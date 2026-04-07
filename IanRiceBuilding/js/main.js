@@ -87,4 +87,57 @@ document.addEventListener('DOMContentLoaded', function () {
         : '0 2px 12px rgba(0,0,0,.35)';
     }, { passive: true });
   }
+
+  // ─── Lightbox ────────────────────────────────────────────────────────────
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbClose = document.getElementById('lightbox-close');
+  const lbPrev = document.getElementById('lightbox-prev');
+  const lbNext = document.getElementById('lightbox-next');
+  const lbItems = Array.from(document.querySelectorAll('[data-lightbox]'));
+  let lbIndex = 0;
+
+  function lbOpen(index) {
+    lbIndex = index;
+    const item = lbItems[index];
+    lbImg.src = item.dataset.img;
+    lbImg.alt = item.dataset.caption || '';
+    lbCaption.textContent = item.dataset.caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function lbClose_() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  if (lightbox) {
+    lbItems.forEach(function (item, i) {
+      item.addEventListener('click', function () { lbOpen(i); });
+    });
+    lbClose.addEventListener('click', lbClose_);
+    lbPrev.addEventListener('click', function () { lbOpen((lbIndex - 1 + lbItems.length) % lbItems.length); });
+    lbNext.addEventListener('click', function () { lbOpen((lbIndex + 1) % lbItems.length); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lbClose_(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') lbClose_();
+      if (e.key === 'ArrowLeft') lbOpen((lbIndex - 1 + lbItems.length) % lbItems.length);
+      if (e.key === 'ArrowRight') lbOpen((lbIndex + 1) % lbItems.length);
+    });
+  }
+
+  // ─── Back to top ─────────────────────────────────────────────────────────
+  const btt = document.getElementById('back-to-top');
+  if (btt) {
+    window.addEventListener('scroll', function () {
+      btt.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+    btt.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
