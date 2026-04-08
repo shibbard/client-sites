@@ -1,3 +1,3 @@
 {
-  "ignoreCommand": "git diff HEAD~1 --name-only | grep -qv '^IanRiceBuilding/'"
+  "ignoreCommand": "if git diff HEAD~1 --name-only | grep -q '^IanRiceBuilding/'; then exit 1; else exit 0; fi"
 }
