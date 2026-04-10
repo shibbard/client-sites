@@ -24,25 +24,26 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li>
-            <a href="#">Restaurants <i data-lucide="chevron-down" style="width:13px;height:13px;display:inline;vertical-align:middle;"></i></a>
+            <a href="#">Restaurants</a>
             <ul class="dropdown">
               <li><a href="paulton.html">Paulton</a></li>
-              <li><a href="warminster.html">Upton Scudamore, Warminster</a></li>
+              <li><a href="warminster.html">Upton Scudamore</a></li>
               <li><a href="stonehouse.html">Stonehouse</a></li>
               <li><a href="chard.html">Chard</a></li>
             </ul>
           </li>
-          <li>
-            <a href="#">Book a Table <i data-lucide="chevron-down" style="width:13px;height:13px;display:inline;vertical-align:middle;"></i></a>
+          <li><a href="about.html">About</a></li>
+          <li><a href="gift-card.html">Gift Cards</a></li>
+          <li><a href="work-with-us.html">Work With Us</a></li>
+          <li class="nav-cta">
+            <a href="#">Book a Table</a>
             <ul class="dropdown">
               <li><a href="paulton.html#book">Paulton</a></li>
-              <li><a href="warminster.html#book">Upton Scudamore, Warminster</a></li>
+              <li><a href="warminster.html#book">Warminster</a></li>
               <li><a href="stonehouse.html#book">Stonehouse</a></li>
               <li><a href="chard.html#book">Chard</a></li>
             </ul>
           </li>
-          <li><a href="gift-card.html" class="active">Gift Cards</a></li>
-          <li><a href="work-with-us.html">Work With Us</a></li>
         </ul>
       </nav>
       <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
@@ -53,16 +54,14 @@
   <nav class="mobile-nav" aria-label="Mobile navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
       <li class="sub-link"><a href="paulton.html">Paulton</a></li>
       <li class="sub-link"><a href="warminster.html">Upton Scudamore, Warminster</a></li>
       <li class="sub-link"><a href="stonehouse.html">Stonehouse</a></li>
       <li class="sub-link"><a href="chard.html">Chard</a></li>
-      <li><a href="paulton.html#book">Book at Paulton</a></li>
-      <li><a href="warminster.html#book">Book at Warminster</a></li>
-      <li><a href="stonehouse.html#book">Book at Stonehouse</a></li>
-      <li><a href="chard.html#book">Book at Chard</a></li>
       <li><a href="gift-card.html">Gift Cards</a></li>
       <li><a href="work-with-us.html">Work With Us</a></li>
+      <li class="mobile-cta"><a href="paulton.html#book">Book a Table</a></li>
     </ul>
   </nav>
 </header>
@@ -74,62 +73,90 @@
   </div>
 </section>
 
-<section class="section">
+<!-- ── GIFT CARD INTRO ──────────────────────────────────────── -->
+<section class="section" style="background:var(--surface);">
   <div class="container">
-    <div class="gc-page">
-      <div class="reveal">
-        <div class="divider"></div>
-        <p class="gc-intro">Spoil someone with a La Campagna Gift Card — <em>"where nothing is too much trouble…"</em><br>Please call the restaurant where the gift card is most likely to be used, or alternatively visit your most convenient restaurant.</p>
+    <div style="max-width:680px; margin:0 auto; text-align:center;" class="reveal">
+      <h2>The Gift of Great Food</h2>
+      <div class="gold-rule"></div>
+      <p style="font-size:1.05rem; color:var(--on-surface-variant); margin-bottom:0;">Spoil someone special with a La Campagna Gift Card. Whether it's a birthday, anniversary or just because — our gift cards let them enjoy everything we do best: exceptional food, fine wine and warm hospitality. <em>"Where nothing is too much trouble."</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW TO GET ONE ──────────────────────────────────────── -->
+<section class="section" style="background:var(--surface-low); padding-top:0;">
+  <div class="container">
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2rem; margin-bottom:4rem;" class="reveal">
+      <div class="info-card" style="margin-bottom:0;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <div style="width:40px;height:40px;background:var(--surface-container);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i data-lucide="phone-call" style="width:18px;height:18px;color:var(--secondary);"></i>
+          </div>
+          <h3 style="margin:0;">Call Your Nearest Restaurant</h3>
+        </div>
+        <p style="color:var(--on-surface-variant);font-size:0.95rem;">Simply telephone the restaurant most convenient to the recipient. Our team will arrange the gift card for you. Gift cards can be collected in person or details arranged over the phone.</p>
       </div>
-
-      <div class="gc-locations reveal">
-
-        <div class="gc-card">
-          <div style="width:48px;height:48px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
-            <i data-lucide="gift" style="width:22px;height:22px;color:var(--forest);"></i>
+      <div class="info-card" style="margin-bottom:0;">
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+          <div style="width:40px;height:40px;background:var(--surface-container);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i data-lucide="map-pin" style="width:18px;height:18px;color:var(--secondary);"></i>
           </div>
-          <h3>Paulton</h3>
-          <p>Salisbury Rd, Paulton<br>Bristol BS39 7RJ</p>
-          <a href="tel:01761418443" class="btn btn-primary" style="width:100%;justify-content:center;">
-            <i data-lucide="phone" style="width:15px;height:15px;"></i> 01761 418443
+          <h3 style="margin:0;">Visit Us in Person</h3>
+        </div>
+        <p style="color:var(--on-surface-variant);font-size:0.95rem;">Pop into any of our four restaurants and our team will be happy to set up a gift card for you. Gift cards are redeemable at any La Campagna location.</p>
+      </div>
+    </div>
+
+    <!-- Contact list — clean table layout, not phone-number cards -->
+    <div class="info-card reveal" style="max-width:760px;margin:0 auto;">
+      <h3 style="margin-bottom:1.5rem;">Restaurant Contact Numbers</h3>
+      <div style="display:grid;gap:1.1rem;">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:1.1rem;border-bottom:1px solid var(--surface-container);">
+          <div>
+            <p style="font-weight:700;color:var(--primary);margin:0;font-size:0.95rem;">Paulton</p>
+            <p style="color:var(--on-surface-variant);font-size:0.83rem;margin:0;">Salisbury Rd, Paulton, Bristol BS39 7RJ</p>
+          </div>
+          <a href="tel:01761418443" class="btn btn-secondary" style="padding:0.6rem 1.25rem;">
+            <i data-lucide="phone" style="width:14px;height:14px;"></i> 01761 418443
           </a>
         </div>
 
-        <div class="gc-card">
-          <div style="width:48px;height:48px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
-            <i data-lucide="gift" style="width:22px;height:22px;color:var(--forest);"></i>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:1.1rem;border-bottom:1px solid var(--surface-container);">
+          <div>
+            <p style="font-weight:700;color:var(--primary);margin:0;font-size:0.95rem;">Upton Scudamore, Warminster</p>
+            <p style="color:var(--on-surface-variant);font-size:0.83rem;margin:0;">The Angel Inn, Upton Scudamore, BA12 0AG</p>
           </div>
-          <h3>Warminster</h3>
-          <p>The Angel Inn, Upton Scudamore<br>Warminster BA12 0AG</p>
-          <a href="tel:01985213225" class="btn btn-primary" style="width:100%;justify-content:center;">
-            <i data-lucide="phone" style="width:15px;height:15px;"></i> 01985 213 225
+          <a href="tel:01985213225" class="btn btn-secondary" style="padding:0.6rem 1.25rem;">
+            <i data-lucide="phone" style="width:14px;height:14px;"></i> 01985 213 225
           </a>
         </div>
 
-        <div class="gc-card">
-          <div style="width:48px;height:48px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
-            <i data-lucide="gift" style="width:22px;height:22px;color:var(--forest);"></i>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-bottom:1.1rem;border-bottom:1px solid var(--surface-container);">
+          <div>
+            <p style="font-weight:700;color:var(--primary);margin:0;font-size:0.95rem;">Stonehouse</p>
+            <p style="color:var(--on-surface-variant);font-size:0.83rem;margin:0;">56 High St, Stonehouse GL10 2NA</p>
           </div>
-          <h3>Stonehouse</h3>
-          <p>56 High St<br>Stonehouse GL10 2NA</p>
-          <a href="tel:01453821599" class="btn btn-primary" style="width:100%;justify-content:center;">
-            <i data-lucide="phone" style="width:15px;height:15px;"></i> 01453 821599
+          <a href="tel:01453821599" class="btn btn-secondary" style="padding:0.6rem 1.25rem;">
+            <i data-lucide="phone" style="width:14px;height:14px;"></i> 01453 821599
           </a>
         </div>
 
-        <div class="gc-card">
-          <div style="width:48px;height:48px;background:var(--sage);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;">
-            <i data-lucide="gift" style="width:22px;height:22px;color:var(--forest);"></i>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+          <div>
+            <p style="font-weight:700;color:var(--primary);margin:0;font-size:0.95rem;">Chard</p>
+            <p style="color:var(--on-surface-variant);font-size:0.83rem;margin:0;">Buckland St Mary, Chard TA20 3JE</p>
           </div>
-          <h3>Chard</h3>
-          <p>Buckland St Mary<br>Chard TA20 3JE</p>
-          <a href="tel:01460234292" class="btn btn-primary" style="width:100%;justify-content:center;">
-            <i data-lucide="phone" style="width:15px;height:15px;"></i> 01460 234292
+          <a href="tel:01460234292" class="btn btn-secondary" style="padding:0.6rem 1.25rem;">
+            <i data-lucide="phone" style="width:14px;height:14px;"></i> 01460 234292
           </a>
         </div>
 
       </div>
     </div>
+
   </div>
 </section>
 
