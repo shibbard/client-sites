@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://deltaroofingrepairs.getdigitaldone.co.uk/sitemap.xml
