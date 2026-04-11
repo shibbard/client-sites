@@ -172,7 +172,7 @@ p {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(10,10,12,0.88) 0%, rgba(20,20,24,0.60) 60%, rgba(20,20,24,0.75) 100%);
+  background: linear-gradient(160deg, rgba(10,10,12,0.72) 0%, rgba(20,20,24,0.45) 60%, rgba(20,20,24,0.60) 100%);
 }
 .hero-content {
   position: relative;
@@ -814,6 +814,9 @@ a.contact-item:hover {
   color: rgba(255,255,255,0.3);
 }
 
+/* Mobile-only nav CTA — hidden unless menu is open */
+.nav-cta-mobile { display: none; }
+
 /* ============================================
    SCROLL REVEAL
    ============================================ */
@@ -868,6 +871,7 @@ a.contact-item:hover {
   }
   .nav-links.open li { width: 100%; }
   .nav-links.open .nav-link { font-size: 1rem; padding: 12px 16px; }
+  .nav-cta-mobile { display: none; }
   .nav-links.open .nav-cta-mobile {
     display: block;
     background: var(--primary-container);
