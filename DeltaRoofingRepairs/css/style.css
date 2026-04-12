@@ -164,19 +164,28 @@ p {
   min-height: 88vh;
   display: flex;
   align-items: flex-end;
-  background:
-    radial-gradient(ellipse at 60% 50%, rgba(127,86,0,0.15) 0%, rgba(251,176,22,0.08) 40%, transparent 70%),
-    url('https://deltaroofingrepairs.co.uk/background.jpg') center center / cover no-repeat;
   background-color: var(--surface-dim);
+  overflow: hidden;
+}
+/* Background image on its own layer so we can brighten it independently */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://deltaroofingrepairs.co.uk/resources/roofs/New%20tiled%20roof.jpg') center 40% / cover no-repeat;
+  filter: brightness(1.35) saturate(1.1) contrast(0.92);
+  z-index: 0;
 }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(10,10,12,0.72) 0%, rgba(20,20,24,0.45) 60%, rgba(20,20,24,0.60) 100%);
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(10,10,12,0.72) 0%, rgba(10,10,12,0.55) 40%, rgba(10,10,12,0.18) 75%, rgba(10,10,12,0.08) 100%);
 }
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
