@@ -831,12 +831,12 @@ a.contact-item:hover {
   color: rgba(255,255,255,0.3);
 }
 .footer-bottom a {
-  color: var(--primary-container);
+  color: rgba(255,255,255,0.35);
   text-decoration: none;
-  font-weight: 600;
-  transition: opacity var(--transition);
+  font-weight: 400;
+  transition: color var(--transition);
 }
-.footer-bottom a:hover { opacity: 0.75; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.65); }
 
 /* Mobile-only nav CTA — hidden unless menu is open */
 .nav-cta-mobile { display: none; }
