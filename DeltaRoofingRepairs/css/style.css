@@ -830,9 +830,111 @@ a.contact-item:hover {
   font-size: 0.76rem;
   color: rgba(255,255,255,0.3);
 }
+.footer-bottom a {
+  color: var(--primary-container);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity var(--transition);
+}
+.footer-bottom a:hover { opacity: 0.75; }
 
 /* Mobile-only nav CTA — hidden unless menu is open */
 .nav-cta-mobile { display: none; }
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+#lightbox.lb-open { display: flex; }
+
+.lb-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,12,0.94);
+  backdrop-filter: blur(6px);
+}
+.lb-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90vw;
+  max-height: 90vh;
+  gap: 14px;
+}
+.lb-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  display: block;
+}
+.lb-caption {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+.lb-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 2;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.lb-close:hover { background: rgba(255,255,255,0.25); }
+
+.lb-prev,
+.lb-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.10);
+  border: none;
+  color: var(--white);
+  font-size: 2.4rem;
+  line-height: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.lb-prev { left: 16px; }
+.lb-next { right: 16px; }
+.lb-prev:hover,
+.lb-next:hover { background: rgba(255,255,255,0.22); }
+
+@media (max-width: 600px) {
+  .lb-prev { left: 6px; }
+  .lb-next { right: 6px; }
+}
 
 /* ============================================
    SCROLL REVEAL
