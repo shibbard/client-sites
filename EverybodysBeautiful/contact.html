@@ -7,7 +7,9 @@
   <meta name="description" content="Find Everybody's Beautiful beauty salon at 20 High Street, Stonehouse, GL10 2NA. Call 01453 823903 or email everybodysbeautiful@live.com. Opening hours Mon–Sat.">
   <link rel="canonical" href="https://www.ebstonehouse.com/contact.html">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="images/favicon.ico">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
 </head>
 <body>
   <header class="site-header"><div class="header-inner container"><a href="index.html" class="logo-block" style="text-decoration:none;"><div class="logo-name">Everybody's Beautiful</div><div class="logo-sub">Beauty Salon</div></a></div></header>
@@ -76,6 +78,67 @@
       </div>
     </div>
   </div></section>
+  <section class="section contact-form-section">
+    <div class="container">
+      <div class="contact-form-wrap">
+        <div id="form-container">
+          <h3>Send Us a Message</h3>
+          <p class="form-sub">Have a question or want to book a treatment? We'll get back to you as soon as we can.</p>
+          <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" required>
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="01453 000000">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="treatment">Treatment of Interest</label>
+              <select id="treatment" name="treatment">
+                <option value="">Please select&hellip;</option>
+                <option value="facial">Facial Treatments</option>
+                <option value="massage">Body Massage &amp; Holistic</option>
+                <option value="eye-treatments">Eye Treatments / Lashes</option>
+                <option value="waxing">Waxing</option>
+                <option value="nails">Nails &amp; Manicures</option>
+                <option value="spray-tan">Spray Tanning</option>
+                <option value="aesthetics">Aesthetics</option>
+                <option value="pedicure">Pedicure Treatments</option>
+                <option value="gift-voucher">Gift Voucher Enquiry</option>
+                <option value="other">Other / General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us what you'd like to know or book&hellip;" required></textarea>
+            </div>
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+        <div class="form-success" id="form-success">
+          <div class="fs-icon">&#10003;</div>
+          <h3>Message Sent!</h3>
+          <p>Thanks for getting in touch. We'll reply as soon as we can — or you can book online 24/7 via Phorest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="cta-strip"><div class="container"><h2>Ready to Book?</h2><p>Book online 24/7 or give us a call during opening hours.</p><div class="btn-cta-row"><a href="https://phorest.com/book/salons/everybodysbeautiful" class="btn btn-white" target="_blank" rel="noopener">Book Online Now</a><a href="tel:01453823903" class="btn btn-gold">📞 01453 823903</a></div></div></section>
   <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><div class="footer-logo">Everybody's <span>Beautiful</span></div><p>A friendly unisex beauty salon in Stonehouse, Gloucestershire.</p></div><div class="footer-col"><h4>Treatments</h4><a href="facial-treatments.html">Facial Treatments</a><a href="body-massage.html">Body Massage</a><a href="eye-treatments.html">Eye Treatments</a><a href="waxing.html">Waxing</a><a href="nail-treatments.html">Nails &amp; Manicures</a><a href="aesthetics.html">Aesthetics</a></div><div class="footer-col"><h4>Salon</h4><a href="team.html">Meet Our Team</a><a href="brands.html">Our Brands</a><a href="reviews.html">Reviews</a><a href="gift-vouchers.html">Gift Vouchers</a><a href="vacancies.html">Vacancies</a><a href="policy.html">Salon Policy</a></div><div class="footer-col"><h4>Contact</h4><a href="tel:01453823903">📞 01453 823903</a><a href="mailto:everybodysbeautiful@live.com">✉️ everybodysbeautiful@live.com</a><a href="contact.html">📍 20 High Street, Stonehouse, GL10 2NA</a></div></div><div class="footer-bottom"><span>© 2026 Everybody's Beautiful. All rights reserved.</span><span><a href="policy.html">Terms &amp; Conditions</a></span><span>Website by <a href="https://getdigitaldone.co.uk" target="_blank" rel="noopener">GetDigitalDone</a></span></div></div></footer>
   <script src="js/main.js"></script>

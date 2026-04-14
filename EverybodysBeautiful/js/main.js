@@ -1,5 +1,47 @@
 // Everybody's Beautiful – main.js
 
+// ---- Contact Form (Formspree) ----
+// Create form at formspree.io and replace YOUR_FORM_ID below
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const fname = form.fname.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!fname || !email || !message) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending\u2026';
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+    if (res.ok) {
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      const data = await res.json();
+      alert(data.errors ? data.errors.map(e => e.message).join(', ') : 'Something went wrong. Please call us on 01453 823903.');
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
+  } catch {
+    alert('Could not send your message. Please call us on 01453 823903.');
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Load Lucide icons ----
@@ -144,5 +186,45 @@ document.addEventListener('DOMContentLoaded', () => {
       navList.classList.remove('open');
     }
   });
+
+  // ---- Lightbox ----
+  const lightbox = document.getElementById('lightbox');
+  const lbImg    = document.getElementById('lb-img');
+  const lbCaption = document.getElementById('lb-caption');
+  const lbClose  = document.getElementById('lb-close');
+  const lbPrev   = document.getElementById('lb-prev');
+  const lbNext   = document.getElementById('lb-next');
+  const lbItems  = Array.from(document.querySelectorAll('[data-lightbox]'));
+  let lbIndex = 0;
+
+  function lbOpen(index) {
+    lbIndex = index;
+    const item = lbItems[index];
+    lbImg.src = item.dataset.img;
+    lbImg.alt = item.dataset.caption || '';
+    lbCaption.textContent = item.dataset.caption || '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function lbCloseFn() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.src = '';
+  }
+
+  if (lightbox && lbItems.length) {
+    lbItems.forEach((item, i) => item.addEventListener('click', () => lbOpen(i)));
+    lbClose.addEventListener('click', lbCloseFn);
+    lbPrev.addEventListener('click', () => lbOpen((lbIndex - 1 + lbItems.length) % lbItems.length));
+    lbNext.addEventListener('click', () => lbOpen((lbIndex + 1) % lbItems.length));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lbCloseFn(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape')     lbCloseFn();
+      if (e.key === 'ArrowLeft')  lbOpen((lbIndex - 1 + lbItems.length) % lbItems.length);
+      if (e.key === 'ArrowRight') lbOpen((lbIndex + 1) % lbItems.length);
+    });
+  }
 
 });
