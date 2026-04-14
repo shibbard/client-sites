@@ -99,15 +99,61 @@
         </div>
 
         <div class="reveal reveal-delay-1">
-          <div class="contact-info-box">
-            <h3 class="headline-md">Free, No-Obligation Estimates</h3>
-            <p class="body-md">We offer completely free estimates for all building projects — large or small. There's no obligation, and we'll always give you honest, straightforward advice.</p>
-            <a href="mailto:ianricebuildingltd@gmail.com" class="btn btn-dark" style="margin-bottom: 0.75rem; display: inline-flex; width: 100%; justify-content: center;">
-              <i data-lucide="mail" width="15" height="15"></i> Email Us
-            </a>
-            <a href="tel:01453821555" class="btn btn-primary" style="display: inline-flex; width: 100%; justify-content: center;">
-              <i data-lucide="phone" width="15" height="15"></i> Call 01453 821555
-            </a>
+          <div class="contact-form-wrap">
+            <div id="form-container">
+              <div class="form-title">Request a Free Estimate</div>
+              <div class="form-subtitle">No obligation. We'll get back to you promptly.</div>
+              <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fname">First Name *</label>
+                    <input type="text" id="fname" name="fname" placeholder="John" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="lname">Last Name *</label>
+                    <input type="text" id="lname" name="lname" placeholder="Smith" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="01453 000000">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="service">Service Required</label>
+                  <select id="service" name="service">
+                    <option value="">Please select&hellip;</option>
+                    <option value="extension">Extension</option>
+                    <option value="conservatory">Conservatory</option>
+                    <option value="refurbishment">Refurbishment</option>
+                    <option value="kitchen-bathroom">Kitchen / Bathroom</option>
+                    <option value="repairs">Small Repairs / Maintenance</option>
+                    <option value="new-build">New Build</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" placeholder="Please describe your project or requirements&hellip;" required></textarea>
+                </div>
+                <div class="form-submit">
+                  <button type="submit" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Send Enquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="form-success" id="form-success">
+              <div class="icon">&#10003;</div>
+              <h3>Enquiry Sent!</h3>
+              <p>Thank you for getting in touch. We'll aim to respond within one business day.</p>
+            </div>
           </div>
 
           <div style="margin-top: 2rem;">
@@ -133,6 +179,17 @@
 
       </div>
     </div>
+  </section>
+
+  <section class="section map-embed-section">
+    <iframe
+      class="map-embed"
+      src="https://maps.google.com/maps?q=Stonehouse+Gloucestershire+GL10&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Ian Rice Building Ltd location — Stonehouse, Gloucestershire">
+    </iframe>
   </section>
 
   <footer class="site-footer">

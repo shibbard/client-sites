@@ -3,6 +3,49 @@
    main.js
    =========================== */
 
+// ─── Contact Form (Formspree) ────────────────────────────────────────────────
+// Create form at formspree.io and replace YOUR_FORM_ID below
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const fname = form.fname.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!fname || !email || !message) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending\u2026';
+
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+
+    if (response.ok) {
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      const data = await response.json();
+      alert(data.errors ? data.errors.map(function(e) { return e.message; }).join(', ') : 'Something went wrong. Please call us on 01453 821555.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Enquiry';
+    }
+  } catch (err) {
+    alert('Could not send your message. Please call us on 01453 821555.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Enquiry';
+  }
+}
+
 // ─── Lucide Icons ───────────────────────────────────────────────────────────
 (function loadLucide() {
   const script = document.createElement('script');
