@@ -336,10 +336,20 @@ section {
   background: var(--pink-pale);
 }
 
-/* Book a Table button — always white text, never inherits nav colour */
+/* Book a Table button — locked styles regardless of scroll or hover state */
+#header .nav-menu-btn,
+#header .nav-menu-btn:hover,
 #header.scrolled .nav-menu-btn,
-.nav-menu-btn {
+#header.scrolled .nav-menu-btn:hover {
+  background: var(--secondary) !important;
   color: var(--on-secondary) !important;
+  border-color: var(--secondary) !important;
+}
+#header .nav-menu-btn:hover,
+#header.scrolled .nav-menu-btn:hover {
+  background: var(--secondary-hover) !important;
+  border-color: var(--secondary-hover) !important;
+  transform: translateY(-2px);
 }
 
 .nav-menu-btn {
