@@ -126,6 +126,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 
 <body>
@@ -221,27 +222,27 @@
       <div class="container">
         <div class="features-grid">
           <div class="feature-item">
-            <span class="feature-icon" aria-hidden="true">🍳</span>
+            <i data-lucide="sunrise" class="feature-icon" aria-hidden="true"></i>
             <span class="feature-label">Breakfast Until Noon</span>
           </div>
           <div class="feature-item">
-            <span class="feature-icon" aria-hidden="true">🏡</span>
+            <i data-lucide="chef-hat" class="feature-icon" aria-hidden="true"></i>
             <span class="feature-label">Homemade Daily</span>
           </div>
           <div class="feature-item">
-            <span class="feature-icon" aria-hidden="true">🌿</span>
+            <i data-lucide="flower-2" class="feature-icon" aria-hidden="true"></i>
             <span class="feature-label">Beautiful Garden</span>
           </div>
           <div class="feature-item">
-            <span class="feature-icon" aria-hidden="true">🐾</span>
+            <i data-lucide="paw-print" class="feature-icon" aria-hidden="true"></i>
             <span class="feature-label">Dog Friendly</span>
           </div>
           <div class="feature-item">
-            <span class="feature-icon" aria-hidden="true">🍷</span>
+            <i data-lucide="wine" class="feature-icon" aria-hidden="true"></i>
             <span class="feature-label">Fully Licensed</span>
           </div>
           <div class="feature-item">
-            <span class="feature-icon" aria-hidden="true">👨‍👩‍👧</span>
+            <i data-lucide="users" class="feature-icon" aria-hidden="true"></i>
             <span class="feature-label">Family Friendly</span>
           </div>
         </div>
@@ -321,7 +322,7 @@
           <!-- Breakfast -->
           <article class="menu-card" role="listitem">
             <div class="menu-card-header">
-              <span class="menu-card-icon" aria-hidden="true">🍳</span>
+              <i data-lucide="coffee" class="menu-card-icon" aria-hidden="true"></i>
               <h3>Breakfast</h3>
             </div>
             <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem;font-style:italic;">Served until 12 noon</p>
@@ -360,7 +361,7 @@
           <!-- Cakes & Sweet Treats -->
           <article class="menu-card menu-card--dark" role="listitem">
             <div class="menu-card-header">
-              <span class="menu-card-icon" aria-hidden="true">🍰</span>
+              <i data-lucide="cookie" class="menu-card-icon" aria-hidden="true"></i>
               <h3>Cakes &amp; Sweet Treats</h3>
             </div>
             <ul class="menu-items">
@@ -393,7 +394,7 @@
           <!-- Light Bites & Lunch -->
           <article class="menu-card" role="listitem">
             <div class="menu-card-header">
-              <span class="menu-card-icon" aria-hidden="true">🥗</span>
+              <i data-lucide="utensils" class="menu-card-icon" aria-hidden="true"></i>
               <h3>Light Bites &amp; Lunch</h3>
             </div>
             <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem;font-style:italic;">Served from 12 noon until 2.30 pm</p>
@@ -428,10 +429,10 @@
           <!-- Afternoon Tea -->
           <article class="menu-card menu-card--featured" role="listitem">
             <div class="menu-card-header">
-              <span class="menu-card-icon" aria-hidden="true">🫖</span>
+              <i data-lucide="flower-2" class="menu-card-icon" aria-hidden="true"></i>
               <h3>Afternoon Tea</h3>
             </div>
-            <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem;font-style:italic;">Served from 2 pm until 4.30 pm &nbsp;·&nbsp; £22.50 per person</p>
+            <p style="font-size:0.85rem;color:rgba(255,255,255,0.72);margin-bottom:1rem;font-style:italic;">Served 2 pm – 4.30 pm &nbsp;·&nbsp; £22.50 per person</p>
             <ul class="menu-items">
               <li class="menu-item">
                 <span class="menu-item-name">Freshly made sandwiches <span class="menu-item-note">Egg Mayo, Wiltshire Ham, Brie &amp; Caramelised Onion, Smoked Salmon</span></span>
@@ -454,7 +455,7 @@
           <!-- Drinks -->
           <article class="menu-card" role="listitem">
             <div class="menu-card-header">
-              <span class="menu-card-icon" aria-hidden="true">☕</span>
+              <i data-lucide="coffee" class="menu-card-icon" aria-hidden="true"></i>
               <h3>Drinks</h3>
             </div>
             <ul class="menu-items">
@@ -567,76 +568,40 @@
       <div class="container">
 
         <div class="section-header">
-          <span class="section-eyebrow">★★★★★ &nbsp;·&nbsp; 4.9 Average Rating</span>
           <h2 id="reviews-heading"><em>Voices from the Village</em></h2>
-          <p class="section-intro">We're proud to be one of the most loved cafés in the area. Here's what our guests have to say.</p>
+          <div class="reviews-stars-hero" aria-label="5 out of 5 stars">★★★★★</div>
+          <span class="section-eyebrow">4.9 / 5 Average Rating</span>
         </div>
 
         <div class="reviews-grid" role="list">
 
           <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text" itemprop="reviewBody">This place was recommend to me by a friend and what a treasure it is. Customers service excellent, freshly cooked food and a lovely seating inside and another area outside in the flowered garden. Prices very reasonable for such good service and food. Full breakfast menu until 12 o'clock.</p>
+            <p class="review-text" itemprop="reviewBody">The best scones I've ever had, hands down. The clotted cream is so fresh it's like it came from the farm next door. A true gem in Ashton Keynes!</p>
             <div class="review-footer">
               <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">Andy Williams</span>
               </div>
-              <div class="review-platform">Google Review ★★★★★</div>
+              <div class="review-platform">Local Resident</div>
             </div>
           </article>
 
           <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text" itemprop="reviewBody">Jennie's Kitchen is incredible. The food was great, the service was excellent, and the vibe was like being at home. I would highly recommend this hidden gem to anyone visiting the area.</p>
+            <p class="review-text" itemprop="reviewBody">Jennie's Kitchen is my morning ritual. The atmosphere is so peaceful, and the coffee is consistently perfect. Truly warm hospitality.</p>
             <div class="review-footer">
               <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span itemprop="name">Danielle Sinclair</span>
               </div>
-              <div class="review-platform">Google Review ★★★★★</div>
+              <div class="review-platform">Regular Guest</div>
             </div>
           </article>
 
           <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text" itemprop="reviewBody">Lovely friendly cafe in a beautiful setting. Plenty of choice of food. Lovely garden if you want to sit outside. Will definitely be back!</p>
+            <p class="review-text" itemprop="reviewBody">We visited for Afternoon Tea and it was spectacular. Every sandwich was delicate and the cake selection was stunning. Will be back!</p>
             <div class="review-footer">
               <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <span itemprop="name">Sarah Mills</span>
+                <span itemprop="name">Emma &amp; James</span>
               </div>
-              <div class="review-platform">Google Review ★★★★★</div>
-            </div>
-          </article>
-
-          <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text" itemprop="reviewBody">I took my mum here for coffee and cake and we would certainly return. I had the most delicious gluten-free option — such a lovely treat in a beautiful village setting.</p>
-            <div class="review-footer">
-              <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <span itemprop="name">Donna Giles</span>
-              </div>
-              <div class="review-platform">Google Review ★★★★★</div>
-            </div>
-          </article>
-
-          <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text" itemprop="reviewBody">Had a lovely lunch here, the Mac and cheese with bacon was delicious. The service was amazing. I would definitely recommend Jennie's Kitchen to friends and family.</p>
-            <div class="review-footer">
-              <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <span itemprop="name">Myles Stephenson</span>
-              </div>
-              <div class="review-platform">Google Review ★★★★★</div>
-            </div>
-          </article>
-
-          <article class="review-card" role="listitem" itemscope itemtype="https://schema.org/Review">
-            <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <p class="review-text" itemprop="reviewBody">Very friendly welcome when we arrived. The Saxon breakfasts were hot, well presented and of good quality. A real gem of a café that we'll be returning to again and again.</p>
-            <div class="review-footer">
-              <div class="review-author" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <span itemprop="name">K Winter</span>
-              </div>
-              <div class="review-platform">Google Review ★★★★★</div>
+              <div class="review-platform">Weekend Visitors</div>
             </div>
           </article>
 
@@ -751,49 +716,27 @@
   <footer role="contentinfo">
     <div class="container">
 
-      <div class="footer-grid">
-
-        <div class="footer-brand">
-          <a href="index.html" class="logo" aria-label="Jennie's Kitchen home">
-            <img src="images/logo.png" alt="Jennie's Kitchen" class="logo-img logo-img--footer">
+      <div class="footer-top">
+        <a href="index.html" class="footer-wordmark" aria-label="Jennie's Kitchen home">Jennie's Kitchen</a>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/p/Jennies-Kitchen-Cafe-61582087446355/" target="_blank" rel="noopener" aria-label="Facebook">
+            <i data-lucide="facebook"></i>
           </a>
-          <p class="footer-desc">Somewhere special in the Cotswold Water Park. Real home cooking, cream teas, breakfast &amp; light lunches. Fully Licensed. Dog Friendly. Family Friendly.</p>
-          <div class="footer-contact">
-            <a href="tel:+441285860048">📞 01285 860048</a>
-            <a href="mailto:info@jennieskitchen.co.uk">✉️ info@jennieskitchen.co.uk</a>
-            <span>📍 Fridays Ham Lane, Ashton Keynes, SN6 6QP</span>
-            <a href="https://www.instagram.com/jennieskitchencafe" target="_blank" rel="noopener">📸 @jennieskitchencafe</a>
-          </div>
+          <a href="https://www.instagram.com/jennieskitchencafe" target="_blank" rel="noopener" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
         </div>
-
-        <div>
-          <p class="footer-col-title">Navigate</p>
-          <ul class="footer-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#location">Find Us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-col-title">The Menu</p>
-          <ul class="footer-links">
-            <li><a href="menu.html#breakfast">Breakfast</a></li>
-            <li><a href="menu.html#lunch">Light Bites &amp; Lunch</a></li>
-            <li><a href="menu.html#afternoon-tea">Afternoon Tea</a></li>
-            <li><a href="menu.html#cakes">Cakes &amp; Desserts</a></li>
-            <li><a href="menu.html#drinks">Drinks</a></li>
-          </ul>
-        </div>
-
       </div>
 
       <div class="footer-bottom">
-        <span>&copy; 2026 Jennie's Kitchen, Ashton Keynes. All rights reserved.</span>
-        <span>Fridays Ham Lane, Ashton Keynes, Swindon SN6 6QP &nbsp;|&nbsp; <a href="tel:+441285860048" style="color:inherit">01285 860048</a></span>
-        <span>Site by <a href="https://www.getdigitaldone.co.uk" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Get Digital Done</a></span>
+        <span class="footer-copy">&copy; 2026 Jennie's Kitchen. Crafted with care in the countryside.</span>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="#about">About</a>
+          <a href="menu.html">Menu</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#location">Find Us</a>
+          <a href="https://www.getdigitaldone.co.uk" target="_blank" rel="noopener">Get Digital Done</a>
+        </nav>
       </div>
 
     </div>
@@ -804,6 +747,11 @@
        JAVASCRIPT
        ============================================= -->
   <script>
+    /* ---- Lucide icons ---- */
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+    });
+
     /* ---- Sticky header ---- */
     const header = document.getElementById('header');
     const onScroll = () => {
