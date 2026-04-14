@@ -1374,12 +1374,7 @@ footer {
 }
 
 .menu-row-price {
-  display: block;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--secondary);
-  white-space: nowrap;
-  flex-shrink: 0;
+  display: none;
 }
 
 .menu-note {
