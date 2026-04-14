@@ -326,13 +326,20 @@ section {
 }
 
 #header.scrolled #main-nav a {
-  color: var(--text);
+  color: var(--primary-container);   /* #2d3e25 — readable mid-forest green */
+  font-weight: 700;
 }
 
 #header.scrolled #main-nav a:hover,
 #header.scrolled #main-nav a.active {
-  color: var(--pink);
+  color: var(--secondary);
   background: var(--pink-pale);
+}
+
+/* Book a Table button — always white text, never inherits nav colour */
+#header.scrolled .nav-menu-btn,
+.nav-menu-btn {
+  color: var(--on-secondary) !important;
 }
 
 .nav-menu-btn {
