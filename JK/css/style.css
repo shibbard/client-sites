@@ -330,8 +330,8 @@ section {
   font-weight: 700;
 }
 
-#header.scrolled #main-nav a:hover,
-#header.scrolled #main-nav a.active {
+#header.scrolled #main-nav a:not(.nav-menu-btn):hover,
+#header.scrolled #main-nav a:not(.nav-menu-btn).active {
   color: var(--secondary);
   background: var(--pink-pale);
 }
