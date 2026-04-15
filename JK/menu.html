@@ -221,19 +221,16 @@
         <!-- Quick-jump nav -->
         <nav class="menu-jump-nav" aria-label="Jump to menu section">
           <span class="menu-jump-label">Jump to:</span>
-          <a href="#starters"    class="menu-jump-chip">Starters</a>
-          <a href="#main-course" class="menu-jump-chip">Mains</a>
-          <a href="#desserts"    class="menu-jump-chip">Desserts</a>
-          <a href="#breakfast"   class="menu-jump-chip">Breakfast</a>
-          <a href="#lunch"       class="menu-jump-chip">Lunch</a>
-          <a href="#drinks"      class="menu-jump-chip">Drinks</a>
-          <a href="#alcohol"     class="menu-jump-chip">Alcohol</a>
-          <a href="#others"      class="menu-jump-chip">Extras</a>
+          <a href="#breakfast"      class="menu-jump-chip">Breakfast</a>
+          <a href="#cakes"          class="menu-jump-chip">Cakes &amp; Treats</a>
+          <a href="#lunch"          class="menu-jump-chip">Light Bites &amp; Lunch</a>
+          <a href="#afternoon-tea"  class="menu-jump-chip">Afternoon Tea</a>
+          <a href="#drinks"         class="menu-jump-chip">Drinks</a>
         </nav>
 
 
-        <!-- ==================== STARTERS ==================== -->
-        <section class="menu-section" id="starters" aria-labelledby="starters-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
+        <!-- ==================== BREAKFAST ==================== -->
+        <section class="menu-section" id="breakfast" aria-labelledby="breakfast-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
             <i data-lucide="salad" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="starters-heading" itemprop="name">Starters</h2>
@@ -356,85 +353,90 @@
             <i data-lucide="sunrise" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="breakfast-heading" itemprop="name">Breakfast</h2>
           </div>
-          <p style="font-size:0.88rem;color:var(--text-light);font-style:italic;margin-bottom:1.5rem;">
-            ☀️ Served until <strong>12 noon</strong> every day
-          </p>
+          <p style="font-size:0.85rem;color:var(--text-light);font-style:italic;margin-bottom:1rem;">Served until 12 noon every day</p>
           <div class="menu-table" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Breakfast Platter</span>
-                <span class="menu-row-desc">2 eggs (fried/poached/scrambled), bacon, sausage, beans, grilled tomato, mushrooms, hash brown &amp; toast</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">7.95</span><meta itemprop="priceCurrency" content="GBP">£7.95
+                <span itemprop="name">'Supreme' Breakfast</span>
+                <span class="menu-row-desc">2 Sausages, 2 Bacon, 2 Eggs, Black Pudding, 2 Hash Browns</span>
+                <div class="diet-labels"><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">2 Poached Eggs / Scrambled on Two Rounds of Toast</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">5.50</span><meta itemprop="priceCurrency" content="GBP">£5.50
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Egg &amp; Bacon (Large Bap)</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">4.50</span><meta itemprop="priceCurrency" content="GBP">£4.50
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Sausage &amp; Egg (Large Bap)</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">5.50</span><meta itemprop="priceCurrency" content="GBP">£5.50
+                <span itemprop="name">Full English Breakfast</span>
+                <span class="menu-row-desc">Bacon, Sausage, Egg, Tomato, Mushrooms, Hash Brown, Beans, Toast</span>
+                <div class="diet-labels"><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Veggie Sausage &amp; Egg</span>
-                <div class="diet-labels"><span class="diet-label veggie">Vegetarian</span></div>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">5.50</span><meta itemprop="priceCurrency" content="GBP">£5.50
+                <span itemprop="name">Vegetarian Breakfast</span>
+                <span class="menu-row-desc">2 Vegetarian Sausages, Tomato, Fried Egg, Beans, Mushrooms, Hash Brown</span>
+                <div class="diet-labels"><span class="diet-label veggie">V</span><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Vegan Sausage &amp; Mushroom</span>
-                <div class="diet-labels"><span class="diet-label vegan">Vegan</span></div>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">5.50</span><meta itemprop="priceCurrency" content="GBP">£5.50
+                <span itemprop="name">Lighter Breakfast</span>
+                <span class="menu-row-desc">2 Bacon, 2 Eggs, Beans, Toast</span>
+                <div class="diet-labels"><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">2 Fried Eggs</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Beans</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Toasted Teacake</span>
-                <span class="menu-row-desc">Buttered / Jam</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.00</span><meta itemprop="priceCurrency" content="GBP">£3.00<span style="font-size:0.78rem;font-weight:400;"> + extras</span>
+              <div class="menu-row-name">
+                <span itemprop="name">Smashed Avocado &amp; Poached Eggs</span>
+                <span class="menu-row-desc">On Sourdough Toast with chilli flakes</span>
+                <div class="diet-labels"><span class="diet-label veggie">V</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Buttered Toast</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">1.50</span><meta itemprop="priceCurrency" content="GBP">£1.50
+              <div class="menu-row-name">
+                <span itemprop="name">Eggs Benedict</span>
+                <span class="menu-row-desc">Bacon &amp; Poached Eggs on a toasted muffin with Hollandaise Sauce</span>
+              </div>
+            </div>
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name">
+                <span itemprop="name">Teacake — toasted with Jam &amp; Butter</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- ==================== CAKES & SWEET TREATS ==================== -->
+        <section class="menu-section" id="cakes" aria-labelledby="cakes-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
+          <div class="menu-section-title">
+            <i data-lucide="cookie" class="menu-section-icon" aria-hidden="true"></i>
+            <h2 id="cakes-heading" itemprop="name">Cakes &amp; Sweet Treats</h2>
+          </div>
+          <div class="menu-table" role="list">
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name"><span itemprop="name">Large Scone with Jam &amp; Clotted Cream</span></div>
+            </div>
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name"><span itemprop="name">Apple Pie / Cheesecake / Chocolate Fudge Cake</span></div>
+            </div>
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name"><span itemprop="name">Slice of Homemade Cake</span></div>
+            </div>
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name">
+                <span itemprop="name">Ice Cream — Homemade</span>
+                <span class="menu-row-desc">Various flavours available, please ask</span>
               </div>
             </div>
 
@@ -442,112 +444,108 @@
               <div class="menu-row-name"><span itemprop="name">Croissant</span></div>
             </div>
 
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name">
-                <span itemprop="name">Egg &amp; Bacon Bap</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">4.50</span><meta itemprop="priceCurrency" content="GBP">£4.50
-              </div>
-            </div>
-
-          </div>
-          <div class="menu-extras-note">
-            <p><strong>Black Pudding extra:</strong> add to any breakfast +£1.00</p>
-            <p>All breakfasts freshly cooked to order. Please allow a little time at busy periods.</p>
           </div>
         </section>
 
 
-        <!-- ==================== LUNCH ==================== -->
+        <!-- ==================== LIGHT BITES & LUNCH ==================== -->
         <section class="menu-section" id="lunch" aria-labelledby="lunch-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
           <div class="menu-section-title">
             <i data-lucide="utensils" class="menu-section-icon" aria-hidden="true"></i>
             <h2 id="lunch-heading" itemprop="name">Light Bites &amp; Lunch</h2>
           </div>
+          <p style="font-size:0.85rem;color:var(--text-light);font-style:italic;margin-bottom:1rem;">Served from 12 noon until 2.30 pm</p>
           <div class="menu-table" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
                 <span itemprop="name">Jacket Potato</span>
-                <span class="menu-row-desc">Choice of: Tuna &amp; Mayo · Coronation Chicken · Cheese &amp; Beans · Houmous, Avocado, Carrot &amp; Peppers with Salad (v/vg) · Vegan Bean Goulash (vg)</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">7.50</span><meta itemprop="priceCurrency" content="GBP">£7.50
+                <span class="menu-row-desc">Tuna Mayo · Chicken Bacon &amp; Mayo · Chilli Con Carne · Cheddar &amp; Beans · Prawn &amp; Marie Rose</span>
+                <div class="diet-labels"><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Homemade Soup of the Day with Crusty Bread</span>
-                <div class="diet-labels"><span class="diet-label veggie">Often Vegetarian</span></div>
+                <span itemprop="name">Homemade Soup of the Day</span>
+                <span class="menu-row-desc">Served with crusty bread</span>
+                <div class="diet-labels"><span class="diet-label veggie">V</span><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Tuna &amp; Mayo Sandwich / Roll</span>
+                <span itemprop="name">Panini</span>
+                <span class="menu-row-desc">Served with salad &amp; crisps · Brie &amp; Cranberry · Chicken Bacon &amp; Avocado · Tuna Cheese &amp; Red Onion · BBQ Sausage &amp; Bacon</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Coronation Chicken Sandwich / Roll</span>
+                <span itemprop="name">Ham, Egg &amp; Chips</span>
+                <span class="menu-row-desc">With salad and coleslaw</span>
+                <div class="diet-labels"><span class="diet-label gf">GF</span></div>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Brie &amp; Mango Chutney Sandwich</span>
-                <div class="diet-labels"><span class="diet-label veggie">Vegetarian</span></div>
+                <span itemprop="name">Beef Bourguignon</span>
+                <span class="menu-row-desc">Served with crusty bread</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Pulled Pork Sandwich / Roll</span>
+                <span itemprop="name">Macaroni Cheese</span>
+                <span class="menu-row-desc">With crusty bread · Add bacon +£2</span>
+                <div class="diet-labels"><span class="diet-label veggie">V</span></div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+
+        <!-- ==================== AFTERNOON TEA ==================== -->
+        <section class="menu-section" id="afternoon-tea" aria-labelledby="aftea-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
+          <div class="menu-section-title">
+            <i data-lucide="flower-2" class="menu-section-icon" aria-hidden="true"></i>
+            <h2 id="aftea-heading" itemprop="name">Afternoon Tea</h2>
+          </div>
+          <p style="font-size:0.85rem;color:var(--text-light);font-style:italic;margin-bottom:1rem;">Served 2 pm – 4.30 pm · £22.50 per person · Please book in advance</p>
+          <div class="menu-table" role="list">
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name">
+                <span itemprop="name">Freshly Made Sandwiches</span>
+                <span class="menu-row-desc">Egg Mayo · Wiltshire Ham · Brie &amp; Caramelised Onion · Smoked Salmon</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Ham &amp; Cheese Sandwich / Roll</span>
+                <span itemprop="name">Homemade Scone with Cream &amp; Jam</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Goats Cheese &amp; Chutney Sandwich</span>
-                <div class="diet-labels"><span class="diet-label veggie">Vegetarian</span></div>
+                <span itemprop="name">Selection of Homemade Cake</span>
+                <span class="menu-row-desc">Victoria Sponge · Carrot Cake · Chocolate Brownie</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Jackfruit Sandwich / Roll</span>
-                <div class="diet-labels"><span class="diet-label vegan">Vegan</span></div>
+                <span itemprop="name">Strawberries Dipped in Chocolate</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
-                <span itemprop="name">Cheese &amp; Beans Roll</span>
-                <div class="diet-labels"><span class="diet-label veggie">Vegetarian</span></div>
+                <span itemprop="name">Tea &amp; Coffee</span>
               </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name">
-                <span itemprop="name">Cottage Pie</span>
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name">
-                <span itemprop="name">Afternoon Tea for Two</span>
-                <span class="menu-row-desc">Finger sandwiches, fresh scones with cream &amp; jam, homemade cakes, tea or coffee</span>
-              </div>
-              <div class="menu-row-price">Ask us</div>
             </div>
 
           </div>
@@ -565,235 +563,48 @@
           <div class="menu-table menu-table--spaced" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Pot of Tea</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Cappuccino</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Latte</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Espresso</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Americano</span></div>
+              <div class="menu-row-name"><span itemprop="name">Cappuccino / Latte / Americano / Espresso</span></div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
                 <span itemprop="name">Hot Chocolate</span>
-                <span class="menu-row-desc">Add whipped cream &amp; marshmallows +50p · Almond / Soya / Lactose Free milk +50p</span>
+                <span class="menu-row-desc">Add whipped cream &amp; marshmallows +50p · Alt. milks +50p</span>
               </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">2.80</span><meta itemprop="priceCurrency" content="GBP">£2.80
-              </div>
+            </div>
+
+            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
+              <div class="menu-row-name"><span itemprop="name">Pot of Tea</span></div>
             </div>
 
           </div>
 
-          <h3 class="menu-sub-heading">Cold Drinks &amp; Soft Drinks</h3>
+          <h3 class="menu-sub-heading">Cold Drinks</h3>
           <div class="menu-table" role="list">
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name">
-                <span itemprop="name">Fresh Smoothies</span>
-                <span class="menu-row-desc">Various / Healthy options · Add Ice Cream extra</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.75</span><meta itemprop="priceCurrency" content="GBP">£3.75
-              </div>
+              <div class="menu-row-name"><span itemprop="name">Fresh Smoothies (various)</span></div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name">
                 <span itemprop="name">Frappe</span>
-                <span class="menu-row-desc">Vanilla (v) · Chocolate (v) · Coffee</span>
-              </div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.25</span><meta itemprop="priceCurrency" content="GBP">£3.25
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Fresh Orange Juice</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Coke / Diet Coke</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">1.50</span><meta itemprop="priceCurrency" content="GBP">£1.50
+                <span class="menu-row-desc">Vanilla · Chocolate · Coffee</span>
               </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
               <div class="menu-row-name"><span itemprop="name">Cawston Fruit Juice</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">2.20</span><meta itemprop="priceCurrency" content="GBP">£2.20
-              </div>
             </div>
 
             <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Harrogate Water Still / Sparkling</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Bottle Green Sparkling Pressé</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Mountain Mist Lemon &amp; Lime &amp; Other Flavours</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Capri Sun / Fruit Shoot</span></div>
+              <div class="menu-row-name"><span itemprop="name">Coke / Diet Coke</span></div>
             </div>
 
           </div>
         </section>
 
 
-        <!-- ==================== ALCOHOL ==================== -->
-        <section class="menu-section" id="alcohol" aria-labelledby="alcohol-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
-          <div class="menu-section-title">
-            <i data-lucide="wine" class="menu-section-icon" aria-hidden="true"></i>
-            <h2 id="alcohol-heading" itemprop="name">Alcohol</h2>
-          </div>
-
-          <h3 class="menu-sub-heading">Wine &amp; Fizz</h3>
-          <div class="menu-table menu-table--spaced" role="list">
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Blossom Hill Wine</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Hardys Wine Red</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Prosecco</span></div>
-            </div>
-
-          </div>
-
-          <h3 class="menu-sub-heading">Beer &amp; Cider</h3>
-          <div class="menu-table menu-table--spaced" role="list">
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Bishops Finger Beer</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.85</span><meta itemprop="priceCurrency" content="GBP">£3.85
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Doom Bar Beer</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.85</span><meta itemprop="priceCurrency" content="GBP">£3.85
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Corona Extra / Peroni Beer</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.75</span><meta itemprop="priceCurrency" content="GBP">£3.75
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Rekorderlig Cider</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.50</span><meta itemprop="priceCurrency" content="GBP">£3.50
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Magners Cider</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.95</span><meta itemprop="priceCurrency" content="GBP">£3.95
-              </div>
-            </div>
-
-          </div>
-
-          <h3 class="menu-sub-heading">Spirits &amp; Cocktails</h3>
-          <div class="menu-table" role="list">
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Gin / Pink Gin Single</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">3.50</span><meta itemprop="priceCurrency" content="GBP">£3.50
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Gin / Pink Gin Double</span></div>
-              <div class="menu-row-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                <span itemprop="price" style="display:none">6.75</span><meta itemprop="priceCurrency" content="GBP">£6.75
-              </div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Fever Tree / Schweppes Tonic Water</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Pimm's Single Glass</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Pimm's Large Jug (Mixed)</span></div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Whisky Single / Double</span></div>
-            </div>
-
-          </div>
-          <p class="menu-note">Please drink responsibly. Challenge 25 policy in operation. We reserve the right to refuse service.</p>
-        </section>
-
-
-        <!-- ==================== EXTRAS / OTHERS ==================== -->
-        <section class="menu-section" id="others" aria-labelledby="others-heading" itemprop="hasMenuSection" itemscope itemtype="https://schema.org/MenuSection">
-          <div class="menu-section-title">
-            <i data-lucide="plus-circle" class="menu-section-icon" aria-hidden="true"></i>
-            <h2 id="others-heading" itemprop="name">Extras &amp; Additions</h2>
-          </div>
-          <div class="menu-table" role="list">
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Whipped Cream &amp; Marshmallows (hot drinks)</span></div>
-              <div class="menu-row-price">+£0.50</div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Alternative Milk (Almond / Soya / Lactose Free)</span></div>
-              <div class="menu-row-price">+£0.50</div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Black Pudding (add to breakfast)</span></div>
-              <div class="menu-row-price">+£1.00</div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Add Mixed Fruit or Ice Cream (to smoothies or desserts)</span></div>
-              <div class="menu-row-price">+£1.00</div>
-            </div>
-
-            <div class="menu-row" role="listitem" itemprop="hasMenuItem" itemscope itemtype="https://schema.org/MenuItem">
-              <div class="menu-row-name"><span itemprop="name">Ice Cream added to smoothies</span></div>
-              <div class="menu-row-price">+£1.00</div>
-            </div>
-
-          </div>
-        </section>
 
 
         <!-- Allergen notice -->
