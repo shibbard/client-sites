@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thewoolpack.getdigitaldone.co.uk/sitemap.xml
