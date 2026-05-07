@@ -112,6 +112,15 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.5rem); font-weight: 600; }
   background: rgba(252, 249, 239, 0.28);
   border-color: rgba(255, 255, 255, 0.6);
 }
+.btn-outline-forest {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-outline-forest:hover {
+  background: var(--primary);
+  color: var(--on-primary);
+}
 .btn-gold {
   background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
   color: var(--on-primary);
