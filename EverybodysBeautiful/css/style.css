@@ -181,8 +181,9 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- Site Header ---------- */
 .site-header {
-  background: var(--header-tan);
+  background: #fff;
   padding: 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
@@ -193,10 +194,14 @@ p:last-child { margin-bottom: 0; }
 }
 
 .logo-block {
-  background: var(--logo-cream);
-  padding: 1rem 2.5rem;
+  padding: 0.75rem 1.5rem;
   text-align: center;
-  border: 1px solid rgba(139,115,64,0.25);
+}
+
+.logo-img {
+  height: 80px;
+  width: auto;
+  display: block;
 }
 
 .logo-block .logo-name {
@@ -326,8 +331,7 @@ p:last-child { margin-bottom: 0; }
 /* ---------- Hero ---------- */
 .hero {
   background: linear-gradient(135deg, #E8D8F0 0%, #D8C8E8 50%, #E0D0F0 100%);
-  padding: 5rem 0;
-  text-align: center;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }
@@ -340,16 +344,39 @@ p:last-child { margin-bottom: 0; }
   opacity: 0.5;
 }
 
-.hero-content { position: relative; z-index: 1; }
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  min-height: 500px;
+}
+
+.hero-content { position: relative; z-index: 1; flex: 1; padding: 5rem 0; }
+
+.hero-image {
+  flex: 0 0 44%;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  margin: 2rem 0;
+  box-shadow: var(--shadow-hover);
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
 
 .hero h1 { color: var(--plum); margin-bottom: 1rem; }
 .hero .hero-sub {
   font-size: 1.15rem;
   color: var(--text-mid);
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
+  max-width: 520px;
+  margin: 0 0 1.5rem;
 }
-.hero .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero .hero-cta { display: flex; gap: 1rem; justify-content: flex-start; flex-wrap: wrap; }
 
 /* ---------- Page Hero (inner pages) ---------- */
 .page-hero {
@@ -365,7 +392,7 @@ p:last-child { margin-bottom: 0; }
 /* ---------- Cards ---------- */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
 
@@ -765,8 +792,12 @@ p:last-child { margin-bottom: 0; }
 /* ---------- Treatments nav page ---------- */
 .treatment-nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+}
+
+.treatment-nav-grid .treatment-nav-card:last-child:nth-child(3n+1) {
+  grid-column: 2 / 3;
 }
 
 .treatment-nav-card {
@@ -1065,6 +1096,7 @@ p:last-child { margin-bottom: 0; }
   .contact-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .form-row { grid-template-columns: 1fr; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -1083,11 +1115,16 @@ p:last-child { margin-bottom: 0; }
   .has-dropdown.open .dropdown { display: block; }
   .nav-inner { flex-wrap: wrap; }
   .section { padding: 2.5rem 0; }
-  .hero { padding: 3rem 0; }
+  .hero-inner { flex-direction: column-reverse; min-height: auto; }
+  .hero-content { padding: 2.5rem 0 3rem; text-align: center; }
+  .hero .hero-sub { margin: 0 auto 1.5rem; }
+  .hero .hero-cta { justify-content: center; }
+  .hero-image { flex: none; width: 100%; height: 280px; margin: 0; border-radius: 0; }
 }
 
 @media (max-width: 580px) {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .logo-block { padding: 1rem 1.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
 }
