@@ -138,7 +138,7 @@ img { max-width: 100%; display: block; }
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.55) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.72) 100%);
 }
 
 .hero__content {
@@ -912,6 +912,91 @@ img { max-width: 100%; display: block; }
 
 .btn--ghost:hover { background: rgba(148,68,33,0.05); opacity: 1; }
 
+/* ── Visually hidden (SEO) ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Gallery page ── */
+.gallery-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+}
+
+.gallery-section__title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--on-bg);
+  margin-bottom: 2.5rem;
+}
+
+.gallery-grid a {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.gallery-grid a img {
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* ── Lightbox ── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10,6,3,0.93);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.lightbox-overlay.active { opacity: 1; pointer-events: all; }
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem; right: 1.2rem;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.65);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.2s;
+}
+.lightbox-close:hover { color: #fff; }
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  padding: 1rem;
+  transition: color 0.2s;
+}
+.lightbox-prev:hover, .lightbox-next:hover { color: #fff; }
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+
 /* ── Scroll reveal ── */
 .reveal {
   opacity: 0;
@@ -954,10 +1039,28 @@ img { max-width: 100%; display: block; }
   .gallery-grid { grid-template-columns: 1fr; }
   .gallery-grid img { height: 220px; }
   .staff-grid { grid-template-columns: repeat(2, 1fr); }
+  .welcome-section { padding: 4rem 1.5rem; }
+  .section-cards { padding: 3rem 1.5rem; }
+  .hours-section { padding: 3rem 1.5rem; }
+  .gallery-section { padding: 2rem 1.5rem 3rem; }
+  .staff-section { padding: 3rem 1.5rem; }
+  .laurie-section { padding: 3rem 1.5rem; }
+  .info-section { padding: 3rem 1.5rem; }
+  .map-section { padding: 3rem 1.5rem; }
+  .page-body-section { padding: 3rem 1.5rem; }
 }
 
 @media (max-width: 480px) {
   .staff-grid { grid-template-columns: 1fr; }
   .awards__inner { gap: 2.5rem; }
   .site-footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .welcome-section { padding: 3rem 1.25rem; }
+  .section-cards { padding: 2.5rem 1.25rem; }
+  .hours-section { padding: 2.5rem 1.25rem; }
+  .gallery-section { padding: 1.5rem 1.25rem 2.5rem; }
+  .staff-section { padding: 2.5rem 1.25rem; }
+  .laurie-section { padding: 2.5rem 1.25rem; }
+  .info-section { padding: 2.5rem 1.25rem; }
+  .map-section { padding: 2.5rem 1.25rem; }
+  .page-body-section { padding: 2.5rem 1.25rem; }
 }
