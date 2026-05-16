@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://woodcocklane.getdigitaldone.co.uk/sitemap.xml
