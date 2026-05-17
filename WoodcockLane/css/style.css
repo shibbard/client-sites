@@ -147,8 +147,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 16px;
 }
 .nav-logo img {
-  height: 48px;
+  height: 64px;
   width: auto;
+  max-width: 200px;
   object-fit: contain;
 }
 .nav-links {
