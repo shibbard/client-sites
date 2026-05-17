@@ -301,14 +301,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 580px;
+  height: 600px;
+  max-height: 90vh;
+  overflow: hidden;
   background: var(--surface);
 }
 .hero-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 80px var(--gutter) 80px 80px;
+  padding: 56px var(--gutter) 56px 80px;
   max-width: 620px;
 }
 .hero-content .label-sm { margin-bottom: 16px; }
@@ -328,7 +330,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 .hero-image::after {
   content: '';
@@ -832,7 +834,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .sticky-book { display: block; }
   .nav-actions .btn { display: none; }
 
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { grid-template-columns: 1fr; height: auto; max-height: none; }
   .hero-content { padding: 56px 16px 40px; max-width: 100%; }
   .hero-image { height: 280px; }
   .hero-image::after { background: linear-gradient(to bottom, var(--surface) 0%, transparent 15%); }
