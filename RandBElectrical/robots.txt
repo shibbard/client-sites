@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://randb-electrical.co.uk/sitemap.xml
