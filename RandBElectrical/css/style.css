@@ -443,25 +443,27 @@ nav ul li a.cta-nav:hover { background: var(--primary-container); color: var(--o
 .sponsors-grid {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 28px;
 }
 .sponsor-item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .sponsor-badge {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   border-radius: var(--radius);
-  background: var(--surface-container);
+  background: var(--surface-lowest);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--primary-container);
   border: 1px solid var(--outline-variant);
+  padding: 8px;
+}
+.sponsor-badge img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 .sponsor-item span {
   font-family: var(--font-mono);
@@ -817,12 +819,13 @@ footer ul li a:hover { color: var(--on-primary); }
 @media (max-width: 768px) {
   .hero h1 { font-size: 32px; line-height: 40px; }
   .hero p { font-size: 16px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .info-cards { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2,1fr); gap: 16px; background: transparent; border: none; border-radius: 0; overflow: visible; }
+  .service-card { border: 1px solid var(--outline-variant); border-radius: var(--radius-lg); }
+  .info-cards { grid-template-columns: repeat(2,1fr); }
   .content-split { grid-template-columns: 1fr; gap: 36px; }
   .about-stats { grid-template-columns: 1fr 1fr; }
   .founders-grid { grid-template-columns: 1fr; }
-  .solar-benefits { grid-template-columns: 1fr; }
+  .solar-benefits { grid-template-columns: repeat(2,1fr); }
   .case-studies-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .cta-inner { flex-direction: column; align-items: flex-start; }
@@ -839,6 +842,9 @@ footer ul li a:hover { color: var(--on-primary); }
   .section { padding: 52px 0; }
   .about-stats { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .info-cards { grid-template-columns: 1fr; }
+  .solar-benefits { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 10px; }
   .page-hero h1 { font-size: 28px; line-height: 36px; }
