@@ -835,6 +835,7 @@ footer ul li a:hover { color: var(--on-primary); }
   .hamburger { display: flex; }
   .header-inner { flex-wrap: wrap; position: relative; }
   .section-title h2 { font-size: 28px; line-height: 36px; }
+  .content-body h2 { font-size: 26px; line-height: 34px; }
   .form-row { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
