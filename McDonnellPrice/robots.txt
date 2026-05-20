@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mcdonnell-price.getdigitaldone.co.uk/sitemap.xml
