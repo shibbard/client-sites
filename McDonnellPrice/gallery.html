@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,10 +12,10 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="site-logo"><div class="logo-mark">MP</div><div class="logo-text">McDonnell-Price<span>Roofing Contractors Ltd</span></div></a>
+      <a href="index.html" class="site-logo"><img src="images/logo.gif" alt="McDonnell-Price Roofing Contractors Ltd"></a>
       <div class="site-nav-wrap" id="site-nav-wrap">
         <ul class="nav-list" id="nav-list">
-          <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="health-safety.html">H&amp;S</a></li>
+          <li><a href="about.html">About Us</a></li><li><a href="health-safety.html">Health &amp; Safety</a></li>
           <li><a href="roofing-services.html">Roofing <span class="dropdown-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="flat-roofing.html">Flat Roofing</a></li><li><a href="roof-tiling.html">Roof Tiling</a></li><li><a href="slate-roofing.html">Slate Roofing</a></li><li><a href="lead-roofing.html">Lead Roofing Work</a></li></ul></li>
           <li><a href="building-services.html">Building <span class="dropdown-arrow">&#9660;</span></a><ul class="dropdown"><li><a href="building-refurbishment.html">Building Refurbishment &amp; Maintenance</a></li><li><a href="historical-restoration.html">Historical Building Restoration</a></li></ul></li>
           <li><a href="gallery.html" class="active">Gallery</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="contact.html">Contact</a></li>
@@ -39,14 +39,23 @@
       <p class="section-intro reveal">A selection of our completed roofing and building projects across Gloucestershire and the South West. Click any image to enlarge.</p>
 
       <div class="gallery-grid" style="margin-top:48px;">
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/_resized/Jackson-Roof---Bath-Abbey_230_230_0_217_775_992.jpg" alt="Roofing project — Bath Abbey area" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/_resized/IMG_4137_230_230_0_0_3018_3018.JPG" alt="Roofing project" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/page/_resized/Lead-Flat-roof-two-chinney-top_230_230_284_0_834_550.jpg" alt="Lead flat roof with two chimneys" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/page/_resized/Bay-Porch-lead-roof_230_230_50_0_611_561.jpg" alt="Bay porch lead roof" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/page/_resized/Bay-Porch-lead-roof-2_230_230_224_0_785_561.jpg" alt="Bay porch lead roof detail" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/splash/_resized/Large-red-brick-building_230_230_156_0_890_734.jpg" alt="Large red brick building roofing project" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/page/_resized/Bay-Porch-lead-roof-3_230_230_0_0_561_561.jpg" alt="Bay porch lead roof installation" loading="lazy"></div>
-        <div class="gallery-item reveal"><img src="http://www.mcdonnell-price.co.uk/images/ww/feature/_resized/DP-21_230_230_176_0_700_524.jpg" alt="Brick arch on roof" loading="lazy"></div>
+        <div class="gallery-item reveal" data-index="0"><img src="images/gallery/gallery-1.jpg" alt="Roofing project — Bath Abbey area" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="1"><img src="images/gallery/gallery-2.jpg" alt="Roofing project" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="2"><img src="images/gallery/gallery-3.jpg" alt="Lead flat roof with two chimneys" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="3"><img src="images/gallery/gallery-4.jpg" alt="Bay porch lead roof" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="4"><img src="images/gallery/gallery-5.jpg" alt="Bay porch lead roof detail" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="5"><img src="images/gallery/gallery-6.jpg" alt="Large red brick building roofing project" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="6"><img src="images/gallery/gallery-7.jpg" alt="Bay porch lead roof installation" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+        <div class="gallery-item reveal" data-index="7"><img src="images/gallery/gallery-8.jpg" alt="Brick arch restoration" loading="lazy"><div class="gallery-overlay"><i data-lucide="zoom-in"></i></div></div>
+      </div>
+
+      <!-- Lightbox -->
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close"><i data-lucide="x" style="width:28px;height:28px;"></i></button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Previous"><i data-lucide="chevron-left" style="width:28px;height:28px;"></i></button>
+        <div class="lightbox-inner"><img id="lightbox-img" src="" alt=""></div>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Next"><i data-lucide="chevron-right" style="width:28px;height:28px;"></i></button>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
       </div>
     </div>
   </section>
@@ -67,7 +76,7 @@
         <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="health-safety.html">Health &amp; Safety</a></li><li><a href="testimonials.html">Testimonials</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
         <div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><i data-lucide="phone"></i><a href="tel:01453825445">01453 825 445</a></div><div class="footer-contact-item"><i data-lucide="mail"></i><a href="mailto:enquiries@mcdonnell-price.co.uk">enquiries@mcdonnell-price.co.uk</a></div><div class="footer-contact-item"><i data-lucide="map-pin"></i><span>Unit 1, Gabwell Business Centre, Quadrant Way, Hardwicke, Gloucester GL2 2JH</span></div></div>
       </div>
-      <div class="footer-bottom"><span>&copy; 2025 McDonnell-Price Roofing Contractors Ltd.</span><span>Gloucestershire &amp; South West</span></div>
+      <div class="footer-bottom"><span>&copy; 2026 McDonnell-Price Roofing Contractors Ltd.</span><span>Gloucestershire &amp; South West</span></div>
     </div>
   </footer>
   <script src="js/main.js"></script>
