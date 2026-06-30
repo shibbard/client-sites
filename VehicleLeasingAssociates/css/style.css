@@ -74,7 +74,7 @@ section{position:relative}
 .site-header{position:sticky;top:0;z-index:100;background:var(--navy);box-shadow:0 2px 14px rgba(15,23,42,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
 .brand{display:flex;align-items:center;flex-shrink:0}
-.brand img{height:46px;width:auto}
+.brand img{height:38px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none;flex-wrap:nowrap}
 .nav-links>li>a{
   display:flex;align-items:center;gap:5px;color:#e2e8f0;font-weight:500;font-size:15px;
@@ -100,7 +100,7 @@ section{position:relative}
 .hero{position:relative;min-height:600px;display:flex;align-items:center;color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,23,42,.94) 0%,rgba(15,23,42,.80) 44%,rgba(15,23,42,.46) 100%),linear-gradient(to bottom,rgba(15,23,42,0) 55%,rgba(15,23,42,.88) 100%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(15,23,42,.94) 0%,rgba(15,23,42,.80) 44%,rgba(15,23,42,.46) 100%),linear-gradient(to bottom,rgba(15,23,42,0) 42%,rgba(15,23,42,.80) 72%,rgba(15,23,42,1) 100%)}
 .hero .container{position:relative;z-index:1;padding-top:70px;padding-bottom:70px}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:999px;margin-bottom:22px}
 .hero h1{color:#fff;font-size:clamp(2.2rem,5vw,3.6rem);max-width:18ch;margin-bottom:20px}
@@ -260,7 +260,7 @@ section{position:relative}
 .site-footer{background:var(--navy-2);color:#94a3b8;padding:64px 0 0}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px}
 .site-footer h4{color:#fff;font-size:1rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
-.site-footer .f-brand img{height:48px;margin-bottom:18px}
+.site-footer .f-brand img{height:42px;width:auto;margin-bottom:18px}
 .site-footer .f-brand p{font-size:14px;max-width:32ch}
 .footer-links{list-style:none;display:grid;gap:11px}
 .footer-links a{font-size:14.5px;transition:color .2s}
@@ -277,6 +277,18 @@ section{position:relative}
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
+
+/* back to top */
+.to-top{
+  position:fixed;right:24px;bottom:24px;z-index:90;width:50px;height:50px;border-radius:var(--r);
+  background:var(--navy);color:#fff;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .3s ease,transform .3s ease,background .2s ease,visibility .3s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--red);transform:translateY(-3px)}
+.to-top i,.to-top svg{width:24px;height:24px}
+@media(max-width:600px){.to-top{right:16px;bottom:16px;width:46px;height:46px}}
 
 /* ---------- Responsive ---------- */
 @media(max-width:1024px){
@@ -307,15 +319,20 @@ section{position:relative}
   .banner-media img{position:absolute}
   .form-wrap{grid-template-columns:1fr}
   .lease-grid{grid-template-columns:1fr}
+  .hero{min-height:auto;background:radial-gradient(125% 90% at 82% 6%,#243049 0%,#16213a 50%,#0f172a 100%)}
+  .hero-bg{display:none}
+}
+@media(max-width:700px){
+  .topbar{display:none}
 }
 @media(max-width:600px){
   .section{padding:56px 0}
   .cards,.cards.four,.cat-grid,.offer-grid,.checklist.two{grid-template-columns:1fr}
   .field-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
-  .hero{min-height:540px}
+  .hero{min-height:auto;background:radial-gradient(125% 90% at 82% 6%,#243049 0%,#16213a 50%,#0f172a 100%)}
+  .hero-bg{display:none}
   .hero-trust{gap:20px}
-  .topbar .tb-left{gap:14px}
   .step{grid-template-columns:1fr}
 }
 

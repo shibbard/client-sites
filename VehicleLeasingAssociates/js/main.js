@@ -71,11 +71,27 @@
     });
   }
 
+  // ---- Back to top ----
+  function initToTop() {
+    var btn = document.createElement('button');
+    btn.className = 'to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>';
+    document.body.appendChild(btn);
+    function toggle() { btn.classList.toggle('show', window.pageYOffset > 500); }
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     loadLucide();
     initNav();
     initReveal();
     initForm();
+    initToTop();
     var y = document.querySelector('#year');
     if (y) y.textContent = new Date().getFullYear();
   });
