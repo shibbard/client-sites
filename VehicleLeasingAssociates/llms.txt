@@ -49,9 +49,13 @@ Older vehicles bring age-related failures, warranty exclusion, outdated technolo
 ## Electric vehicle focus
 The vehicle leasing market is increasingly electric. VLA actively advises on EVs — lower running costs, less maintenance, no tailpipe emissions, no London congestion charge, instant torque and an easy, quiet drive. Most current lease examples are electric (Renault 4, Renault 5, BYD Atto 2, Dacia Spring).
 
+## Used car & van marketing service
+In addition to leasing, VLA offers a used car & van marketing service for vehicles from 15 years old to nearly new. Rather than accepting a low part-exchange valuation, owners use VLA's marketing skills (with the owner's own photos) to advertise the vehicle across major platforms. VLA sends serious, pre-qualified buyers to the owner, who deals with them at their convenience — the goal being to achieve maximum market value. Free, no-obligation consultation.
+
 ## Pages
 - / — Home
 - /lease-deals.html — Current lease deal examples (cars and vans)
+- /sell-your-vehicle.html — Used car & van marketing service (sell for maximum value)
 - /about-us.html — About the business
 - /evs-explained.html — Electric vehicles explained
 - /leasing-explained.html — Leasing process and finance terms (PCH, PCP, HP, BCH)
