@@ -1,67 +1,64 @@
 # Vehicle Leasing Associates (UK)
 
-> Expert lease consultants for mainstream vehicle manufacturers, based in Exeter, UK. Vehicle Leasing Associates provides transparent, cost-effective leasing solutions on new vans, pickup trucks and cars — petrol, diesel or electric. Trading as VLA Media Ltd, the company has served builders, plumbers, electricians and other tradespeople since the early 1990s.
+> Qualified vehicle lease consultants based in Exeter, UK, trading as VLA Media Ltd. Vehicle Leasing Associates (UK) is a group of associates whose extensive combined purchasing power secures cost-effective leasing on cars and vans from all mainstream manufacturers — electric, hybrid, petrol or diesel. The business has 17 years of association with one of Europe's leading finance institutions and serves both individuals and businesses.
 
 ## About
 
 - **Business name:** Vehicle Leasing Associates (UK) — VLA Media Ltd
-- **Sector:** Vehicle leasing consultancy / brokerage
+- **Sector:** Vehicle leasing consultancy
 - **Location:** Exeter, United Kingdom (serves customers nationwide)
-- **Established:** Early 1990s; 20+ years' specialist experience
+- **Experience:** 17 years associated with a leading European finance institution
+- **Positioning:** "The Power of Many" — a group of associates buying across a diverse panel of funders to secure sharper pricing
 - **Opening hours:** 9am – 8pm, 7 days a week
 - **Phone:** 07352 816278 (+44 7352 816278)
 - **Email:** vla.uk@mail.com
 - **WhatsApp:** https://wa.me/447352816278
 
-## What they do
+## What they offer
 
-Vehicle Leasing Associates are lease consultants — not tied to any single manufacturer or funder. They guide customers into cost-effective leases using many years of marketing experience, with an emphasis on funding options and benefits. They are associated with one of Europe's leading new vehicle funding institutions. Fleet discounts are available to individuals, and both businesses (self-employed, sole traders, SMEs, limited companies) and employed individuals are welcome.
+- Car or Van Leasing
+- Contract with or without maintenance
+- Finance agreements
+- Purchase options
+- All mainstream manufacturers, any model — electric, hybrid, petrol or diesel
 
-### Leasing solutions
-- Purchase Lease
-- Contract Lease
-- Finance Lease
-- All options available
+## Why choose VLA (The Power of Many)
 
-### Funding / finance terms explained
-- **PCH (Personal Contract Hire)** — leasing; hand the vehicle back at the end; often the cheapest monthly payment; mileage allowances apply.
-- **PCP (Personal Contract Purchase)** — option to buy at the end via a balloon payment (GMFV); more affordable than HP.
-- **HP (Hire Purchase)** — you own the vehicle at the end; most expensive monthly; no mileage limits.
-- **BCH (Business Contract Hire)** — long-term business rental with tax advantages; commercial vehicles attract 100% tax relief.
-- **Finance Lease** — leasing with an ownership feel.
+- **Manufacturer specialist** — in-depth brand and model knowledge
+- **Finance experts** — access to a wide panel of funders and solutions
+- **Personal & business specialist** — tailored leasing for individuals and businesses of all sizes
+- **Market insights** — up-to-date data to guide smarter decisions
+- **Strong partnerships** — established relationships built on trust and results
+- **Ongoing support** — a named support specialist throughout your journey
+- **Collective buying power** — pay less thanks to the group's purchasing power across funders
 
-## Vehicle categories
+## Lease deal examples (illustrative)
 
-- **Small / Medium Cars** — e.g. Fiat 500, Hyundai i10, Kia Picanto, Audi A1, Renault Zoe (EV). From ~£100–£500 per month.
-- **Small Vans** — e.g. Renault Kangoo, Toyota Proace, Nissan Townstar, Ford Connect, Citroen Berlingo, VW Caddy.
-- **Medium Vans** — e.g. Ford Transit, Mercedes Vito, Peugeot Expert, Fiat Scudo, Vauxhall Vivaro, Renault Trafic, VW Transporter.
-- **Large Vans** — e.g. Nissan NV Cargo, Renault Master, Mercedes Sprinter, Ford Transit (EV), VW Crafter.
-- **Pickup Trucks** — available from all major manufacturers.
+- **Renault 4** (electric, 249-mile range) — 3 year personal lease, e.g. £46.08/week, £199.68/month, £2,396.16 initial (inc VAT). Ref-TWC12
+- **Renault 5** (electric, 248-mile range) — 3 year personal lease, e.g. £54.70/week, £237.04/month, £2,844.48 initial (inc VAT). Ref-SPC11
+- **BYD Atto 2** (electric, 270-mile range) — 3 year business lease, e.g. £45.64/week, £197.78/month, £2,373.36 initial (+VAT). Ref-SPC11
+- **Dacia Spring** (electric, 140-mile range) — 3 year personal lease, e.g. £31.03/week, £134.50/month, £1,614.00 initial (inc VAT). Ref-SPC11
+- **Nissan Qashqai** (petrol, 45 MPG) — 3 year business lease, e.g. £54.87/week, £237.79/month, £2,853.48 initial (inc VAT)
+- **Citroën Berlingo** (diesel van) — 3 year business lease, e.g. £50.49/week, £218.79/month, £2,625.48 initial (+VAT). Ref-SPC11
 
-Flexible deposit schemes: 3, 6, 9 or 12 months' initial payment, or part exchange.
+Every example includes full cover warranty, road tax and no MOT concerns.
 
-## Why lease a new vehicle (vs. buying used)
-- No MOT concerns for 3 years
-- No road tax cost (included in lease)
-- Full cover warranty
-- No devaluation / depreciation risk
-- Up-to-date improved economy
-- Fixed monthly budgeting
+## Why lease a new vehicle (vs. keeping an old one)
+Older vehicles bring age-related failures, warranty exclusion, outdated technology, low fuel efficiency, frequent repairs and expensive MOTs. Leasing a brand-new vehicle gives fixed monthly payments, no MOT concerns, road tax included, full cover warranty, no depreciation risk and improved economy.
 
-## Electric vehicles
-The company actively advises on EVs: lower running costs, less maintenance, no tailpipe emissions, no congestion charge in London, instant torque and an easy, quiet drive. Customers are encouraged to swap their current fuel cost for a lease on a brand-new electric model.
+## Electric vehicle focus
+The vehicle leasing market is increasingly electric. VLA actively advises on EVs — lower running costs, less maintenance, no tailpipe emissions, no London congestion charge, instant torque and an easy, quiet drive. Most current lease examples are electric (Renault 4, Renault 5, BYD Atto 2, Dacia Spring).
 
 ## Pages
 - / — Home
-- /about-us.html — About Us
-- /vehicles.html — Vehicle categories overview
-- /small-medium-cars.html, /small-vans.html, /medium-vans.html, /large-vans.html, /pickup-trucks.html
+- /lease-deals.html — Current lease deal examples (cars and vans)
+- /about-us.html — About the business
 - /evs-explained.html — Electric vehicles explained
-- /leasing-explained.html — Leasing process and finance terms
+- /leasing-explained.html — Leasing process and finance terms (PCH, PCP, HP, BCH)
 - /contact.html — Personalised quote request
 
 ## Contact / Call to action
-Request a personalised quote via the website form (vehicle of interest, manufacturer/type, annual mileage, timescale, contact details), call 07352 816278, email vla.uk@mail.com, or message on WhatsApp.
+Request a personalised quote via the website form (vehicle of interest, manufacturer/type, annual mileage, timescale, contact details), call 07352 816278, email vla.uk@mail.com, or message on WhatsApp. Quote the deal reference (e.g. Ref-SPC11) when enquiring about a specific example.
 
 ## Notes
-Not a licensed credit broker or finance house directly; all sales operations are conducted via a licensed credit broker/finance house, and lease contracts include commission via the recommended broker or manufacturer's dealership. Offers subject to status, availability and terms. You must be 18 or over. VAT at 20% may be payable.
+Deals are examples only and subject to status, availability and terms. You must be 18 or over. VAT at 20% may be payable. All sales operations are conducted via a licensed credit broker/finance house, and lease contracts include commission via the recommended broker or manufacturer's dealership.
