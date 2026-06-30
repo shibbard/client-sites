@@ -67,9 +67,11 @@ section{position:relative}
 .topbar .container{display:flex;align-items:center;justify-content:space-between;height:38px;gap:16px}
 .topbar a{color:#cbd5e1;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
 .topbar a:hover{color:#fff}
-.topbar .tb-left{display:flex;gap:22px;flex-wrap:wrap}
-.topbar .tb-social{display:flex;gap:14px;align-items:center}
-.topbar .tb-social i{width:15px;height:15px}
+.topbar .tb-left{display:flex;gap:22px;flex-wrap:nowrap;align-items:center;order:2}
+.topbar .tb-social{display:flex;gap:14px;align-items:center;order:1}
+/* reserve icon space so async icons don't shift the bar on load */
+.topbar [data-lucide]{display:inline-block;width:15px;height:15px;flex-shrink:0}
+.topbar svg{width:15px;height:15px;flex-shrink:0}
 
 .site-header{position:sticky;top:0;z-index:100;background:var(--navy);box-shadow:0 2px 14px rgba(15,23,42,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
