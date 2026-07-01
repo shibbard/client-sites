@@ -388,6 +388,47 @@ section{position:relative}
 .lcard-foot .btn{padding:11px 16px;font-size:13.5px}
 @media(max-width:600px){.lcard-head h3{font-size:1.3rem}}
 
+/* Featured showcase lease card (rich) */
+.fcard{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+.fcard-top{position:relative;display:grid;grid-template-columns:.82fr 1fr;background:linear-gradient(135deg,#eef2f9 0%,#dde5f1 100%)}
+.fcard-info{padding:24px 18px 22px;position:relative;z-index:2}
+.fcard-info h3{font-size:1.9rem;line-height:.95;color:var(--navy);text-transform:uppercase;letter-spacing:-.01em}
+.fcard-spec{font-size:12.5px;color:var(--navy);font-weight:600;margin-top:12px;line-height:1.55}
+.fcard-range{margin-top:16px;padding-top:14px;border-top:3px solid var(--red);display:inline-block}
+.fcard-range span{display:block;font-size:11.5px;color:var(--body);font-weight:600;letter-spacing:.02em}
+.fcard-range strong{font-family:var(--head);font-size:1.05rem;color:var(--navy)}
+.fcard-photo{position:relative;min-height:190px;background:#c9d5e6;clip-path:polygon(20% 0,100% 0,100% 100%,0 100%)}
+.fcard-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fcard-term{background:var(--navy);color:#fff;padding:13px 22px;display:flex;align-items:center;gap:12px;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.fcard-term b{font-family:var(--head);font-size:1.6rem;font-weight:800;line-height:1}
+.fcard-term span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#9db1d6;border-left:1px solid rgba(255,255,255,.25);padding-left:12px}
+.fcard-prices{display:grid;grid-template-columns:repeat(3,1fr);padding:20px 8px 16px;background:#fff}
+.fcard-prices .fp{text-align:center;padding:0 6px;border-right:1px solid var(--line)}
+.fcard-prices .fp:last-child{border-right:0}
+.fcard-prices .fp .pic{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--outline-variant,#c6c6cd);display:flex;align-items:center;justify-content:center;margin:0 auto 9px}
+.fcard-prices .fp .pic i{width:18px;height:18px;color:var(--navy)}
+.fcard-prices .fp .lbl{display:block;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700}
+.fcard-prices .fp b{display:block;font-family:var(--head);font-size:1.35rem;color:var(--navy);margin:5px 0 2px;line-height:1}
+.fcard-prices .fp small{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.fcard-featsbar{margin:0 16px 18px;background:var(--navy);border-radius:var(--r);display:flex;align-items:center;justify-content:space-around;padding:12px 8px;gap:6px}
+.fcard-featsbar span{display:inline-flex;align-items:center;gap:7px;font-size:11px;color:#dbe4f3;font-weight:500;position:relative;flex:1;justify-content:center}
+.fcard-featsbar span+span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);height:20px;width:1px;background:rgba(255,255,255,.2)}
+.fcard-featsbar i{width:15px;height:15px;color:#7dd3a8;flex-shrink:0}
+.fcard-foot{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:16px 18px;background:#eef2f9;border-top:1px solid var(--line)}
+.fcard-brand{display:flex;gap:12px;align-items:flex-start}
+.fcard-brand .bic{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fcard-brand .bic i{width:22px;height:22px;color:var(--navy)}
+.fcard-brand strong{font-family:var(--head);font-size:.95rem;color:var(--navy);line-height:1.1;display:block}
+.fcard-brand p{font-size:11px;color:var(--body);margin:5px 0 4px;line-height:1.4;max-width:22ch}
+.fcard-brand .ref{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.03em}
+.fcard-foot-photo{width:118px;height:78px;border-radius:var(--r);overflow:hidden;background:#c9d5e6;flex-shrink:0}
+.fcard-foot-photo img{width:100%;height:100%;object-fit:cover}
+@media(max-width:600px){
+  .fcard-info h3{font-size:1.6rem}
+  .fcard-foot{grid-template-columns:1fr}
+  .fcard-foot-photo{width:100%;height:120px}
+}
+
 /* Promo banners */
 .promo-img{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);line-height:0}
 .promo-img img{width:100%;height:auto;display:block}
