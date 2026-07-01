@@ -2,21 +2,21 @@
    Vehicle Leasing Associates (UK) — Kinetic Precision
    =========================================================== */
 :root{
-  --navy:#0f172a;
-  --navy-2:#131b2e;
-  --navy-3:#1e293b;
-  --red:#be123c;
-  --red-dark:#9f0e30;
-  --ink:#0b1c30;
-  --body:#45464d;
-  --muted:#64748b;
-  --line:#e2e8f0;
+  --navy:#002164;
+  --navy-2:#022044;
+  --navy-3:#123f7a;
+  --red:#125CA5;        /* accent (Signal Blue) — replaces the old red */
+  --red-dark:#0d4c88;
+  --ink:#071b34;
+  --body:#565b64;
+  --muted:#70737A;
+  --line:#e3e6ec;
   --surface:#ffffff;
-  --surface-2:#f8fafc;
-  --surface-3:#eff4ff;
-  --teal:#0ea5b7;
-  --shadow:0 4px 20px rgba(15,23,42,.08);
-  --shadow-lg:0 18px 50px rgba(15,23,42,.16);
+  --surface-2:#f4f6f8;
+  --surface-3:#eef1f5;
+  --teal:#125CA5;
+  --shadow:0 4px 20px rgba(2,32,68,.07);
+  --shadow-lg:0 18px 50px rgba(2,32,68,.14);
   --r-sm:4px;
   --r:8px;
   --r-lg:12px;
@@ -50,7 +50,7 @@ section{position:relative}
   white-space:nowrap;
 }
 .btn i,.btn svg{width:18px;height:18px}
-.btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(190,18,60,.28)}
+.btn-primary{background:var(--red);color:#fff;box-shadow:0 6px 18px rgba(18,92,165,.28)}
 .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px)}
 .btn-primary:active{transform:scale(.98)}
 .btn-navy{background:var(--navy);color:#fff}
@@ -63,26 +63,27 @@ section{position:relative}
 .btn-block{width:100%}
 
 /* ---------- Header ---------- */
-.topbar{background:var(--navy-2);color:#cbd5e1;font-size:13px;border-bottom:1px solid rgba(255,255,255,.07)}
+.topbar{background:var(--surface-2);color:var(--muted);font-size:13px;border-bottom:1px solid var(--line)}
 .topbar .container{display:flex;align-items:center;justify-content:space-between;height:38px;gap:16px}
-.topbar a{color:#cbd5e1;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
-.topbar a:hover{color:#fff}
+.topbar a{color:var(--muted);display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+.topbar a:hover{color:var(--navy)}
 .topbar .tb-left{display:flex;gap:22px;flex-wrap:nowrap;align-items:center;order:2}
 .topbar .tb-social{display:flex;gap:14px;align-items:center;order:1}
 /* reserve icon space so async icons don't shift the bar on load */
 .topbar [data-lucide]{display:inline-block;width:15px;height:15px;flex-shrink:0}
 .topbar svg{width:15px;height:15px;flex-shrink:0}
 
-.site-header{position:sticky;top:0;z-index:100;background:var(--navy);box-shadow:0 2px 14px rgba(15,23,42,.35)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:74px}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
 .brand{display:flex;align-items:center;flex-shrink:0}
-.brand img{height:34px;width:auto;display:block}
+.brand img{height:38px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;flex-wrap:nowrap}
 .nav-links>li>a{
-  display:flex;align-items:center;gap:5px;color:#e2e8f0;font-weight:500;font-size:14.5px;
+  display:flex;align-items:center;gap:5px;color:#3a4453;font-weight:500;font-size:14.5px;
   padding:10px 11px;border-radius:var(--r-sm);transition:color .2s,background .2s;white-space:nowrap;
 }
-.nav-links>li>a:hover,.nav-links>li.active>a{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links>li>a:hover{color:var(--red)}
+.nav-links>li.active>a{color:var(--navy);background:var(--surface-3);font-weight:600}
 .nav-links .chev{width:15px;height:15px;opacity:.8}
 .has-dropdown{position:relative}
 .dropdown{
@@ -96,7 +97,7 @@ section{position:relative}
 .nav-cta{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-cta .btn{padding:11px 14px;font-size:14px}
 .nav-cta .btn-call-text{display:none}
-.hamburger{display:none;background:none;border:0;cursor:pointer;color:#fff;padding:8px}
+.hamburger{display:none;background:none;border:0;cursor:pointer;color:var(--navy);padding:8px}
 .hamburger i{width:28px;height:28px}
 
 /* ---------- Hero ---------- */
@@ -117,7 +118,7 @@ section{position:relative}
 
 /* ---------- Generic page hero ---------- */
 .page-hero{background:var(--navy);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
-.page-hero::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;background:radial-gradient(circle,rgba(190,18,60,.35),transparent 70%);border-radius:50%}
+.page-hero::before{content:"";position:absolute;right:-120px;top:-120px;width:380px;height:380px;background:radial-gradient(circle,rgba(18,92,165,.35),transparent 70%);border-radius:50%}
 .page-hero .container{position:relative;z-index:1}
 .page-hero .crumb{font-size:13px;color:#94a3b8;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
 .page-hero h1{color:#fff;font-size:clamp(2rem,4.5vw,3rem);margin-bottom:14px}
@@ -221,7 +222,7 @@ section{position:relative}
 
 /* CTA band */
 .cta-band{background:linear-gradient(120deg,var(--navy) 0%,var(--navy-3) 100%);color:#fff;text-align:center;padding:72px 0;position:relative;overflow:hidden}
-.cta-band::before{content:"";position:absolute;left:50%;top:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(190,18,60,.30),transparent 70%);transform:translateX(-50%);border-radius:50%}
+.cta-band::before{content:"";position:absolute;left:50%;top:-80px;width:420px;height:420px;background:radial-gradient(circle,rgba(18,92,165,.30),transparent 70%);transform:translateX(-50%);border-radius:50%}
 .cta-band .container{position:relative;z-index:1}
 .cta-band h2{color:#fff;font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:16px}
 .cta-band p{max-width:60ch;margin:0 auto 28px;color:#cbd5e1;font-size:1.08rem}
@@ -308,7 +309,8 @@ section{position:relative}
     transition:transform .3s ease;box-shadow:-12px 0 40px rgba(0,0,0,.4);overflow-y:auto;z-index:120;
   }
   .nav-links.open{transform:translateX(0)}
-  .nav-links>li>a{padding:14px;font-size:16px}
+  .nav-links>li>a{padding:14px;font-size:16px;color:#e6ebf2}
+  .nav-links>li>a:hover{color:#fff}
   .dropdown{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:rgba(255,255,255,.04);border:0;margin:2px 0 6px;padding:4px}
   .dropdown li a{color:#cbd5e1}
   .dropdown li a:hover{background:rgba(255,255,255,.08);color:#fff}
