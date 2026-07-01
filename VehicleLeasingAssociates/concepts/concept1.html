@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vehicle Leasing Associates (UK) | Specialist Leasing Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=IBM+Plex+Sans:wght@500&amp;family=Work+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2b4385",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#dddfe7",
+                        "surface-tint": "#445b9f",
+                        "inverse-primary": "#b4c5ff",
+                        "inverse-surface": "#2d3133",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#00174c",
+                        "on-secondary-fixed-variant": "#44474d",
+                        "on-secondary-fixed": "#181c21",
+                        "secondary-fixed-dim": "#c4c6ce",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-container": "#002068",
+                        "on-tertiary-fixed-variant": "#264191",
+                        "on-error": "#ffffff",
+                        "primary-container": "#002164",
+                        "on-secondary-container": "#5f6369",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#758bd3",
+                        "primary": "#000f37",
+                        "tertiary-fixed-dim": "#b6c4ff",
+                        "tertiary": "#000e3a",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c6d2",
+                        "outline": "#757681",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "background": "#f7f9fb",
+                        "secondary": "#5b5e65",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#444650",
+                        "surface-container-high": "#e6e8ea",
+                        "on-background": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "tertiary-fixed": "#dce1ff",
+                        "on-tertiary-fixed": "#00164e",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#e0e2ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "48px",
+                        "base": "8px",
+                        "margin-desktop": "40px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "label-sm": ["IBM Plex Sans"],
+                        "body-lg": ["Work Sans"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .metallic-gradient {
+            background: linear-gradient(135deg, #f7f9fb 0%, #e0e3e5 100%);
+        }
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(0, 15, 55, 0.9) 0%, rgba(0, 15, 55, 0.4) 100%);
+        }
+        .bento-card {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top Navigation Shell -->
+<header class="bg-surface dark:bg-primary-container sticky top-0 z-50 border-b border-outline-variant dark:border-outline">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-headline-sm font-headline-sm font-black uppercase tracking-tighter text-primary dark:text-inverse-primary leading-none" href="/">
+                    Vehicle Leasing<br/><span class="text-primary-container dark:text-inverse-primary opacity-80">Associates (UK)</span>
+</a>
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-md font-label-md" href="#">Personal Lease</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-md font-label-md" href="#">Business Lease</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-md font-label-md" href="#">Special Offers</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-md font-label-md" href="#">How it Works</a>
+<a class="text-on-surface-variant dark:text-on-primary-container hover:text-primary dark:hover:text-inverse-primary transition-colors text-label-md font-label-md" href="#">EV's Explained</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary">phone</span>
+<button class="bg-primary text-on-primary px-6 py-2 text-label-md font-label-md rounded hover:opacity-90 transition-all active:scale-95">
+                    Personalised Quote
+                </button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sophisticated commercial hero shot of a luxury dark navy sedan parked in a high-tech architectural hangar with cool metallic grey floor tiles and dramatic overhead linear lighting. The atmosphere is professional, authoritative, and premium, using a deep corporate color palette of navy and silver." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzMEpsN3d-xhXQg8obcLOEmG8PiRBdbSyUYw0tRflQIm5vKqyt_oLglRLSqJNtmesjwGbT240aUTN7Y85VH3MhIDDJxEVytXZM0QmaGOJkAzmNEA7v0eUcXgOH8k3iVI-4-dgHkQuwiYVhjUyrPgDGIhwoJ_9at9L2QqdiUezbZ8jkdFQDxd42o8vIO5JKQEu7vBkizJEAzLig5lLqPCsy2It8iCGkbtWz9pRk6k1NtyhNnli4F5YXpL4kt5F6yc7o4a1k0UnuFQH4')"></div>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto py-stack-lg">
+<div class="max-w-2xl text-on-primary">
+<span class="inline-block bg-error text-on-error px-3 py-1 text-label-sm font-label-sm uppercase tracking-wider mb-stack-sm">Qualified Vehicle Lease Consultants</span>
+<h1 class="font-headline-xl text-headline-xl mb-stack-md leading-tight">Vehicle Leasing Associates (UK)</h1>
+<p class="font-body-lg text-body-lg mb-stack-lg opacity-90 leading-relaxed">Benefit from our group of associates' extensive purchasing power — cost-effective leasing on cars and vans from all mainstream manufacturers. Electric, hybrid, petrol or diesel.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-error hover:bg-red-700 text-on-error px-8 py-4 font-headline-md text-headline-md transition-all rounded shadow-lg">View Lease Deals</button>
+<button class="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 font-headline-md text-headline-md transition-all rounded">Personalised Quote</button>
+</div>
+<div class="grid grid-cols-3 gap-8 mt-16 border-t border-white/20 pt-8">
+<div>
+<p class="font-headline-lg text-headline-lg">17 Yrs</p>
+<p class="font-label-sm text-label-sm uppercase opacity-70">Finance Experience</p>
+</div>
+<div>
+<p class="font-headline-lg text-headline-lg">All</p>
+<p class="font-label-sm text-label-sm uppercase opacity-70">Mainstream Manufacturers</p>
+</div>
+<div>
+<p class="font-headline-lg text-headline-lg">EV</p>
+<p class="font-label-sm text-label-sm uppercase opacity-70">Electric Ready</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Manufacturer Ticker -->
+<section class="bg-surface-container-low py-8 overflow-hidden border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<p class="text-center font-label-sm text-label-sm uppercase text-outline mb-6">All Mainstream Manufacturers - Any Model</p>
+<div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-60">
+<span class="font-bold text-2xl tracking-tighter">AUDI</span>
+<span class="font-bold text-2xl tracking-tighter">BMW</span>
+<span class="font-bold text-2xl tracking-tighter">MERCEDES</span>
+<span class="font-bold text-2xl tracking-tighter">FORD</span>
+<span class="font-bold text-2xl tracking-tighter">TESLA</span>
+<span class="font-bold text-2xl tracking-tighter">HYUNDAI</span>
+<span class="font-bold text-2xl tracking-tighter">BYD</span>
+</div>
+</div>
+</section>
+<!-- Offering Section: Qualified Consultants -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-gutter items-center">
+<div class="space-y-6">
+<p class="text-error font-label-sm text-label-sm uppercase tracking-widest">What We Offer</p>
+<h2 class="font-headline-xl text-headline-xl text-primary">Qualified Vehicle Lease Consultants</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Using our vast amount of experience, we provide cost-effective leasing solutions, tailored to individuals or business. Included in our experience is 17 years of being associated with one of Europe's leading finance institutions.</p>
+<div class="grid grid-cols-2 gap-4 pt-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-weight="fill">check_circle</span>
+<span class="text-label-md font-label-md">Car or Van Leasing</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-weight="fill">check_circle</span>
+<span class="text-label-md font-label-md">Contract hire with/out maintenance</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-weight="fill">check_circle</span>
+<span class="text-label-md font-label-md">Finance agreements</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" data-weight="fill">check_circle</span>
+<span class="text-label-md font-label-md">Purchase options</span>
+</div>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-8 py-3 rounded-sm font-label-md uppercase tracking-widest hover:bg-primary/90 transition-all mt-4">
+                        Get In Touch <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="relative group">
+<div class="bg-white border border-outline-variant p-6 rounded-lg shadow-xl relative z-10 metallic-gradient">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md">Renault 4</h3>
+<p class="text-body-sm text-outline">110kW Evolution+ Comfort Range 52kWh 5dr Auto</p>
+</div>
+<span class="bg-primary text-on-primary px-3 py-1 text-label-sm font-label-sm rounded">3 Year Personal Lease</span>
+</div>
+<div class="flex gap-4 mb-8">
+<div class="flex-1 bg-surface-container-highest p-4 rounded text-center">
+<p class="text-label-sm text-outline uppercase mb-1">Budget Weekly</p>
+<p class="text-headline-sm font-headline-sm text-primary">£46.08</p>
+<p class="text-[10px] text-outline">INC VAT</p>
+</div>
+<div class="flex-1 bg-surface-container-highest p-4 rounded text-center">
+<p class="text-label-sm text-outline uppercase mb-1">Monthly</p>
+<p class="text-headline-sm font-headline-sm text-primary">£199.68</p>
+<p class="text-[10px] text-outline">INC VAT</p>
+</div>
+<div class="flex-1 bg-surface-container-highest p-4 rounded text-center">
+<p class="text-label-sm text-outline uppercase mb-1">Initial</p>
+<p class="text-headline-sm font-headline-sm text-primary">£2,396.16</p>
+<p class="text-[10px] text-outline">INC VAT</p>
+</div>
+</div>
+<div class="flex justify-between text-label-sm text-outline border-t border-outline-variant pt-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">verified</span> Full Cover Warranty</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">local_shipping</span> Road Tax Included</span>
+</div>
+</div>
+<div class="absolute -top-4 -right-4 w-32 h-32 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Deals Grid -->
+<section class="bg-surface-container-low py-stack-lg">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-12">
+<p class="text-error font-label-sm text-label-sm uppercase tracking-widest mb-2">Lease Deals</p>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">Some of Our Amazing Lease Deals</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">A snapshot of current examples across electric, petrol and commercial — all with road tax, full warranty and no MOT concerns.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Deal Card 1 -->
+<div class="bg-white border border-outline-variant group">
+<div class="h-48 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Close-up professional studio photograph of a modern white Renault 5 EV, highlighting its clean futuristic lines and metallic finish. High-end automotive lighting creates soft shadows on the ground in a minimalist corporate grey studio environment." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByiSITEEO_kLQcMQn0CiyVdV0bsIchFNzNYD8_T9cv2eEN9Lthdf4qNZhMOZupArIYtBZwfJ5XPQBzc1RXoM7oXRQXVdvIcDc0Fcup9HmQmT1mz-44c7rQIKDZytiItDWaExTPHwG3v76z35kHxTM1Ku6Zqk7vcgB6T8jB054Qd-stHlMdlVubzD-pyIjY3PBd282hKXZucV8PPd6hZNVglomjxxFJMLK9ZISaN4vOgGnUCGkAl6wbAqfIbnPqpIlXOvt3vDwEZOzy')"></div>
+<span class="absolute top-4 left-4 bg-green-100 text-green-800 px-3 py-1 text-label-sm font-label-sm rounded flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> ELECTRIC</span>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md">Renault 5</h3>
+<span class="bg-primary text-on-primary px-2 py-1 text-[10px] uppercase font-bold tracking-widest">3 Year Personal</span>
+</div>
+<p class="text-label-sm text-outline mb-6">110kW Techno+ Comfort Range 52kWh 5dr Auto</p>
+<div class="grid grid-cols-3 border-y border-outline-variant py-4 mb-6 text-center">
+<div>
+<p class="text-[10px] text-outline uppercase">Weekly</p>
+<p class="font-headline-sm text-headline-sm text-primary">£54.70</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase">Monthly</p>
+<p class="font-headline-sm text-headline-sm text-primary">£237.04</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase">Initial</p>
+<p class="font-headline-sm text-headline-sm text-primary">£2,844.48</p>
+</div>
+</div>
+<button class="w-full bg-error text-on-error py-3 font-label-md uppercase tracking-widest flex items-center justify-center gap-2">
+                                Enquire Now <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Deal Card 2 -->
+<div class="bg-white border border-outline-variant group">
+<div class="h-48 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="High-contrast photograph of a sleek silver BYD Atto 3 electric crossover parked in a modern urban corporate courtyard. The lighting is bright and clear, emphasizing the vehicle's metallic surfaces and reflecting the surrounding architecture." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFxpYZnEp0bTVsTJpbCo5yP0cCOQlHdZJ1SpiG6MpDQkJ-7-JMzL7g4y69ClJsjXzwdIW6MNfx7TB7C4ZWdaQZxQN5kH9gft3cREe1OgxRNa37U8HCblzkJhlrPg-8gX4C5nEZylXHHSfmbuKM303dAOxpBic3NveskmV187tPRNusQVA-sAgyeWcOyK-oNsNI4BN28YboO0L8ANWNGOgzv1xaVp_Eb_p3cm2CFBtrW6mjGbBzzMS4WJKjkLk9Ja31Qf9csJYnAUaQ')"></div>
+<span class="absolute top-4 left-4 bg-green-100 text-green-800 px-3 py-1 text-label-sm font-label-sm rounded flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> ELECTRIC</span>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md">BYD Atto 3</h3>
+<span class="bg-tertiary text-on-tertiary px-2 py-1 text-[10px] uppercase font-bold tracking-widest">3 Year Business</span>
+</div>
+<p class="text-label-sm text-outline mb-6">150kW Comfort 60kWh 5dr Auto</p>
+<div class="grid grid-cols-3 border-y border-outline-variant py-4 mb-6 text-center">
+<div>
+<p class="text-[10px] text-outline uppercase">Weekly</p>
+<p class="font-headline-sm text-headline-sm text-primary">£45.64</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase">Monthly</p>
+<p class="font-headline-sm text-headline-sm text-primary">£197.78</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase">Initial</p>
+<p class="font-headline-sm text-headline-sm text-primary">£2,373.36</p>
+</div>
+</div>
+<button class="w-full bg-error text-on-error py-3 font-label-md uppercase tracking-widest flex items-center justify-center gap-2">
+                                Enquire Now <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Deal Card 3 -->
+<div class="bg-white border border-outline-variant group">
+<div class="h-48 relative overflow-hidden">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500" data-alt="Dynamic shot of a Dacia Spring electric car driving through a clean, light-filled modern city street. The visual style is crisp and professional, with a focus on efficiency and modern transportation within a corporate setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnExQs5ACToz7yVYc7X3hLtdsGD33kmThwPadz6SNso6CXFRaCsFMN9sg-radjsD7U7zLC5QqOetUn_gaVd3l9xjHRTsGGZczD2uLdneMvBlHt5HV6nqTuDkwqJ7sQgrcuGcXS5zN48Uc7PzBdDwQNXBArP1lFv2f3Z2JB7rbys55zZoO-priCGjY2_vaNQ8m4qh9yTEMDJcYKHtcOR7TZK62Nchwb1H66y5qJ9ptLIDUdPMG46dNCL4XHaxEran_xTrFyTisTxoCb')"></div>
+<span class="absolute top-4 left-4 bg-green-100 text-green-800 px-3 py-1 text-label-sm font-label-sm rounded flex items-center gap-1"><span class="material-symbols-outlined text-sm">bolt</span> ELECTRIC</span>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md">Dacia Spring</h3>
+<span class="bg-primary text-on-primary px-2 py-1 text-[10px] uppercase font-bold tracking-widest">3 Year Personal</span>
+</div>
+<p class="text-label-sm text-outline mb-6">45kW Expression 27kWh 5dr Auto</p>
+<div class="grid grid-cols-3 border-y border-outline-variant py-4 mb-6 text-center">
+<div>
+<p class="text-[10px] text-outline uppercase">Weekly</p>
+<p class="font-headline-sm text-headline-sm text-primary">£31.03</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase">Monthly</p>
+<p class="font-headline-sm text-headline-sm text-primary">£134.50</p>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase">Initial</p>
+<p class="font-headline-sm text-headline-sm text-primary">£1,614.00</p>
+</div>
+</div>
+<button class="w-full bg-error text-on-error py-3 font-label-md uppercase tracking-widest flex items-center justify-center gap-2">
+                                Enquire Now <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-12">
+<button class="bg-primary text-on-primary px-10 py-4 font-headline-md rounded shadow hover:bg-primary-container transition-all">View All Lease Deals</button>
+</div>
+</div>
+</section>
+<!-- Unreliable Cars Section -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="grid lg:grid-cols-2 gap-gutter items-center">
+<div class="relative order-2 lg:order-1">
+<div class="aspect-square bg-surface-container-highest border border-outline-variant overflow-hidden p-4">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, slightly desaturated image of a frustrated business professional standing next to a broken-down older car with its hood open on a rainy roadside. The scene highlights the contrast between the stress of unreliable ownership and the peace of mind of a new lease." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDCcgp_LXaZTiPnN-6IaQSh51CV22qtlVimFdFKrVIFhXGx6LXj2zSoWSM9vINsKIfidTGAnkNN9LfiDC7bNpEv9uBmZX55leQK3nj3p2w04OxW1JTZ8JmgoG8DfCRC51t00Y7vqVT08fJLEcIxiPbloMb-oE38Y5BqKblKnr2LVkPPeIB955a9PqCbJwGMCNbWm7WTn5WowFEYkDqg15XKAVBuEHGlzR05QP0NLw7QX19iIQaCLmsYCRPyRjjsrdjeThzCjCzGomC-')"></div>
+</div>
+<div class="absolute bottom-12 right-12 bg-primary text-on-primary p-8 max-w-sm metallic-gradient !text-primary border border-outline">
+<h4 class="font-headline-md text-headline-md mb-2">Are you still paying high running costs on unreliable cars?</h4>
+<div class="flex flex-wrap gap-4 mt-4">
+<span class="flex items-center gap-1 text-[10px] font-bold uppercase"><span class="material-symbols-outlined text-sm">schedule</span> Age-Related</span>
+<span class="flex items-center gap-1 text-[10px] font-bold uppercase"><span class="material-symbols-outlined text-sm">verified</span> Warranty Excl.</span>
+<span class="flex items-center gap-1 text-[10px] font-bold uppercase"><span class="material-symbols-outlined text-sm">local_gas_station</span> Low Fuel Eff.</span>
+</div>
+</div>
+</div>
+<div class="space-y-6 order-1 lg:order-2">
+<p class="text-error font-label-sm text-label-sm uppercase tracking-widest">Time for a change?</p>
+<h2 class="font-headline-xl text-headline-xl text-primary">Stop Paying High Running Costs on Unreliable Cars</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">Age-related failures, warranty exclusions, outdated technology, poor fuel efficiency, frequent repairs and expensive MOTs — older vehicles quietly drain your money. Leasing a brand-new vehicle puts an end to it.</p>
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-y-4 pt-4">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-error">check</span> No MOT concerns</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-error">check</span> Road tax included</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-error">check</span> Full cover warranty</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-error">check</span> No depreciation risk</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-error">check</span> Improved economy</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-error">check</span> Fixed monthly budgeting</li>
+</ul>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-sm font-label-md uppercase tracking-widest flex items-center gap-2 mt-4 hover:opacity-90">
+                        How Leasing Works <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- The Power of Many Section -->
+<section class="bg-surface py-stack-lg border-t border-outline-variant">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<p class="text-error font-label-sm text-label-sm uppercase tracking-widest mb-2">Why Choose VLA</p>
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">The Power of Many</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">Many providers claim expertise across every brand and model — in reality, no single source can truly specialise in everything. VLA has the solution.</p>
+</div>
+<div class="bg-primary p-12 mb-gutter metallic-gradient border border-outline relative overflow-hidden">
+<div class="relative z-10 text-center max-w-3xl mx-auto">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] mb-4 text-outline">The Power of Many</p>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-6">Pay Less Through Collective Buying Power</h3>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Our group of associates buys across a diverse panel of funders — so you benefit from sharper pricing and a personalised service, including your own named support specialist.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="bg-white border border-outline-variant p-8 bento-card">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">workspace_premium</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Manufacturer Specialist</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">In-depth brand and model knowledge across every mainstream manufacturer.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 bento-card">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">account_balance</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Finance Experts</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Access to a wide panel of funders and the right solution for your circumstances.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 bento-card">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">group</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Personal &amp; Business</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Tailored leasing for individuals and businesses of all sizes.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 bento-card">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">query_stats</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Market Insights</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Up-to-date data to guide smarter, better-value decisions.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 bento-card">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">handshake</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Strong Partnerships</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Established relationships built on trust and results.</p>
+</div>
+<div class="bg-white border border-outline-variant p-8 bento-card">
+<span class="material-symbols-outlined text-primary mb-4 text-4xl">support_agent</span>
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Ongoing Support</h4>
+<p class="text-body-md font-body-md text-on-surface-variant">Advice and support throughout your journey from your named specialist.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Visual Call to Action -->
+<section class="py-stack-lg px-margin-desktop max-w-container-max mx-auto">
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="relative group h-96 overflow-hidden border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-all duration-700" data-alt="High-quality professional lifestyle photograph of three people standing next to a sleek silver electric car in a bright modern corporate environment. The image is clean and bright, conveying a sense of teamwork and positive decision-making in vehicle acquisition." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDclxzAshl9H4cVKbIC11adOcxNTL71-u5wD18_SwrYfz2FMlxWylCOwK2BVbL0gpR9sQ1DGTjrNIvD8NbRUDFCVzHwSUXATayGvLs7kKtIkIM8qCDHBGdBlv1DecFqi1KRU3h68zLUdEto9UkRaMyHrBgop1Jq4oa5NOGkTNNXttNHYsG2dt7Uat_R96JB8NLJPpEpYdFlzVrydt7BkpGFQ7V1KH4Ep4hJgqiGhY9l-wW6yOo1pyFcmmI3YNP4P139VuAwdyABAqJA')"></div>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-all flex flex-col justify-end p-10 text-on-primary">
+<p class="font-headline-lg text-headline-lg leading-tight mb-4">Is it time to consider another car?<br/><span class="opacity-80">Electric, Petrol or Diesel?</span></p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest border-l-2 border-error pl-4">We Have Some Amazing Lease Deals</p>
+</div>
+</div>
+<div class="relative group h-96 overflow-hidden border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-all duration-700" data-alt="Professional studio photograph of a clean white commercial van against a high-key grey background. The lighting highlights the van's cargo capacity and modern professional aesthetic, targeted at business owners looking for reliable transport solutions." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvOLoa8xa3GoxkM_m7jVHm_VeHY0iHBgp8ES7fIFEIrk9vb4wuwJaabR2bwG4mrNRKbyWK4rNmgy48pV9mVG_TyAkSWT38s1ymzGfrgyPA8G_8xk456xRjk3j7uyitKLfpU6I4BmfvDGzWssP26hSuCGK6jJ2h7c7h-tN20Ez2XvLxLrltms_D8yZnIqikEtnsZMMprC4qHYJUGMNXCARZ20qoRJJkM9X-hWyDL5oO_eIwMyWdRlBv4bkOowhsWFeRUHsyhK81a33f')"></div>
+<div class="absolute inset-0 bg-primary/40 group-hover:bg-primary/20 transition-all flex flex-col justify-end p-10 text-on-primary">
+<p class="font-headline-lg text-headline-lg leading-tight mb-4">Is it time to consider another van?<br/><span class="opacity-80">Electric, Petrol or Diesel?</span></p>
+<p class="font-label-sm text-label-sm uppercase tracking-widest border-l-2 border-error pl-4">We Have Some Amazing Lease Deals</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-primary text-on-primary py-stack-lg border-t border-white/10">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-headline-xl text-headline-xl mb-6">Ready to Find Your Next Vehicle?</h2>
+<p class="text-body-lg font-body-lg opacity-80 mb-stack-lg max-w-2xl mx-auto">Tell us what you're looking for and our specialists will build a transparent, cost-effective lease around your needs — electric, hybrid, petrol or diesel.</p>
+<button class="bg-error hover:bg-red-700 text-on-error px-12 py-4 font-headline-md rounded-sm transition-all shadow-lg flex items-center gap-3 mx-auto">
+<span class="material-symbols-outlined">edit_note</span> Get a Personalised Quote
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-primary-container dark:bg-black text-on-primary-container dark:text-on-tertiary-container border-t border-on-primary-fixed-variant">
+<div class="w-full px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-start max-w-container-max mx-auto">
+<div class="max-w-sm mb-10 md:mb-0">
+<p class="text-headline-sm font-headline-sm font-black text-on-primary-container uppercase tracking-tighter mb-4">Vehicle Leasing Associates (UK)</p>
+<p class="text-body-sm font-body-sm opacity-80 leading-relaxed">Qualified vehicle lease consultants. Benefit from our group of associates' extensive purchasing power on cars and vans from all mainstream manufacturers.</p>
+<div class="flex gap-4 mt-6">
+<a class="bg-white/10 p-2 rounded hover:bg-white/20 transition-all" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="bg-white/10 p-2 rounded hover:bg-white/20 transition-all" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+<a class="bg-white/10 p-2 rounded hover:bg-white/20 transition-all" href="#"><span class="material-symbols-outlined text-sm">call</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed mb-4 uppercase">Lease Deals</p>
+<ul class="space-y-2 text-body-sm opacity-80">
+<li><a class="hover:text-on-primary-fixed" href="#">All Lease Deals</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Electric &amp; Hybrid Cars</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Petrol &amp; Diesel Cars</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Vans</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Personalised Quote</a></li>
+</ul>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed mb-4 uppercase">Company</p>
+<ul class="space-y-2 text-body-sm opacity-80">
+<li><a class="hover:text-on-primary-fixed" href="#">About Us</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Sell Your Vehicle</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">EV's Explained</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Leasing Explained</a></li>
+<li><a class="hover:text-on-primary-fixed" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-primary-fixed mb-4 uppercase">Get In Touch</p>
+<ul class="space-y-3 text-body-sm opacity-80">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> vla.uk@mail.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">call</span> 07352 816278</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Exeter, United Kingdom</li>
+<li class="mt-4">
+<button class="bg-error text-on-error w-full py-2 rounded text-label-sm font-label-sm uppercase tracking-widest hover:opacity-90">Quick Contact</button>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="border-t border-white/5 py-6 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-on-primary-container opacity-60">
+<p>© 2024 - VLA Media Ltd trading as Vehicle Leasing Associates (UK)</p>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="hover:text-on-primary-fixed" href="#">Privacy Policy</a>
+<a class="hover:text-on-primary-fixed" href="#">Terms of Service</a>
+<a class="hover:text-on-primary-fixed" href="#">Cookie Policy</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll Reveal effect
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>

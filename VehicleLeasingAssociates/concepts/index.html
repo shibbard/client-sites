@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VLA — Design Concepts</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#002164;--deep:#022044;--accent:#125CA5;--grey:#70737A;--line:#e3e6ec;--bg:#eef1f5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:#22303f;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:48px 24px 72px}
+h1{font-family:'Hanken Grotesk',sans-serif;font-size:2rem;color:var(--navy);letter-spacing:-.01em}
+.sub{color:var(--grey);margin-top:8px;font-size:1.05rem}
+h2{font-family:'Hanken Grotesk',sans-serif;font-size:1.15rem;color:var(--navy);margin:44px 0 18px;text-transform:uppercase;letter-spacing:.04em;font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(2,32,68,.12)}
+.card .top{background:linear-gradient(135deg,var(--navy),var(--accent));color:#fff;padding:22px;min-height:104px;display:flex;flex-direction:column;justify-content:space-between}
+.card .n{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
+.card .t{font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:1.1rem;line-height:1.2}
+.card .go{padding:14px 22px;font-weight:600;color:var(--accent);font-size:.92rem;display:flex;justify-content:space-between;align-items:center}
+.pal{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:18px}
+.pal img{width:100%;height:auto;display:block;border-radius:8px}
+.pal .cap{font-size:.9rem;color:var(--grey);margin-top:10px}
+.note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:18px 22px;margin-top:14px;font-size:.95rem;color:#3f4753}
+footer{margin-top:48px;color:var(--grey);font-size:.85rem;text-align:center}
+@media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Vehicle Leasing Associates (UK)</h1>
+  <p class="sub">Design concepts &amp; colour direction — for review</p>
+
+  <h2>Colour Palette</h2>
+  <div class="pal">
+    <img src="palette-brand-scheme.png" alt="VLA brand colour scheme">
+    <div class="cap">Proposed brand scheme — corporate, grey-led, with a single blue accent (red removed). Built from your logo &amp; artwork colours.</div>
+  </div>
+  <div class="pal">
+    <img src="palette-options.png" alt="VLA palette options">
+    <div class="cap">Earlier options explored (for reference).</div>
+  </div>
+
+  <h2>Website Concepts</h2>
+  <div class="grid">
+    <a class="card" href="concept1.html" target="_blank" rel="noopener"><div class="top"><span class="n">Concept 1</span><span class="t">Specialist Leasing Solutions</span></div><span class="go">View concept <span>&rarr;</span></span></a>
+    <a class="card" href="concept2.html" target="_blank" rel="noopener"><div class="top"><span class="n">Concept 2</span><span class="t">Professional Car &amp; Van Leasing</span></div><span class="go">View concept <span>&rarr;</span></span></a>
+    <a class="card" href="concept3.html" target="_blank" rel="noopener"><div class="top"><span class="n">Concept 3</span><span class="t">Electric Future</span></div><span class="go">View concept <span>&rarr;</span></span></a>
+    <a class="card" href="concept4.html" target="_blank" rel="noopener"><div class="top"><span class="n">Concept 4</span><span class="t">Premium Vehicle Leasing</span></div><span class="go">View concept <span>&rarr;</span></span></a>
+    <a class="card" href="concept5.html" target="_blank" rel="noopener"><div class="top"><span class="n">Concept 5</span><span class="t">Premium Vehicle Solutions</span></div><span class="go">View concept <span>&rarr;</span></span></a>
+    <a class="card" href="concept6.html" target="_blank" rel="noopener"><div class="top"><span class="n">Concept 6</span><span class="t">Premium Vehicle Solutions II</span></div><span class="go">View concept <span>&rarr;</span></span></a>
+  </div>
+
+  <div class="note">These are early design concepts for discussion — layouts, styling and content are not final. The current working site remains live separately.</div>
+
+  <footer>Prepared by GetDigitalDone · Vehicle Leasing Associates (UK)</footer>
+</div>
+</body>
+</html>
