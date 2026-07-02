@@ -15,6 +15,12 @@
     var links = document.querySelector('.nav-links');
     var backdrop = document.querySelector('.nav-backdrop');
     if (!burger || !links) return;
+    // inject a close (x) button into the drawer
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'nav-close';
+    closeBtn.setAttribute('aria-label', 'Close menu');
+    closeBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+    links.appendChild(closeBtn);
     function close() {
       links.classList.remove('open');
       if (backdrop) backdrop.classList.remove('open');
@@ -26,6 +32,7 @@
       document.body.style.overflow = open ? 'hidden' : '';
     });
     if (backdrop) backdrop.addEventListener('click', close);
+    closeBtn.addEventListener('click', close);
     links.querySelectorAll('a').forEach(function (a) {
       a.addEventListener('click', function () {
         // allow dropdown parent taps on mobile without closing
