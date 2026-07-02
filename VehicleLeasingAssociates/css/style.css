@@ -315,7 +315,7 @@ section{position:relative}
   .nav-links>li>a{padding:15px 12px;font-size:16px;color:#33404f;border-radius:0}
   .nav-links>li>a:hover{color:var(--red)}
   .nav-links>li.active>a{background:transparent;color:var(--red)}
-  .nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);opacity:0;visibility:hidden;transition:opacity .3s;z-index:110}
+  .nav-backdrop{position:fixed;inset:0;background:rgba(2,32,68,.45);opacity:0;visibility:hidden;transition:opacity .3s;z-index:95}
   .nav-backdrop.open{opacity:1;visibility:visible}
   .split,.split.reverse{grid-template-columns:1fr}
   .split.reverse .split-media{order:0}
