@@ -60,29 +60,35 @@
         <div class="field">
           <label>Vehicle of Interest <span class="req">*</span></label>
           <input type="text" name="vehicle" placeholder="e.g. Ford Transit, Kia Picanto" required>
+          <span class="field-error">Please tell us the vehicle you're interested in.</span>
         </div>
         <div class="field">
           <label>Manufacturer or Type of Vehicle <span class="req">*</span></label>
           <input type="text" name="manufacturer" placeholder="e.g. Small van, Electric car" required>
+          <span class="field-error">Please tell us the manufacturer or type of vehicle.</span>
         </div>
         <div class="field-row">
           <div class="field">
             <label>Approximate Mileage per Year <span class="req">*</span></label>
             <input type="text" name="mileage" placeholder="e.g. 12,000" required>
+            <span class="field-error">Please enter your approximate yearly mileage.</span>
           </div>
           <div class="field">
             <label>Vehicle Required By <span class="req">*</span></label>
             <input type="text" name="required_by" placeholder="e.g. Within 3 months" required>
+            <span class="field-error">Please let us know when you need the vehicle.</span>
           </div>
         </div>
         <div class="field-row">
           <div class="field">
             <label>Name <span class="req">*</span></label>
             <input type="text" name="name" placeholder="Your full name" required>
+            <span class="field-error">Please enter your name.</span>
           </div>
           <div class="field">
             <label>Contact Number <span class="req">*</span></label>
             <input type="tel" name="phone" placeholder="Your phone number" required>
+            <span class="field-error">Please enter a contact number.</span>
           </div>
         </div>
         <div class="field">
@@ -91,13 +97,16 @@
             <label><input type="radio" name="whatsapp" value="yes" required> Yes</label>
             <label><input type="radio" name="whatsapp" value="no"> No</label>
           </div>
+          <span class="field-error">Please select an option.</span>
         </div>
         <div class="field">
           <label>Additional Information <span class="req">*</span></label>
           <textarea name="info" placeholder="Tell us anything else that will help us find your perfect vehicle" required></textarea>
+          <span class="field-error">Please add a little more detail so we can help.</span>
         </div>
         <button type="submit" class="btn btn-primary btn-block btn-lg"><i data-lucide="send"></i> Request My Quote</button>
         <p class="form-note" style="display:none;margin-top:16px;color:#16a34a;font-weight:600"><i data-lucide="check-circle-2" style="width:18px;height:18px;vertical-align:-3px"></i> Thank you — your request has been noted. We'll be in touch shortly.</p>
+        <p class="form-error" style="display:none;margin-top:16px;color:#be123c;font-weight:600"><i data-lucide="alert-circle" style="width:18px;height:18px;vertical-align:-3px"></i> Sorry, something went wrong sending your request. Please call or WhatsApp us instead.</p>
         <p style="font-size:12.5px;color:#64748b;margin-top:14px">By submitting this form you agree to be contacted regarding your enquiry. See our <a href="privacy-policy.html" style="color:#be123c">Privacy Policy</a>.</p>
       </form>
     </div>

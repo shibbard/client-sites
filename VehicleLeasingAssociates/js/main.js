@@ -70,10 +70,53 @@
   function initForm() {
     var f = document.querySelector('#quote-form');
     if (!f) return;
+
+    function fieldIsValid(field) {
+      var radios = field.querySelectorAll('input[type="radio"]');
+      if (radios.length) {
+        return Array.prototype.some.call(radios, function (r) { return r.checked; });
+      }
+      var el = field.querySelector('input, textarea, select');
+      if (!el || !el.hasAttribute('required')) return true;
+      return el.value.trim() !== '';
+    }
+
+    function setFieldValid(field, valid) {
+      field.classList.toggle('invalid', !valid);
+    }
+
+    var fields = f.querySelectorAll('.field');
+    fields.forEach(function (field) {
+      field.addEventListener('input', function () {
+        if (field.classList.contains('invalid') && fieldIsValid(field)) { setFieldValid(field, true); }
+      });
+      field.addEventListener('change', function () {
+        if (field.classList.contains('invalid') && fieldIsValid(field)) { setFieldValid(field, true); }
+      });
+    });
+
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = f.querySelector('.form-note');
+      var errBanner = f.querySelector('.form-error');
       var btn = f.querySelector('button[type="submit"]');
+      if (note) { note.style.display = 'none'; }
+      if (errBanner) { errBanner.style.display = 'none'; }
+
+      var firstInvalid = null;
+      fields.forEach(function (field) {
+        var valid = fieldIsValid(field);
+        setFieldValid(field, valid);
+        if (!valid && !firstInvalid) { firstInvalid = field; }
+      });
+
+      if (firstInvalid) {
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var focusEl = firstInvalid.querySelector('input, textarea, select');
+        if (focusEl) { focusEl.focus(); }
+        return;
+      }
+
       var data = {};
       new FormData(f).forEach(function (value, key) { data[key] = value; });
 
@@ -90,7 +133,7 @@
           f.reset();
         })
         .catch(function () {
-          alert('Sorry, something went wrong sending your request. Please call or WhatsApp us instead.');
+          if (errBanner) { errBanner.style.display = 'block'; }
         })
         .finally(function () {
           if (btn) { btn.disabled = false; }
