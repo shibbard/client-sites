@@ -342,12 +342,12 @@ section{position:relative}
   .hero .container{padding-top:36px;padding-bottom:36px}
   .hero-bg img{object-position:64% 42%}
   .hero-bg::after{background:linear-gradient(180deg,rgba(0,26,74,.62) 0%,rgba(0,26,74,.28) 42%,rgba(2,18,50,.30) 66%,rgba(2,18,50,.82) 100%)}
-  .hero h1{font-size:clamp(2.2rem,9vw,2.7rem);margin-bottom:14px}
+  .hero h1{font-size:clamp(2.4rem,9vw,2.7rem);margin-bottom:14px}
   .hero-sub{font-size:.95rem;margin-bottom:18px}
   .hero-feats{gap:10px}
   .hero-feats li{font-size:1rem}
   .hero-feats i{width:20px;height:20px}
-  .hero-tagline{margin-top:22px;font-size:1.15rem;max-width:26ch}
+  .hero-tagline{margin-top:22px;font-size:1.5rem;max-width:26ch}
   .step{grid-template-columns:1fr}
   /* compact mobile header so the menu button always fits */
   .nav{height:64px;gap:8px}
