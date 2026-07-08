@@ -26,7 +26,7 @@
   --sans:'Inter',system-ui,sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:var(--sans);
   color:var(--body);
@@ -105,7 +105,7 @@ section{position:relative}
 .hero{position:relative;min-height:600px;display:flex;align-items:stretch;color:#fff;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
-.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,26,74,.95) 0%,rgba(0,26,74,.80) 32%,rgba(0,26,74,.44) 58%,rgba(0,26,74,.08) 100%),linear-gradient(to top,rgba(2,18,50,.6) 0%,rgba(2,18,50,0) 32%)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,26,74,.84) 0%,rgba(0,26,74,.60) 34%,rgba(0,26,74,.24) 62%,rgba(0,26,74,0) 100%),linear-gradient(to top,rgba(2,18,50,.42) 0%,rgba(2,18,50,0) 30%)}
 .hero .container{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;justify-content:space-between;padding-top:60px;padding-bottom:56px}
 .hero-top{max-width:620px}
 .hero h1{color:#fff;font-size:clamp(2.3rem,5.2vw,3.7rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
@@ -339,11 +339,28 @@ section{position:relative}
   .field-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .hero{min-height:0}
-  .hero .container{padding-top:34px;padding-bottom:38px}
+  .hero .container{padding-top:24px;padding-bottom:24px}
   .hero-bg img{object-position:50% 50%}
-  .hero-tagline{margin-top:28px}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.2rem);margin-bottom:12px}
+  .hero-sub{font-size:.92rem;margin-bottom:0}
+  .hero-tagline{margin-top:16px;font-size:1.05rem;max-width:30ch}
   .step{grid-template-columns:1fr}
+  /* compact mobile header so the menu button always fits */
+  .nav{height:64px;gap:8px}
+  .brand img{height:30px}
+  .nav-cta{gap:6px}
+  .nav-cta .btn{padding:9px 10px}
+  .hamburger{padding:6px}
+  .hamburger i{width:24px;height:24px}
 }
+
+/* Info strip below hero */
+.info-strip{background:var(--surface-2);border-bottom:1px solid var(--line);padding:22px 0}
+.info-strip .container{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.is-main{font-family:var(--head);font-weight:700;color:var(--navy);font-size:1.1rem;letter-spacing:.01em}
+.is-types{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 30px}
+.is-types span{display:inline-flex;align-items:center;gap:8px;color:var(--body);font-weight:500;font-size:.96rem}
+.is-types i{width:18px;height:18px;color:var(--red);flex-shrink:0}
 
 /* ===========================================================
    Revision components — brand strip, lease deals, promos
@@ -368,6 +385,7 @@ section{position:relative}
 /* HTML lease cards */
 .lcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .lcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.lcard-photo{width:100%;height:180px;object-fit:cover;display:block;background:var(--surface-2);border-bottom:1px solid var(--line)}
 .lcard-head{display:flex;justify-content:space-between;gap:14px;padding:22px 22px 16px}
 .lcard-fuel{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin-bottom:11px}
 .lcard-fuel i{width:13px;height:13px}
