@@ -66,15 +66,35 @@
     els.forEach(function (el) { io.observe(el); });
   }
 
-  // ---- Form (demo handler) ----
+  // ---- Form ----
   function initForm() {
     var f = document.querySelector('#quote-form');
     if (!f) return;
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var note = f.querySelector('.form-note');
-      if (note) { note.style.display = 'block'; }
-      f.reset();
+      var btn = f.querySelector('button[type="submit"]');
+      var data = {};
+      new FormData(f).forEach(function (value, key) { data[key] = value; });
+
+      if (btn) { btn.disabled = true; }
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          if (note) { note.style.display = 'block'; }
+          f.reset();
+        })
+        .catch(function () {
+          alert('Sorry, something went wrong sending your request. Please call or WhatsApp us instead.');
+        })
+        .finally(function () {
+          if (btn) { btn.disabled = false; }
+        });
     });
   }
 
