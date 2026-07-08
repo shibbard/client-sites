@@ -263,7 +263,7 @@ section{position:relative}
 
 /* ---------- Footer ---------- */
 .site-footer{background:var(--navy-2);color:#94a3b8;padding:64px 0 0}
-.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1.2fr;gap:44px;padding-bottom:48px}
 .site-footer h4{color:#fff;font-size:1rem;letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
 .site-footer .f-brand img{height:42px;width:auto;margin-bottom:18px}
 .site-footer .f-brand p{font-size:14px;max-width:32ch}
@@ -338,12 +338,13 @@ section{position:relative}
   .cards,.cards.four,.cat-grid,.offer-grid,.checklist.two{grid-template-columns:1fr}
   .field-row{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
-  .hero{min-height:0}
-  .hero .container{padding-top:24px;padding-bottom:24px}
-  .hero-bg img{object-position:50% 50%}
-  .hero h1{font-size:clamp(1.7rem,7vw,2.2rem);margin-bottom:12px}
-  .hero-sub{font-size:.92rem;margin-bottom:0}
-  .hero-tagline{margin-top:16px;font-size:1.05rem;max-width:30ch}
+  .hero{min-height:540px}
+  .hero .container{padding-top:40px;padding-bottom:40px}
+  .hero-bg img{object-position:64% 42%}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(0,26,74,.62) 0%,rgba(0,26,74,.28) 42%,rgba(2,18,50,.30) 66%,rgba(2,18,50,.82) 100%)}
+  .hero h1{font-size:clamp(1.9rem,7.5vw,2.4rem);margin-bottom:14px}
+  .hero-sub{font-size:.95rem;margin-bottom:18px}
+  .hero-tagline{margin-top:26px;font-size:1.15rem;max-width:26ch}
   .step{grid-template-columns:1fr}
   /* compact mobile header so the menu button always fits */
   .nav{height:64px;gap:8px}
