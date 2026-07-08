@@ -114,7 +114,7 @@ section{position:relative}
 .hero-feats{list-style:none;display:flex;flex-direction:column;gap:12px}
 .hero-feats li{display:flex;align-items:center;gap:12px;font-size:1.08rem;font-weight:500;color:#eef3fb;text-shadow:0 1px 6px rgba(0,10,30,.3)}
 .hero-feats i{width:24px;height:24px;color:#58a6e8;flex-shrink:0}
-.hero-tagline-wrap{flex:1;display:flex;align-items:flex-end;min-height:28px}
+.hero-tagline-wrap{flex:1;display:flex;align-items:center;min-height:28px}
 .hero-tagline{font-family:var(--head);font-weight:500;font-size:clamp(1.55rem,3.4vw,2.3rem);line-height:1.22;letter-spacing:-.005em;color:#f2f6fc;max-width:26ch;text-shadow:0 2px 10px rgba(0,10,30,.35)}
 
 /* ---------- Generic page hero ---------- */
