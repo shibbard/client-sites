@@ -15,6 +15,14 @@
     var links = document.querySelector('.nav-links');
     var backdrop = document.querySelector('.nav-backdrop');
     if (!burger || !links) return;
+    // inject a brand header at the top of the drawer
+    var siteBrand = document.querySelector('.brand');
+    if (siteBrand) {
+      var navBrand = document.createElement('div');
+      navBrand.className = 'nav-drawer-brand';
+      navBrand.innerHTML = siteBrand.innerHTML;
+      links.insertBefore(navBrand, links.firstChild);
+    }
     // inject a close (x) button into the drawer
     var closeBtn = document.createElement('button');
     closeBtn.className = 'nav-close';
