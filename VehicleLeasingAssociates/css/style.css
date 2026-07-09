@@ -73,7 +73,8 @@ section{position:relative}
 .topbar [data-lucide]{display:inline-block;width:15px;height:15px;flex-shrink:0}
 .topbar svg{width:15px;height:15px;flex-shrink:0}
 
-.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px);border-bottom:1px solid var(--line)}
+.site-header{position:sticky;top:0;z-index:100;border-bottom:1px solid var(--line)}
+.site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
 .brand{display:flex;align-items:center;flex-shrink:0}
 .brand img{height:38px;width:auto;display:block}
