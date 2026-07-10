@@ -267,6 +267,7 @@ section{position:relative}
 .field.invalid .radio-row{outline:none}
 .radio-row{display:flex;gap:20px;align-items:center}
 .radio-row label{display:inline-flex;align-items:center;gap:7px;font-weight:500;margin:0;cursor:pointer}
+.radio-row input[type="radio"]{width:18px;height:18px;flex-shrink:0;margin:0;accent-color:var(--navy)}
 .contact-aside .ic-row{display:flex;align-items:flex-start;gap:14px;margin-bottom:22px}
 .contact-aside .ic-row .ic{width:46px;height:46px;border-radius:var(--r);background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .contact-aside .ic-row .ic i{width:20px;height:20px}
@@ -332,6 +333,7 @@ section{position:relative}
   .nav-links>li>a{padding:15px 12px;font-size:16px;color:#33404f;border-radius:0}
   .nav-links>li>a:hover{color:var(--red)}
   .nav-links>li.active>a{background:transparent;color:var(--red)}
+  .nav-drawer-cta{margin-top:18px}
   .nav-backdrop{position:fixed;inset:0;background:rgba(2,32,68,.45);opacity:0;visibility:hidden;transition:opacity .3s;z-index:95}
   .nav-backdrop.open{opacity:1;visibility:visible}
   .split,.split.reverse{grid-template-columns:1fr}

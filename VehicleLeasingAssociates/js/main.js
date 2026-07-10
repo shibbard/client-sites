@@ -23,6 +23,12 @@
       navBrand.innerHTML = siteBrand.innerHTML;
       links.insertBefore(navBrand, links.firstChild);
     }
+    // inject a "Get In Touch" CTA at the bottom of the drawer
+    var navCta = document.createElement('a');
+    navCta.className = 'nav-drawer-cta btn btn-primary btn-block';
+    navCta.href = 'contact.html';
+    navCta.innerHTML = '<i data-lucide="message-square"></i> Get In Touch';
+    links.appendChild(navCta);
     // inject a close (x) button into the drawer
     var closeBtn = document.createElement('button');
     closeBtn.className = 'nav-close';
@@ -190,8 +196,8 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     initSocialIcons();
-    loadLucide();
     initNav();
+    loadLucide();
     initReveal();
     initForm();
     initToTop();
