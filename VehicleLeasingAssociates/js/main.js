@@ -77,7 +77,17 @@
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    els.forEach(function (el) { io.observe(el); });
+    els.forEach(function (el) {
+      // iOS Safari can delay the first IntersectionObserver callback until a
+      // scroll/reflow happens, leaving already-visible elements blank on load.
+      // Reveal those immediately instead of waiting on the observer.
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        el.classList.add('in');
+      } else {
+        io.observe(el);
+      }
+    });
   }
 
   // ---- Form ----
