@@ -29,6 +29,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
+  overflow-x: hidden;
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 24px;
@@ -80,10 +81,15 @@ section { padding: var(--section-pad) 0; }
 /* ---------- Header / Nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 100;
+  border-bottom: 1px solid var(--outline);
+}
+/* Blur lives on a pseudo-element: backdrop-filter on the header itself would
+   make it the containing block for the fixed-position mobile nav panel. */
+.site-header::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
   background: rgba(255,255,255,.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--outline);
 }
 .nav-wrap {
   max-width: var(--container); margin: 0 auto; padding: 0 40px;
@@ -353,10 +359,11 @@ form input:focus, form textarea:focus {
   .nav-cta { display: none; }
   .main-nav {
     position: fixed; inset: 76px 0 0 0; background: #fff;
-    transform: translateX(100%); transition: transform .25s ease;
+    transform: translateX(100%); transition: transform .25s ease, visibility .25s;
+    visibility: hidden;
     overflow-y: auto; padding: 20px 24px;
   }
-  .nav-open .main-nav { transform: none; }
+  .nav-open .main-nav { transform: none; visibility: visible; }
   .main-nav ul { flex-direction: column; align-items: stretch; gap: 0; }
   .main-nav a { padding: 14px 8px; font-size: 16px; border-bottom: 1px solid var(--outline); }
   .dropdown {
