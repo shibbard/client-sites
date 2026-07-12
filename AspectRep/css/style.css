@@ -157,7 +157,7 @@ section { padding: var(--section-pad) 0; }
 }
 .hero::before {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(27,10,14,.78) 0%, rgba(111,0,25,.55) 55%, rgba(27,10,14,.35) 100%);
+  background: linear-gradient(100deg, rgba(13,18,28,.82) 0%, rgba(20,28,44,.58) 55%, rgba(13,18,28,.30) 100%);
 }
 .hero .container { position: relative; z-index: 1; }
 .hero-card { max-width: 640px; }
