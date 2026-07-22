@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -17,7 +17,6 @@
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="Woodcock Lane Dental Care"></a>
       <ul class="nav-links">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="team.html" class="nav-link">Your Team</a></li>
         <li class="nav-item">
           <a href="patient-care.html" class="nav-link active">Patient Care <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
@@ -29,6 +28,7 @@
         </li>
         <li class="nav-item"><a href="prices.html" class="nav-link">Prices &amp; Payment</a></li>
         <li class="nav-item"><a href="practice.html" class="nav-link">The Practice</a></li>
+        <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
       </ul>
       <div class="nav-actions">
@@ -40,7 +40,6 @@
   </div>
 </header>
 <nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a>
   <div class="mobile-section-label">Your Visit</div>
   <a href="team.html">Your Team</a><a href="patient-care.html">Patient Care</a><a href="patient-care.html#new-patients">New Patients</a><a href="patient-care.html#testimonials">Testimonials</a>
   <div class="mobile-section-label">Services</div>
@@ -48,6 +47,7 @@
   <div class="mobile-section-label">Practice</div>
   <a href="prices.html">Prices &amp; Payment</a><a href="practice.html">The Practice</a><a href="contact.html">Contact Us</a>
   <a href="tel:01453828327" class="mobile-phone"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.69A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006.29 6.29l1.41-1.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>01453 828327</a>
+  <a href="news.html">News</a>
   <a href="contact.html" class="mobile-cta">Book Appointment</a>
 </nav>
 
@@ -91,7 +91,7 @@
       <h2 class="headline-lg">New Patients Welcome</h2>
       <p>We are pleased to welcome new patients and their families to our practice.</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;">
+    <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
@@ -184,10 +184,11 @@
       <div class="footer-col"><h4>Treatments</h4><ul><li><a href="services.html#general">General Dentistry</a></li><li><a href="services.html#cosmetic">Cosmetic Dentistry</a></li><li><a href="services.html#implants">Dental Implants</a></li><li><a href="services.html#orthodontics">Orthodontics</a></li><li><a href="services.html#children">Children's Dentistry</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:01453828327">01453 828327</a></li><li><a href="mailto:reception@woodcocklanedentalcare.co.uk">reception@woodcocklanedentalcare.co.uk</a></li><li><a href="practice.html">The Practice</a></li><li><a href="contact.html">Get in Touch</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>&copy; 2025 Woodcock Lane Dental Care. All rights reserved.</span><div style="display:flex;gap:20px;"><a href="#">Privacy Policy</a><a href="#">Freedom of Information</a><a href="#">Site Map</a></div><div class="footer-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Member of the British Dental Association</div></div>
+    <div class="footer-bottom"><span>&copy; 2026 Woodcock Lane Dental Care. All rights reserved.</span><div style="display:flex;gap:20px;"><a href="#">Privacy Policy</a><a href="#">Freedom of Information</a><a href="#">Site Map</a></div><div class="footer-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Member of the British Dental Association</div></div>
   </div>
 </footer>
-<div class="sticky-book"><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Appointment</a></div>
 <script src="js/main.js"></script>
 </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -17,7 +17,6 @@
     <nav class="nav-inner">
       <a href="index.html" class="nav-logo"><img src="images/logo.jpg" alt="Woodcock Lane Dental Care"></a>
       <ul class="nav-links">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="team.html" class="nav-link active">Your Team</a></li>
         <li class="nav-item">
           <a href="patient-care.html" class="nav-link">Patient Care <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
@@ -40,6 +39,7 @@
         </li>
         <li class="nav-item"><a href="prices.html" class="nav-link">Prices &amp; Payment</a></li>
         <li class="nav-item"><a href="practice.html" class="nav-link">The Practice</a></li>
+        <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
         <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
       </ul>
       <div class="nav-actions">
@@ -54,7 +54,6 @@
   </div>
 </header>
 <nav class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Home</a>
   <div class="mobile-section-label">Your Visit</div>
   <a href="team.html">Your Team</a>
   <a href="patient-care.html">Patient Care</a>
@@ -70,6 +69,7 @@
   <a href="practice.html">The Practice</a>
   <a href="contact.html">Contact Us</a>
   <a href="tel:01453828327" class="mobile-phone"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.69A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.14a16 16 0 006.29 6.29l1.41-1.41a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>01453 828327</a>
+  <a href="news.html">News</a>
   <a href="contact.html" class="mobile-cta">Book Appointment</a>
 </nav>
 
@@ -92,10 +92,14 @@
     </div>
 
     <!-- Featured dentist — Tara Conway -->
-    <div class="split-section" style="margin-bottom: 64px;">
-      <div class="split-content reveal">
+    <div class="profile-card reveal">
+      <div class="profile-card-photo">
+        <img src="images/team-tara.jpg" alt="Tara Conway">
+        <div class="profile-card-photo-label">Practice Owner</div>
+      </div>
+      <div class="profile-card-body">
         <span class="label-sm">Practice Owner &amp; Lead Dentist</span>
-        <h2 class="headline-lg">Tara Conway</h2>
+        <h2 class="headline-lg" style="margin-bottom:16px;">Tara Conway</h2>
         <div style="display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap;">
           <span class="chip">Restorative</span>
           <span class="chip">Prosthodontics</span>
@@ -106,15 +110,12 @@
         <p>In 2022 she completed a prestigious Masters of Clinical Dentistry in Fixed and Removable Prosthodontics at King's College London, qualifying with Distinction. She is particularly passionate about complex restorative dentistry, tooth wear and modern Scandinavian-designed dentures.</p>
         <p>Tara took over ownership of Woodcock Lane Dental Care from David Lyons in March 2026.</p>
       </div>
-      <div class="split-image reveal">
-        <img src="images/pexels-team.jpg" alt="Woodcock Lane Dental Care" loading="lazy">
-      </div>
     </div>
 
     <!-- Other dentists grid -->
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-card-img">DL</div>
+        <div class="team-card-img"><img src="images/team-david.jpg" alt="David Lyons"></div>
         <div class="team-card-body">
           <div class="team-card-name">David Lyons</div>
           <div class="team-card-role">Dentist &amp; Orthodontist</div>
@@ -122,7 +123,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img">SF</div>
+        <div class="team-card-img"><img src="images/team-sarah-f.jpg" alt="Sarah Fenton"></div>
         <div class="team-card-body">
           <div class="team-card-name">Sarah Fenton</div>
           <div class="team-card-role">Dentist</div>
@@ -130,7 +131,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img">GB</div>
+        <div class="team-card-img"><img src="images/team-guy.jpg" alt="Guy Bailey"></div>
         <div class="team-card-body">
           <div class="team-card-name">Mr Guy Bailey</div>
           <div class="team-card-role">Implant Dentist</div>
@@ -138,7 +139,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img">LL</div>
+        <div class="team-card-img"><img src="images/team-lisa.jpg" alt="Lisa Law"></div>
         <div class="team-card-body">
           <div class="team-card-name">Lisa Law</div>
           <div class="team-card-role">Dentist</div>
@@ -146,7 +147,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img">NB</div>
+        <div class="team-card-img"><img src="images/team-nick.jpg" alt="Nicholas Brown"></div>
         <div class="team-card-body">
           <div class="team-card-name">Nicholas Brown</div>
           <div class="team-card-role">Dentist</div>
@@ -167,7 +168,7 @@
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-card-img" style="background-color: var(--secondary);">CB</div>
+        <div class="team-card-img"><img src="images/team-carina.jpg" alt="Carina Burgos"></div>
         <div class="team-card-body">
           <div class="team-card-name">Carina Burgos</div>
           <div class="team-card-role">Dental Hygienist</div>
@@ -175,7 +176,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img" style="background-color: var(--secondary);">SD</div>
+        <div class="team-card-img"><img src="images/team-sarah-d.jpg" alt="Sarah Davis"></div>
         <div class="team-card-body">
           <div class="team-card-name">Sarah Davis</div>
           <div class="team-card-role">Dental Hygienist</div>
@@ -183,7 +184,7 @@
         </div>
       </div>
       <div class="team-card reveal">
-        <div class="team-card-img" style="background-color: var(--secondary);">LH</div>
+        <div class="team-card-img"><img src="images/team-laura.jpg" alt="Laura Horton"></div>
         <div class="team-card-body">
           <div class="team-card-name">Laura Horton</div>
           <div class="team-card-role">Dental Hygienist</div>
@@ -202,28 +203,121 @@
       <h2 class="headline-lg">Our Support Team</h2>
       <p>A warm and experienced team ensuring every visit runs smoothly from arrival to departure.</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;">
-      <div class="info-box reveal">
-        <h3>Practice Management</h3>
-        <ul class="info-list">
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Jackie — Practice Manager</li>
-        </ul>
+    <div class="subsection-header reveal">
+      <span class="label-sm">Reception &amp; Admin</span>
+      <h3 class="headline-md">Front of House</h3>
+    </div>
+    <div class="team-grid" style="margin-bottom:56px;">
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-jackie.jpg" alt="Jackie"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Jackie</div>
+          <div class="team-card-role">Practice Manager</div>
+          <p class="team-card-bio">Joined the practice in 1989. Holds the National Certificate for Dental Surgery Assistants and Certificate in Oral Health Education. A cornerstone of the team.</p>
+        </div>
       </div>
-      <div class="info-box reveal">
-        <h3>Reception</h3>
-        <ul class="info-list">
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Karen — Receptionist</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Sarah — Receptionist</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Lesley — Receptionist</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Liz — Administrator</li>
-        </ul>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-liz.jpg" alt="Liz"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Liz</div>
+          <div class="team-card-role">Administrator</div>
+          <p class="team-card-bio">Joined in 1988 as a qualified dental nurse. Former Practice Manager, now supporting the team with administration. One of our most experienced members.</p>
+        </div>
       </div>
-      <div class="info-box reveal">
-        <h3>Dental Nurses</h3>
-        <ul class="info-list">
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Elaine, Josie, Amy, Cheryl</li>
-          <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Hannah, Roxi, Lauren, Jess</li>
-        </ul>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-karen.jpg" alt="Karen"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Karen</div>
+          <div class="team-card-role">Receptionist</div>
+          <p class="team-card-bio">Joined in 2011, helping patients receive the best service available. Previously a dental nurse, bringing valuable clinical knowledge to the front desk.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-sarah-p.jpg" alt="Sarah"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Sarah</div>
+          <div class="team-card-role">Receptionist</div>
+          <p class="team-card-bio">Joined in 2021. With a background in dental nursing she's well placed to liaise with dentists and make patients feel at ease from the moment they arrive.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-lesley.jpg" alt="Lesley"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Lesley</div>
+          <div class="team-card-role">Receptionist</div>
+          <p class="team-card-bio">Joined in August 2023 having worked with Nick Brown at his previous practice. Spent most of her career in the medical and dental sphere.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-header reveal">
+      <span class="label-sm">Clinical Support</span>
+      <h3 class="headline-md">Our Dental Nurses</h3>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-elaine.jpg" alt="Elaine"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Elaine</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Joined in 1999, qualified as a Dental Nurse in 2001. Holds qualifications in Oral Health Education and Dental Radiography.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-josie.jpg" alt="Josie"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Josie</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Joined in 2007, qualified in 2009. Completed the SAAD Assessed Sedation Nurse Scheme in 2019. A valued and experienced member of the clinical team.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-amy.jpg" alt="Amy"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Amy</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Joined in 2013, qualified in January 2016. Trained in dental radiography and shares her nursing duties between dentists and hygienists.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-cheryl.jpg" alt="Cheryl"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Cheryl</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Qualified in 2001, with additional qualifications in Dental Radiography, Oral Health Education and Mental Health First Aid.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-hannah.jpg" alt="Hannah"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Hannah</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Qualified in 2019, joined in 2022 after relocating to Gloucestershire. Shares her nursing duties across dentists and hygienists.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-roxi.jpg" alt="Roxanne"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Roxanne</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Joined as an apprentice in 2021, qualified in 2023. Gained her dental radiography qualification in 2025. A fantastic addition to the nursing team.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-lauren.jpg" alt="Lauren"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Lauren</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Qualified in 2017, joined in July 2023 having previously worked with Nick Brown. Works full-time and holds a Dental Radiography qualification.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div class="team-card-img"><img src="images/team-jess.jpg" alt="Jess"></div>
+        <div class="team-card-body">
+          <div class="team-card-name">Jess</div>
+          <div class="team-card-role">Dental Nurse</div>
+          <p class="team-card-bio">Qualified in January 2014, joined in September 2023. Works part-time and brings over a decade of dental nursing experience to the practice.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -259,13 +353,14 @@
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:01453828327">01453 828327</a></li><li><a href="mailto:reception@woodcocklanedentalcare.co.uk">reception@woodcocklanedentalcare.co.uk</a></li><li><a href="practice.html">The Practice</a></li><li><a href="contact.html">Get in Touch</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2025 Woodcock Lane Dental Care. All rights reserved.</span>
+      <span>&copy; 2026 Woodcock Lane Dental Care. All rights reserved.</span>
       <div style="display:flex; gap:20px;"><a href="#">Privacy Policy</a><a href="#">Freedom of Information</a><a href="#">Site Map</a></div>
       <div class="footer-badge"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Member of the British Dental Association</div>
     </div>
   </div>
 </footer>
-<div class="sticky-book"><a href="contact.html"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Appointment</a></div>
 <script src="js/main.js"></script>
 </body>
 </html>
+
+
