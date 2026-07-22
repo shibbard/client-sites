@@ -142,6 +142,11 @@ ul { list-style: none; }
   padding: 4px;
   color: var(--on-surface);
   margin-left: auto;
+  outline: none;
+}
+.nav-hamburger:focus-visible {
+  outline: 2px solid var(--primary);
+  border-radius: var(--radius);
 }
 .nav-mobile {
   display: none;
@@ -161,6 +166,7 @@ ul { list-style: none; }
 }
 .nav-mobile a:hover { background: var(--surface-low); color: var(--primary); }
 .nav-mobile .btn { margin: 12px 24px 4px; }
+.nav-mobile .btn-primary { color: var(--on-primary); }
 
 /* ── Label chip ── */
 .label-chip {
@@ -238,18 +244,19 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
+  gap: 28px;
+  flex-wrap: nowrap;
 }
 .trust-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
+  gap: 8px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--secondary);
+  white-space: nowrap;
 }
 .trust-item svg { color: var(--primary); flex-shrink: 0; }
 
@@ -800,9 +807,9 @@ ul { list-style: none; }
 .footer-bottom-links a { color: rgba(255,255,255,0.4); transition: color 0.15s; }
 .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
 
-/* ── Scroll reveal ── */
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* ── Scroll reveal — progressive enhancement (visible without JS) ── */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.js .reveal.visible { opacity: 1; transform: none; }
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
@@ -824,7 +831,7 @@ ul { list-style: none; }
   .repairs-bento { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
-  .trust-bar-inner { gap: 20px; justify-content: flex-start; }
+  .trust-bar-inner { gap: 14px; justify-content: flex-start; flex-wrap: wrap; }
   .about-stats { grid-template-columns: 1fr 1fr; }
   .hero { min-height: 420px; }
 }

@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll reveal
+  // Scroll reveal — progressive enhancement (content visible without JS)
+  document.documentElement.classList.add('js');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -24,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  // Fallback: show any still-hidden reveals after 600ms (screenshots, slow JS)
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  }, 600);
 
   // Active nav link
   const path = location.pathname.split('/').pop() || 'index.html';
