@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /privacy-policy.html
 Disallow: /concepts/
 
-Sitemap: https://vehicle-leasing-associates.getdigitaldone.co.uk/sitemap.xml
+Sitemap: https://www.vlauk.com/sitemap.xml

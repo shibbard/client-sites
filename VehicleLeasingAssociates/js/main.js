@@ -76,7 +76,7 @@
       entries.forEach(function (en) {
         if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -20px 0px' });
     els.forEach(function (el) {
       // iOS Safari can delay the first IntersectionObserver callback until a
       // scroll/reflow happens, leaving already-visible elements blank on load.
@@ -154,6 +154,7 @@
         .then(function (res) {
           if (!res.ok) throw new Error('Request failed');
           if (note) { note.style.display = 'block'; }
+          if (window.vlaTrack) window.vlaTrack('generate_lead', { lead_source: 'personalised_quote' });
           f.reset();
         })
         .catch(function () {

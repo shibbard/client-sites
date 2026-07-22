@@ -77,7 +77,7 @@ section{position:relative}
 .site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;height:76px}
 .brand{display:flex;align-items:center;flex-shrink:0}
-.brand img{height:38px;width:auto;display:block}
+.brand img{height:38px;width:auto;display:block;object-fit:contain;object-position:left center}
 .nav-links{display:flex;align-items:center;gap:2px;list-style:none;flex-wrap:nowrap}
 .nav-links>li>a{
   display:flex;align-items:center;gap:5px;color:#3a4453;font-weight:500;font-size:14.5px;
@@ -100,7 +100,7 @@ section{position:relative}
 .nav-cta .btn-call-text{display:none}
 .hamburger{display:none;background:none;border:0;cursor:pointer;color:var(--navy);padding:8px}
 .hamburger i{width:28px;height:28px}
-.nav-close{display:none}
+.nav-drawer-brand,.nav-drawer-cta,.nav-close{display:none}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;min-height:600px;display:flex;align-items:stretch;color:#fff;overflow:hidden}
@@ -130,6 +130,14 @@ section{position:relative}
 .page-hero .crumb a:hover{color:#fff}
 .page-hero h1{color:#fff;font-size:clamp(2rem,4.5vw,3rem);margin-bottom:14px}
 .page-hero p{color:#cbd5e1;max-width:60ch;font-size:1.08rem}
+.sell-hero-subtitle{margin:-4px 0 12px;color:#f2f6fc;font-family:var(--head);font-size:clamp(1rem,2vw,1.2rem);font-weight:600}
+@media(max-width:600px){.page-hero.sell-page-hero{background-position:left center}}
+.lease-hero-points{list-style:none;display:grid;gap:8px;margin-top:20px;color:#f2f6fc}
+.lease-hero-points li{display:flex;align-items:center;gap:10px;font-weight:600}
+.lease-hero-points i,.lease-hero-points svg{width:19px;height:19px;color:#69b2f0;flex-shrink:0}
+.lease-hero-link{display:inline-flex;align-items:center;gap:5px;margin-top:10px;color:#aebed2;font-size:.82rem;font-weight:500;line-height:1.4;border-bottom:1px solid rgba(174,190,210,.32);transition:color .2s,border-color .2s}
+.lease-hero-link:hover{color:#9dd0fa;border-color:#9dd0fa}
+.lease-hero-link i,.lease-hero-link svg{width:14px;height:14px}
 
 /* ---------- Sections ---------- */
 .section{padding:80px 0}
@@ -147,6 +155,8 @@ section{position:relative}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .split.reverse .split-media{order:2}
 .split-media img{border-radius:var(--r);box-shadow:var(--shadow);width:100%;aspect-ratio:4/3;object-fit:cover}
+.sell-photo-stack{display:grid;gap:18px}
+.sell-photo-stack img{aspect-ratio:auto}
 .split-body h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:18px}
 .split-body p{margin-bottom:16px}
 .subhead{font-family:var(--head);font-weight:700;color:var(--ink);font-size:1.15rem;margin:24px 0 10px}
@@ -156,6 +166,21 @@ section{position:relative}
 .checklist li{display:flex;align-items:flex-start;gap:12px;font-weight:500;color:var(--ink)}
 .checklist li i{width:22px;height:22px;color:var(--red);flex-shrink:0;margin-top:1px}
 .checklist.two{grid-template-columns:1fr 1fr}
+
+/* Sell-your-vehicle value and fee summary */
+.sell-value-panel{display:grid;grid-template-columns:1.05fr 1fr 1.45fr auto;align-items:center;gap:24px;margin-top:44px;padding:24px 26px;background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:var(--r-lg);box-shadow:var(--shadow)}
+.sell-value-panel span{display:block;font-size:13px;line-height:1.45;color:var(--body)}
+.sell-value-panel strong{font-family:var(--head);color:var(--navy)}
+.sell-value-gain span{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.sell-value-gain strong{display:block;margin-top:2px;font-size:1.65rem;line-height:1.1}
+.sell-value-promise{display:flex;align-items:center;gap:11px}
+.sell-value-promise i,.sell-value-promise svg{width:27px;height:27px;color:var(--red);flex-shrink:0}
+.sell-value-promise strong,.sell-value-fee strong{display:block;margin-bottom:3px;font-size:1rem}
+.sell-trade-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:12px 16px;background:var(--navy);border-radius:var(--r-sm);color:#fff;font-size:13px;font-weight:600;white-space:nowrap;transition:background .2s,transform .15s}
+.sell-trade-link:hover{background:var(--navy-3);transform:translateY(-2px)}
+.sell-trade-link i,.sell-trade-link svg{width:15px;height:15px}
+@media(max-width:950px){.sell-value-panel{grid-template-columns:1fr 1fr}.sell-trade-link{justify-self:start}}
+@media(max-width:600px){.sell-value-panel{grid-template-columns:1fr;gap:18px;margin-top:30px;padding:22px}.sell-trade-link{width:100%}}
 
 /* feature cards */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -308,14 +333,34 @@ section{position:relative}
 .to-top i,.to-top svg{width:24px;height:24px}
 @media(max-width:600px){.to-top{right:16px;bottom:16px;width:46px;height:46px}}
 
+/* ---------- Compact analytics consent ---------- */
+.consent-banner{position:fixed;left:18px;bottom:18px;z-index:250;display:flex;align-items:center;gap:18px;width:min(620px,calc(100% - 36px));padding:15px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 14px 40px rgba(2,32,68,.2);color:var(--body)}
+.consent-banner p{margin:0;display:grid;gap:2px;font-size:12.5px;line-height:1.45}
+.consent-banner strong{color:var(--ink);font-family:var(--head);font-size:14px}
+.consent-banner p span{display:block}
+.consent-banner a{color:var(--red);text-decoration:underline;text-underline-offset:2px}
+.consent-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.consent-actions button,.cookie-settings-link{font:inherit;cursor:pointer}
+.consent-actions button{padding:9px 11px;border-radius:var(--r-sm);font-size:12px;font-weight:600;white-space:nowrap}
+.consent-reject{background:#fff;border:1px solid var(--line);color:var(--body)}
+.consent-accept{background:var(--navy);border:1px solid var(--navy);color:#fff}
+.cookie-settings-link{padding:0;border:0;background:none;color:inherit;font-size:inherit;text-decoration:underline;text-underline-offset:3px}
+.cookie-settings-link:hover{color:#fff}
+@media(max-width:600px){.consent-banner{left:12px;bottom:12px;width:calc(100% - 24px);align-items:stretch;flex-direction:column;gap:12px}.consent-actions{justify-content:flex-end}.consent-actions button{flex:1}}
+
 /* ---------- Responsive ---------- */
 @media(max-width:1024px){
   .nav-cta .btn-call-text{display:none}
   .split{gap:36px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
 }
-@media(max-width:1180px){
+@media(max-width:1320px), (any-pointer:coarse) and (max-width:1440px){
   .hamburger{display:block}
+  .nav{min-width:0}
+  .brand{flex-shrink:1;min-width:0;max-width:calc(100% - 170px)}
+  .brand img{max-width:100%;height:auto;max-height:38px}
+  .nav-cta{margin-left:auto;min-width:max-content}
+  .nav-cta .btn-call-text{display:none}
   .nav-links{
     position:fixed;top:0;right:0;height:100vh;width:300px;max-width:85vw;background:#ffffff;
     flex-direction:column;align-items:stretch;gap:2px;padding:0 16px 30px;transform:translateX(100%);
@@ -333,9 +378,11 @@ section{position:relative}
   .nav-links>li>a{padding:15px 12px;font-size:16px;color:#33404f;border-radius:0}
   .nav-links>li>a:hover{color:var(--red)}
   .nav-links>li.active>a{background:transparent;color:var(--red)}
-  .nav-drawer-cta{margin-top:18px}
+  .nav-drawer-cta{display:inline-flex;margin-top:18px}
   .nav-backdrop{position:fixed;inset:0;background:rgba(2,32,68,.45);opacity:0;visibility:hidden;transition:opacity .3s;z-index:95}
   .nav-backdrop.open{opacity:1;visibility:visible}
+}
+@media(max-width:1180px){
   .split,.split.reverse{grid-template-columns:1fr}
   .split.reverse .split-media{order:0}
   .cards,.cards.four,.cards.two,.cat-grid,.offer-grid{grid-template-columns:1fr 1fr}
@@ -407,7 +454,7 @@ section{position:relative}
 .lcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .lcard:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
 .lcard-photo{width:100%;height:180px;object-fit:cover;display:block;background:var(--surface-2);border-bottom:1px solid var(--line)}
-.lcard-head{display:flex;justify-content:space-between;gap:14px;padding:22px 22px 16px}
+.lcard-head{display:flex;justify-content:space-between;gap:14px;min-height:173px;padding:22px 22px 16px}
 .lcard-fuel{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:999px;margin-bottom:11px}
 .lcard-fuel i{width:13px;height:13px}
 .fuel-electric{background:#e3f6ee;color:#0a7a52}
@@ -421,6 +468,7 @@ section{position:relative}
 .lcard-term strong{font-family:var(--head);font-size:.9rem;color:#fff;white-space:nowrap}
 .lcard-meta{display:flex;align-items:center;gap:7px;padding:0 22px 16px;font-size:13px;color:var(--body);font-weight:500;border-bottom:1px solid var(--line)}
 .lcard-meta i{width:16px;height:16px;color:var(--red);flex-shrink:0}
+.lcard-meta-spacer{height:37px;padding:0;visibility:hidden}
 .lcard-prices{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface-2)}
 .lcard-prices .lp{padding:15px 8px;text-align:center;border-right:1px solid var(--line)}
 .lcard-prices .lp:last-child{border-right:0}
@@ -433,7 +481,11 @@ section{position:relative}
 .lcard-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 22px;margin-top:auto}
 .lcard-ref{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:.03em;text-transform:uppercase}
 .lcard-foot .btn{padding:11px 16px;font-size:13.5px}
-@media(max-width:600px){.lcard-head h3{font-size:1.3rem}}
+@media(max-width:600px){
+  .lcard-head{min-height:0}
+  .lcard-head h3{font-size:1.3rem}
+  .lcard-meta-spacer{display:none}
+}
 
 /* Featured showcase lease card (rich) */
 .fcard{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line)}
@@ -494,6 +546,7 @@ section{position:relative}
 
 /* small print band */
 .smallprint-note{font-size:12.5px;color:var(--muted);line-height:1.7;max-width:90ch;margin:0 auto;text-align:center}
+.lease-price-note{margin-top:24px}
 
 @media(max-width:900px){
   .deal-grid{grid-template-columns:1fr 1fr}

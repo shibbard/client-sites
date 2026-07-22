@@ -31,7 +31,7 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'Vehicle Leasing Associates <forms@getdigitaldone.co.uk>',
-        to: ['vla.uk@mail.com'],
+        to: ['vlauk@mail.com'],
         subject: `New Quote Request from ${name}`,
         html,
       }),

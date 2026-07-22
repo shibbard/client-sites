@@ -1,1 +1,17 @@
-{"ignoreCommand": "git diff HEAD~1 --name-only | grep -qv '^VehicleLeasingAssociates/'"}
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "git diff HEAD~1 --name-only | grep -qv '^VehicleLeasingAssociates/'",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "vehicle-leasing-associates.getdigitaldone.co.uk"
+        }
+      ],
+      "destination": "https://www.vlauk.com/:path*",
+      "permanent": true
+    }
+  ]
+}
