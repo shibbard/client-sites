@@ -9,20 +9,27 @@
   // Mobile nav toggle
   var toggle = document.querySelector(".nav-toggle");
   var menu = document.querySelector(".nav-menu");
+  var backdrop = document.querySelector(".nav-backdrop");
+  function closeMenu() {
+    if (!menu) return;
+    menu.classList.remove("open");
+    if (toggle) { toggle.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
+    if (backdrop) backdrop.classList.remove("show");
+    document.body.style.overflow = "";
+  }
   if (toggle && menu) {
     toggle.addEventListener("click", function () {
       var open = menu.classList.toggle("open");
       toggle.classList.toggle("open", open);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      if (backdrop) backdrop.classList.toggle("show", open);
       document.body.style.overflow = open ? "hidden" : "";
     });
     menu.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        menu.classList.remove("open");
-        toggle.classList.remove("open");
-        document.body.style.overflow = "";
-      });
+      a.addEventListener("click", closeMenu);
     });
+    if (backdrop) backdrop.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenu(); });
   }
 
   // Header shadow on scroll
