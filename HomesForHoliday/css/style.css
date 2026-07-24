@@ -4,9 +4,9 @@
    ========================================================================== */
 
 :root {
-  /* Brand blues (from the "home for holiday" wordmark) */
-  --navy: #1a2a6c;
-  --navy-deep: #131f52;
+  /* Brand blues (exact navy from the "home for holiday" wordmark) */
+  --navy: #122248;
+  --navy-deep: #0b1730;
   --primary: #24379b;
   --primary-bright: #3f5fd6;
   --sky: #5aa0e6;
@@ -162,9 +162,14 @@ p { color: var(--muted); }
   display: flex; align-items: center; justify-content: space-between;
   height: var(--header-h); gap: 24px;
 }
-.brand { display: flex; flex-direction: column; line-height: 1; flex-shrink: 0; color: var(--nav-ink); transition: color .3s ease; }
-.brand .brand-name { font-weight: 800; font-size: 1.3rem; letter-spacing: -0.02em; }
-.brand .brand-sub { font-family: var(--font-label); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; margin-top: 5px; opacity: 0.8; }
+.brand { display: flex; align-items: center; line-height: 1; flex-shrink: 0; }
+/* Logo is the traced wordmark, recoloured to the current nav ink via CSS mask */
+.brand-logo {
+  display: block; height: 54px; width: 64px;
+  background-color: var(--nav-ink); transition: background-color .3s ease;
+  -webkit-mask: url(../images/logo.svg) center / contain no-repeat;
+  mask: url(../images/logo.svg) center / contain no-repeat;
+}
 
 .nav-menu { display: flex; align-items: center; gap: 26px; flex-wrap: nowrap; }
 .nav-menu a {
@@ -455,7 +460,7 @@ p { color: var(--muted); }
               radial-gradient(30vw 30vw at 5% 100%, rgba(15,158,148,0.18), transparent 60%); }
 .site-footer .container { position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 44px; padding-bottom: 56px; }
-.footer-brand .brand-name { font-weight: 800; font-size: 1.45rem; letter-spacing: -0.02em; }
+.footer-brand .brand-logo { height: 74px; width: 88px; background-color: #fff; margin-bottom: 6px; }
 .footer-brand .brand-sub { font-family: var(--font-label); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua-light); margin-top: 6px; display: block; }
 .footer-brand p { color: rgba(234,238,251,0.62); margin-top: 16px; font-size: 0.95rem; max-width: 34ch; }
 .footer-col h4 { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-light); margin-bottom: 18px; }
@@ -512,8 +517,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 620px) {
-  :root { --gutter: 18px; --header-h: 66px; }
+  :root { --gutter: 18px; --header-h: 62px; }
   body { font-size: 16px; }
+  .brand-logo { height: 46px; width: 54px; }
   .hero { min-height: 92vh; }
   .hero-inner { padding-bottom: 54px; }
   .usp-grid { grid-template-columns: 1fr 1fr; }
