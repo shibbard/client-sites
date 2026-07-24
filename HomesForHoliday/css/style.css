@@ -163,13 +163,12 @@ p { color: var(--muted); }
   height: var(--header-h); gap: 24px;
 }
 .brand { display: flex; align-items: center; line-height: 1; flex-shrink: 0; }
-/* Logo is the traced wordmark, recoloured to the current nav ink via CSS mask */
+/* Inline traced wordmark; recolours to the current nav ink via currentColor */
 .brand-logo {
-  display: block; height: 54px; width: 64px;
-  background-color: var(--nav-ink); transition: background-color .3s ease;
-  -webkit-mask: url(../images/logo.svg) center / contain no-repeat;
-  mask: url(../images/logo.svg) center / contain no-repeat;
+  display: block; height: 54px; width: auto;
+  color: var(--nav-ink); fill: currentColor; transition: color .3s ease;
 }
+.brand-logo use, .brand-logo path { fill: currentColor; }
 
 .nav-menu { display: flex; align-items: center; gap: 26px; flex-wrap: nowrap; }
 .nav-menu a {
@@ -460,7 +459,7 @@ p { color: var(--muted); }
               radial-gradient(30vw 30vw at 5% 100%, rgba(15,158,148,0.18), transparent 60%); }
 .site-footer .container { position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 44px; padding-bottom: 56px; }
-.footer-brand .brand-logo { height: 74px; width: 88px; background-color: #fff; margin-bottom: 6px; }
+.footer-brand .brand-logo { height: 74px; color: #fff; margin-bottom: 6px; }
 .footer-brand .brand-sub { font-family: var(--font-label); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua-light); margin-top: 6px; display: block; }
 .footer-brand p { color: rgba(234,238,251,0.62); margin-top: 16px; font-size: 0.95rem; max-width: 34ch; }
 .footer-col h4 { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-light); margin-bottom: 18px; }
@@ -519,7 +518,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 @media (max-width: 620px) {
   :root { --gutter: 18px; --header-h: 62px; }
   body { font-size: 16px; }
-  .brand-logo { height: 46px; width: 54px; }
+  .brand-logo { height: 46px; width: auto; }
   .hero { min-height: 92vh; }
   .hero-inner { padding-bottom: 54px; }
   .usp-grid { grid-template-columns: 1fr 1fr; }
