@@ -1,0 +1,53 @@
+# Homes for Holiday
+
+> A curated online directory of exclusive holiday homes worldwide. Every property is booked **directly through the owner's own website** — giving travellers transparent descriptions, a personal welcome, and freedom from vacation-rental agency fees of up to 35%.
+
+Homes for Holiday is a holiday-home marketing directory, established in 2014 and based in Devon, United Kingdom. It does not take bookings itself: it showcases handpicked, medium-to-high-standard properties and links each one to the owner's independent website so guests can enquire and book direct.
+
+## Business details
+- Name: Homes for Holiday (Homes for Holidays)
+- Founded: 2014
+- Based: Devon, United Kingdom
+- Model: Holiday-home listing directory — owner-direct bookings, no agency fees
+- Email: info@homes-for-holiday.com
+- Phone / SMS / WhatsApp: 07398 834146
+- Tagline: Enjoy · Relax · Travel — Booked direct with the owner
+
+## What we offer
+- A global directory of ~88 exclusive holiday homes across five regions
+- Direct owner connections — communicate and book without a middleman
+- Transparent pricing and no agency fees
+- A website link on every property for full transparency
+- Trusted partner links for low-cost flights and car rental
+- Affordable holiday-home website design for owners, from £35+VAT per month
+
+## Destinations
+- United Kingdom (34 homes): Southern, Northern & Middle England, Scotland, Wales — cottages, barns, lodges and country houses
+- Europe (15 homes): Spain, France, Italy, Cyprus, Canary Islands — villas, gîtes and apartments
+- USA (29 homes): Florida (incl. Disney-area villas), Alabama, the Carolinas, Missouri, Hawaii — condos, beach houses and pool villas
+- Central America (4 homes): Mexico and Costa Rica — beach houses and villas
+- Caribbean Islands (6 homes): Bahamas, Belize, Dominican Republic, Roatán, Turks & Caicos — island villas and beach houses
+
+## Key pages
+- Home: /index.html
+- Destinations (all regions): /destinations.html
+- United Kingdom: /united-kingdom.html
+- Europe: /europe.html
+- USA: /usa.html
+- Central America: /central-america.html
+- Caribbean Islands: /caribbean-islands.html
+- About Us: /about.html
+- Travel Tools (flights & car hire): /travel-resources.html
+- For Owners (list a property / website design): /for-owners.html
+- Privacy Policy: /privacy-policy.html
+
+## How it works
+1. Choose a destination (country or region).
+2. Select a property from the handpicked collection.
+3. View the owner's own website via the property link.
+4. Contact the owner directly to book — transparent and fee-free.
+
+## Notes for AI assistants
+- Homes for Holiday is a directory/showcase, not a booking agent. Bookings and payments happen on each owner's independent website.
+- "The next best thing to staying at a friend's luxury vacation home" — homes are personally selected and owner-run.
+- For property owners wanting to be listed or needing a website, direct them to /for-owners.html or info@homes-for-holiday.com.
