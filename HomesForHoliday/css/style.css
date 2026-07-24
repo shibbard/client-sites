@@ -171,6 +171,7 @@ p { color: var(--muted); }
 .brand-logo use, .brand-logo path { fill: currentColor; }
 
 .nav-menu { display: flex; align-items: center; gap: 26px; flex-wrap: nowrap; }
+.nav-menu-logo { display: none; }
 .nav-menu a {
   font-size: 0.86rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap;
   color: var(--nav-ink); position: relative; padding: 6px 0; transition: color .3s ease, opacity .2s;
@@ -496,10 +497,12 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .nav-menu {
     position: fixed; inset: 0 0 0 auto; width: min(82vw, 340px);
     flex-direction: column; align-items: flex-start; justify-content: flex-start;
-    background: var(--pearl); padding: calc(var(--header-h) + 24px) 32px 40px; gap: 4px;
+    background: var(--pearl); padding: 22px 32px 40px; gap: 4px;
     transform: translateX(100%); transition: transform .35s cubic-bezier(.2,.8,.2,1);
     box-shadow: var(--shadow-lift); z-index: 90; overflow-y: auto;
   }
+  .nav-menu-logo { display: block; margin: 0 0 20px; }
+  .nav-menu-logo .brand-logo { height: 52px; color: var(--navy); }
   .nav-menu.open { transform: translateX(0); }
   .nav-menu a { color: var(--ink); font-size: 1.05rem; font-weight: 600; padding: 15px 0; width: 100%; border-bottom: 1px solid var(--line); }
   .nav-menu a::after { display: none; }
