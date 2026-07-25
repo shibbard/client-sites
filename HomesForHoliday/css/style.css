@@ -325,7 +325,7 @@ p { color: var(--muted); }
   position: relative; color: #fff; min-height: 58vh; display: flex; align-items: flex-end; overflow: hidden;
 }
 .listing-hero .hero-bg::after { background: linear-gradient(180deg, rgba(11,23,48,0.16) 0%, rgba(11,23,48,0) 40%, rgba(11,23,48,0.42) 100%); }
-.listing-hero-inner { position: relative; z-index: 2; padding: calc(var(--header-h) + 30px) 0 56px; }
+.listing-hero-inner { position: relative; z-index: 2; padding-top: calc(var(--header-h) + 30px); padding-bottom: 56px; }
 .listing-hero-inner::before {
   content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none;
   background: radial-gradient(80% 78% at 24% 68%, rgba(9, 18, 40, 0.55) 0%, rgba(9, 18, 40, 0.26) 44%, rgba(9, 18, 40, 0) 74%);
