@@ -210,7 +210,12 @@ p { color: var(--muted); }
 /* Soft feathered scrim behind the text only — keeps the rest of the photo bright */
 .hero-inner::before {
   content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none;
-  background: radial-gradient(78% 68% at 24% 62%, rgba(9, 18, 40, 0.55) 0%, rgba(9, 18, 40, 0.28) 42%, rgba(9, 18, 40, 0) 72%);
+  background: radial-gradient(120% 105% at 16% 72%,
+    rgba(9, 18, 40, 0.55) 0%,
+    rgba(9, 18, 40, 0.33) 28%,
+    rgba(9, 18, 40, 0.14) 50%,
+    rgba(9, 18, 40, 0.04) 68%,
+    rgba(9, 18, 40, 0) 84%);
 }
 .hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 3px rgba(8,15,35,0.6); }
 .hero h1 {
@@ -328,7 +333,12 @@ p { color: var(--muted); }
 .listing-hero-inner { position: relative; z-index: 2; padding-top: calc(var(--header-h) + 30px); padding-bottom: 56px; }
 .listing-hero-inner::before {
   content: ""; position: absolute; z-index: -1; inset: 0; pointer-events: none;
-  background: radial-gradient(80% 78% at 24% 68%, rgba(9, 18, 40, 0.55) 0%, rgba(9, 18, 40, 0.26) 44%, rgba(9, 18, 40, 0) 74%);
+  background: radial-gradient(125% 130% at 16% 74%,
+    rgba(9, 18, 40, 0.55) 0%,
+    rgba(9, 18, 40, 0.33) 30%,
+    rgba(9, 18, 40, 0.14) 52%,
+    rgba(9, 18, 40, 0.04) 70%,
+    rgba(9, 18, 40, 0) 86%);
 }
 .listing-hero h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.6rem); margin: 14px 0 16px; letter-spacing: -0.03em; text-shadow: 0 2px 8px rgba(8,15,35,0.5); }
 .listing-hero p { color: #fff; max-width: 58ch; font-weight: 500; text-shadow: 0 1px 5px rgba(8,15,35,0.6); }
