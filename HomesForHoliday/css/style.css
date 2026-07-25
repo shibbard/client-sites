@@ -546,6 +546,23 @@ a.prop-card { cursor: pointer; color: inherit; }
 .footer-bottom a:hover { color: var(--aqua-light); }
 
 /* ==========================================================================
+   Back-to-top (mobile)
+   ========================================================================== */
+.to-top {
+  position: fixed; right: 16px; bottom: 16px; z-index: 70;
+  width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer;
+  background: linear-gradient(135deg, var(--primary), var(--primary-bright)); color: #fff;
+  align-items: center; justify-content: center; box-shadow: var(--shadow-lift);
+  display: none; opacity: 0; transform: translateY(12px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.to-top svg { width: 22px; height: 22px; }
+.to-top.show { opacity: 1; transform: none; }
+@media (max-width: 860px) {
+  .to-top { display: flex; }
+}
+
+/* ==========================================================================
    Reveal animation (JS-gated so no-JS always shows content)
    ========================================================================== */
 html.js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }

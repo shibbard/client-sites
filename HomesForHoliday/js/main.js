@@ -123,6 +123,17 @@
     });
   }
 
+  // Back-to-top (mobile)
+  var toTop = document.querySelector("[data-to-top]");
+  if (toTop) {
+    var onScrollTop = function () { toTop.classList.toggle("show", window.scrollY > 500); };
+    window.addEventListener("scroll", onScrollTop, { passive: true });
+    onScrollTop();
+    toTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   // Lucide icons
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();
