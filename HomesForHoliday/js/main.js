@@ -64,6 +64,65 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // Property filter bar (region listing pages)
+  var filterBar = document.querySelector("[data-filter-scope]");
+  if (filterBar) {
+    var searchInput = filterBar.querySelector("[data-filter-search]");
+    var bedsSelect = filterBar.querySelector("[data-filter-beds]");
+    var poolCheckbox = filterBar.querySelector("[data-filter-pool]");
+    var clearButtons = filterBar.querySelectorAll("[data-filter-clear]");
+    var emptyState = filterBar.querySelector("[data-filter-empty]");
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".prop-card"));
+    var groups = Array.prototype.slice.call(document.querySelectorAll(".region-group"));
+
+    function cardBeds(card) {
+      var metaText = card.querySelector(".prop-meta") ? card.querySelector(".prop-meta").textContent : "";
+      var match = metaText.match(/(\d+)\s*Bed/i);
+      return match ? parseInt(match[1], 10) : 0;
+    }
+    function cardHasPool(card) {
+      return !!card.querySelector(".prop-pool");
+    }
+    function cardText(card) {
+      return card.textContent.toLowerCase();
+    }
+
+    function applyFilters() {
+      var query = (searchInput && searchInput.value || "").trim().toLowerCase();
+      var minBeds = bedsSelect ? parseInt(bedsSelect.value, 10) || 0 : 0;
+      var poolOnly = !!(poolCheckbox && poolCheckbox.checked);
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var matches = true;
+        if (query && cardText(card).indexOf(query) === -1) matches = false;
+        if (matches && minBeds && cardBeds(card) < minBeds) matches = false;
+        if (matches && poolOnly && !cardHasPool(card)) matches = false;
+        card.classList.toggle("is-filtered-out", !matches);
+        if (matches) visibleCount++;
+      });
+
+      groups.forEach(function (group) {
+        var visibleInGroup = group.querySelectorAll(".prop-card:not(.is-filtered-out)").length;
+        group.classList.toggle("is-empty", visibleInGroup === 0);
+      });
+
+      if (emptyState) emptyState.classList.toggle("show", visibleCount === 0);
+    }
+
+    if (searchInput) searchInput.addEventListener("input", applyFilters);
+    if (bedsSelect) bedsSelect.addEventListener("change", applyFilters);
+    if (poolCheckbox) poolCheckbox.addEventListener("change", applyFilters);
+    clearButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        if (searchInput) searchInput.value = "";
+        if (bedsSelect) bedsSelect.value = "0";
+        if (poolCheckbox) poolCheckbox.checked = false;
+        applyFilters();
+      });
+    });
+  }
+
   // Lucide icons
   if (window.lucide && typeof window.lucide.createIcons === "function") {
     window.lucide.createIcons();

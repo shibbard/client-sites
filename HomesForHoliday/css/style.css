@@ -177,10 +177,10 @@ p { color: var(--muted); }
   color: var(--nav-ink); position: relative; padding: 6px 0; transition: color .3s ease, opacity .2s;
 }
 .nav-menu a::after {
-  content: ""; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; border-radius: 2px;
-  background: var(--aqua); transition: width .3s ease;
+  content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 2px; border-radius: 2px;
+  background: var(--aqua); transform: scaleX(0); transform-origin: left; transition: transform .3s ease;
 }
-.nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
+.nav-menu a:hover::after, .nav-menu a.active::after { transform: scaleX(1); }
 .nav-menu a.active { opacity: 1; }
 .site-header.scrolled .nav-menu a.active { color: var(--primary); }
 
@@ -196,7 +196,7 @@ p { color: var(--muted); }
    Hero (full-bleed behind nav)
    ========================================================================== */
 .hero {
-  position: relative; min-height: 100vh; display: flex; align-items: flex-end;
+  position: relative; min-height: 82vh; display: flex; align-items: flex-end;
   color: #fff; overflow: hidden;
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
@@ -206,7 +206,7 @@ p { color: var(--muted); }
   background:
     linear-gradient(180deg, rgba(19, 31, 82, 0.55) 0%, rgba(19, 31, 82, 0.12) 34%, rgba(19, 31, 82, 0.30) 62%, rgba(19, 31, 82, 0.86) 100%);
 }
-.hero-inner { position: relative; z-index: 2; width: 100%; padding-bottom: 72px; padding-top: calc(var(--header-h) + 60px); }
+.hero-inner { position: relative; z-index: 2; width: 100%; padding-bottom: 64px; padding-top: calc(var(--header-h) + 36px); }
 .hero .label-caps { color: var(--aqua-light); }
 .hero h1 {
   color: #fff; font-size: clamp(2.5rem, 6.2vw, 4.8rem); font-weight: 800;
@@ -214,6 +214,7 @@ p { color: var(--muted); }
 }
 .hero p { color: rgba(255,255,255,0.92); font-size: 1.15rem; max-width: 52ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.hero-hint { margin-top: 24px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
 /* Glass quick-select bar */
 .quickbar { position: relative; z-index: 3; margin: -42px auto 0; max-width: 1000px; }
@@ -361,6 +362,60 @@ p { color: var(--muted); }
 .prop-meta svg { width: 17px; height: 17px; color: var(--primary); }
 .prop-card .btn { margin-top: 16px; }
 .prop-card .prop-soft { margin-top: 16px; text-align: center; font-size: 0.82rem; color: var(--muted); padding: 13px; background: var(--container-low); border-radius: var(--r); }
+
+/* ==========================================================================
+   Filter bar (region listing pages)
+   ========================================================================== */
+.filter-bar { margin-bottom: 36px; }
+.filter-bar-inner {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 14px;
+  background: var(--glass-strong); backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-soft); padding: 16px 18px;
+}
+.filter-search {
+  display: flex; align-items: center; gap: 10px; flex: 1 1 240px; min-width: 200px;
+  background: var(--pearl); border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 11px 18px; transition: border-color .25s ease, box-shadow .25s ease;
+}
+.filter-search:focus-within { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(36,55,155,0.1); }
+.filter-search svg { width: 17px; height: 17px; color: var(--muted); flex-shrink: 0; }
+.filter-search input { border: 0; outline: none; font-family: var(--font-body); font-size: 0.94rem; color: var(--ink); background: none; width: 100%; }
+.filter-search input::placeholder { color: var(--muted); }
+.filter-select { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.filter-select span { font-family: var(--font-label); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.filter-select select {
+  font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; color: var(--ink);
+  background: var(--pearl); border: 1px solid var(--line); border-radius: var(--r-pill);
+  padding: 9px 34px 9px 16px; cursor: pointer;
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235b6478' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center;
+  transition: border-color .25s ease;
+}
+.filter-select select:focus { outline: none; border-color: var(--primary); }
+.filter-toggle { display: flex; align-items: center; gap: 9px; flex-shrink: 0; cursor: pointer; user-select: none; }
+.filter-toggle input { accent-color: var(--primary); width: 17px; height: 17px; cursor: pointer; }
+.filter-toggle span { display: inline-flex; align-items: center; gap: 6px; font-size: 0.88rem; font-weight: 600; color: var(--ink); }
+.filter-toggle svg { width: 15px; height: 15px; color: var(--aqua); }
+.filter-clear {
+  font-family: var(--font-body); font-size: 0.84rem; font-weight: 700; color: var(--primary);
+  background: none; border: 0; cursor: pointer; padding: 8px 4px; margin-left: auto; flex-shrink: 0;
+  transition: color .2s ease;
+}
+.filter-clear:hover { color: var(--primary-bright); text-decoration: underline; }
+.filter-empty {
+  display: none; margin-top: 14px; padding: 16px 20px; text-align: center;
+  background: var(--container-low); border-radius: var(--r); color: var(--muted); font-size: 0.92rem;
+}
+.filter-empty.show { display: block; }
+.filter-empty .filter-empty-clear { color: var(--primary); font-weight: 700; background: none; border: 0; cursor: pointer; padding: 0; text-decoration: underline; }
+.prop-card.is-filtered-out { display: none; }
+.region-group.is-empty { display: none; }
+@media (max-width: 620px) {
+  .filter-bar-inner { padding: 14px; }
+  .filter-clear { margin-left: 0; width: 100%; text-align: center; border-top: 1px solid var(--line); padding-top: 12px; }
+}
 
 /* ==========================================================================
    Region hub cards (destinations page)
@@ -522,9 +577,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
   :root { --gutter: 18px; --header-h: 62px; }
   body { font-size: 16px; }
   .brand-logo { height: 46px; width: auto; }
-  .hero { min-height: 92vh; }
-  .hero-inner { padding-bottom: 54px; }
+  .hero { min-height: 80vh; }
+  .hero-inner { padding-bottom: 46px; }
   .usp-grid { grid-template-columns: 1fr 1fr; }
+  .usp-grid > .usp:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 260px; margin: 0 auto; }
+  .filter-search { flex-basis: 100%; }
   .bento { grid-template-columns: 1fr; grid-auto-rows: 210px; }
   .dest-card.wide, .dest-card.tall { grid-column: auto; grid-row: auto; }
   .steps { grid-template-columns: 1fr 1fr; gap: 12px; }

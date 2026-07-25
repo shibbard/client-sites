@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-25T00:00:00.000Z",
+  "title": "Design System: Home for Holiday",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "primary", "displayName": "Brand Navy", "canonical": "#122248", "tonalRamp": ["#0b1730", "#122248", "#1a2d5c", "#24379b", "#3f5fd6", "#5aa0e6", "#a9c6ef", "#e3edfa"] },
+      "navy-deep": { "role": "primary", "displayName": "Navy Deep", "canonical": "#0b1730", "tonalRamp": ["#050a17", "#0b1730", "#122248", "#1a2d5c", "#24379b", "#3f5fd6", "#5aa0e6", "#a9c6ef"] },
+      "primary": { "role": "primary", "displayName": "Signal Blue", "canonical": "#24379b", "tonalRamp": ["#0b1730", "#122248", "#1a2d5c", "#24379b", "#3f5fd6", "#5aa0e6", "#a9c6ef", "#e3edfa"] },
+      "primary-bright": { "role": "primary", "displayName": "Bright Blue", "canonical": "#3f5fd6", "tonalRamp": ["#122248", "#1a2d5c", "#24379b", "#3f5fd6", "#5a7bdf", "#7f9ce8", "#a9c6ef", "#d3e3f8"] },
+      "sky": { "role": "primary", "displayName": "Sky", "canonical": "#5aa0e6", "tonalRamp": ["#1a2d5c", "#24379b", "#3f5fd6", "#5aa0e6", "#79b4ec", "#9dc8f1", "#c2ddf7", "#e6f2fc"] },
+      "aqua": { "role": "secondary", "displayName": "Aqua", "canonical": "#0f9e94", "tonalRamp": ["#053733", "#0a5c55", "#0f9e94", "#16c1b5", "#3fd6cb", "#6ff0e6", "#a3f6ef", "#d6fbf8"] },
+      "aqua-light": { "role": "secondary", "displayName": "Aqua Light", "canonical": "#6ff0e6", "tonalRamp": ["#0a5c55", "#0f9e94", "#16c1b5", "#3fd6cb", "#6ff0e6", "#95f4ec", "#bff9f3", "#e6fdfa"] },
+      "amber": { "role": "tertiary", "displayName": "Amber", "canonical": "#b26a00", "tonalRamp": ["#4a2b00", "#7a4700", "#b26a00", "#d1830a", "#e0951f", "#eeac4c", "#f6cb8a", "#fbe6c4"] },
+      "amber-bright": { "role": "tertiary", "displayName": "Amber Bright", "canonical": "#e0951f", "tonalRamp": ["#7a4700", "#b26a00", "#d1830a", "#e0951f", "#eba847", "#f2c078", "#f8d9ab", "#fcecd6"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#16203a", "tonalRamp": ["#080b13", "#16203a", "#28345a", "#3d4a72", "#5b6478", "#7f889a", "#b9c0d0", "#eef2f9"] },
+      "muted": { "role": "neutral", "displayName": "Muted", "canonical": "#5b6478", "tonalRamp": ["#16203a", "#28345a", "#3d4a72", "#5b6478", "#7f889a", "#a4abbb", "#c9ced9", "#eef2f9"] },
+      "surface": { "role": "neutral", "displayName": "Surface", "canonical": "#f6f8fc", "tonalRamp": ["#eef2f9", "#f2f5fb", "#f6f8fc", "#f8fafd", "#fafcfe", "#fcfdfe", "#fdfeff", "#ffffff"] },
+      "pearl": { "role": "neutral", "displayName": "Pearl", "canonical": "#ffffff", "tonalRamp": ["#eef2f9", "#f2f5fb", "#f6f8fc", "#f8fafd", "#fafcfe", "#fcfdfe", "#fdfeff", "#ffffff"] }
+    },
+    "typographyMeta": {
+      "headline": { "displayName": "Headline", "purpose": "Section H2s across all pages." },
+      "title": { "displayName": "Title", "purpose": "Card and sub-section H3s." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, rendered in Muted." },
+      "label": { "displayName": "Label", "purpose": "Uppercase eyebrows, field labels, badges, footer headings." }
+    },
+    "shadows": [
+      { "name": "soft", "value": "0 14px 34px -20px rgba(26, 42, 108, 0.28)", "purpose": "Resting elevation for cards, tiles, glass panels." },
+      { "name": "lift", "value": "0 34px 70px -34px rgba(26, 42, 108, 0.36)", "purpose": "Larger elevation for quickbar and mobile nav panel." },
+      { "name": "glow", "value": "0 20px 50px -24px rgba(36, 55, 155, 0.4)", "purpose": "Hover-state elevation on interactive cards, buttons, tiles." }
+    ],
+    "motion": [
+      { "name": "hover-lift", "value": "transform: translateY(-2px to -6px)", "purpose": "Paired with the glow shadow on hover across buttons, cards, tiles." },
+      { "name": "reveal-ease", "value": "cubic-bezier(.2,.7,.2,1)", "purpose": "Scroll-triggered fade/rise-in for .reveal elements; disabled under prefers-reduced-motion." }
+    ],
+    "breakpoints": [
+      { "name": "lg", "value": "1024px" },
+      { "name": "md", "value": "860px" },
+      { "name": "sm", "value": "620px" },
+      { "name": "xs", "value": "380px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action button; navy-to-bright-blue gradient, pill shape.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Choose Your Destination</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: 10px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 14px 26px; border-radius: 999px; cursor: pointer; border: 1.5px solid transparent; transition: transform .25s ease, box-shadow .25s ease; } .ds-btn-primary { background: linear-gradient(135deg, #24379b, #3f5fd6); color: #fff; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { transform: translateY(-2px); box-shadow: 0 20px 50px -24px rgba(36, 55, 155, 0.4); }"
+    },
+    {
+      "name": "Amber Button",
+      "kind": "button",
+      "refersTo": "button-amber",
+      "description": "Pricing/fee-adjacent CTA; amber gradient, reserved for money moments.",
+      "html": "<a class=\"ds-btn ds-btn-amber\" href=\"#\">List Your Home</a>",
+      "css": ".ds-btn-amber { display: inline-flex; align-items: center; gap: 10px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 14px 26px; border-radius: 999px; border: 1.5px solid transparent; background: linear-gradient(135deg, #b26a00, #e0951f); color: #fff; transition: transform .25s ease, box-shadow .25s ease; } .ds-btn-amber:hover, .ds-btn-amber:focus-visible { transform: translateY(-2px); box-shadow: 0 18px 40px -20px rgba(224, 149, 31, 0.7); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary CTA used over imagery; translucent glass fill.",
+      "html": "<a class=\"ds-btn ds-btn-ghost\" href=\"#\">How It Works</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 10px; font-family: 'Hanken Grotesk', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 14px 26px; border-radius: 999px; background: rgba(255,255,255,0.66); backdrop-filter: blur(8px); color: #24379b; border: 1.5px solid rgba(36, 55, 155, 0.28); transition: .25s ease; } .ds-btn-ghost:hover, .ds-btn-ghost:focus-visible { background: #fff; border-color: #24379b; transform: translateY(-2px); }"
+    },
+    {
+      "name": "Destination Card",
+      "kind": "card",
+      "refersTo": "dest-card",
+      "description": "Bento-grid image tile for a destination, with dark gradient scrim and reveal-on-hover CTA.",
+      "html": "<a class=\"ds-dest-card\" href=\"#\"><img src=\"placeholder.jpg\" alt=\"\"><div class=\"ds-dest-body\"><span class=\"ds-dest-count\">34 Homes</span><h3>United Kingdom</h3><span class=\"ds-dest-go\">Explore →</span></div></a>",
+      "css": ".ds-dest-card { position: relative; overflow: hidden; border-radius: 22px; display: block; color: #fff; border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 14px 34px -20px rgba(26, 42, 108, 0.28); height: 250px; } .ds-dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.8,.2,1); } .ds-dest-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19,31,82,0) 30%, rgba(19,31,82,0.82) 100%); } .ds-dest-card:hover img { transform: scale(1.07); } .ds-dest-body { position: absolute; z-index: 2; left: 0; bottom: 0; padding: 26px; width: 100%; } .ds-dest-count { font-family: 'Geist', sans-serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: #6ff0e6; font-weight: 600; } .ds-dest-card h3 { color: #fff; font-size: 1.5rem; font-weight: 800; margin-top: 6px; } .ds-dest-go { display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; font-size: 0.82rem; font-weight: 700; opacity: 0; transition: .3s; } .ds-dest-card:hover .ds-dest-go { opacity: 1; }"
+    },
+    {
+      "name": "Property Card",
+      "kind": "card",
+      "refersTo": "prop-card",
+      "description": "Listing card for a single property with meta row and CTA.",
+      "html": "<div class=\"ds-prop-card\"><div class=\"ds-prop-media\"><img src=\"placeholder.jpg\" alt=\"\"></div><div class=\"ds-prop-body\"><span class=\"ds-prop-sub\">Cotswolds</span><h3>Willow Barn</h3><p class=\"ds-prop-type\">Sleeps 6 · 3 bed</p></div></div>",
+      "css": ".ds-prop-card { background: #fff; border: 1px solid rgba(26,32,58,0.09); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 14px 34px -20px rgba(26, 42, 108, 0.28); transition: transform .3s ease, box-shadow .3s ease; } .ds-prop-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px -24px rgba(36, 55, 155, 0.4); } .ds-prop-media { aspect-ratio: 3/2; overflow: hidden; } .ds-prop-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; } .ds-prop-card:hover .ds-prop-media img { transform: scale(1.06); } .ds-prop-body { padding: 22px; } .ds-prop-sub { font-family: 'Geist', sans-serif; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: #24379b; font-weight: 600; margin-bottom: 8px; } .ds-prop-card h3 { font-size: 1.22rem; font-weight: 700; line-height: 1.22; margin-bottom: 6px; color: #16203a; } .ds-prop-type { font-size: 0.9rem; color: #5b6478; }"
+    },
+    {
+      "name": "Glass Tile",
+      "kind": "card",
+      "description": "Frosted-glass USP/step tile over the mesh background (current signature; open to evolve).",
+      "html": "<div class=\"ds-glass-tile\"><div class=\"ds-glass-ico\">★</div><h4>Direct Owner Connections</h4></div>",
+      "css": ".ds-glass-tile { padding: 30px 22px; text-align: center; border-radius: 16px; background: rgba(255,255,255,0.66); border: 1px solid rgba(255,255,255,0.6); backdrop-filter: blur(16px); box-shadow: 0 14px 34px -20px rgba(26, 42, 108, 0.28); transition: transform .3s ease, box-shadow .3s ease; } .ds-glass-tile:hover { transform: translateY(-4px); box-shadow: 0 20px 50px -24px rgba(36, 55, 155, 0.4); } .ds-glass-ico { width: 52px; height: 52px; margin: 0 auto 16px; border-radius: 14px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba(36,55,155,0.12), rgba(90,160,230,0.14)); color: #24379b; } .ds-glass-tile h4 { font-size: 0.94rem; font-weight: 700; letter-spacing: -0.01em; color: #16203a; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "description": "Form field with primary-blue focus glow.",
+      "html": "<div class=\"ds-field\"><label>Your Name</label><input type=\"text\" placeholder=\"Jane Smith\"></div>",
+      "css": ".ds-field label { display: block; font-family: 'Geist', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #5b6478; margin-bottom: 8px; } .ds-field input { width: 100%; font-family: 'Hanken Grotesk', sans-serif; font-size: 1rem; color: #16203a; padding: 13px 14px; border: 1px solid rgba(26,32,58,0.09); border-radius: 12px; background: #f6f8fc; transition: border-color .25s ease, box-shadow .25s ease; } .ds-field input:focus { outline: none; border-color: #24379b; box-shadow: 0 0 0 4px rgba(36,55,155,0.1); background: #fff; }"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "description": "Fixed transparent-over-hero header that frosts on scroll; aqua underline on active/hover.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\">Home</a><a class=\"ds-nav-link\" href=\"#\">Destinations</a><a class=\"ds-nav-link\" href=\"#\">About</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 26px; padding: 16px 20px; background: rgba(246, 248, 252, 0.82); backdrop-filter: blur(16px); } .ds-nav-link { font-family: 'Hanken Grotesk', sans-serif; font-size: 0.86rem; font-weight: 600; color: #16203a; position: relative; padding: 6px 0; } .ds-nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; border-radius: 2px; background: #0f9e94; transition: width .3s ease; } .ds-nav-link:hover::after, .ds-nav-link--active::after { width: 100%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Crystalline Bento",
+    "overview": "Home for Holiday reads as premium and trustworthy: a polished, credible, faintly aspirational directory that has to earn confidence against agencies and OTAs on the strength of its own presentation, since it has no booking engine of its own to lean on. The system pairs a deep brand navy with a bento-grid structure of frosted-glass cards floating over a soft, luminous mesh-gradient backdrop — destinations, USPs, and steps are all presented as discrete tiles rather than continuous editorial flow, giving the site a curated, catalog-like rhythm that echoes \"handpicked\" and \"exclusive\" from the copy.\n\nImagery carries the emotional weight (full-bleed hero photography, destination and property photos), while the UI chrome stays quiet and structural: navy for authority and trust, aqua as a sparing highlight (rules, hover accents, active states), amber reserved for money-adjacent moments (fees, pricing) to differentiate them from primary navigation actions.\n\nThe glass-and-soft-shadow treatment (frosted backdrop-filter cards, navy-tinted ambient shadows) is the current signature but is explicitly open to evolve — it is not a locked invariant. Future work may simplify or replace it as long as the navy identity, bento structure, and premium/trustworthy tone survive.",
+    "keyCharacteristics": [
+      "Deep navy (#122248) as the anchor brand color, applied to text, footer, gradients, and dark overlays — never as a large flat background on light pages.",
+      "Bento-grid tiling for destinations, USPs, and steps; content is chunked into discrete cards, not long-form flow.",
+      "Frosted-glass surfaces over a soft radial-gradient mesh background (currently signature, open to change).",
+      "Full-bleed photography carries emotion; UI chrome stays restrained and structural.",
+      "Aqua as a rare accent (rules, active underlines, hover glints); amber reserved specifically for pricing/fee-related copy."
+    ],
+    "rules": [
+      { "name": "The Amber Reserve Rule", "body": "Amber appears only where money is the subject (pricing, fees, the owners' rate callout). It never substitutes for the primary blue on ordinary CTAs — its rarity is what signals \"this is a price.\"", "section": "colors" },
+      { "name": "The One Voice, Two Registers Rule", "body": "Hanken Grotesk carries every reading size; Geist appears only at label scale (≤0.82rem) and always uppercase. Never use Geist for body copy or headlines.", "section": "typography" }
+    ],
+    "dos": [
+      "Do keep amber exclusive to money/pricing content (see Amber Reserve Rule).",
+      "Do use the aqua accent sparingly — rules, underlines, and hover glints, never as a dominant fill.",
+      "Do let full-bleed photography carry emotional weight; keep UI chrome navy/neutral and structural.",
+      "Do use the pill radius (999px) for every button and badge; use the 8–28px escalating radius scale for everything else."
+    ],
+    "donts": [
+      "Don't use Geist at body or headline scale — it's a label-only face.",
+      "Don't use navy as a large flat background on light-mode pages; reserve it for footer, overlays, and dark gradients.",
+      "Don't treat the frosted-glass/soft-shadow elevation system as fixed — it may be simplified in future work as long as the navy identity and bento structure are preserved."
+    ]
+  }
+}
