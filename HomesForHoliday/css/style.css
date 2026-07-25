@@ -204,15 +204,16 @@ p { color: var(--muted); }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(19, 31, 82, 0.55) 0%, rgba(19, 31, 82, 0.12) 34%, rgba(19, 31, 82, 0.30) 62%, rgba(19, 31, 82, 0.86) 100%);
+    linear-gradient(180deg, rgba(11, 23, 48, 0.30) 0%, rgba(11, 23, 48, 0.05) 30%, rgba(11, 23, 48, 0.10) 56%, rgba(11, 23, 48, 0.52) 100%);
 }
 .hero-inner { position: relative; z-index: 2; width: 100%; padding-bottom: 64px; padding-top: calc(var(--header-h) + 36px); }
-.hero .label-caps { color: var(--aqua-light); }
+.hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 10px rgba(8,15,35,0.55); }
 .hero h1 {
   color: #fff; font-size: clamp(2.5rem, 6.2vw, 4.8rem); font-weight: 800;
   margin: 18px 0 20px; max-width: 16ch; letter-spacing: -0.03em; line-height: 1.02;
+  text-shadow: 0 2px 26px rgba(8,15,35,0.42), 0 1px 4px rgba(8,15,35,0.4);
 }
-.hero p { color: rgba(255,255,255,0.92); font-size: 1.15rem; max-width: 52ch; }
+.hero p { color: #fff; font-size: 1.15rem; max-width: 52ch; text-shadow: 0 1px 14px rgba(8,15,35,0.55), 0 1px 3px rgba(8,15,35,0.45); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 .hero-hint { margin-top: 24px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
@@ -318,11 +319,11 @@ p { color: var(--muted); }
 .listing-hero {
   position: relative; color: #fff; min-height: 58vh; display: flex; align-items: flex-end; overflow: hidden;
 }
-.listing-hero .hero-bg::after { background: linear-gradient(180deg, rgba(19,31,82,0.5) 0%, rgba(19,31,82,0.2) 40%, rgba(19,31,82,0.86) 100%); }
+.listing-hero .hero-bg::after { background: linear-gradient(180deg, rgba(11,23,48,0.34) 0%, rgba(11,23,48,0.12) 42%, rgba(11,23,48,0.64) 100%); }
 .listing-hero-inner { position: relative; z-index: 2; padding: calc(var(--header-h) + 30px) 0 56px; }
-.listing-hero h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.6rem); margin: 14px 0 16px; letter-spacing: -0.03em; }
-.listing-hero p { color: rgba(255,255,255,0.92); max-width: 58ch; }
-.listing-hero .label-caps { color: var(--aqua-light); }
+.listing-hero h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.6rem); margin: 14px 0 16px; letter-spacing: -0.03em; text-shadow: 0 2px 24px rgba(8,15,35,0.42), 0 1px 4px rgba(8,15,35,0.4); }
+.listing-hero p { color: #fff; max-width: 58ch; text-shadow: 0 1px 14px rgba(8,15,35,0.55), 0 1px 3px rgba(8,15,35,0.45); }
+.listing-hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 10px rgba(8,15,35,0.55); }
 
 .breadcrumb { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--muted); padding: 22px 0; flex-wrap: wrap; }
 .breadcrumb a:hover { color: var(--primary); }
@@ -360,8 +361,13 @@ p { color: var(--muted); }
 .prop-meta { display: flex; gap: 18px; padding: 14px 0; margin-top: auto; border-top: 1px solid var(--line); }
 .prop-meta span { display: inline-flex; align-items: center; gap: 7px; font-size: 0.85rem; color: var(--ink); font-weight: 600; }
 .prop-meta svg { width: 17px; height: 17px; color: var(--primary); }
-.prop-card .btn { margin-top: 16px; }
 .prop-card .prop-soft { margin-top: 16px; text-align: center; font-size: 0.82rem; color: var(--muted); padding: 13px; background: var(--container-low); border-radius: var(--r); }
+/* Whole card is the link; the CTA is a calm text affordance, not a button wall */
+a.prop-card { cursor: pointer; color: inherit; }
+.prop-cta { margin-top: 16px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.92rem; color: var(--primary); }
+.prop-cta svg { width: 16px; height: 16px; transition: transform .25s ease; }
+.prop-card:hover .prop-cta { color: var(--primary-bright); }
+.prop-card:hover .prop-cta svg { transform: translate(3px, -3px); }
 
 /* ==========================================================================
    Filter bar (region listing pages)
@@ -523,6 +529,7 @@ p { color: var(--muted); }
 .footer-col a:hover { color: #fff; }
 .footer-col .with-ico { display: flex; gap: 10px; align-items: flex-start; }
 .footer-col .with-ico svg { width: 16px; height: 16px; color: var(--aqua-light); flex-shrink: 0; margin-top: 3px; }
+.footer-col .with-ico a[href^="mailto:"] { white-space: nowrap; }
 .footer-bottom { border-top: 1px solid rgba(234,238,251,0.14); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-bottom p { color: rgba(234,238,251,0.5); font-size: 0.84rem; }
 .footer-bottom .fb-links { display: flex; gap: 22px; }
