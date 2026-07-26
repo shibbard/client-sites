@@ -163,7 +163,7 @@ p { color: var(--muted); }
   height: var(--header-h); gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 11px; line-height: 1; flex-shrink: 0; }
-.brand-mark { height: 50px; width: auto; display: block; flex-shrink: 0; position: relative; top: -2px; }
+.brand-mark { height: 56px; width: auto; display: block; flex-shrink: 0; }
 /* Inline traced wordmark; recolours to the current nav ink via currentColor */
 .brand-logo {
   display: block; height: 54px; width: auto;
