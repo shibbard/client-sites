@@ -621,7 +621,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .brand-logo { height: 44px; width: auto; }
   .brand-mark { height: 42px; }
   .brand { gap: 8px; }
-  .hero { min-height: 80vh; }
+  .hero { min-height: 100vh; min-height: 100svh; }
   .hero-inner { padding-bottom: 46px; }
   .hero-actions { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
