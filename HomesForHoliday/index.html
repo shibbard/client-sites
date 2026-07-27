@@ -14,7 +14,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Geist:wght@400;500;600&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 <script src="js/main.js" defer></script>
@@ -25,10 +25,10 @@
   <div class="container">
     <div class="nav">
       <a href="index.html" class="brand" aria-label="Home for Holiday — home">
-        <img class="brand-logo-full" src="images/logo-full.svg" alt="Home for Holiday" width="964" height="816">
+        <img class="brand-mark" src="images/emblem.svg" alt="Home for Holiday" width="610" height="448">
       </a>
       <nav class="nav-menu" aria-label="Main menu">
-        <span class="nav-menu-logo"><svg class="brand-logo" viewBox="0 0 656 556" role="img" aria-label="Home for Holiday" focusable="false"><use href="#hfh-logo"/></svg></span>
+        <span class="nav-menu-logo"><img src="images/logo-full.svg" alt="Home for Holiday" width="588" height="603"></span>
         <a href="index.html" class="active">Home</a>
         <a href="destinations.html">Destinations</a>
         <a href="about.html">About</a>
@@ -47,10 +47,12 @@
   <div class="hero-bg"><img src="images/hero-home.jpg" alt="Beachfront holiday home at sunset"></div>
   <div class="container hero-inner">
     <span class="label-caps">Enjoy &middot; Relax &middot; Travel</span>
-    <h1>Exceptional homes for an extraordinary escape.</h1>
-    <p>A handpicked directory of exclusive holiday homes worldwide. Every property is booked directly through the owner: transparent, personal, and free of agency fees of up to 35%.</p>
+    <h1>Recommended Properties</h1>
+    <p class="hero-sub">Exclusive &amp; available for holiday rental</p>
+    <p class="hero-regions">UK &middot; US &middot; Europe &middot; Caribbean Islands &amp; more</p>
+    <p>Every property is presented through its own individual website &mdash; interact directly with the owner: transparent, personal, and free of agency fees of up to 35%.</p>
     <div class="hero-actions">
-      <a href="destinations.html" class="btn btn-amber">Explore Destinations <i data-lucide="arrow-right"></i></a>
+      <a href="destinations.html" class="btn btn-amber">Explore Properties <i data-lucide="arrow-right"></i></a>
       <a href="#how" class="btn btn-glass">How It Works</a>
     </div>
   </div>
@@ -59,8 +61,8 @@
 <section class="section">
   <div class="container">
     <div class="section-head center reveal">
-      <h2>Handpicked destinations</h2>
-      <p>Exclusive properties we recommend for the refined tourist &mdash; from charming British cottages to sun-drenched Mediterranean villas and Caribbean island retreats. Discover 88 homes across the globe.</p>
+      <h2>Recommended properties &amp; regions</h2>
+      <p>Exclusive properties we recommend for the refined tourist &mdash; across the UK, US, Europe and the Caribbean Islands &amp; more. Every one presented through its owner&rsquo;s own website.</p>
     </div>
     <div class="bento">
       
@@ -115,7 +117,7 @@
       <div class="usp reveal"><div class="usp-ico"><i data-lucide="gem"></i></div><h4>Exclusive Property Showcase</h4></div>
       <div class="usp reveal"><div class="usp-ico"><i data-lucide="badge-pound-sterling"></i></div><h4>No Agency Fees</h4></div>
       <div class="usp reveal"><div class="usp-ico"><i data-lucide="concierge-bell"></i></div><h4>Personalised Service</h4></div>
-      <div class="usp reveal"><div class="usp-ico"><i data-lucide="globe"></i></div><h4>Global Reach, Local Touch</h4></div>
+      <div class="usp reveal"><div class="usp-ico"><i data-lucide="badge-check"></i></div><h4>Personally Recommended</h4></div>
     </div>
   </div>
 </section>
@@ -131,7 +133,7 @@
         <h2>Like staying at a friend&rsquo;s luxury vacation home</h2>
         <p>Every home in our directory is of medium to high standard and booked directly through its owner, so you get honest descriptions, a personal welcome, and no middleman.</p>
         <ul class="tick-list">
-          <li><i data-lucide="check-circle-2"></i><span><strong>High-standard homes</strong> in desirable global locations</span></li>
+          <li><i data-lucide="check-circle-2"></i><span><strong>High-standard homes</strong> in sought-after destinations</span></li>
           <li><i data-lucide="check-circle-2"></i><span><strong>No agency fees</strong> &mdash; communicate with the owner direct</span></li>
           <li><i data-lucide="check-circle-2"></i><span><strong>A website on every home</strong> for full transparency</span></li>
           <li><i data-lucide="check-circle-2"></i><span>Handy links for <strong>low-cost flights &amp; car rental</strong></span></li>
@@ -177,7 +179,7 @@
 <section class="section cta-band">
   <div class="container">
     <span class="label-caps">For Property Owners</span>
-    <h2>Showcase your holiday home to the world</h2>
+    <h2>Showcase your holiday home to the right guests</h2>
     <p>List your property in our directory and reach guests who want to book direct. We can even build you an affordable website from just &pound;35+VAT per month.</p>
     <div class="hero-actions">
       <a href="for-owners.html" class="btn btn-amber">List Your Property <i data-lucide="arrow-right"></i></a>
@@ -189,9 +191,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img class="footer-logo" src="images/logo-full.svg" alt="Home for Holiday" width="964" height="816">
-        <span class="brand-sub">Booked Direct with the Owner</span>
-        <p>A curated directory of exclusive holiday homes worldwide — book direct with owners and avoid agency fees of up to 35%.</p>
+        <img class="footer-logo" src="images/logo-full.svg" alt="Home for Holiday — Owners Direct property &amp; resort websites" width="588" height="603">
+        <p>Recommended properties across the UK, US, Europe and the Caribbean Islands &amp; more — booked direct with owners, free of agency fees.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>

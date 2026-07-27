@@ -44,6 +44,7 @@
   /* Type */
   --font-body: "Hanken Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-label: "Geist", "Hanken Grotesk", sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
 
   /* Layout */
   --container-max: 1220px;
@@ -85,9 +86,11 @@ body::before {
 }
 
 /* ---------- Typography ---------- */
-h1, h2, h3, h4 { font-family: var(--font-body); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); }
-h2 { font-size: clamp(1.9rem, 4vw, 3rem); }
-h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.01em; }
+/* Editorial serif for display headings; sans keeps functional labels crisp */
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.14; letter-spacing: -0.005em; color: var(--ink); }
+h4 { font-family: var(--font-body); font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--ink); }
+h2 { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+h3 { font-size: 1.5rem; font-weight: 600; letter-spacing: 0; }
 p { color: var(--muted); }
 
 .label-caps {
@@ -163,7 +166,7 @@ p { color: var(--muted); }
   height: var(--header-h); gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 11px; line-height: 1; flex-shrink: 0; }
-.brand-logo-full { height: 58px; width: auto; display: block; flex-shrink: 0; }
+.brand-mark { height: 56px; width: auto; display: block; flex-shrink: 0; }
 /* Inline traced wordmark; recolours to the current nav ink via currentColor */
 .brand-logo {
   display: block; height: 54px; width: auto;
@@ -216,11 +219,13 @@ p { color: var(--muted); }
 .hero-inner { position: relative; z-index: 2; width: 100%; padding-bottom: 64px; padding-top: calc(var(--header-h) + 36px); }
 .hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 3px rgba(8,15,35,0.6); }
 .hero h1 {
-  color: #fff; font-size: clamp(2.5rem, 6.2vw, 4.8rem); font-weight: 800;
-  margin: 18px 0 20px; max-width: 16ch; letter-spacing: -0.03em; line-height: 1.02;
-  text-shadow: 0 2px 8px rgba(8,15,35,0.5);
+  color: #fff; font-size: clamp(2.6rem, 6.4vw, 5rem); font-weight: 700;
+  margin: 16px 0 10px; max-width: 16ch; letter-spacing: -0.005em; line-height: 1.04;
+  text-shadow: 0 2px 10px rgba(8,15,35,0.5);
 }
-.hero p { color: #fff; font-size: 1.15rem; max-width: 52ch; font-weight: 500; text-shadow: 0 1px 5px rgba(8,15,35,0.6); }
+.hero-sub { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; font-size: clamp(0.85rem, 1.7vw, 1.05rem); color: #f6b64a; margin: 0; text-shadow: 0 1px 6px rgba(8,15,35,0.65); }
+.hero-regions { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: clamp(0.72rem, 1.3vw, 0.86rem); color: rgba(255,255,255,0.92); margin: 9px 0 0; text-shadow: 0 1px 6px rgba(8,15,35,0.65); }
+.hero p { color: #fff; font-size: 1.12rem; max-width: 52ch; font-weight: 500; margin-top: 20px; text-shadow: 0 1px 5px rgba(8,15,35,0.6); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 .hero-hint { margin-top: 24px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
@@ -597,7 +602,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
     box-shadow: var(--shadow-lift); z-index: 90; overflow-y: auto;
   }
   .nav-menu-logo { display: block; margin: 0 0 20px; }
-  .nav-menu-logo .brand-logo { height: 52px; color: var(--navy); }
+  .nav-menu-logo img { width: 148px; height: auto; display: block; }
   .nav-menu.open { transform: translateX(0); }
   .nav-menu a { color: var(--ink); font-size: 1.05rem; font-weight: 600; padding: 15px 0; width: 100%; border-bottom: 1px solid var(--line); }
   .nav-menu a::after { display: none; }
@@ -617,7 +622,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   :root { --gutter: 18px; --header-h: 62px; }
   body { font-size: 16px; }
   .brand-logo { height: 44px; width: auto; }
-  .brand-logo-full { height: 48px; }
+  .brand-mark { height: 46px; }
   .brand { gap: 8px; }
   .hero { min-height: 100vh; min-height: 100svh; }
   .hero-inner { padding-bottom: 46px; }
