@@ -537,9 +537,7 @@ a.prop-card { cursor: pointer; color: inherit; }
               radial-gradient(30vw 30vw at 5% 100%, rgba(15,158,148,0.18), transparent 60%); }
 .site-footer .container { position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 44px; padding-bottom: 56px; }
-.footer-lockup { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
-.footer-brand .brand-mark { height: 56px; }
-.footer-brand .brand-logo { height: 60px; color: #fff; }
+.footer-logo { width: 180px; height: auto; display: block; margin-bottom: 10px; }
 .footer-brand .brand-sub { font-family: var(--font-label); font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua-light); margin-top: 6px; display: block; }
 .footer-brand p { color: rgba(234,238,251,0.62); margin-top: 16px; font-size: 0.95rem; max-width: 34ch; }
 .footer-col h4 { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-light); margin-bottom: 18px; }
