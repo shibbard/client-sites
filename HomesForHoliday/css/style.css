@@ -60,7 +60,7 @@
   --r-pill: 999px;
 
   /* Header height */
-  --header-h: 78px;
+  --header-h: 84px;
 }
 
 /* ---------- Reset ---------- */
@@ -174,16 +174,12 @@ p { color: var(--muted); }
 /* Horizontal lockup: the client's logo split into mark + text so the business
    name can be scaled up for legibility without forcing a taller header
    (a tall fixed header would eat mobile screen space on every page). */
-/* Tight edge + soft halo so the orange logo separates from bright sky */
-.brand-mark { height: 56px; width: auto; display: block; flex-shrink: 0;
+/* Client-supplied lockup. Tight edge + soft halo so the orange separates
+   from bright sky; shadow drops away once the header turns solid on scroll. */
+.brand-mark { height: 66px; width: auto; display: block; flex-shrink: 0;
   filter: drop-shadow(0 1px 2px rgba(6,12,28,0.55)) drop-shadow(0 3px 12px rgba(6,12,28,0.5));
   transition: filter .3s ease; }
-/* Wordmark stays brand orange; the shadow keeps it legible over the hero photo */
-.brand-wordmark { height: 40px; width: auto; display: block; flex-shrink: 0;
-  filter: drop-shadow(0 1px 2px rgba(6,12,28,0.6)) drop-shadow(0 3px 12px rgba(6,12,28,0.55));
-  transition: filter .3s ease; }
 .site-header.scrolled .brand-mark { filter: none; }
-.site-header.scrolled .brand-wordmark { filter: none; }
 /* Inline traced wordmark; recolours to the current nav ink via currentColor */
 .brand-logo {
   display: block; height: 54px; width: auto;
@@ -641,11 +637,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 620px) {
-  :root { --gutter: 18px; --header-h: 68px; }
+  :root { --gutter: 18px; --header-h: 72px; }
   body { font-size: 16px; }
   .brand-logo { height: 44px; width: auto; }
-  .brand-mark { height: 46px; }
-  .brand-wordmark { height: 33px; }
+  .brand-mark { height: 54px; }
+
   .brand { gap: 8px; }
   .brand { gap: 8px; }
   .hero { min-height: 100vh; min-height: 100svh; }
