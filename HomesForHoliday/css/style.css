@@ -60,7 +60,7 @@
   --r-pill: 999px;
 
   /* Header height */
-  --header-h: 82px;
+  --header-h: 78px;
 }
 
 /* ---------- Reset ---------- */
@@ -171,7 +171,18 @@ p { color: var(--muted); }
   height: var(--header-h); gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 11px; line-height: 1; flex-shrink: 0; }
-.brand-mark { height: 64px; width: auto; display: block; flex-shrink: 0; }
+/* Horizontal lockup: the client's logo split into mark + text so the business
+   name can be scaled up for legibility without forcing a taller header
+   (a tall fixed header would eat mobile screen space on every page). */
+.brand-mark { height: 56px; width: auto; display: block; flex-shrink: 0;
+  filter: drop-shadow(0 2px 5px rgba(6,12,28,0.45)); transition: filter .3s ease; }
+/* Over the hero photo the name reads white; once the header turns to solid
+   glass on scroll it returns to the brand orange. */
+.brand-wordmark { height: 40px; width: auto; display: block; flex-shrink: 0;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 5px rgba(6,12,28,0.55));
+  transition: filter .3s ease; }
+.site-header.scrolled .brand-mark { filter: none; }
+.site-header.scrolled .brand-wordmark { filter: none; }
 /* Inline traced wordmark; recolours to the current nav ink via currentColor */
 .brand-logo {
   display: block; height: 54px; width: auto;
@@ -628,10 +639,12 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 @media (max-width: 620px) {
-  :root { --gutter: 18px; --header-h: 62px; }
+  :root { --gutter: 18px; --header-h: 68px; }
   body { font-size: 16px; }
   .brand-logo { height: 44px; width: auto; }
   .brand-mark { height: 46px; }
+  .brand-wordmark { height: 33px; }
+  .brand { gap: 8px; }
   .brand { gap: 8px; }
   .hero { min-height: 100vh; min-height: 100svh; }
   .hero-inner { padding-bottom: 62px; }
