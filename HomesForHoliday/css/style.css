@@ -463,6 +463,52 @@ a.prop-card { cursor: pointer; color: inherit; }
 }
 
 /* ==========================================================================
+   Featured carousel ("this month's entries")
+   ========================================================================== */
+.featured { padding-bottom: clamp(50px, 7vw, 90px); }
+.carousel { position: relative; margin: 0 auto; max-width: 1600px; }
+.car-viewport { overflow: hidden; padding: 6px 0 14px; }
+.car-track {
+  display: flex; gap: 24px; padding: 0 max(var(--gutter), calc((100vw - var(--container-max)) / 2));
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;
+}
+.car-track::-webkit-scrollbar { display: none; }
+.car-slide { flex: 0 0 calc((min(100vw, var(--container-max)) - 2 * var(--gutter) - 48px) / 3); scroll-snap-align: start; }
+.car-slide .prop-card { height: 100%; }
+.feat-badge {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  background: linear-gradient(135deg, var(--amber), var(--amber-bright)); color: #fff;
+  font-family: var(--font-label); font-size: 0.62rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 11px; border-radius: var(--r-pill);
+}
+.car-btn {
+  position: absolute; top: calc(50% - 34px); transform: translateY(-50%); z-index: 5;
+  width: 46px; height: 46px; border-radius: 50%; cursor: pointer;
+  background: var(--glass-strong); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px); box-shadow: var(--shadow-lift); color: var(--ink);
+  display: flex; align-items: center; justify-content: center; transition: .25s;
+}
+.car-btn:hover { background: #fff; transform: translateY(-50%) scale(1.06); }
+.car-btn svg { width: 22px; height: 22px; }
+.car-btn[disabled] { opacity: 0; pointer-events: none; }
+.car-prev { left: 14px; }
+.car-next { right: 14px; }
+.car-dots { display: flex; justify-content: center; gap: 8px; margin-top: 18px; }
+.car-dots button {
+  width: 8px; height: 8px; padding: 0; border: 0; border-radius: 50%; cursor: pointer;
+  background: var(--outline-variant); transition: .25s;
+}
+.car-dots button[aria-selected="true"] { background: var(--brand-orange); width: 24px; border-radius: 99px; }
+.feat-cta {
+  margin-top: 34px; display: flex; align-items: center; justify-content: space-between; gap: 26px;
+  flex-wrap: wrap; padding: 28px 32px; border-radius: var(--r-xl);
+  background: linear-gradient(160deg, #fff7ea, #fdf3f7); border: 1px solid var(--glass-border);
+}
+.feat-cta h3 { margin-bottom: 6px; }
+.feat-cta p { max-width: 60ch; font-size: 0.98rem; }
+
+/* ==========================================================================
    Region hub cards (destinations page)
    ========================================================================== */
 .hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -610,6 +656,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .prop-grid { grid-template-columns: repeat(2, 1fr); }
+  .car-slide { flex-basis: calc((100vw - 2 * var(--gutter) - 24px) / 2); }
 }
 @media (max-width: 860px) {
   .nav-menu {
@@ -656,6 +703,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .steps { grid-template-columns: 1fr 1fr; gap: 12px; }
   .step { padding: 22px 18px; }
   .prop-grid { grid-template-columns: 1fr; }
+  /* peek the next card so it reads as swipeable */
+  .car-track { gap: 14px; }
+  .car-slide { flex-basis: calc(100vw - 2 * var(--gutter) - 34px); }
+  .car-btn { display: none; }
+  .feat-cta { padding: 24px; text-align: center; justify-content: center; }
   .form-row { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
