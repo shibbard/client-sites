@@ -40,6 +40,8 @@ Homes for Holiday is a holiday-home marketing directory, established in 2014 and
 - Travel Tools (flights & car hire): /travel-resources.html
 - For Owners (list a property / website design): /for-owners.html
 - Privacy Policy: /privacy-policy.html
+- Terms of Use: /terms.html
+- Disclaimer: /disclaimer.html
 
 ## How it works
 1. Choose a destination (country or region).

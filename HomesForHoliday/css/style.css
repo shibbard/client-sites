@@ -615,6 +615,14 @@ a.prop-card { cursor: pointer; color: inherit; }
 .footer-col .with-ico { display: flex; gap: 10px; align-items: flex-start; }
 .footer-col .with-ico svg { width: 16px; height: 16px; color: var(--aqua-light); flex-shrink: 0; margin-top: 3px; }
 .footer-col .with-ico a[href^="mailto:"] { white-space: nowrap; }
+/* Small-print disclaimers used near outbound/third-party links */
+.fineprint { font-size: 0.85rem; line-height: 1.55; color: var(--muted); }
+.fineprint a { color: var(--primary); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.fineprint a:hover { color: var(--primary-bright); }
+
+.footer-legal { border-top: 1px solid rgba(234,238,251,0.14); padding: 22px 0 4px; }
+.footer-legal p { color: rgba(234,238,251,0.45); font-size: 0.82rem; line-height: 1.6; max-width: 90ch; margin-bottom: 8px; }
+
 .footer-bottom { border-top: 1px solid rgba(234,238,251,0.14); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-bottom p { color: rgba(234,238,251,0.5); font-size: 0.84rem; }
 .footer-bottom .fb-links { display: flex; gap: 22px; }
