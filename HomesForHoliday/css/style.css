@@ -625,7 +625,7 @@ a.prop-card { cursor: pointer; color: inherit; }
 
 .footer-bottom { border-top: 1px solid rgba(234,238,251,0.14); padding: 24px 0; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-bottom p { color: rgba(234,238,251,0.5); font-size: 0.84rem; }
-.footer-bottom .fb-links { display: flex; gap: 22px; }
+.footer-bottom .fb-links { display: flex; gap: 22px; flex-wrap: wrap; }
 .footer-bottom a { color: rgba(234,238,251,0.5); font-size: 0.84rem; }
 .footer-bottom a:hover { color: var(--aqua-light); }
 
@@ -719,6 +719,12 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .form-row { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  /* Centre the legal bar and let the links sit as an even, tappable row */
+  .footer-legal { text-align: center; }
+  .footer-legal p { margin-left: auto; margin-right: auto; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 14px; }
+  .footer-bottom .fb-links { justify-content: center; gap: 10px 20px; }
+  .footer-bottom .fb-links a { padding: 4px 0; }
   .quickbar-inner { flex-direction: column; align-items: stretch; }
   .quickbar a { min-width: 0; }
   .quickbar-label { text-align: center; padding-bottom: 4px; }
