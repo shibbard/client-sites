@@ -509,6 +509,55 @@ a.prop-card { cursor: pointer; color: inherit; }
 .feat-cta p { max-width: 60ch; font-size: 0.98rem; }
 
 /* ==========================================================================
+   "Key to the door" — the monthly-access concept
+   ========================================================================== */
+.key-section { padding-top: 0; }
+.key-card {
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(28px, 5vw, 60px);
+  align-items: center; padding: clamp(30px, 5vw, 54px); border-radius: var(--r-xl);
+  background: linear-gradient(150deg, #fff8ec 0%, #fdf3f7 55%, #eef2fb 100%);
+  border: 1px solid var(--glass-border); box-shadow: var(--shadow-soft);
+}
+.key-body .label-caps { display: block; margin-bottom: 12px; }
+.key-body h2 { margin-bottom: 14px; }
+.key-lead { font-size: 1.1rem; margin-bottom: 6px; }
+.key-price {
+  text-align: center; padding: 30px 26px; border-radius: var(--r-lg);
+  background: rgba(255,255,255,0.82); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px); box-shadow: var(--shadow-soft);
+}
+.key-ico { width: 34px; height: 34px; color: var(--brand-orange); }
+.key-amount { font-family: var(--font-display); font-size: 3.4rem; font-weight: 600; color: var(--ink); line-height: 1; margin: 10px 0 4px; }
+.key-term { font-family: var(--font-label); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
+.key-btn { cursor: default; opacity: 0.92; }
+.key-soon { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
+
+/* ==========================================================================
+   Bespoke travel band
+   ========================================================================== */
+.travel-band {
+  margin-top: 44px; padding: clamp(26px, 4vw, 38px); border-radius: var(--r-xl);
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(24px, 4vw, 48px); align-items: center;
+}
+.travel-intro .label-caps { display: block; margin-bottom: 10px; }
+.travel-intro h3 { margin-bottom: 8px; }
+.travel-intro p { font-size: 0.98rem; }
+.travel-links { display: grid; gap: 14px; }
+.travel-card {
+  display: flex; align-items: center; gap: 16px; padding: 18px 20px;
+  background: var(--pearl); border: 1px solid var(--line); border-radius: var(--r-lg);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.travel-card:hover { transform: translateX(4px); border-color: var(--brand-orange); box-shadow: var(--shadow-soft); }
+.travel-card > svg:first-child { width: 26px; height: 26px; color: var(--brand-orange); flex-shrink: 0; }
+.travel-card div { flex: 1; display: flex; flex-direction: column; }
+.travel-card strong { font-size: 1.02rem; color: var(--ink); }
+.travel-card span { font-size: 0.88rem; color: var(--muted); }
+.travel-go { width: 18px; height: 18px; color: var(--muted); flex-shrink: 0; }
+
+/* ==========================================================================
    Region hub cards (destinations page)
    ========================================================================== */
 .hub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -716,6 +765,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .car-slide { flex-basis: calc(100vw - 2 * var(--gutter) - 34px); }
   .car-btn { display: none; }
   .feat-cta { padding: 24px; text-align: center; justify-content: center; }
+  .key-card { grid-template-columns: 1fr; }
+  .travel-band { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
