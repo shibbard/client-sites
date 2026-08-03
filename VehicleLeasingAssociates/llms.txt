@@ -29,17 +29,19 @@
 - **Personal & business specialist** — tailored leasing for individuals and businesses of all sizes
 - **Market insights** — up-to-date data to guide smarter decisions
 - **Strong partnerships** — established relationships built on trust and results
-- **Ongoing support** — a named support specialist throughout your journey
 - **Collective buying power** — pay less thanks to the group's purchasing power across funders
 
 ## Lease deal examples (illustrative)
 
-- **Renault 4** (electric, 249-mile range) — 3 year personal lease, e.g. £46.08/week, £199.68/month, £2,396.16 initial (inc VAT). Ref-TWC12
-- **Renault 5** (electric, 248-mile range) — 3 year personal lease, e.g. £54.70/week, £237.04/month, £2,844.48 initial (inc VAT). Ref-SPC11
-- **BYD Atto 2** (electric, 270-mile range) — 3 year business lease, e.g. £45.64/week, £197.78/month, £2,373.36 initial (+VAT). Ref-SPC11
-- **Dacia Spring** (electric, 140-mile range) — 3 year personal lease, e.g. £31.03/week, £134.50/month, £1,614.00 initial (inc VAT). Ref-SPC11
-- **Nissan Qashqai** (petrol, 45 MPG) — 3 year business lease, e.g. £54.87/week, £237.79/month, £2,853.48 initial (inc VAT)
-- **Citroën Berlingo** (diesel van) — 3 year business lease, e.g. £50.49/week, £218.79/month, £2,625.48 initial (+VAT). Ref-SPC11
+Seven examples are published on /lease-examples.html; four of these are also featured on the home page (Renault 5, BYD Atto 2, Dacia Spring, Citroen Berlingo).
+
+- **MG Motor UK ZS** 1.5 Hybrid+ Trophy 5dr Auto (hybrid) — 2 year personal lease, e.g. £42.57/week, £184.85/month, £2,213.40 initial (inc VAT). Ref: WSC09
+- **Renault 5** 110kW Techno+ Comfort Range 52kWh 5dr Auto (electric, 248-mile range) — 3 year personal lease, e.g. £54.70/week, £237.04/month, £2,844.48 initial (inc VAT). Ref: WSC09
+- **Nissan Qashqai** 1.3 DiG-T MH Acenta Premium (petrol, 45 MPG) — 3 year business lease, e.g. £54.87/week, £237.79/month, £2,853.48 initial (inc VAT). Ref: WSC09
+- **Dacia Spring** 52kW Cargo Extreme 24kWh Auto (electric, 140-mile range) — 3 year personal lease, e.g. £31.03/week, £134.50/month, £1,614.00 initial (inc VAT). Ref: WSC09
+- **Renault Symbioz** 1.3 TCe 140 Techno 5dr (hybrid, 47.9 MPG) — 3 year personal lease, e.g. £45.83/week, £198.60/month, £2,383.20 initial (inc VAT). Ref: WSC09
+- **Citroen Berlingo** 1.5 D 100 PS Enterprise Plus Van (diesel van) — 3 year business lease, e.g. £50.49/week, £218.79/month, £2,625.48 initial (+VAT). Ref: WSV09
+- **BYD Atto 2** 150kW Comfort 65kWh 5dr Auto (electric, 270-mile range) — 3 year business lease, e.g. £45.64/week, £197.78/month, £2,373.36 initial (+VAT). Ref: WSC09
 
 Every example includes full cover warranty, road tax and no MOT concerns.
 
@@ -47,7 +49,7 @@ Every example includes full cover warranty, road tax and no MOT concerns.
 Older vehicles bring age-related failures, warranty exclusion, outdated technology, low fuel efficiency, frequent repairs and expensive MOTs. Leasing a brand-new vehicle gives fixed monthly payments, no MOT concerns, road tax included, full cover warranty, no depreciation risk and improved economy.
 
 ## Electric vehicle focus
-The vehicle leasing market is increasingly electric. VLA actively advises on EVs — lower running costs, less maintenance, no tailpipe emissions, no London congestion charge, instant torque and an easy, quiet drive. Most current lease examples are electric (Renault 4, Renault 5, BYD Atto 2, Dacia Spring).
+The vehicle leasing market is increasingly electric and VLA actively advises on EVs — lower running costs, less maintenance, no tailpipe emissions, instant torque and an easy, quiet drive. See /evs-explained.html. Three of the seven current lease examples are fully electric (Renault 5, Dacia Spring, BYD Atto 2); the rest are hybrid, petrol or diesel.
 
 ## Used car & van marketing service
 In addition to leasing, VLA offers a used car & van marketing service for vehicles from 15 years old to nearly new. Rather than accepting a low part-exchange valuation, owners use VLA's marketing skills (with the owner's own photos) to advertise the vehicle across major platforms. VLA sends serious, pre-qualified buyers to the owner, who deals with them at their convenience — the goal being to achieve maximum market value. Free, no-obligation consultation.
@@ -64,7 +66,7 @@ In addition to leasing, VLA offers a used car & van marketing service for vehicl
 - /disclaimer.html — Legal disclaimer, regulatory position and commission disclosure
 
 ## Contact / Call to action
-Request a personalised quote via the website form (vehicle of interest, manufacturer/type, annual mileage, timescale, contact details), call 07398 834146, email vlauk@mail.com, or message on WhatsApp. Quote the deal reference (e.g. Ref-SPC11) when enquiring about a specific example.
+Request a personalised quote via the website form (vehicle of interest, manufacturer/type, annual mileage, timescale, contact details), call 07398 834146, email vlauk@mail.com, or message on WhatsApp. Quote the deal reference (Ref: WSC09 for cars, Ref: WSV09 for the van) when enquiring about a specific example.
 
 ## Regulatory position (important)
 VLA Media Ltd T/A Vehicle Leasing Associates is an **independent introducer only**. It is **not authorised or regulated by the Financial Conduct Authority (FCA)**, and is **not a lender, finance provider, credit broker or vehicle leasing broker**. It does not carry out regulated activities, does not assess creditworthiness or make lending decisions, and does not give regulated financial advice. VLA facilitates contact between customers and independent third-party FCA-authorised leasing brokers, finance providers or manufacturer dealerships; any finance or leasing agreement is entered into directly between the customer and that third-party provider, subject to their terms, eligibility criteria, credit approval and availability.
