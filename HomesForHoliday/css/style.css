@@ -114,6 +114,8 @@ p { color: var(--muted); }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head .label-caps { display: block; margin-bottom: 16px; }
 .section-head p { margin-top: 16px; font-size: 1.08rem; }
+/* a fineprint line in a section head stays fineprint-sized */
+.section-head p.fineprint { font-size: 0.85rem; }
 /* Property types at a glance, under the featured section intro */
 .type-chips {
   list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
