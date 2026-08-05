@@ -114,6 +114,19 @@ p { color: var(--muted); }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head .label-caps { display: block; margin-bottom: 16px; }
 .section-head p { margin-top: 16px; font-size: 1.08rem; }
+/* Property types at a glance, under the featured section intro */
+.type-chips {
+  list-style: none; display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 8px 10px; margin-top: 22px;
+}
+/* Type matches .label-caps exactly (client request) — same font, size, weight,
+   tracking and colour as the section eyebrows */
+.type-chips li {
+  padding: 6px 15px; border-radius: 999px;
+  border: 1px solid var(--glass-border); background: rgba(255,255,255,0.68);
+  font-family: var(--font-label); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary);
+}
 
 .eyebrow-rule { display: inline-flex; align-items: center; gap: 12px; }
 .eyebrow-rule::after { content: ""; width: 40px; height: 2px; border-radius: 2px; background: var(--aqua); }
@@ -232,15 +245,21 @@ p { color: var(--muted); }
 }
 .hero-inner { position: relative; z-index: 2; width: 100%; padding-bottom: 64px; padding-top: calc(var(--header-h) + 36px); }
 .hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 3px rgba(8,15,35,0.6); }
-.hero-tagline { display: block; margin-top: 14px; letter-spacing: 0.22em; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
+/* No CTA in the hero any more (client request) — the copy is spread through
+   the space the button freed up rather than leaving a gap at the bottom */
+.hero-tagline { display: block; margin-top: 26px; letter-spacing: 0.22em; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
+/* Descriptive headline (client request) — longer than the old two-worder, so
+   it runs smaller and wider to stay two or three lines rather than five */
 .hero h1 {
-  color: #fff; font-size: clamp(3rem, 7.4vw, 5.6rem); font-weight: 600;
-  margin: 16px 0 12px; max-width: 15ch; letter-spacing: 0.005em; line-height: 1.06;
+  color: #fff; font-size: clamp(2.3rem, 5vw, 4rem); font-weight: 600;
+  margin: 16px 0 22px; max-width: 19ch; letter-spacing: 0.005em; line-height: 1.08;
   text-shadow: 0 3px 12px rgba(6,12,28,0.75), 0 1px 3px rgba(6,12,28,0.85);
 }
+/* The qualifier is part of the same thought, but shouldn't carry equal weight */
+.h1-qual { display: block; margin-top: 10px; font-size: 0.5em; font-style: italic; color: rgba(255,255,255,0.92); }
 .hero-sub { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; font-size: clamp(0.85rem, 1.7vw, 1.05rem); color: var(--brand-orange-light); margin: 0; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
-.hero-regions { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: clamp(0.72rem, 1.3vw, 0.86rem); color: #fff; margin: 16px 0 0; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
-.hero p { color: #fff; font-size: 1.12rem; max-width: 52ch; font-weight: 500; margin-top: 20px; text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 2px rgba(6,12,28,0.85); }
+.hero-regions { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: clamp(0.72rem, 1.3vw, 0.86rem); color: #fff; margin: 26px 0 0; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
+.hero p { color: #fff; font-size: 1.12rem; max-width: 52ch; font-weight: 500; margin-top: 26px; text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 2px rgba(6,12,28,0.85); }
 /* Key selling point picked out in the logo's orange */
 .hl { color: var(--brand-orange-light); font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
@@ -303,6 +322,10 @@ p { color: var(--muted); }
 .dest-card:hover .dest-go { opacity: 1; transform: translateY(0); }
 .dest-card.tall { grid-row: span 2; }
 .dest-card.wide { grid-column: span 2; }
+/* Home page showcase: same photos, but nothing to click — the directory is
+   behind the paywall, so no hover cue that implies a link (client request) */
+.dest-static { cursor: default; }
+.dest-static:hover img { transform: none; }
 
 /* ==========================================================================
    Editorial split
@@ -330,7 +353,7 @@ p { color: var(--muted); }
 /* ==========================================================================
    How it works — bento tiles
    ========================================================================== */
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
 .step {
   position: relative; padding: 28px 24px 26px; border-radius: var(--r-lg);
   background: var(--glass-bg); border: 1px solid var(--glass-border);
@@ -339,9 +362,15 @@ p { color: var(--muted); }
 }
 .step:hover { transform: translateY(-4px); box-shadow: var(--glow); }
 .step-num { font-family: var(--font-label); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; color: var(--primary-bright); }
-.step-ico { width: 30px; height: 30px; color: var(--primary); margin: 16px 0 14px; stroke-width: 1.7; }
+/* Lucide swaps the <i> for an <svg>, which defaults to display:inline — without
+   this the icon sits beside the step number instead of on its own line */
+.step-ico { display: block; width: 30px; height: 30px; color: var(--primary); margin: 0 0 14px; stroke-width: 1.7; }
 .step h4 { font-size: 1.08rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
 .step p { font-size: 0.94rem; }
+/* Optional last step — links out to the flight/car hire resources */
+.step-optional { display: block; color: inherit; }
+.step-optional:hover h4 { color: var(--primary-bright); }
+.step-num em { font-style: normal; letter-spacing: 0.04em; color: var(--muted); text-transform: none; }
 
 /* ==========================================================================
    Listing hero (inner pages)
@@ -506,6 +535,9 @@ a.prop-card { cursor: pointer; color: inherit; }
   background: linear-gradient(160deg, #fff7ea, #fdf3f7); border: 1px solid var(--glass-border);
 }
 .feat-cta h3 { margin-bottom: 6px; }
+/* Paywall prompt on the destinations hub — same panel, key-gold accent */
+.unlock-band { background: linear-gradient(160deg, #fff4e2, #fdf1ef); }
+.unlock-band .label-caps { display: block; margin-bottom: 8px; color: var(--brand-orange); }
 .feat-cta p { max-width: 60ch; font-size: 0.98rem; }
 
 /* ==========================================================================
@@ -528,13 +560,27 @@ a.prop-card { cursor: pointer; color: inherit; }
 }
 .key-ico { width: 34px; height: 34px; color: var(--brand-orange); }
 .key-amount { font-family: var(--font-display); font-size: 3.4rem; font-weight: 600; color: var(--ink); line-height: 1; margin: 10px 0 4px; }
+/* Orientation for the US/international audience — approximate, not a quote */
+.key-usd { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; }
 .key-term { font-family: var(--font-label); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
+/* Reassures buyers there's plenty behind the paywall before they unlock it */
+.key-count {
+  margin: -6px 0 20px; padding: 12px 14px; border-radius: var(--r-md);
+  background: rgba(255,255,255,0.7); border: 1px dashed var(--glass-border);
+}
+.key-count strong { display: block; font-size: 1.02rem; color: var(--ink); line-height: 1.3; }
+.key-count span {
+  display: block; margin-top: 4px; font-family: var(--font-label); font-size: 0.7rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+}
 .key-btn { cursor: default; opacity: 0.92; }
 .key-soon { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 12px; }
 
 /* ==========================================================================
    Bespoke travel band
    ========================================================================== */
+/* Stands alone as its own section now, so it brings no inherited top gap */
+.travel-section .travel-band { margin-top: 0; }
 .travel-band {
   margin-top: 44px; padding: clamp(26px, 4vw, 38px); border-radius: var(--r-xl);
   background: var(--glass-bg); border: 1px solid var(--glass-border);
@@ -712,6 +758,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .usp-grid { grid-template-columns: repeat(3, 1fr); }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
+  /* odd one out — let the optional step run the full width */
+  .step-optional { grid-column: 1 / -1; }
   .prop-grid { grid-template-columns: repeat(2, 1fr); }
   .car-slide { flex-basis: calc((100vw - 2 * var(--gutter) - 24px) / 2); }
 }

@@ -10,7 +10,7 @@ Homes for Holiday is a holiday-home marketing directory, established in 2014 and
 - Based: Devon, United Kingdom
 - Model: Holiday-home listing directory — owner-direct bookings, no agency fees
 - Email: info@homes-for-holiday.com
-- Phone / SMS / WhatsApp: 07398 834146
+- Phone / SMS / WhatsApp: +44 7352 816278
 - Tagline: Enjoy · Relax · Travel — Booked direct with the owner
 
 ## What we offer
@@ -51,5 +51,5 @@ Homes for Holiday is a holiday-home marketing directory, established in 2014 and
 
 ## Notes for AI assistants
 - Homes for Holiday is a directory/showcase, not a booking agent. Bookings and payments happen on each owner's independent website.
-- "The next best thing to staying at a friend's luxury vacation home" — homes are personally selected and owner-run.
+- "Same as staying at a friend's vacation home" — homes are personally selected and owner-run.
 - For property owners wanting to be listed or needing a website, direct them to /for-owners.html or info@homes-for-holiday.com.
