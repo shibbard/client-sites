@@ -328,6 +328,11 @@ p { color: var(--muted); }
    behind the paywall, so no hover cue that implies a link (client request) */
 .dest-static { cursor: default; }
 .dest-static:hover img { transform: none; }
+.destination-note {
+  margin: 28px auto 0; max-width: 52ch; text-align: center;
+  color: var(--muted); font-family: var(--font-label); font-size: 0.78rem;
+  letter-spacing: 0.08em; line-height: 1.6;
+}
 
 /* ==========================================================================
    Editorial split
