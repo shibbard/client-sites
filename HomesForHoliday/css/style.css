@@ -335,12 +335,17 @@ p { color: var(--muted); }
 .split.reverse .split-media { order: 2; }
 .split-media { position: relative; border-radius: var(--r-xl); overflow: hidden; box-shadow: var(--shadow-lift); border: 1px solid var(--glass-border); }
 .split-media img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+/* Hold the lower third in frame when the crop goes wide at <=860px — for shots
+   whose subject sits low (e.g. loungers at the waterline) and would be cut off. */
+.split-media img.focus-lower { object-position: center 70%; }
 .split-media .float-badge {
   position: absolute; right: 20px; bottom: 20px;
   background: var(--glass-strong); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border); border-radius: var(--r-md); padding: 18px 22px; text-align: center;
   box-shadow: var(--shadow-soft);
 }
+/* Flip to the opposite corner where the photo's subject sits bottom-right */
+.split-media .float-badge.badge-left { left: 20px; right: auto; }
 .float-badge .fb-num { font-weight: 800; font-size: 1.7rem; color: var(--primary); line-height: 1; letter-spacing: -0.02em; }
 .float-badge .fb-txt { font-family: var(--font-label); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
 .split-body h2 { margin-bottom: 20px; }
@@ -751,6 +756,87 @@ html.js .reveal.in { opacity: 1; transform: none; }
 }
 
 /* ==========================================================================
+   Photo strip — a glimpse of real listings above the directory unlock
+   ========================================================================== */
+.strip-section { padding: 0 0 clamp(28px, 4vw, 44px); }
+.photo-strip {
+  display: flex; gap: 12px; overflow-x: auto; padding: 4px 2px 10px;
+  scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.photo-strip::-webkit-scrollbar { display: none; }
+.strip-thumb {
+  flex: 1 1 0; min-width: 0; scroll-snap-align: start;
+  border-radius: var(--r); overflow: hidden; border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-soft); background: var(--container-low);
+}
+/* Decorative reinforcement only — deliberately not links, so no hover affordance */
+.strip-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+/* Six fill the row on a wide screen; the rest are for the mobile swipe */
+@media (min-width: 861px) {
+  .strip-thumb:nth-child(n+7) { display: none; }
+}
+@media (max-width: 860px) {
+  /* fixed width so the row scrolls and the last thumb peeks as a swipe hint */
+  .photo-strip { gap: 12px; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); }
+  .strip-thumb { flex: 0 0 auto; width: 190px; }
+}
+@media (max-width: 620px) {
+  /* roughly half the viewport, so two sit side by side and the third peeks */
+  .strip-thumb { width: 165px; }
+}
+
+/* ==========================================================================
+   FAQ accordion (native <details> — works with JS disabled)
+   ========================================================================== */
+.faq-group { max-width: 860px; }
+.faq-group + .faq-group { margin-top: 56px; }
+/* Matches the group-heading step already used by .region-group-head */
+.faq-group > h2 { font-size: 1.7rem; margin-bottom: 8px; }
+.faq-group > .faq-intro { color: var(--muted); margin-bottom: 28px; max-width: 60ch; }
+
+.faq-item {
+  border: 1px solid var(--line); border-radius: var(--r-md);
+  background: var(--pearl); box-shadow: var(--shadow-soft);
+  margin-bottom: 12px; overflow: hidden;
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.faq-item[open] { border-color: rgba(36, 55, 155, 0.22); box-shadow: var(--shadow-lift); }
+
+.faq-item > summary {
+  display: flex; align-items: center; gap: 16px; cursor: pointer;
+  padding: 20px 24px; font-weight: 700; color: var(--ink);
+  list-style: none; user-select: none;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary:hover { color: var(--primary); }
+.faq-item > summary:focus-visible {
+  outline: 2px solid var(--primary-bright); outline-offset: -2px;
+}
+.faq-q { flex: 1; }
+
+/* Chevron drawn in CSS so the accordion never waits on the icon script */
+.faq-item > summary::after {
+  content: ""; flex: none; width: 10px; height: 10px; margin-right: 2px;
+  border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform .25s ease, border-color .25s ease;
+}
+.faq-item[open] > summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px); border-color: var(--primary);
+}
+
+.faq-a { padding: 0 24px 22px; max-width: 68ch; }
+.faq-a p { color: var(--muted); }
+.faq-a p + p { margin-top: 12px; }
+.faq-a a { color: var(--primary); font-weight: 600; }
+
+@media (max-width: 620px) {
+  .faq-item > summary { padding: 17px 18px; gap: 12px; }
+  .faq-a { padding: 0 18px 18px; }
+}
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -791,6 +877,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
 @media (max-width: 620px) {
   :root { --gutter: 18px; --header-h: 72px; }
   body { font-size: 16px; }
+  /* Keep the badge from swallowing the photo it sits on */
+  .split-media .float-badge { padding: 12px 15px; bottom: 14px; right: 14px; }
+  .split-media .float-badge.badge-left { left: 14px; }
+  .float-badge .fb-num { font-size: 1.3rem; }
+  .float-badge .fb-txt { font-size: 0.56rem; letter-spacing: 0.08em; margin-top: 4px; }
   .brand-logo { height: 44px; width: auto; }
   .brand-mark { height: 54px; }
 
