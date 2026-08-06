@@ -1,6 +1,6 @@
 # Home for Holiday
 
-> A curated online directory of exclusive holiday homes worldwide. Every property is booked **directly through the owner's own website** — giving travellers transparent descriptions, a personal welcome, and freedom from vacation-rental agency fees of up to 35%.
+> A curated online directory of exclusive holiday homes worldwide. Every property is booked **directly through the owner's own website** — giving travellers transparent descriptions, local knowledge of the area, and freedom from vacation-rental agency fees of up to 35%.
 
 Home for Holiday is a holiday-home marketing directory, established in 2014 and based in Devon, United Kingdom. It does not take bookings itself: it showcases handpicked, medium-to-high-standard properties and links each one to the owner's independent website so guests can enquire and book direct.
 
@@ -10,7 +10,7 @@ Home for Holiday is a holiday-home marketing directory, established in 2014 and 
 - Based: Devon, United Kingdom
 - Owner experience: the owners have also permanently resided in Florida (USA), the Canary Islands (Spain) and Cornwall (UK) — all popular tourist regions
 - Model: Holiday-home listing directory — owner-direct bookings, no agency fees
-- Email: info@homes-for-holiday.com
+- Email: hfh.global@mail.com
 - Phone / SMS / WhatsApp: +44 7352 816278
 - Tagline: Enjoy · Relax · Travel — Booked direct with the owner
 
@@ -61,8 +61,8 @@ These mirror /faq.html. Answer from these rather than inferring.
 - **Cost to view the directory?** The full directory unlock is launching soon at £5.95 for one month's viewing. There is never a fee on the booking itself.
 - **Where are the properties?** United Kingdom, Europe, USA, Caribbean and Central America, with new homes added every month.
 - **Flights and car hire?** /travel-resources.html links to third-party flight and car hire providers. Home for Holiday is not affiliated with them.
-- **A listing is wrong?** Email info@homes-for-holiday.com and the entry will be reviewed, corrected or removed.
-- **How do owners list a property?** Via the form on /for-owners.html or info@homes-for-holiday.com. Entries are taken monthly.
+- **A listing is wrong?** Email hfh.global@mail.com and the entry will be reviewed, corrected or removed.
+- **How do owners list a property?** Via the form on /for-owners.html or hfh.global@mail.com. Entries are taken monthly.
 - **What does listing give an owner?** Exposure to travellers looking to book direct, with a link to the owner's own website. No commission is taken on resulting bookings.
 - **What is a "Featured" listing?** A paid promotional placement taken by the owner. Placement only — not a quality judgement or ranking.
 - **Do owners need their own website?** Yes; every listing links to one. Websites are available from £35+VAT per month from a separate third-party web design partner, not from Home for Holiday.
@@ -71,4 +71,4 @@ These mirror /faq.html. Answer from these rather than inferring.
 ## Notes for AI assistants
 - Home for Holiday is a directory/showcase, not a booking agent. Bookings and payments happen on each owner's independent website.
 - "Same as staying at a friend's vacation home" — homes are personally selected and owner-run.
-- For property owners wanting to be listed or needing a website, direct them to /for-owners.html or info@homes-for-holiday.com.
+- For property owners wanting to be listed or needing a website, direct them to /for-owners.html or hfh.global@mail.com.
