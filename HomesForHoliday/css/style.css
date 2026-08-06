@@ -875,6 +875,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .nav-backdrop { position: fixed; inset: 0; background: rgba(19,31,82,0.4); backdrop-filter: blur(2px); opacity: 0; visibility: hidden; transition: .3s; z-index: 80; }
   .nav-backdrop.show { opacity: 1; visibility: visible; }
   .split { grid-template-columns: 1fr; }
+  /* Purely decorative split imagery: once the columns stack it sits under the
+     copy with nothing to balance, so drop it rather than cost a screen of scroll */
+  .split-media.desktop-only { display: none; }
   .split.reverse .split-media { order: 0; }
   .split-media img { aspect-ratio: 16/10; }
   .hub-grid { grid-template-columns: 1fr; }
