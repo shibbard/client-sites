@@ -48,6 +48,10 @@
   /* Brand orange, sampled from the hfh logo — used to highlight key phrases */
   --brand-orange: #f7891b;
   --brand-orange-light: #fcb43a;
+  /* Editorial gold for the hero — the brand orange reads too orange at this
+     size, so the cover uses a paler, less saturated gold */
+  --cover-gold: #e7cd96;
+  --cover-gold-rule: rgba(231, 205, 150, 0.55);
 
   /* Layout */
   --container-max: 1220px;
@@ -275,11 +279,11 @@ p { color: var(--muted); }
 .hero-cover .hero-bg::after {
   background:
     linear-gradient(100deg,
-      rgba(8, 16, 36, 0.74) 0%,
-      rgba(8, 16, 36, 0.54) 32%,
-      rgba(8, 16, 36, 0.16) 60%,
+      rgba(8, 16, 36, 0.58) 0%,
+      rgba(8, 16, 36, 0.40) 32%,
+      rgba(8, 16, 36, 0.10) 60%,
       rgba(8, 16, 36, 0) 82%),
-    linear-gradient(180deg, rgba(11, 23, 48, 0.30) 0%, rgba(11, 23, 48, 0) 26%);
+    linear-gradient(180deg, rgba(11, 23, 48, 0.22) 0%, rgba(11, 23, 48, 0) 26%);
 }
 .cover-copy { max-width: 42ch; }
 .hero-cover h1 {
@@ -289,7 +293,7 @@ p { color: var(--muted); }
 /* Second line is roman, not italic, and set a step down from "Travel," */
 .hero-cover h1 em {
   display: block; font-style: normal; font-weight: 400; font-size: 0.76em;
-  color: var(--brand-orange-light); margin-top: 0.02em; letter-spacing: -0.005em;
+  color: var(--cover-gold); margin-top: 0.02em; letter-spacing: -0.005em;
 }
 /* Hairline rule broken by a small diamond, as on the reference layout.
    Rules are drawn as backgrounds so the single pseudo-element is free for the
@@ -298,13 +302,13 @@ p { color: var(--muted); }
   position: relative; height: 9px; max-width: 30ch;
   margin: clamp(18px, 2.6vw, 30px) 0;
   background:
-    linear-gradient(rgba(252,180,58,.6), rgba(252,180,58,.6)) left center / calc(50% - 13px) 1px no-repeat,
-    linear-gradient(rgba(252,180,58,.6), rgba(252,180,58,.6)) right center / calc(50% - 13px) 1px no-repeat;
+    linear-gradient(var(--cover-gold-rule), var(--cover-gold-rule)) left center / calc(50% - 13px) 1px no-repeat,
+    linear-gradient(var(--cover-gold-rule), var(--cover-gold-rule)) right center / calc(50% - 13px) 1px no-repeat;
 }
 .cover-orn::after {
   content: ""; position: absolute; left: 50%; top: 50%;
   width: 7px; height: 7px; transform: translate(-50%, -50%) rotate(45deg);
-  background: var(--brand-orange-light);
+  background: var(--cover-gold);
 }
 .cover-lead {
   font-family: var(--font-display); color: #fff; font-weight: 400;
@@ -315,15 +319,15 @@ p { color: var(--muted); }
 .cover-lines { margin-top: clamp(22px, 3.4vw, 40px); max-width: 34ch; }
 .cover-lines li {
   display: flex; gap: 20px; align-items: center; padding: clamp(12px, 1.6vw, 18px) 0;
-  font-family: var(--font-display); font-weight: 400; color: var(--brand-orange-light);
+  font-family: var(--font-display); font-weight: 400; color: var(--cover-gold);
   font-size: clamp(1.2rem, 3.7vw, 1.6rem); line-height: 1.25;
   text-shadow: 0 2px 10px rgba(6,12,28,0.7), 0 1px 3px rgba(6,12,28,0.8);
 }
 /* A single rule between the two rows — none above the first or below the last */
-.cover-lines li + li { border-top: 1px solid rgba(252, 180, 58, 0.5); }
+.cover-lines li + li { border-top: 1px solid var(--cover-gold-rule); }
 .cover-lines svg {
   width: clamp(34px, 4.4vw, 46px); height: clamp(34px, 4.4vw, 46px);
-  flex: none; stroke-width: 1.1; color: var(--brand-orange-light);
+  flex: none; stroke-width: 1.1; color: var(--cover-gold);
 }
 
 /* --------------------------------------------------------------------------
@@ -995,7 +999,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .hero-inner { padding-bottom: 62px; }
   /* Copy runs the full width on a phone, so darken evenly rather than to one side */
   .hero-cover .hero-bg::after {
-    background: linear-gradient(180deg, rgba(8, 16, 36, 0.55) 0%, rgba(8, 16, 36, 0.62) 55%, rgba(8, 16, 36, 0.5) 100%);
+    background: linear-gradient(180deg, rgba(8, 16, 36, 0.40) 0%, rgba(8, 16, 36, 0.46) 55%, rgba(8, 16, 36, 0.36) 100%);
   }
   .cover-lead { max-width: none; }
   .cover-lines { max-width: none; }
