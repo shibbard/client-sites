@@ -253,7 +253,6 @@ p { color: var(--muted); }
 .hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 3px rgba(8,15,35,0.6); }
 /* No CTA in the hero any more (client request) — the copy is spread through
    the space the button freed up rather than leaving a gap at the bottom */
-.hero-tagline { display: block; margin-top: 26px; letter-spacing: 0.22em; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
 /* Descriptive headline (client request) — longer than the old two-worder, so
    it runs smaller and wider to stay two or three lines rather than five */
 .hero h1 {
@@ -264,7 +263,6 @@ p { color: var(--muted); }
 /* The qualifier is part of the same thought, but shouldn't carry equal weight */
 .h1-qual { display: block; margin-top: 10px; font-size: 0.5em; font-style: italic; color: rgba(255,255,255,0.92); }
 .hero-sub { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; font-size: clamp(0.85rem, 1.7vw, 1.05rem); color: var(--brand-orange-light); margin: 0; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
-.hero-regions { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600; font-size: clamp(0.72rem, 1.3vw, 0.86rem); color: #fff; margin: 26px 0 0; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
 .hero p { color: #fff; font-size: 1.12rem; max-width: 52ch; font-weight: 500; margin-top: 26px; text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 2px rgba(6,12,28,0.85); }
 /* Key selling point picked out in the logo's orange */
 .hl { color: var(--brand-orange-light); font-weight: 700; }
@@ -336,41 +334,69 @@ p { color: var(--muted); }
 }
 
 /* --------------------------------------------------------------------------
-   Intro band — the positioning lines, moved out of the hero so they read as
-   page copy rather than part of the header image (client request)
+   Regions strip — the coverage line sits on its own directly under the header
+   image, so it reads as a statement of reach rather than hero decoration
    -------------------------------------------------------------------------- */
-.intro-band { background: var(--pearl); border-bottom: 1px solid var(--hairline); text-align: center; padding: clamp(30px, 4.5vw, 52px) 0; }
-.intro-band .intro-lead {
-  max-width: 56ch; margin: 0 auto; color: var(--ink);
-  font-size: clamp(1.14rem, 2.1vw, 1.42rem); line-height: 1.5; font-weight: 600;
+.regions-strip {
+  background: var(--pearl); border-bottom: 1px solid var(--hairline);
+  text-align: center; padding: clamp(16px, 2.2vw, 24px) 0;
 }
-/* The fee line is the strongest claim on the page, so it is literally
-   highlighted — marker wash behind it, cloned across the line wrap */
-.intro-band .hl {
-  color: var(--amber); font-weight: 800;
-  background: rgba(252, 180, 58, 0.24);
-  box-decoration-break: clone; -webkit-box-decoration-break: clone;
-  padding: 2px 7px; border-radius: 4px;
+.regions-line {
+  font-family: var(--font-label); text-transform: uppercase; font-weight: 700;
+  color: var(--navy); margin: 0;
+  font-size: clamp(0.78rem, 1.4vw, 0.95rem); letter-spacing: 0.14em; line-height: 1.5;
 }
-/* Both caps lines are the same element type, so they share a colour and are
-   told apart by size and tracking — not by being different colours */
-.intro-band .hero-regions {
-  color: var(--navy); text-shadow: none; margin-top: 22px;
-  font-size: clamp(0.76rem, 1.3vw, 0.88rem); letter-spacing: 0.13em;
+.regions-tagline {
+  display: block; margin-top: 8px; color: var(--navy); opacity: 0.55;
+  font-size: 0.7rem; letter-spacing: 0.26em;
 }
-.intro-band .hero-tagline {
-  color: var(--navy); opacity: 0.6; text-shadow: none; margin-top: 0;
-  font-size: 0.72rem; letter-spacing: 0.26em;
+
+/* --------------------------------------------------------------------------
+   Belief band — the fee promise set straight onto a photograph, in the same
+   editorial voice as the hero (client layout reference)
+   -------------------------------------------------------------------------- */
+.belief-band {
+  position: relative; isolation: isolate; overflow: hidden;
+  border-bottom: 1px solid var(--hairline);
+  display: flex; align-items: center; min-height: clamp(360px, 46vw, 620px);
 }
-/* Same ornament as the hero, in the darker amber so it holds up on white —
-   it is what ties this band to the header above it */
-.intro-band .cover-orn {
-  max-width: 190px; margin: 14px auto;
+.belief-bg { position: absolute; inset: 0; z-index: -1; }
+/* Content of the photo sits right of centre, so it is anchored there and the
+   copy takes the open water on the left */
+.belief-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 72% center; }
+.belief-bg::after {
+  content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(rgba(178,106,0,.5), rgba(178,106,0,.5)) left center / calc(50% - 13px) 1px no-repeat,
-    linear-gradient(rgba(178,106,0,.5), rgba(178,106,0,.5)) right center / calc(50% - 13px) 1px no-repeat;
+    linear-gradient(100deg,
+      rgba(8, 16, 36, 0.58) 0%,
+      rgba(8, 16, 36, 0.42) 34%,
+      rgba(8, 16, 36, 0.14) 62%,
+      rgba(8, 16, 36, 0) 84%);
 }
-.intro-band .cover-orn::after { background: var(--amber); }
+.belief-inner { position: relative; z-index: 1; width: 100%; padding-top: clamp(44px, 6vw, 76px); padding-bottom: clamp(44px, 6vw, 76px); }
+.belief-head {
+  font-family: var(--font-display); color: #fff; font-weight: 400;
+  font-size: clamp(1.9rem, 5.2vw, 3.5rem); line-height: 1.12;
+  max-width: 15ch; margin: 0;
+  text-shadow: 0 3px 12px rgba(6,12,28,0.7), 0 1px 3px rgba(6,12,28,0.8);
+}
+.belief-sub {
+  color: #fff; font-weight: 500; margin: 0;
+  font-size: clamp(1.02rem, 2.1vw, 1.4rem); line-height: 1.45; max-width: 30ch;
+  text-shadow: 0 2px 10px rgba(6,12,28,0.75), 0 1px 3px rgba(6,12,28,0.85);
+}
+/* The fee figure is the strongest claim on the page — picked out in the same
+   gold as the hero rather than a highlight wash, which would fight the photo */
+.belief-sub .hl { color: var(--cover-gold); font-weight: 700; }
+.belief-band .cover-orn { max-width: 150px; }
+
+/* Inline links inside body copy — otherwise they inherit the muted paragraph
+   colour and read as plain text */
+.split-body p a {
+  color: var(--primary); font-weight: 600;
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.split-body p a:hover { color: var(--primary-bright); }
 
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 .hero-hint { margin-top: 24px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9); }
@@ -1015,6 +1041,15 @@ html.js .reveal.in { opacity: 1; transform: none; }
   }
   .cover-lead { max-width: none; }
   .cover-lines { max-width: none; }
+  /* Same treatment for the belief band — the copy fills the width, so the
+     photograph is darkened evenly instead of only on the left */
+  .belief-band { min-height: 0; }
+  .belief-bg img { object-position: 62% center; }
+  .belief-bg::after {
+    background: linear-gradient(180deg, rgba(8, 16, 36, 0.46) 0%, rgba(8, 16, 36, 0.52) 55%, rgba(8, 16, 36, 0.44) 100%);
+  }
+  .belief-head, .belief-sub { max-width: none; }
+  .belief-band .cover-orn { margin: 18px 0; }
   .cover-lines .br-narrow { display: inline; }
   .cover-lines .br-wide { display: none; }
   .hero-actions { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
