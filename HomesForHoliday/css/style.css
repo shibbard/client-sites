@@ -382,21 +382,17 @@ p { color: var(--muted); }
 }
 .belief-sub {
   color: #fff; font-weight: 500; margin: 0;
-  /* Loose enough that the highlight plates on consecutive lines clear each
-     other when the fee phrase wraps */
-  font-size: clamp(1.02rem, 2.1vw, 1.4rem); line-height: 1.62; max-width: 30ch;
+  /* Loose enough that the larger fee phrase does not crowd the line above it */
+  font-size: clamp(1.02rem, 2.1vw, 1.4rem); line-height: 1.55; max-width: 30ch;
   text-shadow: 0 2px 10px rgba(6,12,28,0.75), 0 1px 3px rgba(6,12,28,0.85);
 }
-/* The fee figure is the strongest claim on the page, so it gets a marker wash
-   as well as the gold — a dark plate rather than a light one, so it reads as
-   emphasis against the photograph instead of a bright patch fighting it.
-   Cloned across the line wrap so a broken phrase keeps its full box. */
+/* The fee figure is the strongest claim on the page — carried by the gold, a
+   heavier weight and a size step rather than a box, which sat on the
+   photograph as a foreign object */
 .belief-sub .hl {
   color: var(--cover-gold); font-weight: 800;
-  background: rgba(6, 14, 32, 0.62);
-  box-decoration-break: clone; -webkit-box-decoration-break: clone;
-  padding: 2px 8px; border-radius: 4px;
-  box-shadow: inset 0 0 0 1px var(--cover-gold-rule);
+  font-size: 1.15em; letter-spacing: 0.005em;
+  text-shadow: 0 2px 10px rgba(6,12,28,0.9), 0 1px 3px rgba(6,12,28,0.95);
 }
 .belief-band .cover-orn { max-width: 150px; }
 
