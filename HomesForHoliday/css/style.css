@@ -264,6 +264,98 @@ p { color: var(--muted); }
 .hero p { color: #fff; font-size: 1.12rem; max-width: 52ch; font-weight: 500; margin-top: 26px; text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 2px rgba(6,12,28,0.85); }
 /* Key selling point picked out in the logo's orange */
 .hl { color: var(--brand-orange-light); font-weight: 700; }
+/* --------------------------------------------------------------------------
+   Editorial hero (client layout reference): set entirely in the display serif
+   straight onto the photograph — no panel behind it. Legibility comes from the
+   existing hero-bg scrim plus the text shadows below.
+   -------------------------------------------------------------------------- */
+.hero-cover { align-items: center; }
+/* Editorial type sits directly on the photo, so it needs a deeper scrim than
+   the default hero — weighted to the side the copy occupies */
+.hero-cover .hero-bg::after {
+  background:
+    linear-gradient(100deg,
+      rgba(8, 16, 36, 0.74) 0%,
+      rgba(8, 16, 36, 0.54) 32%,
+      rgba(8, 16, 36, 0.16) 60%,
+      rgba(8, 16, 36, 0) 82%),
+    linear-gradient(180deg, rgba(11, 23, 48, 0.30) 0%, rgba(11, 23, 48, 0) 26%);
+}
+.cover-copy { max-width: 42ch; }
+.hero-cover h1 {
+  max-width: none; margin: 0 0 4px; font-weight: 400; line-height: 0.98;
+  font-size: clamp(4.2rem, 22vw, 7.5rem); letter-spacing: -0.015em;
+}
+/* Second line is roman, not italic, and set a step down from "Travel," */
+.hero-cover h1 em {
+  display: block; font-style: normal; font-weight: 400; font-size: 0.76em;
+  color: var(--brand-orange-light); margin-top: 0.02em; letter-spacing: -0.005em;
+}
+/* Hairline rule broken by a small diamond, as on the reference layout.
+   Rules are drawn as backgrounds so the single pseudo-element is free for the
+   diamond itself. */
+.cover-orn {
+  position: relative; height: 9px; max-width: 30ch;
+  margin: clamp(18px, 2.6vw, 30px) 0;
+  background:
+    linear-gradient(rgba(252,180,58,.6), rgba(252,180,58,.6)) left center / calc(50% - 13px) 1px no-repeat,
+    linear-gradient(rgba(252,180,58,.6), rgba(252,180,58,.6)) right center / calc(50% - 13px) 1px no-repeat;
+}
+.cover-orn::after {
+  content: ""; position: absolute; left: 50%; top: 50%;
+  width: 7px; height: 7px; transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--brand-orange-light);
+}
+.cover-lead {
+  font-family: var(--font-display); color: #fff; font-weight: 400;
+  font-size: clamp(1.45rem, 4.4vw, 2rem); line-height: 1.38;
+  max-width: 26ch; margin-top: 0;
+  text-shadow: 0 2px 10px rgba(6,12,28,0.7), 0 1px 3px rgba(6,12,28,0.8);
+}
+.cover-lines { margin-top: clamp(22px, 3.4vw, 40px); max-width: 34ch; }
+.cover-lines li {
+  display: flex; gap: 20px; align-items: center; padding: clamp(12px, 1.6vw, 18px) 0;
+  font-family: var(--font-display); font-weight: 400; color: var(--brand-orange-light);
+  font-size: clamp(1.2rem, 3.7vw, 1.6rem); line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(6,12,28,0.7), 0 1px 3px rgba(6,12,28,0.8);
+}
+/* A single rule between the two rows — none above the first or below the last */
+.cover-lines li + li { border-top: 1px solid rgba(252, 180, 58, 0.5); }
+.cover-lines svg {
+  width: clamp(34px, 4.4vw, 46px); height: clamp(34px, 4.4vw, 46px);
+  flex: none; stroke-width: 1.1; color: var(--brand-orange-light);
+}
+
+/* --------------------------------------------------------------------------
+   Intro band — the positioning lines, moved out of the hero so they read as
+   page copy rather than part of the header image (client request)
+   -------------------------------------------------------------------------- */
+.intro-band { background: var(--pearl); border-bottom: 1px solid var(--hairline); text-align: center; padding: clamp(30px, 4.5vw, 52px) 0; }
+.intro-band .intro-lead {
+  max-width: 60ch; margin: 0 auto; color: var(--ink);
+  font-size: clamp(1.02rem, 1.7vw, 1.18rem); line-height: 1.55; font-weight: 500;
+}
+.intro-band .hl { color: var(--amber); }
+/* Both caps lines are the same element type, so they share a colour and are
+   told apart by size and tracking — not by being different colours */
+.intro-band .hero-regions {
+  color: var(--navy); text-shadow: none; margin-top: 22px;
+  font-size: clamp(0.76rem, 1.3vw, 0.88rem); letter-spacing: 0.13em;
+}
+.intro-band .hero-tagline {
+  color: var(--navy); opacity: 0.6; text-shadow: none; margin-top: 0;
+  font-size: 0.72rem; letter-spacing: 0.26em;
+}
+/* Same ornament as the hero, in the darker amber so it holds up on white —
+   it is what ties this band to the header above it */
+.intro-band .cover-orn {
+  max-width: 190px; margin: 14px auto;
+  background:
+    linear-gradient(rgba(178,106,0,.5), rgba(178,106,0,.5)) left center / calc(50% - 13px) 1px no-repeat,
+    linear-gradient(rgba(178,106,0,.5), rgba(178,106,0,.5)) right center / calc(50% - 13px) 1px no-repeat;
+}
+.intro-band .cover-orn::after { background: var(--amber); }
+
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 .hero-hint { margin-top: 24px; font-size: 0.95rem; font-weight: 600; color: rgba(255,255,255,0.9); }
 
@@ -901,6 +993,12 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .brand { gap: 8px; }
   .hero { min-height: 100vh; min-height: 100svh; }
   .hero-inner { padding-bottom: 62px; }
+  /* Copy runs the full width on a phone, so darken evenly rather than to one side */
+  .hero-cover .hero-bg::after {
+    background: linear-gradient(180deg, rgba(8, 16, 36, 0.55) 0%, rgba(8, 16, 36, 0.62) 55%, rgba(8, 16, 36, 0.5) 100%);
+  }
+  .cover-lead { max-width: none; }
+  .cover-lines { max-width: none; }
   .hero-actions { flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
   .hero-actions .btn { width: 100%; justify-content: center; }
   .usp-grid { grid-template-columns: 1fr 1fr; }
