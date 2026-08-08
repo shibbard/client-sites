@@ -324,6 +324,16 @@ p { color: var(--muted); }
 }
 /* A single rule between the two rows — none above the first or below the last */
 .cover-lines li + li { border-top: 1px solid var(--cover-gold-rule); }
+/* First line reads as plain fact, so it sits in white like the paragraph
+   above it; the second carries the offer and stays in the gold that matches
+   "reimagined" — heavier and with its own glow so it holds up as the one
+   line in the list meant to stand out */
+.cover-lines li:first-child { color: #fff; }
+.cover-lines li:first-child svg { color: #fff; }
+.cover-lines li:last-child {
+  font-weight: 600;
+  text-shadow: 0 0 26px rgba(231,205,150,0.45), 0 2px 10px rgba(6,12,28,0.75), 0 1px 3px rgba(6,12,28,0.85);
+}
 /* The second row breaks after "for" where the line fits, but that string is too
    long for a phone, so narrow screens break after "Homes" instead — two balanced
    lines either way, never a stranded word */
@@ -380,21 +390,25 @@ p { color: var(--muted); }
   max-width: 15ch; margin: 0;
   text-shadow: 0 3px 12px rgba(6,12,28,0.7), 0 1px 3px rgba(6,12,28,0.8);
 }
+/* The fee line sits on its own frosted card — same glass/rounded-corner
+   language as the USP tiles and the float badge on the bespoke-escape photo,
+   rather than more text laid straight over the picture */
+.belief-card {
+  display: inline-block; margin-top: clamp(20px, 3vw, 30px);
+  padding: clamp(18px, 2.4vw, 24px) clamp(20px, 2.8vw, 28px);
+  background: var(--glass-strong); border: 1px solid var(--glass-border);
+  border-radius: var(--r-lg); backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur)); box-shadow: var(--shadow-soft);
+  max-width: 34ch;
+}
 .belief-sub {
-  color: #fff; font-weight: 500; margin: 0;
-  /* Loose enough that the larger fee phrase does not crowd the line above it */
+  color: var(--ink); font-weight: 500; margin: 0;
   /* Runs between the documented Body (17px) and Title (1.4rem) steps */
-  font-size: clamp(1.0625rem, 2.1vw, 1.4rem); line-height: 1.55; max-width: 30ch;
-  text-shadow: 0 2px 10px rgba(6,12,28,0.75), 0 1px 3px rgba(6,12,28,0.85);
+  font-size: clamp(1.0625rem, 2.1vw, 1.4rem); line-height: 1.5;
 }
-/* The fee figure is the strongest claim on the page — carried by the gold, a
-   heavier weight and a size step rather than a box, which sat on the
-   photograph as a foreign object */
-.belief-sub .hl {
-  color: var(--cover-gold); font-weight: 800;
-  font-size: 1.06em; letter-spacing: 0.005em;
-  text-shadow: 0 2px 10px rgba(6,12,28,0.9), 0 1px 3px rgba(6,12,28,0.95);
-}
+/* The fee figure is the strongest claim on the page — carried by the amber
+   accent and a heavier weight now that it sits on a light card */
+.belief-sub .hl { color: var(--amber); font-weight: 800; }
 .belief-band .cover-orn { max-width: 150px; }
 
 /* Inline links inside body copy — otherwise they inherit the muted paragraph
@@ -496,6 +510,8 @@ p { color: var(--muted); }
 }
 /* Flip to the opposite corner where the photo's subject sits bottom-right */
 .split-media .float-badge.badge-left { left: 20px; right: auto; }
+/* Pin to the top where the bottom of the photo is busy (loungers, basket) */
+.split-media .float-badge.badge-top { top: 20px; bottom: auto; }
 .float-badge .fb-num { font-weight: 800; font-size: 1.7rem; color: var(--primary); line-height: 1; letter-spacing: -0.02em; }
 .float-badge .fb-txt { font-family: var(--font-label); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
 .split-body h2 { margin-bottom: 20px; }
@@ -1023,6 +1039,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .split-media.desktop-only { display: none; }
   .split.reverse .split-media { order: 0; }
   .split-media img { aspect-ratio: 16/10; }
+  /* Taller than the standard mobile crop so the boat in the cove stays in
+     frame instead of being cut off the top */
+  .split-media img.focus-lower { aspect-ratio: 5/4; object-position: center 32%; }
   .hub-grid { grid-template-columns: 1fr; }
   .hub-card.feature { grid-column: auto; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -1033,6 +1052,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   /* Keep the badge from swallowing the photo it sits on */
   .split-media .float-badge { padding: 12px 15px; bottom: 14px; right: 14px; }
   .split-media .float-badge.badge-left { left: 14px; }
+  .split-media .float-badge.badge-top { top: 14px; bottom: auto; }
   .float-badge .fb-num { font-size: 1.3rem; }
   .float-badge .fb-txt { font-size: 0.56rem; letter-spacing: 0.08em; margin-top: 4px; }
   .brand-logo { height: 44px; width: auto; }
@@ -1055,7 +1075,10 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .belief-bg::after {
     background: linear-gradient(180deg, rgba(8, 16, 36, 0.46) 0%, rgba(8, 16, 36, 0.52) 55%, rgba(8, 16, 36, 0.44) 100%);
   }
-  .belief-head, .belief-sub { max-width: none; }
+  .belief-head { max-width: none; }
+  /* The card runs the full column width on a phone rather than the fixed
+     34ch measure that suits the wider desktop layout */
+  .belief-card { display: block; max-width: none; }
   /* The rule spans the whole column on a phone rather than sitting as a short
      stub under a full-width headline */
   .belief-band .cover-orn { max-width: none; margin: 18px 0; }
