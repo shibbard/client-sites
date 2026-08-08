@@ -263,7 +263,7 @@ p { color: var(--muted); }
 /* The qualifier is part of the same thought, but shouldn't carry equal weight */
 .h1-qual { display: block; margin-top: 10px; font-size: 0.5em; font-style: italic; color: rgba(255,255,255,0.92); }
 .hero-sub { font-family: var(--font-label); text-transform: uppercase; letter-spacing: 0.14em; font-weight: 600; font-size: clamp(0.85rem, 1.7vw, 1.05rem); color: var(--brand-orange-light); margin: 0; text-shadow: 0 2px 8px rgba(6,12,28,0.85), 0 1px 2px rgba(6,12,28,0.9); }
-.hero p { color: #fff; font-size: 1.12rem; max-width: 52ch; font-weight: 500; margin-top: 26px; text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 2px rgba(6,12,28,0.85); }
+.hero p { color: #fff; font-size: 1.16rem; max-width: 52ch; font-weight: 500; margin-top: 26px; text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 2px rgba(6,12,28,0.85); }
 /* Key selling point picked out in the logo's orange */
 .hl { color: var(--brand-orange-light); font-weight: 700; }
 /* --------------------------------------------------------------------------
