@@ -396,19 +396,20 @@ p { color: var(--muted); }
 .belief-card {
   display: inline-block; margin-top: clamp(20px, 3vw, 30px);
   padding: clamp(18px, 2.4vw, 24px) clamp(20px, 2.8vw, 28px);
-  background: var(--glass-strong); border: 1px solid var(--glass-border);
-  border-radius: var(--r-lg); backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur)); box-shadow: var(--shadow-soft);
+  background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--r-lg); backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px); box-shadow: var(--shadow-soft);
   max-width: 34ch;
 }
 .belief-sub {
-  color: var(--ink); font-weight: 500; margin: 0;
+  color: #fff; font-weight: 500; margin: 0;
+  text-shadow: 0 2px 8px rgba(6,12,28,0.65), 0 1px 3px rgba(6,12,28,0.7);
   /* Runs between the documented Body (17px) and Title (1.4rem) steps */
   font-size: clamp(1.0625rem, 2.1vw, 1.4rem); line-height: 1.5;
 }
-/* The fee figure is the strongest claim on the page — carried by the amber
-   accent and a heavier weight now that it sits on a light card */
-.belief-sub .hl { color: var(--amber); font-weight: 800; }
+/* The fee figure is the strongest claim on the page — a lighter gold reads
+   clearly against the dark photo, where the standard darker amber did not */
+.belief-sub .hl { color: #ffc966; font-weight: 800; }
 .belief-band .cover-orn { max-width: 150px; }
 
 /* Inline links inside body copy — otherwise they inherit the muted paragraph
@@ -563,6 +564,12 @@ p { color: var(--muted); }
 .listing-hero h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.6rem); margin: 14px 0 16px; letter-spacing: -0.03em; text-shadow: 0 2px 8px rgba(8,15,35,0.5); }
 .listing-hero p { color: #fff; max-width: 58ch; font-weight: 500; text-shadow: 0 1px 5px rgba(8,15,35,0.6); }
 .listing-hero .label-caps { color: var(--aqua-light); text-shadow: 0 1px 3px rgba(8,15,35,0.6); }
+.listing-hero-price {
+  color: #fff; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin: 4px 0 20px;
+  text-shadow: 0 2px 8px rgba(8,15,35,0.5);
+}
+.listing-hero-price span { font-size: 0.55em; font-weight: 500; opacity: 0.8; }
 
 .breadcrumb { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--muted); padding: 22px 0; flex-wrap: wrap; }
 .breadcrumb a:hover { color: var(--primary); }
@@ -1099,7 +1106,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .car-slide { flex-basis: calc(100vw - 2 * var(--gutter) - 34px); }
   .car-btn { display: none; }
   .feat-cta { padding: 24px; text-align: center; justify-content: center; }
-  .key-card { grid-template-columns: 1fr; }
+  .key-card { grid-template-columns: 1fr; text-align: center; }
   .travel-band { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }
