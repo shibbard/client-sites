@@ -20,7 +20,7 @@ Home for Holiday is a holiday-home marketing directory, established in 2014 and 
 - Transparent pricing and no agency fees
 - A website link on every property for full transparency
 - Trusted partner links for low-cost flights and car rental
-- Affordable holiday-home website design for owners, from £35+VAT per month
+- Affordable holiday-home website design for owners, from £100 upfront, then £19.99+VAT per month
 
 ## Destinations
 - United Kingdom (34 homes): Southern, Northern & Middle England, Scotland, Wales — cottages, barns, lodges and country houses
@@ -65,7 +65,7 @@ These mirror /faq.html. Answer from these rather than inferring.
 - **How do owners list a property?** Via the form on /for-owners.html or hfh.travel@outlook.com. Entries are taken monthly.
 - **What does listing give an owner?** Exposure to travellers looking to book direct, with a link to the owner's own website. No commission is taken on resulting bookings.
 - **What is a "Featured" listing?** A paid promotional placement taken by the owner. Placement only — not a quality judgement or ranking.
-- **Do owners need their own website?** Yes; every listing links to one. Websites are available from £35+VAT per month from a separate third-party web design partner, not from Home for Holiday.
+- **Do owners need their own website?** Yes; every listing links to one. Websites are available from £100 upfront, then £19.99+VAT per month, from a separate third-party web design partner, not from Home for Holiday.
 - **Who runs it?** VLA Media Ltd, trading as Home for Holiday — owner-run from Devon, UK, established 2014.
 
 ## Notes for AI assistants
