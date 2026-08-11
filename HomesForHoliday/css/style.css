@@ -473,7 +473,7 @@ p { color: var(--muted); }
 }
 .dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.8,.2,1); }
 /* For tall shots whose subject sits low in the frame — hold the bottom, not the top */
-.dest-card img.focus-bottom { object-position: center 70%; }
+.dest-card img.focus-bottom { object-position: center 30%; }
 .dest-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19,31,82,0) 30%, rgba(19,31,82,0.82) 100%); }
 .dest-card:hover img { transform: scale(1.07); }
 .dest-card .dest-body { position: absolute; z-index: 2; left: 0; bottom: 0; padding: 26px; width: 100%; }
