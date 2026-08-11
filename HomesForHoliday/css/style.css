@@ -118,6 +118,7 @@ p { color: var(--muted); }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head .label-caps { display: block; margin-bottom: 16px; }
 .section-head p { margin-top: 16px; font-size: 1.08rem; }
+.destination-cta { margin-top: 22px; }
 /* a fineprint line in a section head stays fineprint-sized */
 .section-head p.fineprint { font-size: 0.85rem; }
 /* Property types at a glance, under the featured section intro */
@@ -505,7 +506,7 @@ p { color: var(--muted); }
 .split-media img.focus-lower { object-position: center 70%; }
 .split-media .float-badge {
   position: absolute; right: 20px; bottom: 20px;
-  background: var(--glass-strong); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.68); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--glass-border); border-radius: var(--r-md); padding: 18px 22px; text-align: center;
   box-shadow: var(--shadow-soft);
 }
@@ -794,7 +795,16 @@ a.prop-card { cursor: pointer; color: inherit; }
 .hub-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(19,31,82,0.1) 24%, rgba(19,31,82,0.86) 100%); }
 .hub-card:hover img { transform: scale(1.06); }
 .hub-body { position: relative; z-index: 2; padding: 32px; width: 100%; }
-.hub-body .hub-count { font-family: var(--font-label); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-light); font-weight: 600; }
+.hub-body .hub-count {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 7px 11px; border-radius: var(--r-pill);
+  background: rgba(19,31,82,0.78); border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 4px 14px rgba(6,12,28,0.22);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  font-family: var(--font-label); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.9); font-weight: 600;
+}
+.hub-body .hub-count strong { color: var(--brand-orange-light); font-size: 1.12em; font-weight: 800; }
 .hub-body h3 { color: #fff; font-size: 1.8rem; margin: 8px 0 10px; }
 .hub-body p { color: rgba(255,255,255,0.86); font-size: 0.95rem; margin-bottom: 16px; max-width: 42ch; }
 .hub-body .hub-go { display: inline-flex; align-items: center; gap: 8px; font-size: 0.84rem; font-weight: 700; color: var(--aqua-light); }
