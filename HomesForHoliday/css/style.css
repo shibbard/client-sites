@@ -447,7 +447,7 @@ p { color: var(--muted); }
    USP strip (bento chips)
    ========================================================================== */
 .usp-strip { padding: clamp(48px, 7vw, 84px) 0; }
-.usp-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.usp-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .usp {
   padding: 30px 22px; text-align: center; border-radius: var(--r-lg);
   background: var(--glass-bg); border: 1px solid var(--glass-border);
