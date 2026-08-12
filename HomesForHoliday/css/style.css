@@ -525,6 +525,13 @@ p { color: var(--muted); }
   color: #fff;
   text-shadow: 0 2px 8px rgba(6,12,28,0.65), 0 1px 3px rgba(6,12,28,0.7);
 }
+.split-media .float-badge.badge-recommended .fb-txt {
+  color: rgba(255,255,255,0.88);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-shadow: 0 1px 3px rgba(6,12,28,0.7);
+}
 .float-badge .fb-num { font-weight: 800; font-size: 1.7rem; color: var(--primary); line-height: 1; letter-spacing: -0.02em; }
 .float-badge .fb-txt { font-family: var(--font-label); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
 .split-body h2 { margin-bottom: 20px; }
