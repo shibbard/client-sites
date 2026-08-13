@@ -191,6 +191,15 @@ p { color: var(--muted); }
   height: var(--header-h); gap: 24px;
 }
 .brand { display: flex; align-items: center; gap: 11px; line-height: 1; flex-shrink: 0; }
+/* Thin destinations line beside the logo — subtle, so it recedes behind the
+   logo and nav rather than competing with them */
+.brand-tagline {
+  font-family: var(--font-label); font-weight: 400; font-size: 0.72rem;
+  letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
+  color: var(--nav-ink); opacity: 0.68; padding-left: 11px;
+  border-left: 1px solid color-mix(in srgb, var(--nav-ink) 35%, transparent);
+  transition: color .3s ease;
+}
 /* Horizontal lockup: the client's logo split into mark + text so the business
    name can be scaled up for legibility without forcing a taller header
    (a tall fixed header would eat mobile screen space on every page). */
@@ -285,6 +294,16 @@ p { color: var(--muted); }
     linear-gradient(180deg, rgba(11, 23, 48, 0.22) 0%, rgba(11, 23, 48, 0) 26%);
 }
 .cover-copy { max-width: 640px; }
+/* Small price/date note pinned to the hero's bottom-right corner — readable
+   but deliberately quiet next to the headline */
+.hero-price-note {
+  position: absolute; right: max(var(--gutter), calc((100vw - var(--container-max)) / 2));
+  bottom: 22px; z-index: 3; text-align: right;
+  font-family: var(--font-label); font-size: 0.76rem; font-weight: 600;
+  letter-spacing: 0.05em; color: rgba(255,255,255,0.85);
+  text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 3px rgba(6,12,28,0.9);
+}
+.hero-price-note strong { color: var(--cover-gold); font-weight: 700; }
 .hero-cover h1 {
   max-width: none; margin: 0 0 4px; font-weight: 400; line-height: 0.98;
   font-size: clamp(4.2rem, 22vw, 7.5rem); letter-spacing: -0.015em;
@@ -1042,6 +1061,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
    ========================================================================== */
 @media (max-width: 1024px) {
   :root { --gutter: 28px; }
+  /* Decorative extra, not essential content — first thing to drop once the
+     header has the nav menu and CTA button to fit as well */
+  .brand-tagline { display: none; }
   .usp-grid { grid-template-columns: repeat(3, 1fr); }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
