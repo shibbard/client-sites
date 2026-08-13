@@ -196,10 +196,12 @@ p { color: var(--muted); }
 .brand-tagline {
   font-family: var(--font-label); font-weight: 400; font-size: 0.72rem;
   letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
-  color: var(--nav-ink); opacity: 0.68; padding-left: 11px;
-  border-left: 1px solid color-mix(in srgb, var(--nav-ink) 35%, transparent);
+  color: var(--nav-ink); opacity: 0.68;
   transition: color .3s ease;
 }
+/* "& more" is the first thing to go as the header narrows — the four
+   destinations are the part worth keeping visible on a phone */
+.brand-tagline .tagline-extra { display: inline; }
 /* Horizontal lockup: the client's logo split into mark + text so the business
    name can be scaled up for legibility without forcing a taller header
    (a tall fixed header would eat mobile screen space on every page). */
@@ -296,14 +298,16 @@ p { color: var(--muted); }
 .cover-copy { max-width: 640px; }
 /* Small price/date note pinned to the hero's bottom-right corner — readable
    but deliberately quiet next to the headline */
-.hero-price-note {
+/* Selector carries the .hero prefix so it outranks `.hero p`, which would
+   otherwise force the 1.16rem body size onto this note */
+.hero .hero-price-note {
   position: absolute; right: max(var(--gutter), calc((100vw - var(--container-max)) / 2));
-  bottom: 22px; z-index: 3; text-align: right;
-  font-family: var(--font-label); font-size: 0.76rem; font-weight: 600;
-  letter-spacing: 0.05em; color: rgba(255,255,255,0.85);
+  bottom: 20px; z-index: 3; text-align: right; margin: 0; max-width: none;
+  font-family: var(--font-label); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.04em; color: rgba(255,255,255,0.82);
   text-shadow: 0 2px 8px rgba(6,12,28,0.8), 0 1px 3px rgba(6,12,28,0.9);
 }
-.hero-price-note strong { color: var(--cover-gold); font-weight: 700; }
+.hero .hero-price-note strong { color: var(--cover-gold); font-weight: 700; }
 .hero-cover h1 {
   max-width: none; margin: 0 0 4px; font-weight: 400; line-height: 0.98;
   font-size: clamp(4.2rem, 22vw, 7.5rem); letter-spacing: -0.015em;
@@ -1061,9 +1065,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
    ========================================================================== */
 @media (max-width: 1024px) {
   :root { --gutter: 28px; }
-  /* Decorative extra, not essential content — first thing to drop once the
-     header has the nav menu and CTA button to fit as well */
-  .brand-tagline { display: none; }
+  /* Nav links are still on-screen here (hamburger kicks in at 860px), so the
+     tagline gives up size before it gives up space */
+  .brand-tagline { font-size: 0.62rem; }
   .usp-grid { grid-template-columns: repeat(3, 1fr); }
   .bento { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
@@ -1073,6 +1077,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .car-slide { flex-basis: calc((100vw - 2 * var(--gutter) - 24px) / 2); }
 }
 @media (max-width: 860px) {
+  /* Nav links move behind the hamburger here, so the tagline gets its size
+     back — it only shares the row with the logo and the toggle now */
+  .brand-tagline { font-size: 0.68rem; }
   .nav-menu {
     position: fixed; inset: 0 0 0 auto; width: min(82vw, 340px);
     flex-direction: column; align-items: flex-start; justify-content: flex-start;
@@ -1106,6 +1113,13 @@ html.js .reveal.in { opacity: 1; transform: none; }
 @media (max-width: 620px) {
   :root { --gutter: 18px; --header-h: 72px; }
   body { font-size: 16px; }
+  /* Phone header only has room for logo + tagline + toggle, so the tagline
+     drops "& more", tightens up, and is allowed to shrink — without this the
+     brand's flex-shrink:0 pushes the menu button off the screen edge */
+  .nav { gap: 10px; }
+  .brand { flex-shrink: 1; min-width: 0; }
+  .brand-tagline { font-size: 0.56rem; letter-spacing: 0.06em; min-width: 0; }
+  .brand-tagline .tagline-extra { display: none; }
   /* Keep the badge from swallowing the photo it sits on */
   .split-media .float-badge { padding: 12px 15px; bottom: 14px; right: 14px; }
   .split-media .float-badge.badge-left { left: 14px; }
