@@ -1119,7 +1119,6 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .nav { gap: 10px; }
   .brand { flex-shrink: 1; min-width: 0; }
   .brand-tagline { font-size: 0.56rem; letter-spacing: 0.06em; min-width: 0; }
-  .brand-tagline .tagline-extra { display: none; }
   /* Keep the badge from swallowing the photo it sits on */
   .split-media .float-badge { padding: 12px 15px; bottom: 14px; right: 14px; }
   .split-media .float-badge.badge-left { left: 14px; }
@@ -1187,4 +1186,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
 }
 @media (max-width: 380px) {
   .steps { grid-template-columns: 1fr; }
+}
+/* "& more" fits on a 375px phone but collides with the menu button on the
+   narrowest handsets, so it drops only below that */
+@media (max-width: 349px) {
+  .brand-tagline .tagline-extra { display: none; }
 }
