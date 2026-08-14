@@ -656,6 +656,8 @@ a.prop-card { cursor: pointer; color: inherit; }
 .prop-cta svg { width: 16px; height: 16px; transition: transform .25s ease; }
 .prop-card:hover .prop-cta { color: var(--primary-bright); }
 .prop-card:hover .prop-cta svg { transform: translate(3px, -3px); }
+.featured .prop-card:hover { transform: none; box-shadow: var(--shadow-soft); }
+.featured .prop-card:hover .prop-media img { transform: none; }
 
 /* ==========================================================================
    Filter bar (region listing pages)
