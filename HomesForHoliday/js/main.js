@@ -209,6 +209,42 @@
     start();
   }
 
+  // Photo strip — quietly advance through the category images on mobile.
+  var photoStrip = document.querySelector("[data-photo-strip]");
+  if (photoStrip) {
+    var stripReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var stripTimer = null;
+    var stripResumeTimer = null;
+
+    var advanceStrip = function () {
+      if (document.hidden || photoStrip.scrollWidth <= photoStrip.clientWidth + 4) return;
+      var firstThumb = photoStrip.querySelector(".strip-thumb");
+      var gap = parseFloat(window.getComputedStyle(photoStrip).gap) || 12;
+      var maxScroll = photoStrip.scrollWidth - photoStrip.clientWidth;
+      var nextPosition = photoStrip.scrollLeft + (firstThumb ? firstThumb.offsetWidth + gap : photoStrip.clientWidth);
+      var atEnd = photoStrip.scrollLeft >= maxScroll - 4;
+      photoStrip.scrollTo({ left: atEnd ? 0 : Math.min(nextPosition, maxScroll), behavior: "smooth" });
+    };
+    var startStrip = function () {
+      if (stripReduceMotion || stripTimer) return;
+      stripTimer = window.setInterval(advanceStrip, 5000);
+    };
+    var stopStrip = function () {
+      if (stripTimer) { window.clearInterval(stripTimer); stripTimer = null; }
+    };
+    var pauseStrip = function () {
+      stopStrip();
+      window.clearTimeout(stripResumeTimer);
+      stripResumeTimer = window.setTimeout(startStrip, 9000);
+    };
+
+    photoStrip.addEventListener("mouseenter", stopStrip);
+    photoStrip.addEventListener("mouseleave", startStrip);
+    photoStrip.addEventListener("focusin", stopStrip);
+    photoStrip.addEventListener("touchstart", pauseStrip, { passive: true });
+    startStrip();
+  }
+
   // Back-to-top (mobile)
   var toTop = document.querySelector("[data-to-top]");
   if (toTop) {
