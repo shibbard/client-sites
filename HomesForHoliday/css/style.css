@@ -1200,3 +1200,45 @@ html.js .reveal.in { opacity: 1; transform: none; }
 @media (max-width: 349px) {
   .brand-tagline .tagline-extra { display: none; }
 }
+
+/* ==========================================================================
+   Directory unlock (unlock.html)
+   ========================================================================== */
+.unlock-shell { max-width: 470px; margin: 0 auto; }
+.unlock-panel {
+  background: #fff; border: 1px solid var(--hairline); border-radius: 18px;
+  padding: clamp(24px, 4vw, 36px); box-shadow: var(--shadow-soft);
+}
+.unlock-panel h2 { font-size: clamp(1.5rem, 3.4vw, 1.9rem); margin-bottom: 10px; }
+.unlock-lead { color: var(--muted); margin-bottom: 22px; }
+.unlock-list { margin-bottom: 26px; }
+.unlock-list li { align-items: flex-start; }
+.unlock-fine { font-size: 0.8rem; color: var(--muted); margin-top: 14px; text-align: center; }
+.unlock-alt { font-size: 0.9rem; color: var(--muted); margin-top: 18px; text-align: center; }
+.unlock-status { color: var(--muted); text-align: center; margin: 0; }
+.unlock-label {
+  display: block; font-family: var(--font-label); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px;
+}
+.unlock-input {
+  width: 100%; padding: 14px 16px; margin-bottom: 16px;
+  border: 1px solid var(--line); border-radius: 12px;
+  font-family: var(--font-body); font-size: 1rem; color: var(--ink); background: var(--pearl);
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.unlock-input:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+/* Six digits, spaced out so they are easy to check against the email */
+.unlock-code-input {
+  font-family: var(--font-label); font-size: 1.5rem; font-weight: 700;
+  letter-spacing: 0.4em; text-align: center; padding-left: 0.4em;
+}
+.unlock-error { color: #b3261e; font-size: 0.86rem; margin: -8px 0 14px; }
+/* A button that reads as a link, so the alternative actions stay quiet */
+.linkish {
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; color: var(--primary); font-weight: 600; text-decoration: underline;
+}
+.linkish:hover { opacity: 0.8; }

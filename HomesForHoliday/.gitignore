@@ -29,3 +29,7 @@ src/plugins/impeccable-live.client.ts
 # impeccable-live-ignore-end
 
 .vercel
+node_modules/
+.vercel
+.env
+.env.local

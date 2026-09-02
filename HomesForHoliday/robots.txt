@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+# Paid redirects. Nothing to index, and no rank should flow through them.
+Disallow: /go/
+Disallow: /api/
+Disallow: /unlock.html
 
 Sitemap: https://home-for-holiday.getdigitaldone.co.uk/sitemap.xml

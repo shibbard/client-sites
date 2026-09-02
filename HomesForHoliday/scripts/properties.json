@@ -1,0 +1,758 @@
+[
+  {
+    "slug": "lanner-cornwall",
+    "region": "United Kingdom",
+    "owner_url": "https://www.chybian.com/",
+    "title": "Lanner, Cornwall",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846687.webp"
+  },
+  {
+    "slug": "new-milton-new-forest",
+    "region": "United Kingdom",
+    "owner_url": "https://www.inglewoodcottage.co.uk/",
+    "title": "New Milton, New Forest",
+    "sub": "Hampshire",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846683.webp"
+  },
+  {
+    "slug": "westward-ho-devon",
+    "region": "United Kingdom",
+    "owner_url": "https://www.westwardhoholidaycottage.co.uk/",
+    "title": "Westward Ho!, Devon",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846677.webp"
+  },
+  {
+    "slug": "shefford-bedfordshire",
+    "region": "United Kingdom",
+    "owner_url": "https://thefarmhouse.polehanger.co.uk/",
+    "title": "Shefford, Bedfordshire",
+    "sub": "South East England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846654.webp"
+  },
+  {
+    "slug": "wick-gloucestershire",
+    "region": "United Kingdom",
+    "owner_url": "https://www.yewtreebath.co.uk/",
+    "title": "Wick, Gloucestershire",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846643.webp"
+  },
+  {
+    "slug": "south-hams-devon",
+    "region": "United Kingdom",
+    "owner_url": "https://www.aprilcottage.info/",
+    "title": "South Hams, Devon",
+    "sub": "Southern England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846634.webp"
+  },
+  {
+    "slug": "portreath-cornwall",
+    "region": "United Kingdom",
+    "owner_url": "https://www.thecoveportreath.co.uk/",
+    "title": "Portreath, Cornwall",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846624.webp"
+  },
+  {
+    "slug": "st-ives-cornwall",
+    "region": "United Kingdom",
+    "owner_url": "https://www.thelighthousestives.com/",
+    "title": "St Ives, Cornwall",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846620.webp"
+  },
+  {
+    "slug": "launceston-cornwall",
+    "region": "United Kingdom",
+    "owner_url": "https://www.crookedbarn.co.uk/",
+    "title": "Launceston, Cornwall",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846405.webp"
+  },
+  {
+    "slug": "appledore-kent",
+    "region": "United Kingdom",
+    "owner_url": "https://www.brittonshillcottage.com/",
+    "title": "Appledore, Kent",
+    "sub": "South East England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846393.webp"
+  },
+  {
+    "slug": "cornwall",
+    "region": "United Kingdom",
+    "owner_url": "https://www.porthsandspenthouse.co.uk/",
+    "title": "Cornwall",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846392.webp"
+  },
+  {
+    "slug": "north-devon",
+    "region": "United Kingdom",
+    "owner_url": "https://www.wearecottage.co.uk/",
+    "title": "North Devon",
+    "sub": "South West England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846389.webp"
+  },
+  {
+    "slug": "bollihope-county-durham",
+    "region": "United Kingdom",
+    "owner_url": "https://www.weardale-cottage.co.uk/",
+    "title": "Bollihope, County Durham",
+    "sub": "Northern England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846648.webp"
+  },
+  {
+    "slug": "kendal-cumbria",
+    "region": "United Kingdom",
+    "owner_url": "https://kendalcottages.com/",
+    "title": "Kendal, Cumbria",
+    "sub": "Northern England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846633.webp"
+  },
+  {
+    "slug": "wilberfoss-york",
+    "region": "United Kingdom",
+    "owner_url": "https://www.goldcrestcabin.com/",
+    "title": "Wilberfoss, York",
+    "sub": "Yorkshire",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846408.webp"
+  },
+  {
+    "slug": "felmoor-park-northumberland",
+    "region": "United Kingdom",
+    "owner_url": "https://vermont-lodge.com/",
+    "title": "Felmoor Park, Northumberland",
+    "sub": "Northern England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846406.webp"
+  },
+  {
+    "slug": "cumbria-lake-district",
+    "region": "United Kingdom",
+    "owner_url": "https://www.churchhousebarn.co.uk/rates-availability",
+    "title": "Cumbria, Lake District",
+    "sub": "Northern England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846401.webp"
+  },
+  {
+    "slug": "cowling-yorkshire",
+    "region": "United Kingdom",
+    "owner_url": "https://www.eamescottage.co.uk/",
+    "title": "Cowling, Yorkshire",
+    "sub": "Northern England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846396.webp"
+  },
+  {
+    "slug": "sheringham-norfolk",
+    "region": "United Kingdom",
+    "owner_url": "https://luxurylookoutsheringham.co.uk/",
+    "title": "Sheringham, Norfolk",
+    "sub": "Middle England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846661.webp"
+  },
+  {
+    "slug": "south-leverton-nottinghamshire",
+    "region": "United Kingdom",
+    "owner_url": "https://www.diamondhouse.org.uk/",
+    "title": "South Leverton, Nottinghamshire",
+    "sub": "Middle England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846632.webp"
+  },
+  {
+    "slug": "croxton-lincolnshire",
+    "region": "United Kingdom",
+    "owner_url": "https://www.croxton-house.co.uk/",
+    "title": "Croxton, Lincolnshire",
+    "sub": "Middle England",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846391.webp"
+  },
+  {
+    "slug": "minnigaff-newton-stewart",
+    "region": "United Kingdom",
+    "owner_url": "https://www.gallowayholidaycottage.co.uk/",
+    "title": "Minnigaff, Newton Stewart",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846032.webp"
+  },
+  {
+    "slug": "nr-pitlochry",
+    "region": "United Kingdom",
+    "owner_url": "https://www.kinnaird-house.co.uk/",
+    "title": "Nr Pitlochry",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846031.webp"
+  },
+  {
+    "slug": "wanlockhead",
+    "region": "United Kingdom",
+    "owner_url": "https://beltonhouseholidayhome.co.uk/",
+    "title": "Wanlockhead",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846027.webp"
+  },
+  {
+    "slug": "rural-angus",
+    "region": "United Kingdom",
+    "owner_url": "https://www.kinclune.co.uk/",
+    "title": "Rural Angus",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846026.webp"
+  },
+  {
+    "slug": "durnamuck",
+    "region": "United Kingdom",
+    "owner_url": "https://www.sailmhorview.co.uk/",
+    "title": "Durnamuck",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846025.webp"
+  },
+  {
+    "slug": "loch-earn",
+    "region": "United Kingdom",
+    "owner_url": "https://www.stayatbriar.co.uk/briar-steading",
+    "title": "Loch Earn",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846024.webp"
+  },
+  {
+    "slug": "wester-ross",
+    "region": "United Kingdom",
+    "owner_url": "https://www.poolewebeachhouse.com/",
+    "title": "Wester Ross",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846020.webp"
+  },
+  {
+    "slug": "tougal-morar-estuary",
+    "region": "United Kingdom",
+    "owner_url": "https://whitesandsmorar.com/",
+    "title": "Tougal, Morar Estuary",
+    "sub": "Scotland",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846019.webp"
+  },
+  {
+    "slug": "anglesey-gwynedd",
+    "region": "United Kingdom",
+    "owner_url": "https://www.cowbellecottage.co.uk/",
+    "title": "Anglesey, Gwynedd",
+    "sub": "North Wales",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846615.webp"
+  },
+  {
+    "slug": "meidrim-carmarthenshire",
+    "region": "United Kingdom",
+    "owner_url": "https://www.meidrim.com/",
+    "title": "Meidrim, Carmarthenshire",
+    "sub": "Wales",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846610.webp"
+  },
+  {
+    "slug": "y-felinheli-gwynedd",
+    "region": "United Kingdom",
+    "owner_url": "https://themooringscottage.com/",
+    "title": "Y Felinheli, Gwynedd",
+    "sub": "North Wales",
+    "file": "united-kingdom.html",
+    "img": "images/image-standard-prv-846409.webp"
+  },
+  {
+    "slug": "pleamar-torrevieja",
+    "region": "Europe",
+    "owner_url": "https://pleamar30holidayrental.com/",
+    "title": "Pleamar, Torrevieja",
+    "sub": "Spain",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-847223.webp"
+  },
+  {
+    "slug": "rome",
+    "region": "Europe",
+    "owner_url": "https://navona-apartment.it/",
+    "title": "Rome",
+    "sub": "Italy",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-847222.webp"
+  },
+  {
+    "slug": "cala-tarida-ibiza",
+    "region": "Europe",
+    "owner_url": "https://www.villacalatarida.nl/",
+    "title": "Cala Tarida, Ibiza",
+    "sub": "Spain",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846902.webp"
+  },
+  {
+    "slug": "javea",
+    "region": "Europe",
+    "owner_url": "https://www.lacasarosajavea.com/",
+    "title": "Javea",
+    "sub": "Costa Blanca, Spain",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846860.webp"
+  },
+  {
+    "slug": "parador-nerja",
+    "region": "Europe",
+    "owner_url": "https://www.casasolbritt.com/",
+    "title": "Parador, Nerja",
+    "sub": "Costa del Sol, Spain",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846856.webp"
+  },
+  {
+    "slug": "le-bar-sur-loup",
+    "region": "Europe",
+    "owner_url": "https://www.villaspencer.com/",
+    "title": "Le Bar-sur-Loup",
+    "sub": "French Riviera, France",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846818.webp"
+  },
+  {
+    "slug": "poitou-charentes-ac5dad",
+    "region": "Europe",
+    "owner_url": "https://www.belleechappee.com/",
+    "title": "Poitou-Charentes",
+    "sub": "France",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846812.webp"
+  },
+  {
+    "slug": "orihuela-costa",
+    "region": "Europe",
+    "owner_url": "https://www.bookabitofparadise.com/",
+    "title": "Orihuela Costa",
+    "sub": "Costa Blanca, Spain",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846808.webp"
+  },
+  {
+    "slug": "meladeia-village-paphos",
+    "region": "Europe",
+    "owner_url": "https://www.ithakihouse.com/",
+    "title": "Meladeia Village, Paphos",
+    "sub": "Cyprus",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846802.webp"
+  },
+  {
+    "slug": "poitou-charentes-580979",
+    "region": "Europe",
+    "owner_url": "https://www.lavieilleferme16150.co.uk/",
+    "title": "Poitou-Charentes",
+    "sub": "France",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846774.webp"
+  },
+  {
+    "slug": "les-issambres-var",
+    "region": "Europe",
+    "owner_url": "https://www.villagladys.com/",
+    "title": "Les Issambres, Var",
+    "sub": "France",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846771.webp"
+  },
+  {
+    "slug": "monflanquin-aquitaine",
+    "region": "Europe",
+    "owner_url": "https://jouannoufarmhouse.com/",
+    "title": "Monflanquin, Aquitaine",
+    "sub": "France",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846769.webp"
+  },
+  {
+    "slug": "playa-blanca-lanzarote",
+    "region": "Europe",
+    "owner_url": "https://www.lanzarote-holiday-villa.co.uk/",
+    "title": "Playa Blanca, Lanzarote",
+    "sub": "Canary Islands",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846767.webp"
+  },
+  {
+    "slug": "torre-pacheco-mar-menor-golf-resort",
+    "region": "Europe",
+    "owner_url": "https://www.villa-aguila.co.uk/",
+    "title": "Torre-Pacheco, Mar Menor Golf Resort",
+    "sub": "Spain",
+    "file": "europe.html",
+    "img": "images/image-standard-prv-846765.webp"
+  },
+  {
+    "slug": "st-pete-beach",
+    "region": "USA",
+    "owner_url": "https://majesticbeachcondo.com/",
+    "title": "St Pete Beach",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-846018.webp"
+  },
+  {
+    "slug": "hernando-beach",
+    "region": "USA",
+    "owner_url": "https://www.hernandohideaway.com/",
+    "title": "Hernando Beach",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-846017.webp"
+  },
+  {
+    "slug": "panama-city-beach",
+    "region": "USA",
+    "owner_url": "https://www.dreamalittledreampcb.com/",
+    "title": "Panama City Beach",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-846015.webp"
+  },
+  {
+    "slug": "barefoot-beach",
+    "region": "USA",
+    "owner_url": "https://www.mybeachshack.net/",
+    "title": "Barefoot Beach",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-846013.webp"
+  },
+  {
+    "slug": "santa-rosa-beach",
+    "region": "USA",
+    "owner_url": "https://www.bellacosta30a.com/",
+    "title": "Santa Rosa Beach",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845951.webp"
+  },
+  {
+    "slug": "st-george-island",
+    "region": "USA",
+    "owner_url": "https://www.islevaca.com/",
+    "title": "St George Island",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845950.webp"
+  },
+  {
+    "slug": "clearwater-beach",
+    "region": "USA",
+    "owner_url": "https://www.clearwaterbeachcondorental.com/",
+    "title": "Clearwater Beach",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845949.webp"
+  },
+  {
+    "slug": "disney-orlando-b5bab8",
+    "region": "USA",
+    "owner_url": "https://www.villalangham.co.uk/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845945.webp"
+  },
+  {
+    "slug": "disney-orlando-6c89c2",
+    "region": "USA",
+    "owner_url": "https://www.orlandoadventurehomes.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845944.webp"
+  },
+  {
+    "slug": "disney-orlando-ce1867",
+    "region": "USA",
+    "owner_url": "https://www.sunsetmemoriesvilla.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845943.webp"
+  },
+  {
+    "slug": "disney-orlando-04158d",
+    "region": "USA",
+    "owner_url": "https://www.mariosarcadepoolhouse.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845940.webp"
+  },
+  {
+    "slug": "disney-orlando-c3bec6",
+    "region": "USA",
+    "owner_url": "https://serhiivilla.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845939.webp"
+  },
+  {
+    "slug": "disney-orlando-f68b42",
+    "region": "USA",
+    "owner_url": "https://www.calabaypalmsvilla.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845938.webp"
+  },
+  {
+    "slug": "disney-orlando-34488c",
+    "region": "USA",
+    "owner_url": "https://floridavillarosso.co.uk/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845937.webp"
+  },
+  {
+    "slug": "disney-orlando-592436",
+    "region": "USA",
+    "owner_url": "https://www.whbeourguest.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845936.webp"
+  },
+  {
+    "slug": "disney-orlando-579556",
+    "region": "USA",
+    "owner_url": "https://www.oristaendlesssummervilla.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845935.webp"
+  },
+  {
+    "slug": "disney-orlando-40d098",
+    "region": "USA",
+    "owner_url": "https://www.ourdisneyhouse.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845933.webp"
+  },
+  {
+    "slug": "disney-orlando-bfb4af",
+    "region": "USA",
+    "owner_url": "https://www.oristaendlesssummervilla.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-845930.webp"
+  },
+  {
+    "slug": "disney-orlando-7f89ce",
+    "region": "USA",
+    "owner_url": "https://www.sunstreamsvilla.com/",
+    "title": "Disney, Orlando",
+    "sub": "Florida",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-844757.webp"
+  },
+  {
+    "slug": "gulf-shores-7dd82f",
+    "region": "USA",
+    "owner_url": "https://www.sandcastlestays.com/",
+    "title": "Gulf Shores",
+    "sub": "Alabama",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847278.webp"
+  },
+  {
+    "slug": "surf-city",
+    "region": "USA",
+    "owner_url": "https://www.sweetteatopsail.com/",
+    "title": "Surf City",
+    "sub": "North Carolina",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847277.webp"
+  },
+  {
+    "slug": "branson",
+    "region": "USA",
+    "owner_url": "https://www.kustescondo2023.com/",
+    "title": "Branson",
+    "sub": "Missouri",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847275.webp"
+  },
+  {
+    "slug": "smoky-mountains",
+    "region": "USA",
+    "owner_url": "https://www.silverbearvacationrentals.com/",
+    "title": "Smoky Mountains",
+    "sub": "South Carolina",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847258.webp"
+  },
+  {
+    "slug": "fripp-island",
+    "region": "USA",
+    "owner_url": "https://sanddollarcourt.com/",
+    "title": "Fripp Island",
+    "sub": "South Carolina",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847237.webp"
+  },
+  {
+    "slug": "north-myrtle-beach",
+    "region": "USA",
+    "owner_url": "https://www.whales-tale.com/",
+    "title": "North Myrtle Beach",
+    "sub": "South Carolina",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847232.webp"
+  },
+  {
+    "slug": "gulf-shores-867ac1",
+    "region": "USA",
+    "owner_url": "https://lazyladygulfshores.com/",
+    "title": "Gulf Shores",
+    "sub": "Alabama",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847230.webp"
+  },
+  {
+    "slug": "corolla",
+    "region": "USA",
+    "owner_url": "https://www.thesaltyseahorse2201.com/",
+    "title": "Corolla",
+    "sub": "North Carolina",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847229.webp"
+  },
+  {
+    "slug": "molokai",
+    "region": "USA",
+    "owner_url": "https://www.travelmolokai.com/",
+    "title": "Molokai",
+    "sub": "Hawaii",
+    "file": "usa.html",
+    "img": "images/image-standard-prv-847228.webp"
+  },
+  {
+    "slug": "maya-beach",
+    "region": "Caribbean Islands",
+    "owner_url": "https://oceansoftimebelize.com/",
+    "title": "Maya Beach",
+    "sub": "Belize",
+    "file": "caribbean-islands.html",
+    "img": "images/image-standard-prv-847295.webp"
+  },
+  {
+    "slug": "cabarete-sea-horse-ranch",
+    "region": "Caribbean Islands",
+    "owner_url": "https://www.yourbeachvilla.com/",
+    "title": "Cabarete, Sea Horse Ranch",
+    "sub": "Dominican Republic",
+    "file": "caribbean-islands.html",
+    "img": "images/image-standard-prv-847291.webp"
+  },
+  {
+    "slug": "north-andros-island",
+    "region": "Caribbean Islands",
+    "owner_url": "https://www.luredinnbahamas.com/",
+    "title": "North Andros Island",
+    "sub": "Bahamas",
+    "file": "caribbean-islands.html",
+    "img": "images/image-standard-prv-847287.webp"
+  },
+  {
+    "slug": "palmetto-bay",
+    "region": "Caribbean Islands",
+    "owner_url": "https://www.larubeyaroatan.com/",
+    "title": "Palmetto Bay",
+    "sub": "Roatán",
+    "file": "caribbean-islands.html",
+    "img": "images/image-standard-prv-847285.webp"
+  },
+  {
+    "slug": "abaco",
+    "region": "Caribbean Islands",
+    "owner_url": "https://www.bluecorallandingbahamas.com/",
+    "title": "Abaco",
+    "sub": "Bahamas",
+    "file": "caribbean-islands.html",
+    "img": "images/image-standard-prv-847281.webp"
+  },
+  {
+    "slug": "turks-caicos",
+    "region": "Caribbean Islands",
+    "owner_url": "https://www.sunrisevillaturks.com/",
+    "title": "Turks & Caicos",
+    "sub": "Caribbean",
+    "file": "caribbean-islands.html",
+    "img": "images/image-standard-prv-847280.webp"
+  },
+  {
+    "slug": "merida",
+    "region": "Central America",
+    "owner_url": "https://casaaltamerida.lodgify.com/",
+    "title": "Mérida",
+    "sub": "Mexico",
+    "file": "central-america.html",
+    "img": "images/image-standard-prv-847330.webp"
+  },
+  {
+    "slug": "esterillos",
+    "region": "Central America",
+    "owner_url": "https://www.casatweed.com/",
+    "title": "Esterillos",
+    "sub": "Costa Rica",
+    "file": "central-america.html",
+    "img": "images/image-standard-prv-847328.webp"
+  },
+  {
+    "slug": "pura-vida",
+    "region": "Central America",
+    "owner_url": "https://www.hucksbeachhouse.com/",
+    "title": "Pura Vida",
+    "sub": "Costa Rica",
+    "file": "central-america.html",
+    "img": "images/image-standard-prv-847327.webp"
+  },
+  {
+    "slug": "akumal",
+    "region": "Central America",
+    "owner_url": "https://www.akumalbliss.com/",
+    "title": "Akumal",
+    "sub": "Mexico",
+    "file": "central-america.html",
+    "img": "images/image-standard-prv-847301.webp"
+  }
+]
