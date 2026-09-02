@@ -11,6 +11,8 @@
   },
   "scripts": {
     "test": "node scripts/test-gate.mjs",
-    "extract": "node scripts/extract-properties.mjs && node scripts/build-seed.mjs"
+    "catalogue": "node scripts/from-csv.mjs",
+    "catalogue:check": "node scripts/from-csv.mjs --check",
+    "catalogue:verify": "node scripts/verify-roundtrip.mjs"
   }
 }
