@@ -5,9 +5,9 @@ the directory.
 
 ## "Is the link all you need?"
 
-No — the link is one of seven things. A card can't be built from a URL alone.
-Taking `vellandreathcornishcottages.com` as the example, here is what a card
-needs and where it comes from:
+Nearly, yes — more than I first thought. The photos can be pulled off the
+owner's own site automatically (see below), so in practice **the link plus a
+couple of details is enough**. Here is what a card needs:
 
 | Column | Example | Notes |
 |---|---|---|
@@ -18,15 +18,35 @@ needs and where it comes from:
 | `type` | `Cottage` | Cottage, Villa, Apartment, Barn Conversion, Cabin, House, Mansion… |
 | `beds` / `baths` | `3` / `2` | numbers |
 | `pool` | `Private Pool` | optional — or `Communal Pool`, or blank |
-| `image` | `images/xxx.webp` | **a photo file, saved into `images/`** |
+| `image` | `images/xxx.webp` | grabbed from the owner site by the script below |
 
-The photo is the part that can't be automated away. House style is no external
-image links, so each one has to be downloaded, converted to `.webp` and put in
-`images/`. If Gary can send a photo per property alongside the link, everything
-else can be read off the owner's site in a minute or two.
+House style is no external image links, so photos have to be downloaded,
+converted to `.webp` and put in `images/`. That part is now scripted.
 
-**Short version for Gary:** *link + one photo + how many beds and baths.* The
-rest can be worked out from the owner's own site.
+**Short version for Gary: the link is enough to start.** Beds and baths are
+worth confirming, and the property type and sub-region need a human, but no
+photo needs sending.
+
+### Grabbing the photos from a link
+
+```bash
+node scripts/fetch-property.mjs <owner-url>              # see what it found
+node scripts/fetch-property.mjs <owner-url> --pick 1 --slug sennen-cornwall
+```
+
+It reads the owner's page, lists every usable photo with its size, then
+converts the chosen one to the same 720x540 `.webp` every existing card uses,
+and prints a spreadsheet row.
+
+Photos on these sites are usually **not** in `<img>` tags — they tend to be CSS
+backgrounds or `data-bg` slideshow attributes, so all of those are harvested
+too. On Gary's example, `vellandreathcornishcottages.com`, it found 14 usable
+hero shots at 1240x827 plus the page title, description and a bed count, from
+nothing but the link.
+
+> The photos belong to the owner. They are fine to use for the listing that
+> promotes them, but that rests on Gary's relationship with each owner, not on
+> the fact that the file was reachable.
 
 ## The spreadsheet
 
@@ -46,7 +66,8 @@ npm run catalogue          # checks the sheet, then regenerates everything
 That does three things:
 
 1. **Checks the list** for duplicates, wrong regions and missing photos
-2. Rewrites `db/002_seed_properties.sql` — run it in Supabase to update the live directory
+2. Rewrites `db/002_seed_properties.sql` — the directory data, ready for when
+   the database exists (see the note below)
 3. Writes `build/cards/<region>.html` — card markup to paste into the region page
 
 `npm run catalogue:verify` confirms the generated markup still matches what's on
@@ -121,6 +142,17 @@ at 84 properties, is much easier than at 150.
 Gary's plan of 5–10 more per region would take it to roughly 110–135. The thin
 areas are Caribbean Islands, Central America and Europe; the USA is heavily
 concentrated on Orlando.
+
+## There is no database yet
+
+Worth being explicit, since the tooling talks about it: **nothing is
+provisioned.** The paywall was written against Supabase Postgres as the spec
+sets out, and `db/001_init.sql` and `db/002_seed_properties.sql` are written
+and ready — but no Supabase project has been created, so they have never been
+run anywhere.
+
+Until that exists, the spreadsheet and generated SQL are the directory data,
+and the site still works exactly as it does today. Nothing here is live.
 
 ## One thing that needs deciding
 
