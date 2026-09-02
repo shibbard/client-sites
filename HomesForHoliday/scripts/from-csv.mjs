@@ -64,7 +64,11 @@ const hash6 = s => createHash('sha256').update(s).digest('hex').slice(0, 6);
 
 // --- Load -------------------------------------------------------------------
 const rows = parseCsv(readFileSync('properties.csv', 'utf8'));
-const live = rows.filter(r => (r.status || 'live').toLowerCase() !== 'hidden');
+// Only "live" is published. Anything else — draft, pending, hidden, blank —
+// stays in the sheet and out of the site, so a half-finished row can sit there
+// safely until someone has checked it.
+const live = rows.filter(r => (r.status || '').trim().toLowerCase() === 'live');
+const held = rows.filter(r => !live.includes(r));
 
 const errors = [], warnings = [];
 const problem = (list, row, msg) =>
@@ -150,7 +154,7 @@ for (const r of live) {
 }
 
 // --- Report -----------------------------------------------------------------
-console.log(`\nproperties.csv — ${rows.length} rows (${live.length} live, ${rows.length - live.length} hidden)\n`);
+console.log(`\nproperties.csv — ${rows.length} rows (${live.length} live, ${held.length} not published)\n`);
 
 const counts = {};
 for (const r of live) counts[r.region] = (counts[r.region] || 0) + 1;
@@ -166,7 +170,15 @@ if (warnings.length) {
   console.log(`\nWARNINGS (${warnings.length}) — worth a look:`);
   warnings.forEach(w => console.log(`  ! ${w}`));
 }
-if (!errors.length && !warnings.length) console.log('\nno problems found');
+if (held.length) {
+  console.log(`\nNOT PUBLISHED (${held.length}) — status is not "live":`);
+  for (const r of held) {
+    const name = (r.title || r.slug || r.owner_url || '?').slice(0, 40).padEnd(42);
+    console.log(`  · ${name} status: ${r.status || '(blank)'}${r.notes ? '  — ' + r.notes : ''}`);
+  }
+}
+
+if (!errors.length && !warnings.length && !held.length) console.log('\nno problems found');
 
 if (errors.length) { console.log(''); process.exit(1); }
 if (checkOnly) { console.log(''); process.exit(0); }
