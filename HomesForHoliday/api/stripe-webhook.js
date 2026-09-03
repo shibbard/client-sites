@@ -1,9 +1,13 @@
-// Stripe is the source of truth for payment. The webhook, not the browser
-// redirect, is what grants access.
+// Stripe is the source of truth for payment, and the signed webhook — not the
+// browser redirect — is what triggers the email.
+//
+// The buyer already has access by this point: /api/activate set their cookie on
+// the way back from Stripe. What this adds is the link that works on any other
+// device, and is the way back in if they clear their browser.
 import Stripe from 'stripe';
-import { admin } from '../lib/supabase.js';
-import { readRawBody, json } from '../lib/http.js';
-import { ACCESS_DAYS } from '../lib/session.js';
+import { sign, expiryFrom, ACCESS_DAYS } from '../lib/token.js';
+import { sendAccessLink } from '../lib/email.js';
+import { readRawBody, json, siteUrl } from '../lib/http.js';
 
 // Signature verification needs the untouched bytes.
 export const config = { api: { bodyParser: false } };
@@ -37,31 +41,35 @@ export default async function handler(req, res) {
       return json(res, 200, { received: true, ignored: 'no_email' });
     }
 
+    // Buying twice adds to whatever is left. Without a table to read, "what is
+    // left" comes from Stripe: if there is an earlier paid checkout still
+    // inside its 30 days, the new window starts from the end of that one.
+    let from = null;
     try {
-      const { data: existing } = await admin
-        .from('members').select('id, access_expires_at').eq('email', email).maybeSingle();
-
-      // Extend from whatever is later: an unexpired window, or now. Buying
-      // twice adds time rather than throwing the remainder away.
-      const from = existing?.access_expires_at && new Date(existing.access_expires_at) > new Date()
-        ? new Date(existing.access_expires_at)
-        : new Date();
-      const expires = new Date(from.getTime() + ACCESS_DAYS * 864e5).toISOString();
-
-      const { error } = await admin.from('members').upsert({
-        ...(existing?.id ? { id: existing.id } : {}),
-        email,
-        stripe_customer_id: typeof cs.customer === 'string' ? cs.customer : null,
-        access_expires_at: expires,
-      }, { onConflict: 'email' });
-
-      if (error) throw new Error(error.message);
-      console.log(`webhook: access granted to ${email} until ${expires}`);
+      if (typeof cs.customer === 'string') {
+        const { data: earlier } = await stripe.checkout.sessions.list({ customer: cs.customer, limit: 20 });
+        for (const prev of earlier) {
+          if (prev.id === cs.id || prev.payment_status !== 'paid') continue;
+          const ends = new Date(prev.created * 1000 + ACCESS_DAYS * 864e5);
+          if (ends > new Date() && (!from || ends > from)) from = ends;
+        }
+      }
     } catch (err) {
-      // 500 makes Stripe retry, which is what we want if the DB was briefly down.
-      console.error('webhook: grant failed', err.message);
+      // Not worth failing the webhook over — they still get a full 30 days.
+      console.error('webhook: could not check earlier purchases', err.message);
+    }
+
+    try {
+      const expiresAt = expiryFrom(from);
+      const token = await sign(email, expiresAt);
+      await sendAccessLink({ to: email, token, expiresAt, siteUrl: siteUrl(req), renewed: !!from });
+      console.log(`webhook: link sent to ${email}, access until ${expiresAt.toISOString()}`);
+    } catch (err) {
+      // 500 makes Stripe retry. Worth retrying: the email is how they get back
+      // in on any device other than the one they paid on.
+      console.error('webhook: could not send the access link', err.message);
       res.statusCode = 500;
-      return res.end('grant failed');
+      return res.end('send failed');
     }
   }
 

@@ -1,11 +1,8 @@
 import Stripe from 'stripe';
-import { json, readJson, methodGuard } from '../lib/http.js';
+import { json, readJson, methodGuard, siteUrl } from '../lib/http.js';
 
 const PRICE_PENCE = 595;          // £5.95 — see note in README about VAT
 const CURRENCY = 'gbp';
-
-const siteUrl = req => process.env.SITE_URL
-  || `https://${req.headers['x-forwarded-host'] || req.headers.host}`;
 
 export default async function handler(req, res) {
   if (!methodGuard(req, res, ['POST'])) return;
@@ -40,7 +37,13 @@ export default async function handler(req, res) {
         },
       },
       allow_promotion_codes: false,
-      success_url: `${base}/unlock.html?paid=1&cs={CHECKOUT_SESSION_ID}${next ? `&next=${next}` : ''}`,
+      // Creates a Customer against the email even in payment mode. With no
+      // database of our own, that record is what /api/recover reads to work out
+      // who paid and when.
+      customer_creation: 'always',
+      // Back through /api/activate, which confirms the payment with Stripe and
+      // sets the cookie, so access is immediate rather than waiting on email.
+      success_url: `${base}/api/activate?cs={CHECKOUT_SESSION_ID}${next ? `&next=${next}` : ''}`,
       cancel_url: `${base}/unlock.html${next ? `?next=${next}` : ''}`,
       metadata: { next_slug: next || '' },
     });

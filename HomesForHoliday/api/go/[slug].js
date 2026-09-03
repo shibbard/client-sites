@@ -1,11 +1,16 @@
 // The paywall.
 //
-// The session check runs here, on the server, BEFORE the owner URL is put in a
-// response. Nothing in this flow ever renders owner_url into HTML, so
-// view-source on a region page shows only /go/<slug>.
-import { admin } from '../../lib/supabase.js';
-import { getMember, touchSession, isThrottled } from '../../lib/session.js';
-import { redirect, json, methodGuard } from '../../lib/http.js';
+// The token check runs here, on the server, BEFORE the owner URL is put in a
+// response. Nothing in this flow renders an owner URL into HTML, so view-source
+// on a region page shows only /go/<slug>.
+//
+// No database: the cookie is a signed token carrying the buyer's email and
+// expiry, and the slug is looked up in the catalogue that ships with this
+// function.
+import { lookup } from '../_catalogue.js';
+import { readToken, verify } from '../../lib/token.js';
+import { isThrottled } from '../../lib/throttle.js';
+import { redirect, methodGuard } from '../../lib/http.js';
 
 export default async function handler(req, res) {
   if (!methodGuard(req, res, ['GET', 'HEAD'])) return;
@@ -18,21 +23,20 @@ export default async function handler(req, res) {
 
   const next = encodeURIComponent(slug);
 
-  let member;
+  let access;
   try {
-    member = await getMember(req);
+    access = await verify(readToken(req));
   } catch (err) {
-    console.error('gate: session lookup failed', err);
+    // Only reachable if ACCESS_SECRET is missing or malformed in this
+    // environment — fail closed rather than opening the gate.
+    console.error('gate: token check failed', err.message);
     return redirect(res, `/unlock.html?next=${next}&error=1`);
   }
 
-  // Not signed in — send them to the unlock panel, remembering where they were.
-  if (!member) return redirect(res, `/unlock.html?next=${next}`);
+  // No token, a tampered one, or one whose 30 days have run out.
+  if (!access) return redirect(res, `/unlock.html?next=${next}`);
 
-  // Signed in but the 30 days have lapsed.
-  if (!member.hasAccess) return redirect(res, `/unlock.html?renew=1&next=${next}`);
-
-  if (await isThrottled(member.id)) {
+  if (isThrottled(access.email)) {
     res.statusCode = 429;
     res.setHeader('Retry-After', '600');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
@@ -43,26 +47,14 @@ export default async function handler(req, res) {
 <div style="font:16px/1.6 system-ui;max-width:34rem;margin:15vh auto;padding:0 1.25rem">
 <h1 style="font-size:1.3rem">Just a moment</h1>
 <p>That is a lot of properties in a short space of time, so we have paused this
-account for a few minutes.</p>
+link for a few minutes.</p>
 <p>If this was you, it will clear on its own &mdash; or email
 <a href="mailto:hfh.travel@outlook.com">hfh.travel@outlook.com</a> and we will sort it out.</p>
 <p><a href="/destinations.html">Back to the directory</a></p></div>`);
   }
 
-  const { data: property } = await admin
-    .from('properties').select('slug, owner_url').eq('slug', slug).maybeSingle();
-
+  const property = lookup(slug);
   if (!property) return redirect(res, '/destinations.html?notfound=1');
 
-  // Log first, then send them on.
-  await Promise.all([
-    admin.from('link_events').insert({
-      member_id: member.id,
-      slug: property.slug,
-      referrer: (req.headers.referer || '').slice(0, 500) || null,
-    }),
-    touchSession(member.sessionId),
-  ]).catch(err => console.error('gate: logging failed', err));
-
-  return redirect(res, property.owner_url);
+  return redirect(res, property.url);
 }

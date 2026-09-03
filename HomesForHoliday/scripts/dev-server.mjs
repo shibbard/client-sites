@@ -1,5 +1,5 @@
 // Local preview only. Serves the static site and stubs the API responses so the
-// unlock panel can be checked visually without Stripe or Supabase credentials.
+// unlock panel can be checked visually without Stripe or Resend credentials.
 // Not used in production — Vercel serves api/ for real.
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
@@ -9,12 +9,15 @@ const PORT = Number(process.env.PORT || 8787);
 const root = process.cwd();
 
 // Flip these to preview the other states.
+// STUB_STATE=locked | active | lapsed
+const STATE = process.env.STUB_STATE || 'locked';
 const STUB = {
-  signedIn: process.env.STUB_SIGNED_IN === '1',
-  hasAccess: process.env.STUB_HAS_ACCESS === '1',
-  email: 'someone@example.com',
-  accessExpiresAt: new Date(Date.now() + 30 * 864e5).toISOString(),
-};
+  locked:  { hasAccess: false, known: false },
+  active:  { hasAccess: true,  known: true, email: 'someone@example.com',
+             accessExpiresAt: new Date(Date.now() + 30 * 864e5).toISOString() },
+  lapsed:  { hasAccess: false, known: true, lapsed: true, email: 'someone@example.com',
+             accessExpiresAt: new Date(Date.now() - 2 * 864e5).toISOString() },
+}[STATE] || { hasAccess: false, known: false };
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript',

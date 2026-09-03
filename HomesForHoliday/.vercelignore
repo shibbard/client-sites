@@ -1,0 +1,13 @@
+# Vercel serves this folder's files as static output, so anything left here is
+# a public URL. These hold owner URLs or are local tooling; none of them are
+# needed at runtime — api/_catalogue.js is what the gate reads.
+#
+# This is the real protection. The /lib/ and /scripts/ redirects in vercel.json
+# are a second line in case a file is ever added back.
+scripts/
+build/
+properties.csv
+properties.previous.csv
+*.md
+.env.example
+node_modules/

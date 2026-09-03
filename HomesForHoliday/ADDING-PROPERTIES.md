@@ -66,8 +66,9 @@ npm run catalogue          # checks the sheet, then regenerates everything
 That does three things:
 
 1. **Checks the list** for duplicates, wrong regions and missing photos
-2. Rewrites `db/002_seed_properties.sql` — the directory data, ready for when
-   the database exists (see the note below)
+2. Rewrites `api/_catalogue.js` — the slug-to-owner-URL map the paywall reads.
+   It lives inside `api/` on purpose: files there are function source, not
+   static output, so it is never fetchable from the site
 3. Writes `build/cards/<region>.html` — card markup to paste into the region page
 
 `npm run catalogue:verify` confirms the generated markup still matches what's on
@@ -143,16 +144,17 @@ Gary's plan of 5–10 more per region would take it to roughly 110–135. The th
 areas are Caribbean Islands, Central America and Europe; the USA is heavily
 concentrated on Orlando.
 
-## There is no database yet
+## There is no database
 
-Worth being explicit, since the tooling talks about it: **nothing is
-provisioned.** The paywall was written against Supabase Postgres as the spec
-sets out, and `db/001_init.sql` and `db/002_seed_properties.sql` are written
-and ready — but no Supabase project has been created, so they have never been
-run anywhere.
+By design. The paywall holds no customer records at all: access is a signed
+token in a cookie, and `api/_catalogue.js` — generated from this spreadsheet —
+is the only server-side data there is. Adding a property means regenerating that
+file and deploying; there is nothing to migrate and nothing to keep running
+between purchases.
 
-Until that exists, the spreadsheet and generated SQL are the directory data,
-and the site still works exactly as it does today. Nothing here is live.
+What is not provisioned yet is **Stripe** and **Resend**, so nothing can take
+money or send an access link until those accounts exist. The site itself works
+exactly as it does today.
 
 ## One thing that needs deciding
 

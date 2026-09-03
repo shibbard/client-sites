@@ -3,12 +3,25 @@
   "rewrites": [
     { "source": "/go/:slug", "destination": "/api/go/:slug" }
   ],
+  "redirects": [
+    { "source": "/lib/:path*", "destination": "/404.html", "permanent": false },
+    { "source": "/scripts/:path*", "destination": "/404.html", "permanent": false },
+    { "source": "/build/:path*", "destination": "/404.html", "permanent": false },
+    { "source": "/properties.csv", "destination": "/404.html", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/go/:slug",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "Cache-Control", "value": "no-store, private" }
+      ]
+    },
+    {
+      "source": "/api/:path*",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Referrer-Policy", "value": "no-referrer" }
       ]
     }
   ]

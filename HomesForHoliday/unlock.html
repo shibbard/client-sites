@@ -78,45 +78,36 @@
         <ul class="tick-list unlock-list">
           <li><i data-lucide="check-circle-2"></i><span><strong>30 days</strong> of direct links to every owner&rsquo;s website</span></li>
           <li><i data-lucide="check-circle-2"></i><span><strong>No booking fees</strong> &mdash; owners set their own prices, we take nothing</span></li>
-          <li><i data-lucide="check-circle-2"></i><span><strong>No account to set up</strong> &mdash; we email you a 6-digit code</span></li>
+          <li><i data-lucide="check-circle-2"></i><span><strong>No account to set up</strong> &mdash; we email you a link that just works</span></li>
           <li><i data-lucide="check-circle-2"></i><span><strong>No auto-renew</strong> &mdash; it simply lapses after 30 days</span></li>
         </ul>
         <button class="btn btn-amber btn-block" data-action="buy">
           Unlock for &pound;5.95 <i data-lucide="arrow-right"></i>
         </button>
         <p class="unlock-fine">Card, Apple&nbsp;Pay or Google&nbsp;Pay via Stripe. One payment, no subscription.</p>
-        <p class="unlock-alt">Already bought access? <button class="linkish" data-action="show-signin">Sign in</button></p>
+        <p class="unlock-alt">Already bought access? <button class="linkish" data-action="show-recover">Send my link again</button></p>
       </div>
 
-      <!-- Email step -->
-      <div class="unlock-panel" data-state="email" hidden>
-        <h2>Sign in</h2>
-        <p class="unlock-lead">Pop in the email address you used. We&rsquo;ll send you a 6-digit code &mdash; no password to remember.</p>
-        <form data-form="email" novalidate>
+      <!-- Lost the email -->
+      <div class="unlock-panel" data-state="recover" hidden>
+        <h2>Send my link again</h2>
+        <p class="unlock-lead">Pop in the email address you paid with and we&rsquo;ll send your access link straight back out. It works on any device.</p>
+        <form data-form="recover" novalidate>
           <label class="unlock-label" for="unlock-email">Email address</label>
           <input class="unlock-input" id="unlock-email" name="email" type="email"
                  autocomplete="email" inputmode="email" required placeholder="you@example.com">
-          <p class="unlock-error" data-error="email" hidden></p>
-          <button class="btn btn-primary btn-block" type="submit">Send my code</button>
+          <p class="unlock-error" data-error="recover" hidden></p>
+          <button class="btn btn-primary btn-block" type="submit">Email me the link</button>
         </form>
         <p class="unlock-alt"><button class="linkish" data-action="show-locked">Back</button></p>
       </div>
 
-      <!-- Code step -->
-      <div class="unlock-panel" data-state="code" hidden>
-        <h2>Enter your code</h2>
-        <p class="unlock-lead">We&rsquo;ve emailed a 6-digit code to <strong data-slot="email"></strong>. It expires shortly, so best be quick.</p>
-        <form data-form="code" novalidate>
-          <label class="unlock-label" for="unlock-code">6-digit code</label>
-          <input class="unlock-input unlock-code-input" id="unlock-code" name="code" type="text"
-                 autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]*"
-                 maxlength="6" required placeholder="123456">
-          <p class="unlock-error" data-error="code" hidden></p>
-          <button class="btn btn-primary btn-block" type="submit">Confirm</button>
-        </form>
-        <p class="unlock-alt">
-          Didn&rsquo;t arrive? Check spam, or <button class="linkish" data-action="resend">send it again</button>.
-        </p>
+      <!-- Link on its way -->
+      <div class="unlock-panel" data-state="sent" hidden>
+        <h2>Check your inbox</h2>
+        <p class="unlock-lead" data-slot="sent-message">If that address has access, the link is on its way.</p>
+        <p class="unlock-fine">It can take a minute to arrive, and it is worth a look in your spam folder. Still nothing? Email <a href="mailto:hfh.travel@outlook.com">hfh.travel@outlook.com</a> and we will sort it out.</p>
+        <p class="unlock-alt"><button class="linkish" data-action="show-locked">Back</button></p>
       </div>
 
       <!-- Signed in, paid -->
@@ -126,14 +117,14 @@
         <a class="btn btn-amber btn-block" data-slot="continue" href="/destinations.html">
           Continue <i data-lucide="arrow-right"></i>
         </a>
-        <p class="unlock-alt"><span data-slot="signed-in-as"></span> &middot;
-          <button class="linkish" data-action="signout">Sign out</button></p>
+        <p class="unlock-fine">We have emailed this link to <span data-slot="signed-in-as"></span> as well &mdash; keep it and you can pick up where you left off on your phone.</p>
+        <p class="unlock-alt"><button class="linkish" data-action="signout">Sign out on this device</button></p>
       </div>
 
-      <!-- Signed in, lapsed -->
+      <!-- Known, but out of date -->
       <div class="unlock-panel" data-state="lapsed" hidden>
         <h2>Your 30 days are up</h2>
-        <p class="unlock-lead">There are new properties added every month &mdash; unlock another 30 days whenever you like.</p>
+        <p class="unlock-lead">Access ran out on <strong data-slot="expires"></strong>. There are new properties added every month &mdash; unlock another 30 days whenever you like.</p>
         <button class="btn btn-amber btn-block" data-action="buy">
           Unlock again for &pound;5.95 <i data-lucide="arrow-right"></i>
         </button>
@@ -141,11 +132,12 @@
           <button class="linkish" data-action="signout">Sign out</button></p>
       </div>
 
-      <!-- Straight back from Stripe -->
-      <div class="unlock-panel" data-state="paid" hidden>
-        <h2>Payment received &mdash; thank you</h2>
-        <p class="unlock-lead">Last step: we&rsquo;ve sent a 6-digit code to <strong data-slot="email"></strong> so we know it&rsquo;s you.</p>
-        <p class="unlock-status" data-slot="paid-status">Sending your code&hellip;</p>
+      <!-- Something went wrong on the way back from Stripe -->
+      <div class="unlock-panel" data-state="problem" hidden>
+        <h2>That didn&rsquo;t quite work</h2>
+        <p class="unlock-lead" data-slot="problem-message">We could not confirm that payment just then.</p>
+        <p class="unlock-fine">If you have been charged, nothing is lost &mdash; your access link is in your email. You can also <button class="linkish" data-action="show-recover">have it sent again</button>, or email <a href="mailto:hfh.travel@outlook.com">hfh.travel@outlook.com</a>.</p>
+        <p class="unlock-alt"><button class="linkish" data-action="show-locked">Back</button></p>
       </div>
 
     </div>

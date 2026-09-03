@@ -37,3 +37,8 @@ export const readJson = async req => {
 
 export const clientIp = req =>
   (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'unknown';
+
+// Canonical origin. SITE_URL wins so that Stripe return URLs and emailed links
+// always point at the real domain, not at a preview deployment's hostname.
+export const siteUrl = req => process.env.SITE_URL
+  || `https://${req.headers['x-forwarded-host'] || req.headers.host}`;
