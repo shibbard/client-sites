@@ -1,12 +1,12 @@
 // Stripe is the source of truth for payment, and the signed webhook — not the
-// browser redirect — is what triggers the email.
+// browser redirect — is what triggers the confirmation email.
 //
 // The buyer already has access by this point: /api/activate set their cookie on
-// the way back from Stripe. What this adds is the link that works on any other
-// device, and is the way back in if they clear their browser.
+// the way back from Stripe. What this adds is the receipt, and the reminder
+// that other devices sign in with a code rather than a shared link.
 import Stripe from 'stripe';
-import { sign, expiryFrom, ACCESS_DAYS } from '../lib/token.js';
-import { sendAccessLink } from '../lib/email.js';
+import { foldAccessEnd, paidSessionsFor } from '../lib/stripe-access.js';
+import { sendAccessNotice } from '../lib/email.js';
 import { readRawBody, json, siteUrl } from '../lib/http.js';
 
 // Signature verification needs the untouched bytes.
@@ -41,33 +41,29 @@ export default async function handler(req, res) {
       return json(res, 200, { received: true, ignored: 'no_email' });
     }
 
-    // Buying twice adds to whatever is left. Without a table to read, "what is
-    // left" comes from Stripe: if there is an earlier paid checkout still
-    // inside its 30 days, the new window starts from the end of that one.
-    let from = null;
+    // Replay every payment this address has made, including this one, so the
+    // date quoted in the email is the same one a later sign-in will compute.
+    // Buying twice stacks: the new window starts where the old one ended.
+    let sessions = [cs];
     try {
-      if (typeof cs.customer === 'string') {
-        const { data: earlier } = await stripe.checkout.sessions.list({ customer: cs.customer, limit: 20 });
-        for (const prev of earlier) {
-          if (prev.id === cs.id || prev.payment_status !== 'paid') continue;
-          const ends = new Date(prev.created * 1000 + ACCESS_DAYS * 864e5);
-          if (ends > new Date() && (!from || ends > from)) from = ends;
-        }
-      }
+      const known = await paidSessionsFor(stripe, email);
+      sessions = [cs, ...known.filter(prev => prev.id !== cs.id)];
     } catch (err) {
-      // Not worth failing the webhook over — they still get a full 30 days.
+      // Not worth failing the webhook over — they still get a full 30 days, and
+      // the sign-in path recomputes from Stripe anyway.
       console.error('webhook: could not check earlier purchases', err.message);
     }
 
+    const expiresAt = foldAccessEnd(sessions);
+    const renewed = sessions.length > 1;
+
     try {
-      const expiresAt = expiryFrom(from);
-      const token = await sign(email, expiresAt);
-      await sendAccessLink({ to: email, token, expiresAt, siteUrl: siteUrl(req), renewed: !!from });
-      console.log(`webhook: link sent to ${email}, access until ${expiresAt.toISOString()}`);
+      await sendAccessNotice({ to: email, expiresAt, siteUrl: siteUrl(req), renewed });
+      console.log(`webhook: notice sent to ${email}, access until ${expiresAt.toISOString()}`);
     } catch (err) {
-      // 500 makes Stripe retry. Worth retrying: the email is how they get back
-      // in on any device other than the one they paid on.
-      console.error('webhook: could not send the access link', err.message);
+      // 500 makes Stripe retry. The buyer is not locked out either way — they
+      // are already through on this device, and a code gets them in on another.
+      console.error('webhook: could not send the confirmation', err.message);
       res.statusCode = 500;
       return res.end('send failed');
     }

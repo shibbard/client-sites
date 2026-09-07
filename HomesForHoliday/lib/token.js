@@ -41,13 +41,6 @@ const sameSignature = (a, b) => {
 
 export const ACCESS_DAYS = 30;
 
-// Buying again extends rather than resets: pass the current expiry as `from`
-// and whatever is left is added to, not thrown away.
-export const expiryFrom = (from = null) => {
-  const start = from && new Date(from) > new Date() ? new Date(from) : new Date();
-  return new Date(start.getTime() + ACCESS_DAYS * 864e5);
-};
-
 export const sign = async (email, expiresAt) => {
   const payload = b64urlEncode(enc.encode(JSON.stringify({
     v: 1,

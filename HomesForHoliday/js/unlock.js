@@ -1,6 +1,8 @@
 /* Unlock panel.
    This is presentation only. It decides which panel to show; it never holds an
-   owner URL and is not the paywall — /api/go/<slug> is, server-side. */
+   owner URL and is not the paywall — /api/go/<slug> is, server-side.
+   Signing in is a code typed in here, never a link: nothing this file handles
+   can be forwarded to somebody else. */
 (function () {
   'use strict';
 
@@ -9,14 +11,14 @@
 
   var params = new URLSearchParams(location.search);
   var next = (params.get('next') || '').replace(/[^a-z0-9-]/gi, '');
+  var pendingEmail = '';
 
   var PROBLEMS = {
     session: 'That payment link was not one we recognised.',
     unpaid: 'Stripe has not marked that payment as complete.',
     stripe: 'We could not reach Stripe to confirm the payment.',
-    noemail: 'That payment came through without an email address, so we could not send your link.',
+    noemail: 'That payment came through without an email address, so we could not set your access up.',
     config: 'Something is not set up right at our end.',
-    link: 'That link is not valid — it may have been cut in half by your email app.',
     1: 'Something went wrong at our end.'
   };
 
@@ -25,6 +27,8 @@
   function show(name) {
     panels().forEach(function (p) { p.hidden = p.dataset.state !== name; });
     if (window.lucide) window.lucide.createIcons();
+    var field = shell.querySelector('.unlock-panel:not([hidden]) input');
+    if (field) { try { field.focus(); } catch (e) {} }
   }
 
   function slot(name, value) {
@@ -53,7 +57,9 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body || {})
-    }).then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); });
+    }).then(function (r) {
+      return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; });
+    });
   }
 
   function formatDate(iso) {
@@ -91,18 +97,31 @@
 
   function startCheckout(btn) {
     if (btn) { btn.disabled = true; }
-    post('/api/checkout', { next: next }).then(function (r) {
-      if (r.ok && r.data.url) {
-        location.href = r.data.url;
-      } else {
-        if (btn) btn.disabled = false;
-        slot('problem-message', 'We could not open the payment page just then. Nothing has been charged — please try again.');
-        show('problem');
-      }
-    }).catch(function () {
+    var failed = function () {
       if (btn) btn.disabled = false;
       slot('problem-message', 'We could not open the payment page just then. Nothing has been charged — please try again.');
       show('problem');
+    };
+    post('/api/checkout', { next: next }).then(function (r) {
+      if (r.ok && r.data.url) { location.href = r.data.url; } else { failed(); }
+    }).catch(failed);
+  }
+
+  // The reply is the same whether or not the address has ever paid, so there is
+  // nothing to branch on here — always move on to the code panel.
+  function sendCode(email, form, label) {
+    if (form) busy(form, true, label || 'Sending…');
+    return post('/api/auth/send-code', { email: email }).then(function () {
+      if (form) busy(form, false);
+      pendingEmail = email;
+      slot('code-sent-to', email);
+      error('code', '');
+      var field = shell.querySelector('#unlock-code');
+      if (field) field.value = '';
+      show('code');
+    }).catch(function () {
+      if (form) busy(form, false);
+      error('signin', 'We could not send that just now. Please try again shortly.');
     });
   }
 
@@ -112,8 +131,18 @@
     var action = btn.dataset.action;
 
     if (action === 'buy') { e.preventDefault(); startCheckout(btn); }
-    if (action === 'show-recover') { e.preventDefault(); error('recover', ''); show('recover'); }
+    if (action === 'show-signin') { e.preventDefault(); error('signin', ''); show('signin'); }
     if (action === 'show-locked') { e.preventDefault(); show('locked'); }
+
+    if (action === 'resend') {
+      e.preventDefault();
+      if (!pendingEmail) { show('signin'); return; }
+      btn.disabled = true;
+      error('code', '');
+      sendCode(pendingEmail).then(function () {
+        error('code', 'A fresh code is on its way. The previous one no longer works.');
+      });
+    }
 
     if (action === 'signout') {
       e.preventDefault();
@@ -121,40 +150,52 @@
     }
   });
 
-  var recoverForm = shell.querySelector('[data-form="recover"]');
-  if (recoverForm) recoverForm.addEventListener('submit', function (e) {
+  var signinForm = shell.querySelector('[data-form="signin"]');
+  if (signinForm) signinForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    error('recover', '');
-    var email = recoverForm.elements.email.value.trim();
+    error('signin', '');
+    var email = signinForm.elements.email.value.trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return error('recover', 'That does not look like an email address.');
+      error('signin', 'That does not look like an email address.');
+      return;
     }
-    busy(recoverForm, true, 'Sending…');
-    post('/api/recover', { email: email }).then(function (r) {
-      busy(recoverForm, false);
-      // Same answer either way — the server will not say whether an address
-      // has access, and neither does this.
-      slot('sent-message', (r.data && r.data.message) || 'If that address has access, the link is on its way.');
-      show('sent');
+    sendCode(email, signinForm);
+  });
+
+  var codeForm = shell.querySelector('[data-form="code"]');
+  if (codeForm) codeForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    error('code', '');
+    var code = codeForm.elements.code.value.replace(/\D/g, '');
+    if (code.length !== 6) { error('code', 'The code is six digits.'); return; }
+
+    busy(codeForm, true, 'Checking…');
+    post('/api/auth/verify-code', { email: pendingEmail, code: code }).then(function (r) {
+      busy(codeForm, false);
+
+      if (r.ok && r.data.ok && r.data.known) {
+        // The cookie is set; /api/me decides between the active and lapsed panel.
+        refresh();
+        return;
+      }
+      if (r.ok && r.data.ok && !r.data.known) {
+        // Right inbox, but nothing has ever been bought with it.
+        show('locked');
+        return;
+      }
+      error('code', (r.data && r.data.message) || 'That code was not right, or it has expired.');
     }).catch(function () {
-      busy(recoverForm, false);
-      error('recover', 'We could not send that just now. Please try again shortly.');
+      busy(codeForm, false);
+      error('code', 'We could not check that just now. Please try again shortly.');
     });
   });
 
-  // /api/activate and /api/unlock have already set the cookie by the time we
-  // get here, so there is nothing to poll for — just read the state.
+  // /api/activate has already set the cookie by the time we get here, so there
+  // is nothing to poll for — just read the state.
   var problem = params.get('error');
   if (problem) {
     slot('problem-message', PROBLEMS[problem] || PROBLEMS[1]);
     show('problem');
-  } else if (params.get('renew') === '1') {
-    refresh().then(function () {
-      // A lapsed token gives the lapsed panel already; an expired emailed link
-      // arrives with no usable cookie, so fall back to the buy panel.
-      var lapsed = shell.querySelector('[data-state="lapsed"]');
-      if (lapsed && lapsed.hidden) show('locked');
-    });
   } else {
     refresh();
   }

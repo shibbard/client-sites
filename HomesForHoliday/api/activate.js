@@ -3,12 +3,14 @@
 // Stripe's redirect lands here with the checkout session id. We ask Stripe
 // whether it was actually paid — the id alone proves nothing — then mint the
 // token and set the cookie, so a buyer is through to the property they wanted
-// without going via their inbox.
+// without going via their inbox at all.
 //
-// The emailed link (sent by the webhook) is the other half: this browser is
-// covered by the cookie, the email covers every other device.
+// The expiry is folded from Stripe's own payment history rather than from the
+// cookie, so it agrees exactly with what signing in on another device will
+// work out later.
 import Stripe from 'stripe';
-import { sign, peek, expiryFrom, setAccessCookie, readToken } from '../lib/token.js';
+import { foldAccessEnd, paidSessionsFor } from '../lib/stripe-access.js';
+import { sign, setAccessCookie } from '../lib/token.js';
 import { redirect, methodGuard } from '../lib/http.js';
 
 export default async function handler(req, res) {
@@ -24,31 +26,31 @@ export default async function handler(req, res) {
   if (!sessionId.startsWith('cs_')) return redirect(res, '/unlock.html?error=session');
 
   let email;
+  let expiresAt;
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     const cs = await stripe.checkout.sessions.retrieve(sessionId);
     if (cs?.payment_status !== 'paid') return redirect(res, '/unlock.html?error=unpaid');
+
     email = (cs.customer_details?.email || cs.customer_email || '').trim().toLowerCase();
+    if (!email) {
+      console.error('activate: paid session with no email', sessionId);
+      return redirect(res, '/unlock.html?error=noemail');
+    }
+
+    // This session plus anything bought earlier, so a repeat purchase stacks
+    // rather than resets.
+    const known = await paidSessionsFor(stripe, email).catch(err => {
+      console.error('activate: could not list earlier purchases', err.message);
+      return [];
+    });
+    expiresAt = foldAccessEnd([cs, ...known.filter(prev => prev.id !== cs.id)]);
   } catch (err) {
     console.error('activate: stripe lookup failed', err.message);
     return redirect(res, '/unlock.html?error=stripe');
   }
 
-  if (!email) {
-    console.error('activate: paid session with no email', sessionId);
-    return redirect(res, '/unlock.html?error=noemail');
-  }
-
-  // If this browser already holds unexpired access for the same person, add to
-  // it rather than replacing it — matching what the webhook does.
-  let from = null;
   try {
-    const current = await peek(readToken(req));
-    if (current && current.email === email && current.expiresAt > new Date()) from = current.expiresAt;
-  } catch { /* no usable cookie; start from now */ }
-
-  try {
-    const expiresAt = expiryFrom(from);
     setAccessCookie(res, await sign(email, expiresAt));
   } catch (err) {
     console.error('activate: cannot mint token', err.message);

@@ -146,14 +146,14 @@ concentrated on Orlando.
 
 ## There is no database
 
-By design. The paywall holds no customer records at all: access is a signed
-token in a cookie, and `api/_catalogue.js` — generated from this spreadsheet —
-is the only server-side data there is. Adding a property means regenerating that
-file and deploying; there is nothing to migrate and nothing to keep running
-between purchases.
+By design. The paywall holds no customer records: access is a signed token in a
+cookie, and `api/_catalogue.js` — generated from this spreadsheet — is the only
+server-side data there is. The one thing that is stored is a pending sign-in
+code, which deletes itself after ten minutes. Adding a property means
+regenerating that file and deploying; there is nothing to migrate.
 
 What is not provisioned yet is **Stripe** and **Resend**, so nothing can take
-money or send an access link until those accounts exist. The site itself works
+money or send a sign-in code until those accounts exist. The site itself works
 exactly as it does today.
 
 ## One thing that needs deciding

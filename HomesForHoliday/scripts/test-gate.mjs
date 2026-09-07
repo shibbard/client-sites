@@ -316,5 +316,186 @@ await testAsync('valid cookie → access and the expiry, no owner URLs', async (
   for (const host of ownerHosts) assert.ok(!res.body.includes(host), `${host} leaked from /api/me`);
 });
 
+console.log('\nsign-in: a code proves the inbox, and it is spent once used');
+
+// In-memory stand-in for Upstash, so the suite still runs with no credentials.
+// TTLs are not simulated — expiry is Redis's job, and what matters here is
+// wrong codes, reuse and lockout.
+const fakeStore = () => {
+  const map = new Map();
+  return {
+    async get(key) { return map.has(key) ? map.get(key) : null; },
+    async setEx(key, value) { map.set(key, String(value)); return 'OK'; },
+    async del(key) { return map.delete(key) ? 1 : 0; },
+    async incrWithTtl(key) {
+      const n = Number(map.get(key) || 0) + 1;
+      map.set(key, String(n));
+      return n;
+    },
+    map,
+  };
+};
+
+const otp = await import('../lib/otp.js');
+const otherCode = code => String((Number(code) + 7) % 1000000).padStart(6, '0');
+
+await testAsync('a freshly issued code verifies', async () => {
+  otp.useStoreForTests(fakeStore());
+  const code = await otp.issueCode('buyer@example.com');
+  assert.match(code, /^\d{6}$/, `code was "${code}"`);
+  assert.equal(await otp.checkCode('buyer@example.com', code), 'ok');
+});
+
+await testAsync('a code is single use', async () => {
+  otp.useStoreForTests(fakeStore());
+  const code = await otp.issueCode('buyer@example.com');
+  assert.equal(await otp.checkCode('buyer@example.com', code), 'ok');
+  assert.equal(await otp.checkCode('buyer@example.com', code), 'bad',
+    'a spent code was accepted a second time');
+});
+
+await testAsync('a wrong code is rejected', async () => {
+  otp.useStoreForTests(fakeStore());
+  const code = await otp.issueCode('buyer@example.com');
+  assert.equal(await otp.checkCode('buyer@example.com', otherCode(code)), 'bad');
+});
+
+await testAsync('a code issued for one address does not work for another', async () => {
+  otp.useStoreForTests(fakeStore());
+  const code = await otp.issueCode('buyer@example.com');
+  assert.equal(await otp.checkCode('someone.else@example.com', code), 'bad');
+});
+
+await testAsync('the code dies after too many wrong guesses', async () => {
+  otp.useStoreForTests(fakeStore());
+  const code = await otp.issueCode('buyer@example.com');
+  const wrong = otherCode(code);
+  for (let i = 0; i < otp.MAX_ATTEMPTS; i++) {
+    assert.equal(await otp.checkCode('buyer@example.com', wrong), 'bad', `attempt ${i + 1}`);
+  }
+  assert.equal(await otp.checkCode('buyer@example.com', wrong), 'locked');
+  assert.equal(await otp.checkCode('buyer@example.com', code), 'bad',
+    'the right code still worked after the lockout should have burned it');
+});
+
+await testAsync('asking for a new code clears the lockout and kills the old one', async () => {
+  otp.useStoreForTests(fakeStore());
+  const first = await otp.issueCode('buyer@example.com');
+  const wrong = otherCode(first);
+  for (let i = 0; i <= otp.MAX_ATTEMPTS; i++) await otp.checkCode('buyer@example.com', wrong);
+
+  const second = await otp.issueCode('buyer@example.com');
+  assert.equal(await otp.checkCode('buyer@example.com', first), 'bad',
+    'the superseded code still worked');
+  assert.equal(await otp.checkCode('buyer@example.com', second), 'ok');
+});
+
+await testAsync('malformed codes are rejected', async () => {
+  otp.useStoreForTests(fakeStore());
+  await otp.issueCode('buyer@example.com');
+  for (const junk of ['', '1', '12345', '1234567', 'abcdef', '12 34 56', null, undefined, {}]) {
+    assert.equal(await otp.checkCode('buyer@example.com', junk), 'bad',
+      `checkCode(${JSON.stringify(junk)}) should be bad`);
+  }
+});
+
+await testAsync('the store holds neither the code nor the address', async () => {
+  const store = fakeStore();
+  otp.useStoreForTests(store);
+  const code = await otp.issueCode('buyer@example.com');
+  const dump = [...store.map.entries()].map(([k, v]) => `${k}=${v}`).join('\n');
+  assert.ok(!dump.includes(code), 'the code is recoverable from a dump of the store');
+  assert.ok(!dump.includes('buyer@example.com'), 'the address is recoverable from a dump of the store');
+});
+
+await testAsync('an inbox cannot be flooded with codes', async () => {
+  otp.useStoreForTests(fakeStore());
+  let allowed = 0;
+  for (let i = 0; i < 20; i++) if (await otp.canSend('buyer@example.com', '10.0.0.1')) allowed++;
+  assert.ok(allowed > 0 && allowed <= 5, `the send limit let ${allowed} codes through`);
+});
+
+await testAsync('codes are spread across the whole six-digit range', async () => {
+  const seen = new Set();
+  for (let i = 0; i < 500; i++) seen.add(otp.generateCode());
+  assert.ok(seen.size > 450, `only ${seen.size} distinct codes in 500 draws`);
+});
+
+otp.useStoreForTests(null);
+
+console.log('\nsharing: nothing that grants access can be forwarded');
+
+test('the magic-link endpoints are gone', () => {
+  for (const path of ['api/unlock.js', 'api/recover.js']) {
+    assert.ok(!existsSync(path), `${path} still exists — a forwarded link would grant access`);
+  }
+});
+
+test('no email contains a link that unlocks anything', () => {
+  const email = readFileSync('lib/email.js', 'utf8');
+  for (const marker of ['api/unlock', '?t=']) {
+    assert.ok(!email.includes(marker),
+      `lib/email.js builds "${marker}" — an emailed credential is forwardable`);
+  }
+});
+
+test('the unlock panel signs in with a code, not a link', () => {
+  const js = readFileSync('js/unlock.js', 'utf8');
+  for (const endpoint of ['/api/auth/send-code', '/api/auth/verify-code']) {
+    assert.ok(js.includes(endpoint), `js/unlock.js does not call ${endpoint}`);
+  }
+  assert.ok(!js.includes('/api/recover'), 'js/unlock.js still calls the removed recover endpoint');
+});
+
+test('the access expiry is a fold over Stripe, so every device agrees', () => {
+  assert.ok(existsSync('lib/stripe-access.js'), 'lib/stripe-access.js is missing');
+  for (const file of ['api/activate.js', 'api/auth/verify-code.js', 'api/stripe-webhook.js']) {
+    const src = readFileSync(file, 'utf8');
+    assert.ok(/stripe-access\.js/.test(src), `${file} computes access without the shared fold`);
+  }
+});
+
+console.log('\naccess window: replaying Stripe gives the same answer every time');
+
+const { foldAccessEnd } = await import('../lib/stripe-access.js');
+const DAY = 864e5;
+const at = iso => ({ created: Math.floor(new Date(iso).getTime() / 1000) });
+const days = (a, b) => Math.round((new Date(b) - new Date(a)) / DAY);
+
+test('never paid → no access', () => {
+  assert.equal(foldAccessEnd([]), null);
+});
+
+test('one payment → 30 days from that payment', () => {
+  const end = foldAccessEnd([at('2026-01-01T00:00:00Z')]);
+  assert.equal(days('2026-01-01T00:00:00Z', end), 30);
+});
+
+test('buying again mid-window stacks rather than resets', () => {
+  // Bought on the 1st, again on the 10th: 20 days were still unused, so the
+  // second purchase must end on the 31st, not the 9th of February.
+  const end = foldAccessEnd([at('2026-01-01T00:00:00Z'), at('2026-01-10T00:00:00Z')]);
+  assert.equal(days('2026-01-01T00:00:00Z', end), 60,
+    'the unused part of the first window was thrown away');
+});
+
+test('buying again after a lapse starts fresh', () => {
+  // The first window closed on the 31st; a purchase in March buys 30 days from
+  // March, not a stack on top of something long gone.
+  const end = foldAccessEnd([at('2026-01-01T00:00:00Z'), at('2026-03-01T00:00:00Z')]);
+  assert.equal(days('2026-03-01T00:00:00Z', end), 30);
+});
+
+test('the order Stripe returns payments in does not matter', () => {
+  const a = at('2026-01-01T00:00:00Z');
+  const b = at('2026-01-10T00:00:00Z');
+  const c = at('2026-06-01T00:00:00Z');
+  assert.equal(
+    foldAccessEnd([a, b, c]).toISOString(),
+    foldAccessEnd([c, a, b]).toISOString(),
+    'a different listing order produced a different expiry',
+  );
+});
+
 console.log(failures ? `\n${failures} FAILED\n` : `\nall passed\n`);
 process.exit(failures ? 1 : 0);

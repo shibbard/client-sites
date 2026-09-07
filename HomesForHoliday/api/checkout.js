@@ -1,7 +1,10 @@
 import Stripe from 'stripe';
 import { json, readJson, methodGuard, siteUrl } from '../lib/http.js';
 
-const PRICE_PENCE = 595;          // £5.95 — see note in README about VAT
+// £5.95 flat. VLA Media Ltd is not VAT registered, so this is the whole price.
+// If that ever changes, the registered price has to be VAT-inclusive at this
+// number rather than added on top, and terms.html says so too.
+const PRICE_PENCE = 595;
 const CURRENCY = 'gbp';
 
 export default async function handler(req, res) {

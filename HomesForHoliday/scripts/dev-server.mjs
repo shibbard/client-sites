@@ -34,6 +34,22 @@ createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify(STUB));
   }
+  // Stubbed sign-in, so the panels can be walked through with no Redis, Stripe
+  // or Resend. Any six digits are accepted; STUB_STATE decides what comes back.
+  if (path === '/api/auth/send-code') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    return res.end(JSON.stringify({ ok: true, message: 'Stub: any six digits will do.' }));
+  }
+  if (path === '/api/auth/verify-code') {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    return res.end(JSON.stringify({
+      ok: true,
+      email: STUB.email || 'someone@example.com',
+      known: STATE !== 'locked',
+      hasAccess: STATE === 'active',
+      accessExpiresAt: STUB.accessExpiresAt,
+    }));
+  }
   if (path.startsWith('/api/')) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify({ ok: true, stub: true }));
