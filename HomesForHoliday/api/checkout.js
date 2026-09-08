@@ -19,7 +19,12 @@ export default async function handler(req, res) {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
-      payment_method_types: ['card'],
+      // No payment_method_types on purpose. Naming them here pins the list to
+      // whatever was hardcoded and stops Stripe offering anything else — the
+      // wallets included. Left off, Checkout shows every method enabled in the
+      // dashboard that suits the buyer's device and the £5.95 GBP amount, so
+      // Apple Pay and Google Pay appear where they are supported and turning a
+      // new method on later is a dashboard toggle rather than a deploy.
       line_items: [{
         quantity: 1,
         price_data: {
