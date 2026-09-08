@@ -12,6 +12,7 @@
   var params = new URLSearchParams(location.search);
   var next = (params.get('next') || '').replace(/[^a-z0-9-]/gi, '');
   var pendingEmail = '';
+  var justPaid = params.get('welcome') === '1';
 
   var PROBLEMS = {
     session: 'That payment link was not one we recognised.',
@@ -80,7 +81,21 @@
           slot('expires', formatDate(me.accessExpiresAt));
           slot('signed-in-as', me.email);
           var cta = shell.querySelector('[data-slot="continue"]');
-          if (cta) cta.setAttribute('href', continueHref());
+          if (cta) {
+            cta.setAttribute('href', continueHref());
+            // The owner's site opens in a new tab, the same as the cards on the
+            // region pages, so paying never navigates anyone off Home for
+            // Holiday.
+            if (next) {
+              cta.setAttribute('target', '_blank');
+              cta.setAttribute('rel', 'nofollow noopener');
+            } else {
+              cta.removeAttribute('target');
+            }
+          }
+          slot('continue-label', next ? 'Open the property' : 'Browse the directory');
+          var paid = shell.querySelector('[data-welcome]');
+          if (paid) paid.hidden = !justPaid;
           show('active');
           return;
         }
@@ -196,6 +211,13 @@
   if (problem) {
     slot('problem-message', PROBLEMS[problem] || PROBLEMS[1]);
     show('problem');
+  } else if (params.get('signin') === '1') {
+    // Deep link out of the confirmation email: straight to the sign-in form,
+    // unless this device already holds access, in which case say so instead.
+    refresh().then(function () {
+      var active = shell.querySelector('[data-state="active"]');
+      if (active && active.hidden) show('signin');
+    });
   } else {
     refresh();
   }

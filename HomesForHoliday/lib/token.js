@@ -116,13 +116,30 @@ export const parseCookies = req => {
   return out;
 };
 
-export const setAccessCookie = (res, token) => {
-  res.setHeader('Set-Cookie',
-    `${COOKIE}=${encodeURIComponent(token)}; Max-Age=${COOKIE_DAYS * 86400}; Path=/; HttpOnly; Secure; SameSite=Lax`);
+// A second, deliberately readable cookie holding nothing but the expiry, so the
+// header on every page can say "you are in" without an API call on every view.
+// It is cosmetic: the access cookie above is HttpOnly and unreadable from
+// script, and the gate checks that one. Forging this changes the wording in the
+// header and nothing else.
+export const HINT_COOKIE = 'hfh_until';
+
+export const setAccessCookie = (res, token, expiresAt) => {
+  const maxAge = COOKIE_DAYS * 86400;
+  const cookies = [
+    `${COOKIE}=${encodeURIComponent(token)}; Max-Age=${maxAge}; Path=/; HttpOnly; Secure; SameSite=Lax`,
+  ];
+  if (expiresAt) {
+    const seconds = Math.floor(new Date(expiresAt).getTime() / 1000);
+    cookies.push(`${HINT_COOKIE}=${seconds}; Max-Age=${maxAge}; Path=/; Secure; SameSite=Lax`);
+  }
+  res.setHeader('Set-Cookie', cookies);
 };
 
 export const clearAccessCookie = res => {
-  res.setHeader('Set-Cookie', `${COOKIE}=; Max-Age=0; Path=/; HttpOnly; Secure; SameSite=Lax`);
+  res.setHeader('Set-Cookie', [
+    `${COOKIE}=; Max-Age=0; Path=/; HttpOnly; Secure; SameSite=Lax`,
+    `${HINT_COOKIE}=; Max-Age=0; Path=/; Secure; SameSite=Lax`,
+  ]);
 };
 
 export const readToken = req => parseCookies(req)[COOKIE] || null;

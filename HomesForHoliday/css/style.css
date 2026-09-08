@@ -1242,3 +1242,29 @@ html.js .reveal.in { opacity: 1; transform: none; }
   font: inherit; color: var(--primary); font-weight: 600; text-decoration: underline;
 }
 .linkish:hover { opacity: 0.8; }
+
+/* Header CTA once you hold access: a state, not a call to action. Aqua rather
+   than the primary blue so it reads as "you are in" at a glance. */
+.nav-cta .btn.has-access {
+  background: var(--aqua);
+  border-color: var(--aqua);
+  color: #fff;
+}
+.nav-cta .btn.has-access:hover { background: #0c8880; border-color: #0c8880; }
+
+/* Payment confirmation, shown only on the way back from Stripe */
+.unlock-paid {
+  display: flex; align-items: center; gap: 8px;
+  margin: 0 0 14px; padding: 10px 14px;
+  background: color-mix(in srgb, var(--aqua) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--aqua) 30%, transparent);
+  border-radius: 10px; color: #0b6f68; font-weight: 600; font-size: 0.92rem;
+}
+.unlock-paid i, .unlock-paid svg { width: 18px; height: 18px; flex: none; }
+
+/* "or" divider above the sign-in route on the buy panel */
+.unlock-sep { display: flex; align-items: center; gap: 12px; margin: 22px 0 14px; }
+.unlock-sep::before, .unlock-sep::after {
+  content: ""; flex: 1; height: 1px; background: var(--line);
+}
+.unlock-sep span { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }

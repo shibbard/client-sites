@@ -55,7 +55,7 @@ export default async function handler(req, res) {
   // nothing at the gate, but it lets the panel say "your access ran out on the
   // 3rd" rather than showing a first-time visitor's blank paywall.
   try {
-    setAccessCookie(res, await sign(email, accessEnd));
+    setAccessCookie(res, await sign(email, accessEnd), accessEnd);
   } catch (err) {
     console.error('verify-code: cannot mint token', err.message);
     return json(res, 500, { error: 'server_error' });

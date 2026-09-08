@@ -261,6 +261,33 @@
     window.lucide.createIcons();
   }
 
+  // Header access state.
+  //
+  // hfh_until is a cosmetic hint cookie carrying only the expiry timestamp; the
+  // real token is HttpOnly and cannot be read here, and /api/go is what
+  // actually enforces access. Reading a cookie rather than calling /api/me
+  // keeps this to zero requests on all 84 property pages, and there is no
+  // flash of the wrong state.
+  var accessCta = document.querySelector('.nav-cta a[href="unlock.html"]');
+  if (accessCta) {
+    var stamp = (document.cookie.match(/(?:^|;\s*)hfh_until=(\d+)/) || [])[1];
+    if (stamp) {
+      var endsAt = new Date(Number(stamp) * 1000);
+      var left = Math.ceil((endsAt - new Date()) / 864e5);
+      if (left > 0) {
+        accessCta.textContent = "✓ My Access";
+        accessCta.classList.add("has-access");
+        accessCta.setAttribute("title",
+          "Access runs until " + endsAt.toLocaleDateString("en-GB",
+            { day: "numeric", month: "long", year: "numeric" }) +
+          " — " + left + (left === 1 ? " day" : " days") + " left");
+      } else {
+        accessCta.textContent = "Renew Access";
+        accessCta.setAttribute("title", "Your 30 days have ended");
+      }
+    }
+  }
+
   // Current year
   var y = document.querySelectorAll("[data-year]");
   y.forEach(function (el) { el.textContent = new Date().getFullYear(); });

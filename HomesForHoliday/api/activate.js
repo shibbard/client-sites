@@ -21,7 +21,12 @@ export default async function handler(req, res) {
 
   const sessionId = String(req.query.cs || '').trim();
   const next = String(req.query.next || '').replace(/[^a-z0-9-]/gi, '').slice(0, 80);
-  const onward = next ? `/go/${next}` : '/unlock.html?welcome=1';
+
+  // Back to the unlock panel, never straight out to the owner's site. Someone
+  // who has just been charged should see that it worked and how long they have
+  // bought before they leave Home for Holiday — the panel carries a Continue
+  // button through to the property they were after.
+  const onward = `/unlock.html?welcome=1${next ? `&next=${next}` : ''}`;
 
   if (!sessionId.startsWith('cs_')) return redirect(res, '/unlock.html?error=session');
 
@@ -51,7 +56,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    setAccessCookie(res, await sign(email, expiresAt));
+    setAccessCookie(res, await sign(email, expiresAt), expiresAt);
   } catch (err) {
     console.error('activate: cannot mint token', err.message);
     return redirect(res, '/unlock.html?error=config');

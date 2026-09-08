@@ -497,5 +497,71 @@ test('the order Stripe returns payments in does not matter', () => {
   );
 });
 
+console.log('\ncookies: the readable one is a hint, never a credential');
+
+const { setAccessCookie, clearAccessCookie, HINT_COOKIE, COOKIE } = await import('../lib/token.js');
+
+const cookiesFrom = res => {
+  const v = res.getHeader('set-cookie');
+  return Array.isArray(v) ? v : [v];
+};
+
+await testAsync('signing in sets the HttpOnly token and a readable expiry hint', async () => {
+  const res = mockRes();
+  const expires = new Date(Date.now() + 30 * 864e5);
+  setAccessCookie(res, await sign('buyer@example.com', expires), expires);
+
+  const set = cookiesFrom(res);
+  const token = set.find(c => c.startsWith(`${COOKIE}=`));
+  const hint = set.find(c => c.startsWith(`${HINT_COOKIE}=`));
+
+  assert.ok(token, 'the access cookie was not set');
+  assert.ok(hint, 'the hint cookie was not set');
+  assert.match(token, /HttpOnly/, 'the access cookie must not be readable from script');
+  assert.match(token, /Secure/);
+  assert.match(hint, /Secure/);
+});
+
+await testAsync('the hint cookie carries a timestamp and nothing else', async () => {
+  const res = mockRes();
+  const expires = new Date(Date.now() + 30 * 864e5);
+  setAccessCookie(res, await sign('buyer@example.com', expires), expires);
+
+  const hint = cookiesFrom(res).find(c => c.startsWith(`${HINT_COOKIE}=`));
+  const value = hint.slice(HINT_COOKIE.length + 1).split(';')[0];
+
+  assert.match(value, /^\d+$/, `hint cookie value was "${value}", expected digits only`);
+  assert.ok(!hint.includes('buyer@example.com'), 'the address leaked into a script-readable cookie');
+  assert.ok(!hint.includes('.'), 'the hint looks like it contains a token');
+  assert.equal(Math.floor(expires.getTime() / 1000), Number(value));
+});
+
+await testAsync('the hint cookie is deliberately readable from script', async () => {
+  const res = mockRes();
+  const expires = new Date(Date.now() + 30 * 864e5);
+  setAccessCookie(res, await sign('buyer@example.com', expires), expires);
+  const hint = cookiesFrom(res).find(c => c.startsWith(`${HINT_COOKIE}=`));
+  assert.ok(!/HttpOnly/.test(hint),
+    'the header script cannot read an HttpOnly cookie, so this would silently do nothing');
+});
+
+test('signing out clears both cookies', () => {
+  const res = mockRes();
+  clearAccessCookie(res);
+  const set = cookiesFrom(res);
+  for (const name of [COOKIE, HINT_COOKIE]) {
+    const cleared = set.find(c => c.startsWith(`${name}=`));
+    assert.ok(cleared, `${name} was not cleared`);
+    assert.match(cleared, /Max-Age=0/, `${name} was not expired`);
+  }
+});
+
+test('the header reads the hint, not the access cookie', () => {
+  const js = readFileSync('js/main.js', 'utf8');
+  assert.ok(js.includes('hfh_until'), 'js/main.js does not read the hint cookie');
+  assert.ok(!js.includes('hfh_access'),
+    'js/main.js references the HttpOnly cookie, which it can never read');
+});
+
 console.log(failures ? `\n${failures} FAILED\n` : `\nall passed\n`);
 process.exit(failures ? 1 : 0);

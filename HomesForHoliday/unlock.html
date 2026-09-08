@@ -85,7 +85,10 @@
           Unlock for &pound;5.95 <i data-lucide="arrow-right"></i>
         </button>
         <p class="unlock-fine">Card, Apple&nbsp;Pay or Google&nbsp;Pay via Stripe. One payment, no subscription.</p>
-        <p class="unlock-alt">Already bought access? <button class="linkish" data-action="show-signin">Sign in</button></p>
+        <div class="unlock-sep"><span>Already bought access?</span></div>
+        <button class="btn btn-ghost btn-block" data-action="show-signin">
+          Sign in with your email <i data-lucide="arrow-right"></i>
+        </button>
       </div>
 
       <!-- Signing in on this device -->
@@ -121,12 +124,13 @@
 
       <!-- Signed in, paid -->
       <div class="unlock-panel" data-state="active" hidden>
-        <h2>You&rsquo;re in</h2>
+        <h2 data-slot="active-heading">You&rsquo;re in</h2>
+        <p class="unlock-paid" data-welcome hidden><i data-lucide="check-circle-2"></i> Payment received &mdash; &pound;5.95. Thank you.</p>
         <p class="unlock-lead">Access runs until <strong data-slot="expires"></strong>.</p>
         <a class="btn btn-amber btn-block" data-slot="continue" href="/destinations.html">
-          Continue <i data-lucide="arrow-right"></i>
+          <span data-slot="continue-label">Continue</span> <i data-lucide="arrow-right"></i>
         </a>
-        <p class="unlock-fine">Signed in as <span data-slot="signed-in-as"></span>. On your phone or any other device, sign in with the same address and we&rsquo;ll send a code.</p>
+        <p class="unlock-fine">Signed in as <span data-slot="signed-in-as"></span>. On your phone or any other device, open this site, tap <strong>Unlock the Directory</strong> then <strong>Sign in with your email</strong>, and we&rsquo;ll send you a code.</p>
         <p class="unlock-alt"><button class="linkish" data-action="signout">Sign out on this device</button></p>
       </div>
 
