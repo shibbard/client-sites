@@ -23,11 +23,11 @@ Home for Holiday is a holiday-home marketing directory, established in 2014 and 
 - Affordable holiday-home website design for owners, from £100 upfront, then £19.99+VAT per month
 
 ## Destinations
-- United Kingdom (34 homes): Southern, Northern & Middle England, Scotland, Wales — cottages, barns, lodges and country houses
+- United Kingdom (34 homes): South West England, Southern & South East England, Middle England, North East & Yorkshire, North West & Lake District, Scotland, Wales — cottages, barns, lodges and country houses
 - Europe (15 homes): Spain, France, Italy, Cyprus, Canary Islands — villas, gîtes and apartments
 - USA (29 homes): Florida (incl. Disney-area villas), Alabama, the Carolinas, Missouri, Hawaii — condos, beach houses and pool villas
-- Central America (4 homes): Mexico and Costa Rica — beach houses and villas
-- Caribbean Islands (6 homes): Bahamas, Belize, Dominican Republic, Roatán, Turks & Caicos — island villas and beach houses
+- Central America (5 homes): Mexico, Costa Rica and Belize — beach houses and villas
+- Caribbean Islands (5 homes): Bahamas, Dominican Republic, Roatán, Turks & Caicos — island villas and beach houses
 
 ## Key pages
 - Home: /index.html

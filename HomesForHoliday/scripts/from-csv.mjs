@@ -20,9 +20,11 @@ const REGIONS = {
 
 // Countries that sit on the Central American mainland. Belize and Honduras have
 // a Caribbean coastline, which is how they end up filed under the islands.
+// Roatán is a Honduran island but is listed under Caribbean Islands on purpose
+// (Gary, 12 Sep: the Caribbean page is grouped by island), so it is not here.
 const CENTRAL_AMERICA_HINTS = [
   'belize', 'costa rica', 'panama', 'nicaragua', 'honduras', 'guatemala',
-  'el salvador', 'mexico', 'roatán', 'roatan',
+  'el salvador', 'mexico',
 ];
 const CARIBBEAN_HINTS = [
   'bahamas', 'turks', 'caicos', 'dominican', 'barbados', 'jamaica', 'antigua',
@@ -239,15 +241,21 @@ const card = r => {
 for (const [region, file] of Object.entries(REGIONS)) {
   const group = live.filter(r => r.region === region);
   if (!group.length) continue;
-  const bySub = {};
-  for (const r of group) (bySub[r.sub] ||= []).push(r);
+  // Fewest bedrooms first, as on the region pages. sort() is stable, so
+  // properties with the same bed count keep their spreadsheet order.
+  const byBeds = (a, b) => (Number(a.beds) || Infinity) - (Number(b.beds) || Infinity);
+  // Grouped by the page heading (`group`). Central America has no headings, so
+  // its rows leave `group` blank and come out as one block.
+  const byGroup = {};
+  for (const r of [...group].sort(byBeds)) (byGroup[r.group || '(no heading)'] ||= []).push(r);
   const out = [
     `<!-- ${region} — ${group.length} homes. Generated from properties.csv.`,
-    `     Paste the cards into the matching .prop-grid in ${file}.`,
-    `     Remember to update the "N homes" count in each .region-group-head. -->`,
+    `     Paste each block into the .prop-grid under its heading in ${file}.`,
+    `     Cards are in bedroom order; keep it when pasting. The "N homes" count`,
+    `     in each .region-group-head is corrected on page load by js/main.js. -->`,
     '',
-    ...Object.entries(bySub).map(([sub, list]) =>
-      `<!-- ${sub} — ${list.length} -->\n${list.map(card).join('\n')}`),
+    ...Object.entries(byGroup).map(([heading, list]) =>
+      `<!-- ${heading} — ${list.length} -->\n${list.map(card).join('\n')}`),
   ].join('\n');
   writeFileSync(`build/cards/${file}`, out + '\n');
   console.log(`build/cards/${file.padEnd(24)} ${group.length} cards`);

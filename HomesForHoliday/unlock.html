@@ -72,23 +72,29 @@
       </div>
 
       <!-- Not signed in -->
-      <div class="unlock-panel" data-state="locked" hidden>
-        <h2>Unlock the directory</h2>
-        <p class="unlock-lead">Browsing is free. Going through to an owner&rsquo;s own website is the part that&rsquo;s locked.</p>
-        <ul class="tick-list unlock-list">
-          <li><i data-lucide="check-circle-2"></i><span><strong>30 days</strong> of direct links to every owner&rsquo;s website</span></li>
-          <li><i data-lucide="check-circle-2"></i><span><strong>No booking fees</strong> &mdash; owners set their own prices, we take nothing</span></li>
-          <li><i data-lucide="check-circle-2"></i><span><strong>No account to set up</strong> &mdash; we email you a six-digit code</span></li>
-          <li><i data-lucide="check-circle-2"></i><span><strong>No auto-renew</strong> &mdash; it simply lapses after 30 days</span></li>
-        </ul>
-        <button class="btn btn-amber btn-block" data-action="buy">
-          Unlock for &pound;5.95 <i data-lucide="arrow-right"></i>
-        </button>
-        <p class="unlock-fine">Card, Apple&nbsp;Pay or Google&nbsp;Pay via Stripe. One payment, no subscription.</p>
-        <div class="unlock-sep"><span>Already bought access?</span></div>
-        <button class="btn btn-ghost btn-block" data-action="show-signin">
-          Sign in with your email <i data-lucide="arrow-right"></i>
-        </button>
+      <div class="unlock-panel unlock-feature" data-state="locked" hidden>
+        <div class="unlock-feature-hero">
+          <div class="unlock-feature-copy">
+            <h2 class="unlock-feature-title">Unlock the curated directory of exclusive vacation homes <span>available for holiday rental.</span></h2>
+            <p class="unlock-feature-kicker">Websites from the owners direct</p>
+            <ul class="tick-list unlock-list">
+              <li><i data-lucide="check-circle-2"></i><span><strong>30 days</strong> of direct links to every owner&rsquo;s website</span></li>
+              <li><i data-lucide="check-circle-2"></i><span><strong>No booking fees</strong> &mdash; owners set their own prices, we take nothing</span></li>
+              <li><i data-lucide="check-circle-2"></i><span><strong>No account to set up</strong> &mdash; we email you a six-digit code</span></li>
+              <li><i data-lucide="check-circle-2"></i><span><strong>No auto-renew</strong> &mdash; it simply lapses after 30 days</span></li>
+            </ul>
+          </div>
+          <button class="btn btn-amber btn-block unlock-feature-cta" data-action="buy">
+            Unlock for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
+        <div class="unlock-feature-foot">
+          <p class="unlock-fine">Card, Apple&nbsp;Pay or Google&nbsp;Pay via Stripe. One payment, no subscription. Charged in pounds, so the dollar price is approximate.</p>
+          <div class="unlock-sep"><span>Already bought access?</span></div>
+          <button class="btn btn-ghost btn-block" data-action="show-signin">
+            Sign in with your email <i data-lucide="arrow-right"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Signing in on this device -->
@@ -139,7 +145,7 @@
         <h2>Your 30 days are up</h2>
         <p class="unlock-lead">Access ran out on <strong data-slot="expires"></strong>. There are new properties added every month &mdash; unlock another 30 days whenever you like.</p>
         <button class="btn btn-amber btn-block" data-action="buy">
-          Unlock again for &pound;5.95 <i data-lucide="arrow-right"></i>
+          Unlock again for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i>
         </button>
         <p class="unlock-alt"><span data-slot="signed-in-as"></span> &middot;
           <button class="linkish" data-action="signout">Sign out</button></p>

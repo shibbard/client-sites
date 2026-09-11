@@ -64,63 +64,66 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
-  // Property filter bar (region listing pages)
-  var filterBar = document.querySelector("[data-filter-scope]");
-  if (filterBar) {
-    var searchInput = filterBar.querySelector("[data-filter-search]");
-    var bedsSelect = filterBar.querySelector("[data-filter-beds]");
-    var poolCheckbox = filterBar.querySelector("[data-filter-pool]");
-    var clearButtons = filterBar.querySelectorAll("[data-filter-clear]");
-    var emptyState = filterBar.querySelector("[data-filter-empty]");
-    var cards = Array.prototype.slice.call(document.querySelectorAll(".prop-card"));
-    var groups = Array.prototype.slice.call(document.querySelectorAll(".region-group"));
+  // Bedroom filter (region listing pages)
+  //
+  // Cards are already in bedroom order in the HTML; this only shows and hides
+  // them. Buttons are built from the bed counts actually on the page, so none
+  // of them ever leads to an empty list, and the bar stays hidden without JS.
+  var bedFilter = document.querySelector("[data-bed-filter]");
+  if (bedFilter) {
+    var bedOptions = bedFilter.querySelector("[data-bed-options]");
+    var bedStatus = bedFilter.querySelector("[data-bed-status]");
+    var bedCards = Array.prototype.slice.call(document.querySelectorAll(".prop-card"));
+    var bedGroups = Array.prototype.slice.call(document.querySelectorAll(".region-group"));
+    var homes = function (n) { return n + (n === 1 ? " home" : " homes"); };
 
-    function cardBeds(card) {
-      var metaText = card.querySelector(".prop-meta") ? card.querySelector(".prop-meta").textContent : "";
-      var match = metaText.match(/(\d+)\s*Bed/i);
-      return match ? parseInt(match[1], 10) : 0;
-    }
-    function cardHasPool(card) {
-      return !!card.querySelector(".prop-pool");
-    }
-    function cardText(card) {
-      return card.textContent.toLowerCase();
-    }
-
-    function applyFilters() {
-      var query = (searchInput && searchInput.value || "").trim().toLowerCase();
-      var minBeds = bedsSelect ? parseInt(bedsSelect.value, 10) || 0 : 0;
-      var poolOnly = !!(poolCheckbox && poolCheckbox.checked);
-      var visibleCount = 0;
-
-      cards.forEach(function (card) {
-        var matches = true;
-        if (query && cardText(card).indexOf(query) === -1) matches = false;
-        if (matches && minBeds && cardBeds(card) < minBeds) matches = false;
-        if (matches && poolOnly && !cardHasPool(card)) matches = false;
-        card.classList.toggle("is-filtered-out", !matches);
-        if (matches) visibleCount++;
-      });
-
-      groups.forEach(function (group) {
-        var visibleInGroup = group.querySelectorAll(".prop-card:not(.is-filtered-out)").length;
-        group.classList.toggle("is-empty", visibleInGroup === 0);
-      });
-
-      if (emptyState) emptyState.classList.toggle("show", visibleCount === 0);
-    }
-
-    if (searchInput) searchInput.addEventListener("input", applyFilters);
-    if (bedsSelect) bedsSelect.addEventListener("change", applyFilters);
-    if (poolCheckbox) poolCheckbox.addEventListener("change", applyFilters);
-    clearButtons.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        if (searchInput) searchInput.value = "";
-        if (bedsSelect) bedsSelect.value = "0";
-        if (poolCheckbox) poolCheckbox.checked = false;
-        applyFilters();
-      });
+    var bedsOf = {};
+    var bedCounts = [];
+    bedCards.forEach(function (card, i) {
+      var meta = card.querySelector(".prop-meta");
+      var match = meta && meta.textContent.match(/(\d+)\s*Bed/i);
+      var n = match ? parseInt(match[1], 10) : 0;
+      bedsOf[i] = n;
+      if (n && bedCounts.indexOf(n) === -1) bedCounts.push(n);
     });
+    bedCounts.sort(function (a, b) { return a - b; });
+
+    var applyBeds = function (wanted) {
+      var shown = 0;
+      bedCards.forEach(function (card, i) {
+        var match = !wanted || bedsOf[i] === wanted;
+        card.classList.toggle("is-filtered-out", !match);
+        if (match) shown++;
+      });
+      // Group counts are recomputed from the cards, so they are always right
+      // and follow the filter
+      bedGroups.forEach(function (group) {
+        var inGroup = group.querySelectorAll(".prop-card:not(.is-filtered-out)").length;
+        group.classList.toggle("is-empty", inGroup === 0);
+        var count = group.querySelector(".region-group-head .count");
+        if (count) count.textContent = homes(inGroup);
+      });
+      Array.prototype.forEach.call(bedOptions.children, function (btn) {
+        btn.setAttribute("aria-pressed", Number(btn.value) === wanted ? "true" : "false");
+      });
+      bedStatus.textContent = wanted
+        ? "Showing " + shown + " of " + homes(bedCards.length) + " with " + wanted + (wanted === 1 ? " bedroom" : " bedrooms")
+        : "Showing all " + homes(bedCards.length);
+    };
+
+    if (bedCounts.length > 1) {
+      [0].concat(bedCounts).forEach(function (n) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.value = n;
+        btn.textContent = n ? n : "All";
+        if (n) btn.setAttribute("aria-label", n + (n === 1 ? " bedroom" : " bedrooms"));
+        btn.addEventListener("click", function () { applyBeds(n); });
+        bedOptions.appendChild(btn);
+      });
+      applyBeds(0);
+      bedFilter.hidden = false;
+    }
   }
 
   // Featured properties carousel
@@ -269,12 +272,15 @@
   // keeps this to zero requests on all 84 property pages, and there is no
   // flash of the wrong state.
   var accessCta = document.querySelector('.nav-cta a[href="unlock.html"]');
+  var accessBanner = document.querySelector("[data-access-banner]");
   if (accessCta) {
     var stamp = (document.cookie.match(/(?:^|;\s*)hfh_until=(\d+)/) || [])[1];
     if (stamp) {
       var endsAt = new Date(Number(stamp) * 1000);
       var left = Math.ceil((endsAt - new Date()) / 864e5);
       if (left > 0) {
+        // Already paid: the region-page sales banner has nothing to offer them
+        if (accessBanner) accessBanner.hidden = true;
         accessCta.textContent = "✓ My Access";
         accessCta.classList.add("has-access");
         accessCta.setAttribute("title",

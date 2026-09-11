@@ -105,6 +105,22 @@ Twelve of the USA entries are "Disney, Orlando", which is plausible — it's a
 villa cluster — but it does mean guests see twelve identical-looking headings.
 Worth giving them distinguishing names at some point.
 
+## Region structure (settled 12 September)
+
+Gary set one heading level per page. Each heading is the `group` column; the
+small label on each card (`sub`) repeats it, and the card title is the place.
+
+| Page | Heading (`group`) | Card title |
+|---|---|---|
+| United Kingdom | South West England · Southern & South East England · Middle England · North East & Yorkshire · North West & Lake District · Scotland · Wales | Town, County |
+| Europe | Country | Town, City or Resort |
+| Caribbean Islands | Island | Region or Resort |
+| USA | unchanged | unchanged |
+| Central America | none, one list | Place |
+
+Belize moved to Central America. Roatán stays under Caribbean Islands as an
+island heading. Everything below this section is the 2 September history.
+
 ## "Some properties are in the wrong regions"
 
 Gary is right. The checker flags these:
@@ -156,12 +172,17 @@ What is not provisioned yet is **Stripe** and **Resend**, so nothing can take
 money or send a sign-in code until those accounts exist. The site itself works
 exactly as it does today.
 
-## One thing that needs deciding
+## Order, the bedroom filter and group counts
 
-The `.region-group-head` blocks on each page carry a hand-written count
-("13 homes") and a short description. Those are **not** generated, so they go
-stale as properties are added. Either they get updated by hand each time, or
-the count gets generated too — worth deciding before the first batch goes in.
+Cards within each group are in **bedroom order, fewest first**, and the
+generator writes them that way, so pasted cards keep the order. Every region
+page has a bedroom filter bar above the listings (`data-bed-filter`, driven by
+`js/main.js`). Its buttons are built from the bed counts on that page, so adding
+a 9-bed property adds a "9" button with no markup change.
+
+The `.region-group-head` blocks carry a hand-written count ("13 homes") and a
+short description. The count is recomputed from the cards on page load, so a
+stale number only shows without JavaScript. The description is still by hand.
 
 ## "New properties every month" — encouraging repeat purchases
 

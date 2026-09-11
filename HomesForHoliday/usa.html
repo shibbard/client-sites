@@ -65,6 +65,19 @@
 </div>
 <section class="section" style="padding-top:20px;">
   <div class="container">
+    <aside class="access-banner" data-access-banner aria-label="Directory access">
+      <div class="access-banner-media" aria-hidden="true"></div>
+      <div class="access-banner-body">
+        <p class="access-banner-title">Browse every home free. <span>Unlock the owners&rsquo; own websites for 30 days.</span></p>
+        <p class="access-banner-sub">No booking fees &middot; No account to set up &middot; No auto-renew</p>
+      </div>
+      <a href="unlock.html" class="btn btn-amber access-banner-btn">Unlock for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i></a>
+    </aside>
+    <div class="bed-filter" data-bed-filter hidden>
+      <span class="bed-filter-label" id="bed-filter-label"><i data-lucide="bed-double"></i>Bedrooms</span>
+      <div class="bed-filter-options" role="group" aria-labelledby="bed-filter-label" data-bed-options></div>
+      <p class="bed-filter-status" aria-live="polite" data-bed-status></p>
+    </div>
     
       <div class="region-group">
         <div class="region-group-head">
@@ -73,38 +86,6 @@
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Gulf-coast condos and beach houses across the Sunshine State.</p>
         <div class="prop-grid">
-        <a class="prop-card reveal" href="/go/st-pete-beach" target="_blank" aria-label="Condo (Apartment) in St Pete Beach, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            
-            <img src="images/image-standard-prv-846018.webp" alt="Condo (Apartment) in St Pete Beach" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>St Pete Beach</h3>
-            <p class="prop-type">Condo (Apartment)</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>2 Beds</span>
-              <span><i data-lucide="bath"></i>1 Bath</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
-        <a class="prop-card reveal" href="/go/hernando-beach" target="_blank" aria-label="House in Hernando Beach, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-846017.webp" alt="House in Hernando Beach" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>Hernando Beach</h3>
-            <p class="prop-type">House</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>4 Beds</span>
-              <span><i data-lucide="bath"></i>5 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
         <a class="prop-card reveal" href="/go/panama-city-beach" target="_blank" aria-label="Studio Condo (Apartment) in Panama City Beach, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
@@ -116,6 +97,22 @@
             <p class="prop-type">Studio Condo (Apartment)</p>
             <div class="prop-meta">
               <span><i data-lucide="bed-double"></i>1 Bed</span>
+              <span><i data-lucide="bath"></i>1 Bath</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/st-pete-beach" target="_blank" aria-label="Condo (Apartment) in St Pete Beach, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            
+            <img src="images/image-standard-prv-846018.webp" alt="Condo (Apartment) in St Pete Beach" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>St Pete Beach</h3>
+            <p class="prop-type">Condo (Apartment)</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>2 Beds</span>
               <span><i data-lucide="bath"></i>1 Bath</span>
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
@@ -153,22 +150,6 @@
             <div class="prop-soft">Owner website coming soon &mdash; <a href="mailto:hfh.travel@outlook.com" style="color:var(--primary);font-weight:600;">enquire for details</a></div>
           </div>
         </article>
-        <a class="prop-card reveal" href="/go/santa-rosa-beach" target="_blank" aria-label="Beach House in Santa Rosa Beach, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
-            <img src="images/image-standard-prv-845951.webp" alt="Beach House in Santa Rosa Beach" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>Santa Rosa Beach</h3>
-            <p class="prop-type">Beach House</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>4 Beds</span>
-              <span><i data-lucide="bath"></i>3 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
         <a class="prop-card reveal" href="/go/st-george-island" target="_blank" aria-label="Island House in St George Island, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             
@@ -200,6 +181,38 @@
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
+        </a>
+        <a class="prop-card reveal" href="/go/hernando-beach" target="_blank" aria-label="House in Hernando Beach, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
+            <img src="images/image-standard-prv-846017.webp" alt="House in Hernando Beach" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>Hernando Beach</h3>
+            <p class="prop-type">House</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>4 Beds</span>
+              <span><i data-lucide="bath"></i>5 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/santa-rosa-beach" target="_blank" aria-label="Beach House in Santa Rosa Beach, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
+            <img src="images/image-standard-prv-845951.webp" alt="Beach House in Santa Rosa Beach" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>Santa Rosa Beach</h3>
+            <p class="prop-type">Beach House</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>4 Beds</span>
+              <span><i data-lucide="bath"></i>3 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
         </a></div>
       </div>
 
@@ -210,22 +223,6 @@
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Spacious private-pool villas minutes from the Orlando parks.</p>
         <div class="prop-grid">
-        <a class="prop-card reveal" href="/go/disney-orlando-b5bab8" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-845945.webp" alt="Villa in Disney, Orlando" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>Disney, Orlando</h3>
-            <p class="prop-type">Villa</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>5 Beds</span>
-              <span><i data-lucide="bath"></i>3 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
         <a class="prop-card reveal" href="/go/disney-orlando-6c89c2" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
@@ -242,34 +239,18 @@
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
         </a>
-        <a class="prop-card reveal" href="/go/disney-orlando-ce1867" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
+        <a class="prop-card reveal" href="/go/disney-orlando-592436" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-845943.webp" alt="Villa in Disney, Orlando" loading="lazy">
+            <img src="images/image-standard-prv-845936.webp" alt="Villa in Disney, Orlando" loading="lazy">
           </div>
           <div class="prop-body">
             <span class="prop-sub">Florida</span>
             <h3>Disney, Orlando</h3>
             <p class="prop-type">Villa</p>
             <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>5 Beds</span>
-              <span><i data-lucide="bath"></i>5 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
-        <a class="prop-card reveal" href="/go/disney-orlando-04158d" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-845940.webp" alt="Villa in Disney, Orlando" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>Disney, Orlando</h3>
-            <p class="prop-type">Villa</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>5 Beds</span>
-              <span><i data-lucide="bath"></i>5 Baths</span>
+              <span><i data-lucide="bed-double"></i>3 Beds</span>
+              <span><i data-lucide="bath"></i>3 Baths</span>
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
@@ -290,22 +271,6 @@
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
         </a>
-        <a class="prop-card reveal" href="/go/disney-orlando-f68b42" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-845938.webp" alt="Villa in Disney, Orlando" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>Disney, Orlando</h3>
-            <p class="prop-type">Villa</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>5 Beds</span>
-              <span><i data-lucide="bath"></i>4 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
         <a class="prop-card reveal" href="/go/disney-orlando-34488c" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
@@ -317,22 +282,6 @@
             <p class="prop-type">Villa</p>
             <div class="prop-meta">
               <span><i data-lucide="bed-double"></i>4 Beds</span>
-              <span><i data-lucide="bath"></i>3 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
-        <a class="prop-card reveal" href="/go/disney-orlando-592436" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-845936.webp" alt="Villa in Disney, Orlando" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Florida</span>
-            <h3>Disney, Orlando</h3>
-            <p class="prop-type">Villa</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>3 Beds</span>
               <span><i data-lucide="bath"></i>3 Baths</span>
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
@@ -386,6 +335,70 @@
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
         </a>
+        <a class="prop-card reveal" href="/go/disney-orlando-b5bab8" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
+            <img src="images/image-standard-prv-845945.webp" alt="Villa in Disney, Orlando" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>Disney, Orlando</h3>
+            <p class="prop-type">Villa</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>5 Beds</span>
+              <span><i data-lucide="bath"></i>3 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/disney-orlando-ce1867" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
+            <img src="images/image-standard-prv-845943.webp" alt="Villa in Disney, Orlando" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>Disney, Orlando</h3>
+            <p class="prop-type">Villa</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>5 Beds</span>
+              <span><i data-lucide="bath"></i>5 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/disney-orlando-04158d" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
+            <img src="images/image-standard-prv-845940.webp" alt="Villa in Disney, Orlando" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>Disney, Orlando</h3>
+            <p class="prop-type">Villa</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>5 Beds</span>
+              <span><i data-lucide="bath"></i>5 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/disney-orlando-f68b42" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
+            <img src="images/image-standard-prv-845938.webp" alt="Villa in Disney, Orlando" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Florida</span>
+            <h3>Disney, Orlando</h3>
+            <p class="prop-type">Villa</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>5 Beds</span>
+              <span><i data-lucide="bath"></i>4 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
         <a class="prop-card reveal" href="/go/disney-orlando-7f89ce" target="_blank" aria-label="Villa in Disney, Orlando, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
@@ -411,6 +424,22 @@
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">From Gulf Shores to the Smokies, Hawaii to the Carolinas.</p>
         <div class="prop-grid">
+        <a class="prop-card reveal" href="/go/molokai" target="_blank" aria-label="Condo (Apartment) in Molokai, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
+            <img src="images/image-standard-prv-847228.webp" alt="Condo (Apartment) in Molokai" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">Hawaii</span>
+            <h3>Molokai</h3>
+            <p class="prop-type">Condo (Apartment)</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>1 Bed</span>
+              <span><i data-lucide="bath"></i>1 Bath</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
         <a class="prop-card reveal" href="/go/gulf-shores-7dd82f" target="_blank" aria-label="Condo (Apartment) in Gulf Shores, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
@@ -423,22 +452,6 @@
             <div class="prop-meta">
               <span><i data-lucide="bed-double"></i>2 Beds</span>
               <span><i data-lucide="bath"></i>2 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
-        <a class="prop-card reveal" href="/go/surf-city" target="_blank" aria-label="House in Surf City, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            
-            <img src="images/image-standard-prv-847277.webp" alt="House in Surf City" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">North Carolina</span>
-            <h3>Surf City</h3>
-            <p class="prop-type">House</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>4 Beds</span>
-              <span><i data-lucide="bath"></i>3 Baths</span>
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
@@ -459,22 +472,6 @@
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
         </a>
-        <a class="prop-card reveal" href="/go/smoky-mountains" target="_blank" aria-label="Cabin in Smoky Mountains, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            
-            <img src="images/image-standard-prv-847258.webp" alt="Cabin in Smoky Mountains" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">South Carolina</span>
-            <h3>Smoky Mountains</h3>
-            <p class="prop-type">Cabin</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>4 Beds</span>
-              <span><i data-lucide="bath"></i>3 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
         <a class="prop-card reveal" href="/go/fripp-island" target="_blank" aria-label="House in Fripp Island, visit owner's website" rel="nofollow noopener">
           <div class="prop-media">
             
@@ -486,6 +483,54 @@
             <p class="prop-type">House</p>
             <div class="prop-meta">
               <span><i data-lucide="bed-double"></i>3 Beds</span>
+              <span><i data-lucide="bath"></i>3 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/corolla" target="_blank" aria-label="House in Corolla, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
+            <img src="images/image-standard-prv-847229.webp" alt="House in Corolla" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">North Carolina</span>
+            <h3>Corolla</h3>
+            <p class="prop-type">House</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>3 Beds</span>
+              <span><i data-lucide="bath"></i>3 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/surf-city" target="_blank" aria-label="House in Surf City, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            
+            <img src="images/image-standard-prv-847277.webp" alt="House in Surf City" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">North Carolina</span>
+            <h3>Surf City</h3>
+            <p class="prop-type">House</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>4 Beds</span>
+              <span><i data-lucide="bath"></i>3 Baths</span>
+            </div>
+            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+          </div>
+        </a>
+        <a class="prop-card reveal" href="/go/smoky-mountains" target="_blank" aria-label="Cabin in Smoky Mountains, visit owner's website" rel="nofollow noopener">
+          <div class="prop-media">
+            
+            <img src="images/image-standard-prv-847258.webp" alt="Cabin in Smoky Mountains" loading="lazy">
+          </div>
+          <div class="prop-body">
+            <span class="prop-sub">South Carolina</span>
+            <h3>Smoky Mountains</h3>
+            <p class="prop-type">Cabin</p>
+            <div class="prop-meta">
+              <span><i data-lucide="bed-double"></i>4 Beds</span>
               <span><i data-lucide="bath"></i>3 Baths</span>
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
@@ -519,38 +564,6 @@
             <div class="prop-meta">
               <span><i data-lucide="bed-double"></i>8 Beds</span>
               <span><i data-lucide="bath"></i>6 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
-        <a class="prop-card reveal" href="/go/corolla" target="_blank" aria-label="House in Corolla, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Private Pool</div>
-            <img src="images/image-standard-prv-847229.webp" alt="House in Corolla" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">North Carolina</span>
-            <h3>Corolla</h3>
-            <p class="prop-type">House</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>3 Beds</span>
-              <span><i data-lucide="bath"></i>3 Baths</span>
-            </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
-          </div>
-        </a>
-        <a class="prop-card reveal" href="/go/molokai" target="_blank" aria-label="Condo (Apartment) in Molokai, visit owner's website" rel="nofollow noopener">
-          <div class="prop-media">
-            <div class="prop-pool"><i data-lucide="waves"></i>Communal Pool</div>
-            <img src="images/image-standard-prv-847228.webp" alt="Condo (Apartment) in Molokai" loading="lazy">
-          </div>
-          <div class="prop-body">
-            <span class="prop-sub">Hawaii</span>
-            <h3>Molokai</h3>
-            <p class="prop-type">Condo (Apartment)</p>
-            <div class="prop-meta">
-              <span><i data-lucide="bed-double"></i>1 Bed</span>
-              <span><i data-lucide="bath"></i>1 Bath</span>
             </div>
             <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
           </div>
