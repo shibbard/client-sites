@@ -42,3 +42,14 @@ export const clientIp = req =>
 // always point at the real domain, not at a preview deployment's hostname.
 export const siteUrl = req => process.env.SITE_URL
   || `https://${req.headers['x-forwarded-host'] || req.headers.host}`;
+
+// The site a checkout was started from. Stripe sends every event to every
+// webhook on the account, so the host that *receives* a webhook is not
+// necessarily the site the buyer paid on; the success_url we gave Stripe is.
+// It is ours (set in api/checkout.js) and arrives inside a signed event.
+export const checkoutOrigin = cs => {
+  try {
+    const { protocol, origin } = new URL(cs?.success_url || '');
+    return protocol === 'https:' ? origin : null;
+  } catch { return null; }
+};

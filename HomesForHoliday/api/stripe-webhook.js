@@ -7,7 +7,7 @@
 import Stripe from 'stripe';
 import { foldAccessEnd, paidSessionsFor } from '../lib/stripe-access.js';
 import { sendAccessNotice } from '../lib/email.js';
-import { readRawBody, json, siteUrl } from '../lib/http.js';
+import { readRawBody, json, siteUrl, checkoutOrigin } from '../lib/http.js';
 
 // Signature verification needs the untouched bytes.
 export const config = { api: { bodyParser: false } };
@@ -57,8 +57,13 @@ export default async function handler(req, res) {
     const expiresAt = foldAccessEnd(sessions);
     const renewed = sessions.length > 1;
 
+    // Link the email to the site they bought on. Without this, a purchase on the
+    // real domain whose event reached the test preview's webhook emailed out
+    // links to the preview.
+    const site = process.env.SITE_URL || checkoutOrigin(cs) || siteUrl(req);
+
     try {
-      await sendAccessNotice({ to: email, expiresAt, siteUrl: siteUrl(req), renewed });
+      await sendAccessNotice({ to: email, expiresAt, siteUrl: site, renewed });
       console.log(`webhook: notice sent to ${email}, access until ${expiresAt.toISOString()}`);
     } catch (err) {
       // 500 makes Stripe retry. The buyer is not locked out either way — they

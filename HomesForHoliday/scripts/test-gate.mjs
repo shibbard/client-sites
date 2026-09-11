@@ -455,6 +455,24 @@ test('the access expiry is a fold over Stripe, so every device agrees', () => {
   }
 });
 
+console.log('\nemail links: point at the site the buyer paid on');
+
+const { checkoutOrigin } = await import('../lib/http.js');
+
+test('the confirmation email links to the site the checkout started on', () => {
+  const cs = { success_url: 'https://home-for-holiday.getdigitaldone.co.uk/api/activate?cs={CHECKOUT_SESSION_ID}&next=javea' };
+  assert.equal(checkoutOrigin(cs), 'https://home-for-holiday.getdigitaldone.co.uk');
+  const src = readFileSync('api/stripe-webhook.js', 'utf8');
+  assert.ok(src.includes('checkoutOrigin(cs)'),
+    'api/stripe-webhook.js builds email links from the host that received the webhook');
+});
+
+test('a missing or odd success_url gives no origin rather than a bad link', () => {
+  for (const cs of [{}, null, { success_url: 'not a url' }, { success_url: 'javascript:alert(1)' }, { success_url: 'http://example.com/x' }]) {
+    assert.equal(checkoutOrigin(cs), null);
+  }
+});
+
 console.log('\naccess window: replaying Stripe gives the same answer every time');
 
 const { foldAccessEnd } = await import('../lib/stripe-access.js');
