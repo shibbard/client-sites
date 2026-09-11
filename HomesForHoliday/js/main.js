@@ -272,7 +272,10 @@
   // keeps this to zero requests on all 84 property pages, and there is no
   // flash of the wrong state.
   var accessBanner = document.querySelector("[data-access-banner]");
-  var stamp = (document.cookie.match(/(?:^|;\s*)hfh_until=(\d+)/) || [])[1];
+  var readStamp = function () {
+    return (document.cookie.match(/(?:^|;\s*)hfh_until=(\d+)/) || [])[1];
+  };
+  var stamp = readStamp();
   var hasAccessHint = !!stamp && Number(stamp) * 1000 > Date.now();
 
   // Property links open in a new tab so the owner's site sits beside the
@@ -286,12 +289,15 @@
   // Already paid: the region-page sales banner has nothing to offer them
   if (hasAccessHint && accessBanner) accessBanner.hidden = true;
 
-  // The header button and its copy in the mobile menu carry the same state
-  var accessCtas = document.querySelectorAll('.nav-cta a[href="unlock.html"], .nav-menu-cta');
-  if (stamp) {
-    var endsAt = new Date(Number(stamp) * 1000);
+  // The header button and its copy in the mobile menu carry the same state.
+  // Exposed so the unlock page can re-apply it the moment a sign-in sets the
+  // cookie, rather than leaving "Unlock the Directory" up until a reload.
+  var applyAccessCtas = function () {
+    var current = readStamp();
+    if (!current) return;
+    var endsAt = new Date(Number(current) * 1000);
     var left = Math.ceil((endsAt - new Date()) / 864e5);
-    accessCtas.forEach(function (cta) {
+    document.querySelectorAll('.nav-cta a[href="unlock.html"], .nav-menu-cta').forEach(function (cta) {
       if (left > 0) {
         cta.textContent = "✓ My Access";
         cta.classList.add("has-access");
@@ -301,10 +307,13 @@
           " — " + left + (left === 1 ? " day" : " days") + " left");
       } else {
         cta.textContent = "Renew Access";
+        cta.classList.remove("has-access");
         cta.setAttribute("title", "Your 30 days have ended");
       }
     });
-  }
+  };
+  window.hfhApplyAccessHint = applyAccessCtas;
+  applyAccessCtas();
 
   // Current year
   var y = document.querySelectorAll("[data-year]");

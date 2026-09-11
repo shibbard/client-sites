@@ -13,6 +13,14 @@
   var next = (params.get('next') || '').replace(/[^a-z0-9-]/gi, '');
   var pendingEmail = '';
   var justPaid = params.get('welcome') === '1';
+  // Show "Payment received" once, on the way back from Stripe. Take the flag
+  // out of the address so a reload, a bookmark or a later sign-in on this page
+  // does not thank them for a payment they did not just make.
+  if (justPaid && window.history && history.replaceState) {
+    params.delete('welcome');
+    var rest = params.toString();
+    history.replaceState(null, '', location.pathname + (rest ? '?' + rest : '') + location.hash);
+  }
 
   var PROBLEMS = {
     session: 'That payment link was not one we recognised.',
@@ -96,7 +104,11 @@
           slot('continue-label', next ? 'Open the property' : 'Browse the directory');
           var paid = shell.querySelector('[data-welcome]');
           if (paid) paid.hidden = !justPaid;
+          justPaid = false;
           show('active');
+          // A sign-in on this page has just set the hint cookie; bring the
+          // header in line without waiting for a reload.
+          if (window.hfhApplyAccessHint) window.hfhApplyAccessHint();
           return;
         }
         if (me.known && me.lapsed) {
