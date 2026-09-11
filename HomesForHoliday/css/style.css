@@ -233,6 +233,14 @@ p { color: var(--muted); }
 .site-header.scrolled .nav-menu a.active { color: var(--primary); }
 
 .nav-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+/* Copy of the header CTA for the slide-in menu; the header one is hidden there */
+.nav-menu-cta { display: none; }
+/* Between the hamburger breakpoint and ~1180px the logo, tagline, five links
+   and the CTA need more width than there is, and the CTA gets clipped at the
+   edge. The tagline is the one piece that can go. */
+@media (min-width: 861px) and (max-width: 1180px) {
+  .brand-tagline { display: none; }
+}
 .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 8px; z-index: 95; }
 .nav-toggle span { display: block; width: 24px; height: 2px; border-radius: 2px; background: var(--nav-ink); margin: 5px 0; transition: .3s; }
 .nav-toggle.open span { background: var(--ink); }
@@ -1079,6 +1087,10 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .nav-menu a.active { color: var(--primary); }
   .nav-toggle { display: block; }
   .nav-cta .btn { display: none; }
+  .nav-menu a.nav-menu-cta {
+    display: flex; justify-content: center; margin-top: 24px; padding: 14px 26px;
+    color: #fff; font-size: 0.95rem; border-bottom: 0;
+  }
   .nav-backdrop { position: fixed; inset: 0; background: rgba(19,31,82,0.4); backdrop-filter: blur(2px); opacity: 0; visibility: hidden; transition: .3s; z-index: 80; }
   .nav-backdrop.show { opacity: 1; visibility: visible; }
   .split { grid-template-columns: 1fr; }
@@ -1221,12 +1233,12 @@ html.js .reveal.in { opacity: 1; transform: none; }
 
 /* Header CTA once you hold access: a state, not a call to action. Aqua rather
    than the primary blue so it reads as "you are in" at a glance. */
-.nav-cta .btn.has-access {
+.nav-cta .btn.has-access, .nav-menu a.nav-menu-cta.has-access {
   background: var(--aqua);
   border-color: var(--aqua);
   color: #fff;
 }
-.nav-cta .btn.has-access:hover { background: #0c8880; border-color: #0c8880; }
+.nav-cta .btn.has-access:hover, .nav-menu a.nav-menu-cta.has-access:hover { background: #0c8880; border-color: #0c8880; }
 
 /* Payment confirmation, shown only on the way back from Stripe */
 .unlock-paid {

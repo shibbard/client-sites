@@ -271,27 +271,39 @@
   // actually enforces access. Reading a cookie rather than calling /api/me
   // keeps this to zero requests on all 84 property pages, and there is no
   // flash of the wrong state.
-  var accessCta = document.querySelector('.nav-cta a[href="unlock.html"]');
   var accessBanner = document.querySelector("[data-access-banner]");
-  if (accessCta) {
-    var stamp = (document.cookie.match(/(?:^|;\s*)hfh_until=(\d+)/) || [])[1];
-    if (stamp) {
-      var endsAt = new Date(Number(stamp) * 1000);
-      var left = Math.ceil((endsAt - new Date()) / 864e5);
+  var stamp = (document.cookie.match(/(?:^|;\s*)hfh_until=(\d+)/) || [])[1];
+  var hasAccessHint = !!stamp && Number(stamp) * 1000 > Date.now();
+
+  // Property links open in a new tab so the owner's site sits beside the
+  // directory. Without access that click lands on the unlock page instead,
+  // which belongs in this tab, not a new one.
+  if (!hasAccessHint) {
+    document.querySelectorAll('a.prop-card[target="_blank"]').forEach(function (a) {
+      a.removeAttribute("target");
+    });
+  }
+  // Already paid: the region-page sales banner has nothing to offer them
+  if (hasAccessHint && accessBanner) accessBanner.hidden = true;
+
+  // The header button and its copy in the mobile menu carry the same state
+  var accessCtas = document.querySelectorAll('.nav-cta a[href="unlock.html"], .nav-menu-cta');
+  if (stamp) {
+    var endsAt = new Date(Number(stamp) * 1000);
+    var left = Math.ceil((endsAt - new Date()) / 864e5);
+    accessCtas.forEach(function (cta) {
       if (left > 0) {
-        // Already paid: the region-page sales banner has nothing to offer them
-        if (accessBanner) accessBanner.hidden = true;
-        accessCta.textContent = "✓ My Access";
-        accessCta.classList.add("has-access");
-        accessCta.setAttribute("title",
+        cta.textContent = "✓ My Access";
+        cta.classList.add("has-access");
+        cta.setAttribute("title",
           "Access runs until " + endsAt.toLocaleDateString("en-GB",
             { day: "numeric", month: "long", year: "numeric" }) +
           " — " + left + (left === 1 ? " day" : " days") + " left");
       } else {
-        accessCta.textContent = "Renew Access";
-        accessCta.setAttribute("title", "Your 30 days have ended");
+        cta.textContent = "Renew Access";
+        cta.setAttribute("title", "Your 30 days have ended");
       }
-    }
+    });
   }
 
   // Current year
