@@ -223,7 +223,7 @@ const card = r => {
     r.beds ? `\n              <span><i data-lucide="bed-double"></i>${plural(r.beds, 'Bed')}</span>` : '',
     r.baths ? `\n              <span><i data-lucide="bath"></i>${plural(r.baths, 'Bath')}</span>` : '',
   ].join('');
-  return `        <a class="prop-card reveal" href="/go/${esc(r.slug)}" target="_blank" aria-label="${esc(label)}, visit owner's website" rel="nofollow noopener">
+  return `        <a class="prop-card reveal" href="/go/${esc(r.slug)}" target="_blank" aria-label="${esc(label)}, book direct" rel="nofollow noopener">
           <div class="prop-media">${pool}
             <img src="${esc(r.image)}" alt="${esc(label)}" loading="lazy">
           </div>
@@ -233,7 +233,7 @@ const card = r => {
             <p class="prop-type">${esc(r.type)}</p>
             <div class="prop-meta">${meta}
             </div>
-            <span class="prop-cta">View owner&rsquo;s website <i data-lucide="arrow-up-right"></i></span>
+            <span class="prop-cta">Book direct <i data-lucide="arrow-up-right"></i></span>
           </div>
         </a>`;
 };
