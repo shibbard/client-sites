@@ -319,6 +319,13 @@ section{position:relative}
 .footer-legal p:last-child{margin-bottom:0}
 .footer-legal a{color:rgba(255,255,255,.75);text-decoration:underline}
 .footer-legal a:hover{color:#fff}
+.fl-intro{font-size:13px;color:rgba(255,255,255,.7)}
+.fl-disclaimer summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;color:rgba(255,255,255,.75);text-decoration:underline;margin-bottom:10px}
+.fl-disclaimer summary::-webkit-details-marker{display:none}
+.fl-disclaimer summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.fl-disclaimer[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.fl-disclaimer summary:hover{color:#fff}
+.fl-disclaimer summary:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
 .fb-links{display:inline-flex;gap:18px;flex-wrap:wrap}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
 .footer-bottom a:hover{color:#fff}
