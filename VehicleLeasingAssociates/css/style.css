@@ -560,6 +560,14 @@ section{position:relative}
 /* small print band */
 .smallprint-note{font-size:12.5px;color:var(--muted);line-height:1.7;max-width:90ch;margin:0 auto;text-align:center}
 .lease-price-note{margin-top:24px}
+.lease-price-note p{margin:0}
+.note-disclaimer summary{display:inline-flex;align-items:center;gap:6px;cursor:pointer;list-style:none;color:var(--muted);text-decoration:underline}
+.note-disclaimer summary::-webkit-details-marker{display:none}
+.note-disclaimer summary::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.note-disclaimer[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.note-disclaimer summary:hover{color:var(--navy)}
+.note-disclaimer summary:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:2px}
+.note-disclaimer p{margin-top:8px}
 
 @media(max-width:900px){
   .deal-grid{grid-template-columns:1fr 1fr}
