@@ -74,6 +74,22 @@
       </div>
       <a href="unlock.html" class="btn btn-amber access-banner-btn">Unlock for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i></a>
     </aside>
+    <nav class="region-nav" data-region-nav aria-label="Jump to region">
+      <span class="region-nav-label">Jump to region</span>
+      <div class="region-nav-links">
+        <a href="#region-south-west-england">South West England</a>
+        <a href="#region-southern-south-east-england">Southern &amp; South East England</a>
+        <a href="#region-middle-england">Middle England</a>
+        <a href="#region-north-east-yorkshire">North East &amp; Yorkshire</a>
+        <a href="#region-north-west-lake-district">North West &amp; Lake District</a>
+        <a href="#region-scotland">Scotland</a>
+        <a href="#region-wales">Wales</a>
+        <a href="#region-northern-ireland">Northern Ireland</a>
+      </div>
+      <select aria-label="Jump to region" hidden>
+        <option value="">Choose a region</option>
+      </select>
+    </nav>
     <div class="bed-filter" data-bed-filter hidden>
       <span class="bed-filter-label" id="bed-filter-label"><i data-lucide="bed-double"></i>Bedrooms</span>
       <div class="bed-filter-options" role="group" aria-labelledby="bed-filter-label" data-bed-options></div>
@@ -82,7 +98,7 @@
     
       <div class="region-group">
         <div class="region-group-head">
-          <h2>South West England</h2>
+          <h2 id="region-south-west-england" tabindex="-1">South West England</h2>
           <span class="count">49 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Cornish coves, Devon boltholes and cottages across the West Country.</p>
@@ -816,7 +832,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Southern &amp; South East England</h2>
+          <h2 id="region-southern-south-east-england" tabindex="-1">Southern &amp; South East England</h2>
           <span class="count">7 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">New Forest cottages, Kentish villages and Bedfordshire farmhouses.</p>
@@ -931,7 +947,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Middle England</h2>
+          <h2 id="region-middle-england" tabindex="-1">Middle England</h2>
           <span class="count">10 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Norfolk coast apartments and country houses across the shires.</p>
@@ -1091,7 +1107,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>North East &amp; Yorkshire</h2>
+          <h2 id="region-north-east-yorkshire" tabindex="-1">North East &amp; Yorkshire</h2>
           <span class="count">4 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Northumberland lodges, County Durham cottages and Yorkshire cabins.</p>
@@ -1161,7 +1177,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>North West &amp; Lake District</h2>
+          <h2 id="region-north-west-lake-district" tabindex="-1">North West &amp; Lake District</h2>
           <span class="count">8 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Lake District barns and apartments in Cumbria.</p>
@@ -1288,7 +1304,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Scotland</h2>
+          <h2 id="region-scotland" tabindex="-1">Scotland</h2>
           <span class="count">11 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Highland houses with hot tubs, lochside cottages and dog-friendly escapes.</p>
@@ -1461,7 +1477,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Wales</h2>
+          <h2 id="region-wales" tabindex="-1">Wales</h2>
           <span class="count">9 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Anglesey cottages and Carmarthenshire barns with private pools.</p>
@@ -1607,7 +1623,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Northern Ireland</h2>
+          <h2 id="region-northern-ireland" tabindex="-1">Northern Ireland</h2>
           <span class="count">1 home</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A cottage near the Causeway Coast in County Antrim.</p>

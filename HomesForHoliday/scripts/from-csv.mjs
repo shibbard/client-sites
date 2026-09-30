@@ -272,7 +272,7 @@ for (const [region, file] of Object.entries(REGIONS)) {
     `Browse ${total} owner-direct holiday homes`);
   page = page.replace(/(<div class="region-group">)([\s\S]*?)(?=<div class="region-group">|<\/section>)/g,
     (block, opening, body) => {
-      const heading = body.match(/<h2>(.*?)<\/h2>/)?.[1];
+      const heading = body.match(/<h2\b[^>]*>(.*?)<\/h2>/)?.[1];
       if (!heading) return block;
       const liveCount = live.filter(r => r.region === region && esc(r.group) === heading).length;
       const pendingCount = (body.match(/<article class="prop-card reveal">/g) || []).length;

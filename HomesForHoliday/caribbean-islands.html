@@ -74,6 +74,18 @@
       </div>
       <a href="unlock.html" class="btn btn-amber access-banner-btn">Unlock for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i></a>
     </aside>
+    <nav class="region-nav" data-region-nav aria-label="Jump to island">
+      <span class="region-nav-label">Jump to island</span>
+      <div class="region-nav-links">
+        <a href="#region-bahamas">Bahamas</a>
+        <a href="#region-dominican-republic">Dominican Republic</a>
+        <a href="#region-roat-n">Roatán</a>
+        <a href="#region-turks-caicos">Turks &amp; Caicos</a>
+      </div>
+      <select aria-label="Jump to island" hidden>
+        <option value="">Choose an island</option>
+      </select>
+    </nav>
     <div class="bed-filter" data-bed-filter hidden>
       <span class="bed-filter-label" id="bed-filter-label"><i data-lucide="bed-double"></i>Bedrooms</span>
       <div class="bed-filter-options" role="group" aria-labelledby="bed-filter-label" data-bed-options></div>
@@ -82,7 +94,7 @@
     
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Bahamas</h2>
+          <h2 id="region-bahamas" tabindex="-1">Bahamas</h2>
           <span class="count">2 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A beach house on North Andros and a cottage on Abaco.</p>
@@ -123,7 +135,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Dominican Republic</h2>
+          <h2 id="region-dominican-republic" tabindex="-1">Dominican Republic</h2>
           <span class="count">1 home</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A north-coast house at Sea Horse Ranch, Cabarete.</p>
@@ -148,7 +160,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Roatán</h2>
+          <h2 id="region-roat-n" tabindex="-1">Roatán</h2>
           <span class="count">1 home</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A villa on the largest of Honduras&rsquo; Bay Islands.</p>
@@ -173,7 +185,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Turks &amp; Caicos</h2>
+          <h2 id="region-turks-caicos" tabindex="-1">Turks &amp; Caicos</h2>
           <span class="count">1 home</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A villa overlooking Long Bay Beach on Providenciales.</p>

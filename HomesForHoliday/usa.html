@@ -74,6 +74,17 @@
       </div>
       <a href="unlock.html" class="btn btn-amber access-banner-btn">Unlock for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i></a>
     </aside>
+    <nav class="region-nav" data-region-nav aria-label="Jump to area">
+      <span class="region-nav-label">Jump to area</span>
+      <div class="region-nav-links">
+        <a href="#region-florida">Florida</a>
+        <a href="#region-florida-disney-area">Florida — Disney Area</a>
+        <a href="#region-all-other-states">All Other States</a>
+      </div>
+      <select aria-label="Jump to area" hidden>
+        <option value="">Choose an area</option>
+      </select>
+    </nav>
     <div class="bed-filter" data-bed-filter hidden>
       <span class="bed-filter-label" id="bed-filter-label"><i data-lucide="bed-double"></i>Bedrooms</span>
       <div class="bed-filter-options" role="group" aria-labelledby="bed-filter-label" data-bed-options></div>
@@ -82,7 +93,7 @@
     
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Florida</h2>
+          <h2 id="region-florida" tabindex="-1">Florida</h2>
           <span class="count">8 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Gulf-coast condos and beach houses across the Sunshine State.</p>
@@ -219,7 +230,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Florida — Disney Area</h2>
+          <h2 id="region-florida-disney-area" tabindex="-1">Florida — Disney Area</h2>
           <span class="count">11 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Spacious private-pool villas minutes from the Orlando parks.</p>
@@ -404,7 +415,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>All Other States</h2>
+          <h2 id="region-all-other-states" tabindex="-1">All Other States</h2>
           <span class="count">9 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">From Gulf Shores to the Smokies, Hawaii to the Carolinas.</p>

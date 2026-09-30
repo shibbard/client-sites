@@ -19,6 +19,7 @@ Home for Holiday is a holiday-home marketing directory, established in 2014 and 
 - Direct owner connections — communicate and book without a middleman
 - Transparent pricing and no agency fees
 - A website link on every property for full transparency
+- Sticky section shortcuts on grouped property pages let visitors jump to a region, country, area or island; the shortcuts follow the bedroom filter.
 - Trusted partner links for low-cost flights and car rental
 - Affordable holiday-home website design for owners, from £100 upfront, then £19.99+VAT per month
 

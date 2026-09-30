@@ -626,6 +626,33 @@ p { color: var(--muted); }
 .breadcrumb .sep { color: var(--outline-variant, #b9c0d0); }
 
 .region-group { padding-top: 20px; }
+.region-group-head h2[id] { scroll-margin-top: calc(var(--header-h) + var(--region-nav-h, 128px) + 32px); }
+.region-group-head h2:focus { outline: none; }
+.region-nav {
+  position: sticky; top: calc(var(--header-h) + 8px); z-index: 60;
+  display: flex; align-items: center; gap: 12px 18px;
+  margin-bottom: 16px; padding: 14px 18px;
+  background: var(--pearl); border: 1px solid var(--line);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-soft);
+}
+.region-nav-label { flex-shrink: 0; font-family: var(--font-label); font-size: .68rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.region-nav-links { display: flex; flex-wrap: wrap; gap: 6px; }
+.region-nav-links a {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 7px 12px;
+  border-radius: var(--r-pill); background: var(--surface); border: 1px solid var(--line);
+  font-size: .82rem; line-height: 1.35; color: var(--primary); text-decoration: none;
+}
+.region-nav-links a[hidden] { display: none; }
+.region-nav-links a:hover, .region-nav-links a[aria-current="location"] { background: var(--primary); border-color: var(--primary); color: var(--pearl); }
+.region-nav-links a:focus-visible, .region-nav select:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.region-nav select { display: none; min-height: 44px; min-width: 0; padding: 8px; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); color: var(--ink); font: inherit; font-size: .86rem; }
+@media (max-width: 700px) {
+  :root { --region-nav-h: 72px; }
+  .region-nav { padding: 10px 12px; gap: 10px; }
+  html.js .region-nav-links { display: none; }
+  .region-nav select:not([hidden]) { display: block; flex: 1; }
+  html:not(.js) .region-nav { flex-direction: column; align-items: flex-start; }
+}
 .region-group + .region-group { padding-top: 58px; }
 .region-group-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 26px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
 .region-group-head h2 { font-size: 1.7rem; }

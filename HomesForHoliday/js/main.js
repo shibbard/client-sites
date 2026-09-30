@@ -64,6 +64,40 @@
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
 
+  // Section shortcuts remain available while browsing long property lists.
+  var regionNav = document.querySelector("[data-region-nav]");
+  var regionLinks = regionNav ? Array.prototype.slice.call(regionNav.querySelectorAll("a")) : [];
+  var regionSelect = regionNav && regionNav.querySelector("select");
+  if (regionNav && regionSelect) {
+    regionLinks.forEach(function (link) {
+      var option = document.createElement("option");
+      option.value = link.hash;
+      option.textContent = link.textContent;
+      regionSelect.appendChild(option);
+    });
+    regionSelect.hidden = false;
+    regionSelect.addEventListener("change", function () {
+      if (regionSelect.value) window.location.hash = regionSelect.value;
+    });
+    var syncRegionHash = function () {
+      var found = false;
+      regionLinks.forEach(function (link) {
+        var active = link.hash === window.location.hash && !link.hidden;
+        if (active) { link.setAttribute("aria-current", "location"); found = true; }
+        else link.removeAttribute("aria-current");
+      });
+      regionSelect.value = found ? window.location.hash : "";
+    };
+    window.addEventListener("hashchange", syncRegionHash);
+    syncRegionHash();
+    var measureRegionNav = function () {
+      document.documentElement.style.setProperty("--region-nav-h", regionNav.getBoundingClientRect().height + "px");
+    };
+    if ("ResizeObserver" in window) new ResizeObserver(measureRegionNav).observe(regionNav);
+    window.addEventListener("resize", measureRegionNav);
+    measureRegionNav();
+  }
+
   // Bedroom filter (region listing pages)
   //
   // Cards are already in bedroom order in the HTML; this only shows and hides
@@ -102,7 +136,17 @@
         group.classList.toggle("is-empty", inGroup === 0);
         var count = group.querySelector(".region-group-head .count");
         if (count) count.textContent = homes(inGroup);
+        if (regionNav) {
+          var heading = group.querySelector("h2[id]");
+          regionLinks.forEach(function (link, i) {
+            if (heading && link.hash === "#" + heading.id) {
+              link.hidden = inGroup === 0;
+              regionSelect.options[i + 1].disabled = inGroup === 0;
+            }
+          });
+        }
       });
+      if (regionNav) syncRegionHash();
       Array.prototype.forEach.call(bedOptions.children, function (btn) {
         btn.setAttribute("aria-pressed", Number(btn.value) === wanted ? "true" : "false");
       });

@@ -74,6 +74,19 @@
       </div>
       <a href="unlock.html" class="btn btn-amber access-banner-btn">Unlock for &pound;5.95 ($8.00) <i data-lucide="arrow-right"></i></a>
     </aside>
+    <nav class="region-nav" data-region-nav aria-label="Jump to country">
+      <span class="region-nav-label">Jump to country</span>
+      <div class="region-nav-links">
+        <a href="#region-spain">Spain</a>
+        <a href="#region-france">France</a>
+        <a href="#region-italy">Italy</a>
+        <a href="#region-cyprus">Cyprus</a>
+        <a href="#region-ireland">Ireland</a>
+      </div>
+      <select aria-label="Jump to country" hidden>
+        <option value="">Choose a country</option>
+      </select>
+    </nav>
     <div class="bed-filter" data-bed-filter hidden>
       <span class="bed-filter-label" id="bed-filter-label"><i data-lucide="bed-double"></i>Bedrooms</span>
       <div class="bed-filter-options" role="group" aria-labelledby="bed-filter-label" data-bed-options></div>
@@ -82,7 +95,7 @@
     
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Spain</h2>
+          <h2 id="region-spain" tabindex="-1">Spain</h2>
           <span class="count">8 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Costa Blanca and Costa del Sol villas, golf-resort living and island hideaways on Ibiza and Lanzarote.</p>
@@ -220,7 +233,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>France</h2>
+          <h2 id="region-france" tabindex="-1">France</h2>
           <span class="count">5 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Riviera villas, Aquitaine farmhouses and gîtes in Poitou-Charentes.</p>
@@ -310,7 +323,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Italy</h2>
+          <h2 id="region-italy" tabindex="-1">Italy</h2>
           <span class="count">1 home</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A city apartment in Rome.</p>
@@ -335,7 +348,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Cyprus</h2>
+          <h2 id="region-cyprus" tabindex="-1">Cyprus</h2>
           <span class="count">1 home</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">A village house near Paphos.</p>
@@ -361,7 +374,7 @@
 
       <div class="region-group">
         <div class="region-group-head">
-          <h2>Ireland</h2>
+          <h2 id="region-ireland" tabindex="-1">Ireland</h2>
           <span class="count">3 homes</span>
         </div>
         <p style="max-width:60ch;margin:-14px 0 26px;color:var(--muted);">Coastal cottages and houses in Cork, Kerry and Donegal.</p>
