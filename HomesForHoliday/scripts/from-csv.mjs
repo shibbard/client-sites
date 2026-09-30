@@ -260,4 +260,49 @@ for (const [region, file] of Object.entries(REGIONS)) {
   writeFileSync(`build/cards/${file}`, out + '\n');
   console.log(`build/cards/${file.padEnd(24)} ${group.length} cards`);
 }
+// Keep the overview badges and descriptions aligned with the published cards.
+// A coming-soon card is visible on a region page but has no owner link in the CSV.
+const visibleCounts = {};
+for (const [region, file] of Object.entries(REGIONS)) {
+  const original = readFileSync(file, 'utf8');
+  const placeholders = (original.match(/<article class="prop-card reveal">/g) || []).length;
+  const total = (counts[region] || 0) + placeholders;
+  visibleCounts[region] = total;
+  let page = original.replace(/Browse \d+ owner-direct holiday homes/g,
+    `Browse ${total} owner-direct holiday homes`);
+  page = page.replace(/(<div class="region-group">)([\s\S]*?)(?=<div class="region-group">|<\/section>)/g,
+    (block, opening, body) => {
+      const heading = body.match(/<h2>(.*?)<\/h2>/)?.[1];
+      if (!heading) return block;
+      const liveCount = live.filter(r => r.region === region && esc(r.group) === heading).length;
+      const pendingCount = (body.match(/<article class="prop-card reveal">/g) || []).length;
+      const n = liveCount + pendingCount;
+      return opening + body.replace(/(<span class="count">)\d+ homes?(<\/span>)/,
+        (_, before, after) => `${before}${n} ${n === 1 ? 'home' : 'homes'}${after}`);
+    });
+  if (page !== original) writeFileSync(file, page);
+}
+const hubOriginal = readFileSync('destinations.html', 'utf8');
+let hub = hubOriginal;
+for (const [region, file] of Object.entries(REGIONS)) {
+  const pattern = new RegExp(`(<a href="${file.replace('.', '\\.')}" class="hub-card[^\"]*">[\\s\\S]*?<span class="hub-count"><strong>)\\d+( Homes<\\/strong>)`);
+  if (!pattern.test(hub)) throw new Error(`Missing destination count for ${region}`);
+  hub = hub.replace(pattern, (_, before, after) => before + visibleCounts[region] + after);
+}
+const liveMilestone = Math.floor((live.length - 1) / 50) * 50;
+hub = hub.replace(/Over \d+ vacation opportunities/, `Over ${liveMilestone} vacation opportunities`);
+if (hub !== hubOriginal) writeFileSync('destinations.html', hub);
+const homeOriginal = readFileSync('index.html', 'utf8');
+const home = homeOriginal.replace(/Over \d+ exclusive properties available for holiday rental/,
+  `Over ${liveMilestone} exclusive properties available for holiday rental`);
+if (home !== homeOriginal) writeFileSync('index.html', home);
+const llmsOriginal = readFileSync('llms.txt', 'utf8');
+let llms = llmsOriginal.replace(/over \d+ exclusive holiday homes/, `over ${liveMilestone} exclusive holiday homes`);
+for (const [region, file] of Object.entries(REGIONS)) {
+  const placeholders = visibleCounts[region] - (counts[region] || 0);
+  const label = `${visibleCounts[region]} homes${placeholders ? `, including ${placeholders === 1 ? 'one' : placeholders} awaiting ${placeholders === 1 ? 'its' : 'their'} direct link` : ''}`;
+  llms = llms.replace(new RegExp(`(- ${region} \\()[^)]*(\\):)`), (_, before, after) => before + label + after);
+}
+if (llms !== llmsOriginal) writeFileSync('llms.txt', llms);
+console.log('Overview counts synchronised with the catalogue and coming-soon cards.');
 console.log('');
