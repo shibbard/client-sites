@@ -107,7 +107,7 @@ test('.vercelignore keeps the spreadsheet and scripts out of the deployment', ()
 
 test('every region-page link points at /go/<slug>', () => {
   const files = ['united-kingdom.html', 'europe.html', 'usa.html',
-                 'caribbean-islands.html', 'central-america.html'];
+                 'caribbean-islands.html', 'central-america.html', 'canada.html'];
   let count = 0;
   for (const file of files) {
     const html = readFileSync(file, 'utf8');

@@ -4,7 +4,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 
 const FILES = ['united-kingdom.html', 'europe.html', 'usa.html',
-               'caribbean-islands.html', 'central-america.html'];
+               'caribbean-islands.html', 'central-america.html', 'canada.html'];
 
 const norm = s => s.replace(/\s+/g, ' ').trim();
 
@@ -29,6 +29,10 @@ for (const file of FILES) {
   if (!existsSync(genPath)) { console.log(`skip ${file} — not generated`); continue; }
   const gen = cards(readFileSync(genPath, 'utf8'));
   const live = cards(readFileSync(file, 'utf8'));
+
+  for (const slug of Object.keys(gen)) {
+    if (!(slug in live)) missing.push(`${file}: ${slug} missing from page`);
+  }
 
   for (const [slug, liveBlock] of Object.entries(live)) {
     if (!(slug in gen)) { missing.push(`${file}: ${slug} not in generated output`); continue; }

@@ -16,6 +16,7 @@ const REGIONS = {
   'USA': 'usa.html',
   'Caribbean Islands': 'caribbean-islands.html',
   'Central America': 'central-america.html',
+  'Canada': 'canada.html',
 };
 
 // Countries that sit on the Central American mainland. Belize and Honduras have

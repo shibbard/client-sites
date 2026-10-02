@@ -10,7 +10,7 @@ web
 
 Dual-sided:
 
-1. **Travellers** browsing the directory for a holiday home worldwide (UK, Europe, USA, Caribbean, Central America) and wanting to book direct with the owner instead of through an agency.
+1. **Travellers** browsing the directory for a holiday home worldwide (UK, Europe, USA, Canada, Caribbean, Central America) and wanting to book direct with the owner instead of through an agency.
 2. **Holiday-home owners** who want to list their property in the directory to reach guests who book direct, and who may also buy a website through the business's web-design partner.
 
 ## Product Purpose
@@ -23,7 +23,7 @@ Direct owner-to-guest connection, not an OTA/agency middleman — no agency book
 
 ## Operating Context
 
-- Static directory site: destination hub pages (UK, Europe, USA, Caribbean, Central America) link out to individual property listings.
+- Static directory site: destination hub pages (UK, Europe, USA, Canada, Caribbean, Central America) link out to individual property listings.
 - Owners are onboarded via a "For Owners" page that doubles as a lead-gen funnel for an affiliated web-design service (Get Digital Done), priced from £35+VAT/month.
 - Content includes a "Travel Tools" resources page and an "About" page with company story.
 

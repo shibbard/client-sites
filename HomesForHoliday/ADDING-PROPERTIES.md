@@ -14,7 +14,7 @@ couple of details is enough**. Here is what a card needs:
 | `owner_url` | `https://vellandreathcornishcottages.com/` | the link |
 | `title` | `Sennen, Cornwall` | **place**, not the property's trading name |
 | `sub` | `South West England` | the sub-heading it gets grouped under |
-| `region` | `United Kingdom` | which of the five pages it lands on |
+| `region` | `United Kingdom` | which destination page it lands on (UK, Europe, USA, Canada, Caribbean Islands or Central America) |
 | `type` | `Cottage` | Cottage, Villa, Apartment, Barn Conversion, Cabin, House, Mansion… |
 | `beds` / `baths` | `3` / `2` | numbers |
 | `pool` | `Private Pool` | optional — or `Communal Pool`, or blank |
@@ -50,7 +50,7 @@ nothing but the link.
 
 ## The spreadsheet
 
-`properties.csv` is now the master list — all 84 current properties, one row
+`properties.csv` is the master list — all current properties, one row
 each. Open it in Excel. It is the single source of truth: the website and the
 database are both generated from it.
 
