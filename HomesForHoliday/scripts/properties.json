@@ -1116,15 +1116,6 @@
     "img": "images/ecclerigg-windermere-cumbria-db0f39.webp"
   },
   {
-    "slug": "bowness-on-windermere-cumbria-2f1104",
-    "region": "United Kingdom",
-    "owner_url": "https://rydalcottage.co.uk/",
-    "title": "Bowness-on-Windermere, Cumbria",
-    "sub": "North West & Lake District",
-    "file": "united-kingdom.html",
-    "img": "images/bowness-on-windermere-cumbria-2f1104.webp"
-  },
-  {
     "slug": "kents-bank-grange-over-sands-cumbria-d36cd9",
     "region": "United Kingdom",
     "owner_url": "https://kentsbankholiday.co.uk/",
@@ -1195,15 +1186,6 @@
     "sub": "Wales",
     "file": "united-kingdom.html",
     "img": "images/llithfaen-gwynedd-2ff67d.webp"
-  },
-  {
-    "slug": "suladale-isle-of-skye-5132d2",
-    "region": "United Kingdom",
-    "owner_url": "https://www.theoldcottageskye.com/",
-    "title": "Suladale, Isle of Skye",
-    "sub": "Scotland",
-    "file": "united-kingdom.html",
-    "img": "images/suladale-isle-of-skye-5132d2.webp"
   },
   {
     "slug": "findochty-moray-cb6232",
@@ -1314,15 +1296,6 @@
     "img": "images/ashford-in-the-water-derbyshire-d21790.webp"
   },
   {
-    "slug": "bushmills-county-antrim-8a7cc5",
-    "region": "United Kingdom",
-    "owner_url": "https://www.bushmillsholidays.com/",
-    "title": "Bushmills, County Antrim",
-    "sub": "Northern Ireland",
-    "file": "united-kingdom.html",
-    "img": "images/bushmills-county-antrim-8a7cc5.webp"
-  },
-  {
     "slug": "near-ballydehob-county-cork-a10093",
     "region": "Europe",
     "owner_url": "https://www.roaringwaterbay.com/",
@@ -1395,15 +1368,6 @@
     "img": "images/big-pine-key-florida-keys-34b397.webp"
   },
   {
-    "slug": "cape-coral-20c32f",
-    "region": "USA",
-    "owner_url": "https://www.saltlifevillacapecoral.com/",
-    "title": "Cape Coral",
-    "sub": "Florida",
-    "file": "usa.html",
-    "img": "images/cape-coral-20c32f.webp"
-  },
-  {
     "slug": "highgate-park-davenport-bc9489",
     "region": "USA",
     "owner_url": "https://www.ourfloridavacationhome.net/",
@@ -1411,15 +1375,6 @@
     "sub": "Florida — Disney Area",
     "file": "usa.html",
     "img": "images/highgate-park-davenport-bc9489.webp"
-  },
-  {
-    "slug": "cumbrian-lakes-kissimmee-38569d",
-    "region": "USA",
-    "owner_url": "https://magicmemoriesparadisevilla.com/",
-    "title": "Cumbrian Lakes, Kissimmee",
-    "sub": "Florida — Disney Area",
-    "file": "usa.html",
-    "img": "images/cumbrian-lakes-kissimmee-38569d.webp"
   },
   {
     "slug": "indian-ridge-kissimmee-130515",
@@ -1438,15 +1393,6 @@
     "sub": "Florida — Disney Area",
     "file": "usa.html",
     "img": "images/highgate-park-davenport-d2b9db.webp"
-  },
-  {
-    "slug": "kissimmee-ceacef",
-    "region": "USA",
-    "owner_url": "https://orlandovillarent.com/",
-    "title": "Kissimmee",
-    "sub": "Florida — Disney Area",
-    "file": "usa.html",
-    "img": "images/kissimmee-ceacef.webp"
   },
   {
     "slug": "davenport-1321d9",
@@ -1548,15 +1494,6 @@
     "img": "images/cane-bay-st-croix-7e9448.webp"
   },
   {
-    "slug": "clear-creek-orlando-area-74f514",
-    "region": "USA",
-    "owner_url": "https://www.palmleafvilla.com/",
-    "title": "Clear Creek, Orlando Area",
-    "sub": "Florida — Disney Area",
-    "file": "usa.html",
-    "img": "images/clear-creek-orlando-area-74f514.webp"
-  },
-  {
     "slug": "fort-lauderdale-ac0200",
     "region": "USA",
     "owner_url": "https://www.jonathanshouse.com/",
@@ -1611,15 +1548,6 @@
     "img": "images/borrego-springs-california-255eac.webp"
   },
   {
-    "slug": "ellijay-georgia-6f6e52",
-    "region": "USA",
-    "owner_url": "https://www.ellijaycabinretreat.com/",
-    "title": "Ellijay, Georgia",
-    "sub": "Georgia",
-    "file": "usa.html",
-    "img": "images/ellijay-georgia-6f6e52.webp"
-  },
-  {
     "slug": "albrightsville-pennsylvania-20c810",
     "region": "USA",
     "owner_url": "https://poconomountainescape.com/",
@@ -1636,15 +1564,6 @@
     "sub": "New Hampshire",
     "file": "usa.html",
     "img": "images/plymouth-new-hampshire-0a528b.webp"
-  },
-  {
-    "slug": "ellijay-georgia-f6988a",
-    "region": "USA",
-    "owner_url": "https://gone-squatchin-creekside-cabin.com/",
-    "title": "Ellijay, Georgia",
-    "sub": "Georgia",
-    "file": "usa.html",
-    "img": "images/ellijay-georgia-f6988a.webp"
   },
   {
     "slug": "garden-city-beach-south-carolina-1a1eeb",
@@ -1674,24 +1593,6 @@
     "img": "images/kelowna-british-columbia-8064f2.webp"
   },
   {
-    "slug": "rice-lake-ontario-267ddc",
-    "region": "Canada",
-    "owner_url": "https://ricelakecottages.ca/",
-    "title": "Rice Lake, Ontario",
-    "sub": "Ontario",
-    "file": "canada.html",
-    "img": "images/rice-lake-ontario-267ddc.webp"
-  },
-  {
-    "slug": "lake-bernard-ontario-e30dc7",
-    "region": "Canada",
-    "owner_url": "https://lakeshorelodging.ca/",
-    "title": "Lake Bernard, Ontario",
-    "sub": "Ontario",
-    "file": "canada.html",
-    "img": "images/lake-bernard-ontario-e30dc7.webp"
-  },
-  {
     "slug": "nipissing-ontario-618f05",
     "region": "Canada",
     "owner_url": "https://www.nplakesidecottage.ca/",
@@ -1717,24 +1618,6 @@
     "sub": "Barbados",
     "file": "caribbean-islands.html",
     "img": "images/st-peter-barbados-434e44.webp"
-  },
-  {
-    "slug": "sabadeco-bonaire-209af2",
-    "region": "Caribbean Islands",
-    "owner_url": "https://www.villaviteau.com/",
-    "title": "Sabadeco, Bonaire",
-    "sub": "Bonaire",
-    "file": "caribbean-islands.html",
-    "img": "images/sabadeco-bonaire-209af2.webp"
-  },
-  {
-    "slug": "quintueles-asturias-7f5222",
-    "region": "Europe",
-    "owner_url": "https://www.fincanal.es/",
-    "title": "Quintueles, Asturias",
-    "sub": "Spain",
-    "file": "europe.html",
-    "img": "images/quintueles-asturias-7f5222.webp"
   },
   {
     "slug": "piedrafita-de-jaca-huesca-b5c25f",
@@ -1935,24 +1818,6 @@
     "img": "images/forte-dei-marmi-tuscany-96d330.webp"
   },
   {
-    "slug": "monopoli-puglia-df6c34",
-    "region": "Europe",
-    "owner_url": "https://www.villagapanthus.it/",
-    "title": "Monopoli, Puglia",
-    "sub": "Italy",
-    "file": "europe.html",
-    "img": "images/monopoli-puglia-df6c34.webp"
-  },
-  {
-    "slug": "kisla-kalkan-ad358a",
-    "region": "Europe",
-    "owner_url": "https://www.kislafalls.com/",
-    "title": "Kisla, Kalkan",
-    "sub": "Turkey",
-    "file": "europe.html",
-    "img": "images/kisla-kalkan-ad358a.webp"
-  },
-  {
     "slug": "kalamar-bay-kalkan-046e42",
     "region": "Europe",
     "owner_url": "https://www.villa-in-kalkan.co.uk/",
@@ -1971,15 +1836,6 @@
     "img": "images/agios-nikolaos-zakynthos-2136f9.webp"
   },
   {
-    "slug": "zakynthos-cabe63",
-    "region": "Europe",
-    "owner_url": "https://www.laperda.com/",
-    "title": "Zakynthos",
-    "sub": "Greece",
-    "file": "europe.html",
-    "img": "images/zakynthos-cabe63.webp"
-  },
-  {
     "slug": "argassi-zakynthos-f932f0",
     "region": "Europe",
     "owner_url": "https://www.villarocale.com/",
@@ -1987,24 +1843,6 @@
     "sub": "Greece",
     "file": "europe.html",
     "img": "images/argassi-zakynthos-f932f0.webp"
-  },
-  {
-    "slug": "sveta-nedjelja-hvar-5718c8",
-    "region": "Europe",
-    "owner_url": "https://villa-perka.com/",
-    "title": "Sveta Nedjelja, Hvar",
-    "sub": "Croatia",
-    "file": "europe.html",
-    "img": "images/sveta-nedjelja-hvar-5718c8.webp"
-  },
-  {
-    "slug": "labin-istria-02a37e",
-    "region": "Europe",
-    "owner_url": "https://www.olivegrovehouse.com/",
-    "title": "Labin, Istria",
-    "sub": "Croatia",
-    "file": "europe.html",
-    "img": "images/labin-istria-02a37e.webp"
   },
   {
     "slug": "rezanci-istria-c55942",
@@ -2025,24 +1863,6 @@
     "img": "images/kraishte-near-bansko-fb052c.webp"
   },
   {
-    "slug": "alsvik-ryfylke-beca9b",
-    "region": "Europe",
-    "owner_url": "https://preikestolenvilla.com/",
-    "title": "Alsvik, Ryfylke",
-    "sub": "Norway",
-    "file": "europe.html",
-    "img": "images/alsvik-ryfylke-beca9b.webp"
-  },
-  {
-    "slug": "vehmersalmi-kuopio-9e6bc5",
-    "region": "Europe",
-    "owner_url": "https://villapurnukka.com/en/",
-    "title": "Vehmersalmi, Kuopio",
-    "sub": "Finland",
-    "file": "europe.html",
-    "img": "images/vehmersalmi-kuopio-9e6bc5.webp"
-  },
-  {
     "slug": "sirkka-levi-1d1b06",
     "region": "Europe",
     "owner_url": "https://www.snowandpine.com/",
@@ -2050,14 +1870,5 @@
     "sub": "Finland",
     "file": "europe.html",
     "img": "images/sirkka-levi-1d1b06.webp"
-  },
-  {
-    "slug": "suomutunturi-03cb25",
-    "region": "Europe",
-    "owner_url": "https://www.kettukumpu.fi/en",
-    "title": "Suomutunturi",
-    "sub": "Finland",
-    "file": "europe.html",
-    "img": "images/suomutunturi-03cb25.webp"
   }
 ]

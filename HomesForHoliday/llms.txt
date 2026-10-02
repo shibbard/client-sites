@@ -24,12 +24,12 @@ Home for Holiday is a holiday-home marketing directory, established in 2014 and 
 - Affordable holiday-home website design for owners, from £100 upfront, then £19.99+VAT per month
 
 ## Destinations
-- United Kingdom (99 homes): South West England, Southern & South East England, Middle England, North East & Yorkshire, North West & Lake District, Scotland, Wales, Northern Ireland — cottages, barns, lodges and country houses
-- Europe (55 homes, including one awaiting its direct link): Spain (including the Canary Islands), France, Italy, Cyprus, Ireland, Portugal, Turkey, Greece, Croatia, Bulgaria, Norway and Finland — villas, gîtes, apartments and cabins
-- USA (58 homes, including one awaiting its direct link): Florida (incl. Disney-area villas), Alabama, the Carolinas, Missouri, Hawaii, California, Nevada, Georgia, Pennsylvania and New Hampshire — condos, beach houses and pool villas
-- Canada (5 homes): Ontario and British Columbia — lakeside cottages and houses
+- United Kingdom (96 homes): South West England, Southern & South East England, Middle England, North East & Yorkshire, North West & Lake District, Scotland, Wales — cottages, barns, lodges and country houses
+- Europe (45 homes): Spain (including the Canary Islands), France, Italy, Cyprus, Ireland, Portugal, Turkey, Greece, Croatia, Bulgaria and Finland — villas, gîtes, apartments and cabins
+- USA (51 homes): Florida (incl. Disney-area villas), Alabama, the Carolinas, Missouri, Hawaii, California, Nevada, Georgia, Pennsylvania and New Hampshire — condos, beach houses and pool villas
+- Canada (3 homes): Ontario and British Columbia — lakeside cottages and houses
 - Central America (5 homes): Mexico, Costa Rica and Belize — beach houses and villas
-- Caribbean Islands (9 homes): Bahamas, Dominican Republic, Roatán, Turks & Caicos, St Croix, Curaçao, Barbados and Bonaire — island villas and beach houses
+- Caribbean Islands (8 homes): Bahamas, Dominican Republic, Roatán, Turks & Caicos, St Croix, Curaçao, Barbados and Bonaire — island villas and beach houses
 
 ## Key pages
 - Home: /index.html
