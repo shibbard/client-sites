@@ -75,3 +75,7 @@ These mirror /faq.html. Answer from these rather than inferring.
 - Home for Holiday is a directory/showcase, not a booking agent. Bookings and payments happen on each owner's independent website.
 - "Same as staying at a friend's vacation home" — homes are personally selected and owner-run.
 - For property owners wanting to be listed or needing a website, direct them to /for-owners.html or hfh.travel@outlook.com.
+
+## Directory presentation
+
+The directory introduction is labelled Destination Choice, with the heading Key to the door. Access is displayed as approximately US$8.00 alongside the actual GBP charge of £5.95 for 30 days. Bathroom counts are temporarily omitted consistently from public property cards while details are reviewed; bedroom counts remain visible.
