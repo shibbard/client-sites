@@ -620,6 +620,7 @@ p { color: var(--muted); }
   text-shadow: 0 2px 8px rgba(8,15,35,0.5);
 }
 .listing-hero-price span { font-size: 0.55em; font-weight: 500; opacity: 0.8; }
+.listing-hero--destination .hero-bg img { object-position: center 78%; }
 .listing-hero .listing-price-note { font-size: 0.85rem; margin-top: -12px; }
 
 .breadcrumb { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--muted); padding: 22px 0; flex-wrap: wrap; }
