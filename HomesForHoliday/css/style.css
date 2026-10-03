@@ -1349,3 +1349,38 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .access-banner-media { min-height: 110px; }
   .access-banner-body { padding: 0 6px; }
 }
+
+/* Destination catalogue cover — type and accents follow Gary's reference. */
+.destination-cover { min-height: clamp(740px, 88svh, 900px); align-items: center; }
+.destination-cover .listing-hero-inner { padding-top: calc(var(--header-h) + 58px); padding-bottom: 70px; }
+.destination-cover .hero-bg::after { background: linear-gradient(90deg, rgba(8,31,53,.57), rgba(8,31,53,.34) 43%, rgba(8,31,53,.05) 78%), linear-gradient(180deg, rgba(8,31,53,.12), transparent 70%); }
+.destination-cover .label-caps { display: block; color: #26e1e5; font-size: clamp(.95rem, 1.3vw, 1.2rem); font-weight: 700; letter-spacing: .3em; margin-bottom: 22px; }
+.destination-cover h1 { font-size: clamp(3.7rem, 6.7vw, 6.4rem); font-weight: 500; line-height: 1.02; letter-spacing: -.035em; margin: 0 0 24px; }
+.destination-cover .listing-hero-inner > p:not(.listing-hero-price):not(.listing-price-note) { max-width: 47ch; font-size: clamp(1.15rem, 1.7vw, 1.55rem); line-height: 1.45; font-weight: 400; }
+.destination-proof { display: flex; align-items: center; gap: 22px; margin: 28px 0 18px; }
+.destination-proof > svg { color: #f4cf71; width: 54px; height: 54px; flex: 0 0 auto; stroke-width: 1.4; }
+.destination-proof p { border-left: 2px solid #f4cf71; padding-left: 22px; font-size: clamp(1.05rem, 1.4vw, 1.3rem); line-height: 1.4; font-weight: 400; }
+.destination-proof strong { color: #f4cf71; font-size: 1.3em; font-weight: 700; }
+.destination-cover .listing-hero-price { font-size: clamp(2.5rem, 4vw, 3.6rem); font-weight: 400; line-height: 1.1; margin: 18px 0 24px; }
+.destination-cover .listing-hero-price span { font-size: .88em; opacity: 1; font-weight: 400; }
+.destination-cover-cta { display: inline-flex; align-items: center; gap: 20px; padding: 17px 30px; border-radius: 999px; background: #009fa6; color: #fff; font-size: 1.05rem; font-weight: 800; text-transform: uppercase; letter-spacing: .07em; box-shadow: 0 8px 26px rgba(0,40,52,.18); transition: background .2s, transform .2s; }
+.destination-cover-cta svg { width: 25px; height: 25px; stroke-width: 3; }
+.destination-cover-cta:hover { background: #007f86; transform: translateY(-2px); }
+.destination-cover-cta:focus-visible { outline: 3px solid #f4cf71; outline-offset: 5px; }
+.destination-cover .listing-price-note { margin: 14px 0 0; font-size: .78rem; font-weight: 400; }
+#holiday-destinations, #unlock-shell { scroll-margin-top: calc(var(--header-h) + 24px); }
+@media (max-width: 620px) {
+  .destination-cover { min-height: 760px; }
+  .destination-cover .listing-hero-inner { padding-top: calc(var(--header-h) + 55px); padding-bottom: 64px; }
+  .destination-cover .hero-bg img { object-position: 66% center; }
+  .destination-cover .hero-bg::after { background: linear-gradient(90deg, rgba(8,31,53,.53), rgba(8,31,53,.32) 74%, rgba(8,31,53,.15)); }
+  .destination-cover .label-caps { font-size: .86rem; letter-spacing: .23em; margin-bottom: 22px; }
+  .destination-cover h1 { font-size: clamp(3rem, 13vw, 3.7rem); max-width: 10ch; margin-bottom: 24px; }
+  .destination-cover .listing-hero-inner > p:not(.listing-hero-price):not(.listing-price-note) { font-size: 1.1rem; line-height: 1.5; }
+  .destination-proof { gap: 14px; margin: 24px 0 18px; }
+  .destination-proof > svg { width: 38px; height: 38px; }
+  .destination-proof p { padding-left: 14px; font-size: .95rem; }
+  .destination-cover .listing-hero-price { font-size: 2.7rem; margin: 18px 0 22px; }
+  .destination-cover-cta { font-size: .87rem; padding: 16px 23px; gap: 12px; }
+  .destination-cover .listing-price-note { max-width: 38ch; font-size: .73rem; }
+}
