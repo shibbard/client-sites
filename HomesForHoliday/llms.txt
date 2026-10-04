@@ -87,3 +87,5 @@ Directory hero follows Gary’s catalogue-cover typography: larger serif headlin
 4 October 2026: Gary’s final hero copy specifies holiday rental; hero price is £5.95 / $8.00 with equal-size currencies, and the independent-websites detail uses smaller type. The actual charge remains GBP5.95; dollars are approximate.
 
 4 October 2026: Bathroom counts are restored. Unknown counts display Standard while confirmation is gathered; Standard does not imply a count of one. New listings should include confirmed bathroom counts. The hero currency note uses the available width and only wraps when needed.
+
+4 October 2026: Unknown bathroom counts now display Request details from owner instead of Standard, per Gary. All 193 known counts and 208 live listings remain unchanged.
