@@ -222,7 +222,7 @@ const card = r => {
   const plural = (n, word) => `${esc(n)} ${word}${Number(n) === 1 ? '' : 's'}`;
   const meta = [
     r.beds ? `\n              <span><i data-lucide="bed-double"></i>${plural(r.beds, 'Bed')}</span>` : '',
-    // Bathroom counts stay in the source; hide them consistently until reviewed.
+    `\n              <span${r.baths ? '' : ' aria-label="Bathrooms: Standard"'}><i data-lucide="bath"></i>${r.baths ? plural(r.baths, 'Bath') : 'Standard'}</span>`,
   ].join('');
   return `        <a class="prop-card reveal" href="/go/${esc(r.slug)}" target="_blank" aria-label="${esc(label)}, book direct" rel="nofollow noopener">
           <div class="prop-media">${pool}

@@ -1367,7 +1367,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .destination-cover-cta svg { width: 25px; height: 25px; stroke-width: 3; }
 .destination-cover-cta:hover { background: #007f86; transform: translateY(-2px); }
 .destination-cover-cta:focus-visible { outline: 3px solid #f4cf71; outline-offset: 5px; }
-.destination-cover .listing-price-note { margin: 14px 0 0; font-size: .78rem; font-weight: 400; }
+.destination-cover .listing-price-note { max-width: none; margin: 14px 0 0; font-size: .78rem; font-weight: 400; }
 #holiday-destinations, #unlock-shell { scroll-margin-top: calc(var(--header-h) + 24px); }
 @media (max-width: 620px) {
   .destination-cover { min-height: 760px; }
@@ -1382,5 +1382,5 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .destination-proof p { padding-left: 14px; font-size: .82rem; }
   .destination-cover .listing-hero-price { font-size: 2.7rem; margin: 18px 0 22px; }
   .destination-cover-cta { font-size: .87rem; padding: 16px 23px; gap: 12px; }
-  .destination-cover .listing-price-note { max-width: 38ch; font-size: .73rem; }
+  .destination-cover .listing-price-note { max-width: none; font-size: .73rem; }
 }
