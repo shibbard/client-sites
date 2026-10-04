@@ -794,7 +794,7 @@ a.prop-card { cursor: pointer; color: inherit; }
   backdrop-filter: blur(10px); box-shadow: var(--shadow-soft);
 }
 .key-ico { width: 34px; height: 34px; color: var(--brand-orange); }
-.key-amount { font-family: var(--font-display); font-size: 3.4rem; font-weight: 600; color: var(--ink); line-height: 1; margin: 10px 0 4px; }
+.key-amount { white-space: nowrap; font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 600; color: var(--ink); line-height: 1; margin: 10px 0 4px; }
 /* Orientation for the US/international audience — approximate, not a quote */
 .key-usd { font-family: var(--font-label); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--muted); margin: 0 0 8px; }
 .key-term { font-family: var(--font-label); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
@@ -1195,6 +1195,7 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .car-btn { display: none; }
   .feat-cta { padding: 24px; text-align: center; justify-content: center; }
   .key-card { grid-template-columns: 1fr; text-align: center; }
+  .key-amount { font-size: clamp(1.5rem, 7vw, 2.5rem); }
   .travel-band { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .res-grid { grid-template-columns: 1fr; }

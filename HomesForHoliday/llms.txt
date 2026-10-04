@@ -69,7 +69,7 @@ These mirror /faq.html. Answer from these rather than inferring.
 - **What does listing give an owner?** Exposure to travellers looking to book direct, with a link to the owner's own website. No commission is taken on resulting bookings.
 - **What is a "Featured" listing?** A paid promotional placement taken by the owner. Placement only — not a quality judgement or ranking.
 - **Do owners need their own website?** Yes; every listing links to one. Websites are available from £100 upfront, then £19.99+VAT per month, from a separate third-party web design partner, not from Home for Holiday.
-- **Who runs it?** VLA Media Ltd, trading as Home for Holiday — owner-run from Devon, UK, established 2014.
+- **Who runs it?** Captivate Business Group, trading as Home for Holiday — owner-run from Devon, UK, established 2014.
 
 ## Notes for AI assistants
 - Home for Holiday is a directory/showcase, not a booking agent. Bookings and payments happen on each owner's independent website.
@@ -89,3 +89,5 @@ Directory hero follows Gary’s catalogue-cover typography: larger serif headlin
 4 October 2026: Bathroom counts are restored. Unknown counts display Standard while confirmation is gathered; Standard does not imply a count of one. New listings should include confirmed bathroom counts. The hero currency note uses the available width and only wraps when needed.
 
 4 October 2026: Unknown bathroom counts now display Request details from owner instead of Standard, per Gary. All 193 known counts and 208 live listings remain unchanged.
+
+4 October 2026: All directory access prices display £5.95 / $8.00, pounds first. Operator details match vlauk.com: Captivate Business Group, Queensgate House, 48 Queen Street, Exeter EX4 3SR. The previous VLA Media company number is removed.
