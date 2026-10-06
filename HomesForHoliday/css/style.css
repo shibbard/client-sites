@@ -683,7 +683,7 @@ p { color: var(--muted); }
 .prop-sub { font-family: var(--font-label); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); font-weight: 600; margin-bottom: 8px; }
 .prop-card h3 { font-size: 1.22rem; line-height: 1.22; margin-bottom: 6px; }
 .prop-type { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; }
-.prop-meta { display: flex; gap: 18px; padding: 14px 0; margin-top: auto; border-top: 1px solid var(--line); }
+.prop-meta { display: flex; flex-wrap: wrap; gap: 18px; padding: 14px 0; margin-top: auto; border-top: 1px solid var(--line); }
 .prop-meta span { display: inline-flex; align-items: center; gap: 7px; font-size: 0.85rem; color: var(--ink); font-weight: 600; }
 .prop-meta svg { width: 17px; height: 17px; color: var(--primary); }
 .prop-card .prop-soft { margin-top: 16px; text-align: center; font-size: 0.82rem; color: var(--muted); padding: 13px; background: var(--container-low); border-radius: var(--r); }
@@ -1385,3 +1385,11 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .destination-cover-cta { font-size: .87rem; padding: 16px 23px; gap: 12px; }
   .destination-cover .listing-price-note { max-width: none; font-size: .73rem; }
 }
+
+/* Owner links describe where the click leads; booking happens with the owner. */
+.prop-direct { display: block; margin-top: 5px; font-size: .78rem; color: var(--muted); }
+.featured-updates { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; margin: 18px auto 0; padding: 12px 18px; border-radius: var(--r-md); background: var(--pearl); color: var(--primary); }
+.featured-updates svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+.prop-meta span:first-child { white-space: nowrap; }
+.prop-meta svg { flex-shrink: 0; }

@@ -245,9 +245,10 @@
     };
 
     track.addEventListener("scroll", function () { window.requestAnimationFrame(syncUi); }, { passive: true });
-    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseenter", function () { if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) stop(); });
     carousel.addEventListener("mouseleave", start);
     carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", function (event) { if (!carousel.contains(event.relatedTarget)) start(); });
     carousel.addEventListener("touchstart", pause, { passive: true });
     window.addEventListener("resize", function () { buildDots(); syncUi(); });
 
@@ -285,9 +286,10 @@
       stripResumeTimer = window.setTimeout(startStrip, 9000);
     };
 
-    photoStrip.addEventListener("mouseenter", stopStrip);
+    photoStrip.addEventListener("mouseenter", function () { if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) stopStrip(); });
     photoStrip.addEventListener("mouseleave", startStrip);
     photoStrip.addEventListener("focusin", stopStrip);
+    photoStrip.addEventListener("focusout", function (event) { if (!photoStrip.contains(event.relatedTarget)) startStrip(); });
     photoStrip.addEventListener("touchstart", pauseStrip, { passive: true });
     startStrip();
   }

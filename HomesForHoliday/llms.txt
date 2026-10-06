@@ -91,3 +91,5 @@ Directory hero follows Gary’s catalogue-cover typography: larger serif headlin
 4 October 2026: Unknown bathroom counts now display Request details from owner instead of Standard, per Gary. All 193 known counts and 208 live listings remain unchanged.
 
 4 October 2026: All directory access prices display £5.95 / $8.00, pounds first. Operator details match vlauk.com: Captivate Business Group, Queensgate House, 48 Queen Street, Exeter EX4 3SR. The previous VLA Media company number is removed.
+
+6 October 2026: Homepage features a varied selection of eight live homes, including a condo, UK cottage, Florida pool villa, French gite and Finnish winter cabin. Regular additions are highlighted. Property links say View website with Book direct with the owner beneath. Slideshows resume after focus leaves, and touch devices no longer receive a sticky mouse-hover pause.
