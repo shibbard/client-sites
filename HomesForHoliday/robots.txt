@@ -3,6 +3,6 @@ Allow: /
 # Paid redirects. Nothing to index, and no rank should flow through them.
 Disallow: /go/
 Disallow: /api/
-Disallow: /unlock.html
+# Allow crawling of the sign-in page so its noindex tag can be read.
 
 Sitemap: https://hfhtravel.com/sitemap.xml
