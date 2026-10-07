@@ -20,7 +20,7 @@ const formatDate = d => new Date(d).toLocaleDateString('en-GB',
 
 const send = async ({ to, subject, text, html }) => {
   const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.MAIL_FROM || 'Home for Holiday <noreply@home-for-holiday.co.uk>';
+  const from = process.env.MAIL_FROM || 'Home for Holiday <homeforholiday@hfhtravel.com>';
   if (!apiKey) throw new Error('RESEND_API_KEY is not set');
 
   const res = await fetch(ENDPOINT, {
