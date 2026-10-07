@@ -5,6 +5,7 @@
 Home for Holiday is a holiday-home marketing directory, established in 2014 and based in Devon, United Kingdom. It does not take bookings itself: it showcases handpicked, medium-to-high-standard properties and links each one to the owner's independent website so guests can enquire and book direct.
 
 ## Business details
+- Website: https://hfhtravel.com
 - Name: Home for Holiday
 - Founded: 2014
 - Based: Devon, United Kingdom

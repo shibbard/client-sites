@@ -460,8 +460,8 @@ console.log('\nemail links: point at the site the buyer paid on');
 const { checkoutOrigin } = await import('../lib/http.js');
 
 test('the confirmation email links to the site the checkout started on', () => {
-  const cs = { success_url: 'https://home-for-holiday.getdigitaldone.co.uk/api/activate?cs={CHECKOUT_SESSION_ID}&next=javea' };
-  assert.equal(checkoutOrigin(cs), 'https://home-for-holiday.getdigitaldone.co.uk');
+  const cs = { success_url: 'https://hfhtravel.com/api/activate?cs={CHECKOUT_SESSION_ID}&next=javea' };
+  assert.equal(checkoutOrigin(cs), 'https://hfhtravel.com');
   const src = readFileSync('api/stripe-webhook.js', 'utf8');
   assert.ok(src.includes('checkoutOrigin(cs)'),
     'api/stripe-webhook.js builds email links from the host that received the webhook');

@@ -16,7 +16,7 @@ import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const UA = 'Mozilla/5.0 (compatible; HomeForHoliday-directory/1.0; +https://home-for-holiday.getdigitaldone.co.uk)';
+const UA = 'Mozilla/5.0 (compatible; HomeForHoliday-directory/1.0; +https://hfhtravel.com)';
 const TARGET_W = 720, TARGET_H = 540;   // matches every existing card photo
 const MAX_CANDIDATES = 24;
 

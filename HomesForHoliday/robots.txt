@@ -5,4 +5,4 @@ Disallow: /go/
 Disallow: /api/
 Disallow: /unlock.html
 
-Sitemap: https://home-for-holiday.getdigitaldone.co.uk/sitemap.xml
+Sitemap: https://hfhtravel.com/sitemap.xml

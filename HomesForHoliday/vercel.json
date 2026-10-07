@@ -4,6 +4,17 @@
     { "source": "/go/:slug", "destination": "/api/go/:slug" }
   ],
   "redirects": [
+    {
+      "source": "/:path((?!api(?:/|$)).*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "home-for-holiday\\.getdigitaldone\\.co\\.uk"
+        }
+      ],
+      "destination": "https://hfhtravel.com/:path*",
+      "permanent": true
+    },
     { "source": "/lib/:path*", "destination": "/404.html", "permanent": false },
     { "source": "/scripts/:path*", "destination": "/404.html", "permanent": false },
     { "source": "/build/:path*", "destination": "/404.html", "permanent": false },
