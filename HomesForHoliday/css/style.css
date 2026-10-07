@@ -1393,3 +1393,14 @@ html.js .reveal.in { opacity: 1; transform: none; }
 
 .prop-meta span:first-child { white-space: nowrap; }
 .prop-meta svg { flex-shrink: 0; }
+
+/* Optional analytics: accessible, equal-choice controls. */
+.analytics-choice { position: fixed; z-index: 2500; bottom: 16px; left: 16px; right: 16px; max-width: 1000px; margin: auto; padding: 22px; display: flex; align-items: center; gap: 24px; background: #fff; color: #16203a; border: 1px solid #b9c0d0; border-radius: 16px; box-shadow: 0 8px 32px rgba(11,23,48,.22); }
+.analytics-choice[hidden] { display: none; }
+.analytics-choice strong { font-size: 1.05rem; }
+.analytics-choice p { margin: 8px 0 0; font-size: .9rem; line-height: 1.5; }
+.analytics-choice a { color: #24379b; text-decoration: underline; }
+.analytics-choice-actions { display: flex; flex-wrap: wrap; flex-shrink: 0; gap: 10px; }
+.analytics-choice .btn { min-height: 44px; }
+.analytics-settings { display: block; margin: 18px 0 0; padding: 10px 0; min-height: 44px; background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
+@media (max-width: 700px) { .analytics-choice { flex-direction: column; align-items: stretch; gap: 16px; padding: 18px; } .analytics-choice-actions { flex-wrap: nowrap; } .analytics-choice-actions .btn { flex: 1; padding: 12px 10px; font-size: .85rem; } }
