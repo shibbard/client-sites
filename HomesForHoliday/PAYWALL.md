@@ -171,6 +171,9 @@ outages are not observable by these application alerts. Resend outages delay
 both confirmation emails and alerts; native Stripe webhook-health notices
 remain a separate account-level notification setting. No paid transaction is
 required to run `npm test` or send a clearly labelled alert-delivery test.
+Operators can send a signature-verified `hfh.integration.alert_test` diagnostic
+event using the existing webhook secret. It only sends a TEST notification;
+it cannot create a payment or grant access, and it is never a public test form.
 
 ### 3. Upstash
 

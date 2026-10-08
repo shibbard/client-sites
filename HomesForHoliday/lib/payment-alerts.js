@@ -3,6 +3,7 @@ import { get, setEx, setIfAbsent, del } from './redis.js';
 import { sendPaymentAlert } from './email.js';
 
 const ISSUES = {
+  alert_test: ['TEST — payment alerts enabled', 'This is a diagnostic test. No payment was made and no customer has had an error.'],
   payment_failed: ['Payment attempt failed', 'The buyer may retry successfully. Check Stripe before contacting them.'],
   delayed_payment_failed: ['Delayed payment failed', 'Stripe reports that a delayed payment failed. Access has not been granted for this payment.'],
   checkout_failed: ['Checkout could not start', 'A visitor could not open Stripe checkout. Check the Stripe configuration and Vercel logs.'],

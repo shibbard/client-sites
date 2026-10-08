@@ -30,6 +30,13 @@ export default async function handler(req, res) {
   }
 
   try {
+    // An operator can verify the live notification path with the existing
+    // signing secret. This never retrieves a payment or grants access.
+    if (event.type === 'hfh.integration.alert_test') {
+      await reportPaymentIssue({ kind: 'alert_test', reference: event.id,
+        code: 'diagnostic_test', strict: true });
+      return json(res, 200, { received: true });
+    }
     if (await handlePaymentFailure(stripe, event)) return json(res, 200, { received: true });
   } catch (err) {
     console.error('webhook: failure alert could not be processed', err.name);

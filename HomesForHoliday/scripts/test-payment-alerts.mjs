@@ -121,6 +121,15 @@ try {
   assert.equal(mail.length, beforeTestEvent);
   console.log('ok: missing paid email alerts safely; test-mode events do not notify production');
 
+  const diagnostic = { id: 'evt_diagnostic', type: 'hfh.integration.alert_test', data: { object: {} } };
+  assert.equal((await runWebhook(diagnostic)).statusCode, 200);
+  assert.match(mail.at(-1).subject, /TEST/);
+  assert.match(mail.at(-1).text, /No payment was made/);
+  const afterDiagnostic = mail.length;
+  assert.equal((await runWebhook({ ...diagnostic, id: 'evt_unsigned_diagnostic' }, false)).statusCode, 400);
+  assert.equal(mail.length, afterDiagnostic);
+  console.log('ok: live diagnostic requires a valid signature and cannot grant access');
+
   delete process.env.STRIPE_SECRET_KEY;
   const checkoutRes = { statusCode: 200, status(n) { this.statusCode = n; return this; }, setHeader() { return this; }, end(s) { this.body = s; } };
   await checkout({ method: 'POST', body: {}, headers: {} }, checkoutRes);
