@@ -130,6 +130,17 @@ flight, so only do it if the secret leaks.
   his account's live values and create the webhook endpoint again in his
   dashboard. Nothing else moves.
 
+Production was switched to Gary's live account `acct_1UFzlQP9dW1IiPA0` on
+8 October 2026. Charges and payouts are enabled. The live webhook
+`we_1UOLXxP9dW1IiPA0Rfv6GKvs` sends `checkout.session.completed` to
+`https://hfhtravel.com/api/stripe-webhook`. Both live credentials are sensitive
+Production-only Vercel variables; Preview retains the original test credentials.
+The production browser checkout was verified as live, one-off GBP 5.95 with
+the required terms consent and correct HFH return URLs. The webhook accepts
+the live signing secret and rejects invalid signatures. No real purchase was
+made during this verification; the first customer purchase still needs its
+access and confirmation email checked.
+
 ### 3. Upstash
 
 Database `hfh-prod-otp`, London (`eu-west-2`), pay as you go. Copy the **REST**
@@ -233,7 +244,7 @@ account" problem — there is nothing to delete.
 
 ## Still needed before go-live
 
-- [ ] Stripe account with Gary's bank details (test mode until then)
+- [x] Gary's live Stripe account connected, with charges and payouts enabled
 - [ ] Resend account and a verified sending domain (SPF + DKIM)
 - [ ] `ACCESS_SECRET` generated and set in Vercel
 - [ ] `UPSTASH_REDIS_REST_TOKEN` set in Vercel
