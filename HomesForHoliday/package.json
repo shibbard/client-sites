@@ -16,6 +16,6 @@
     "catalogue:verify": "node scripts/verify-roundtrip.mjs",
     "links": "node scripts/build-links.mjs",
     "secret": "node -e \"console.log(require('crypto').randomBytes(32).toString('base64url'))\"",
-    "test": "node scripts/test-gate.mjs"
+    "test": "node scripts/test-gate.mjs && node scripts/test-payment-alerts.mjs"
   }
 }

@@ -141,6 +141,37 @@ the live signing secret and rejects invalid signatures. No real purchase was
 made during this verification; the first customer purchase still needs its
 access and confirmation email checked.
 
+### Payment-error alerts
+
+Production uses `PAYMENT_ALERT_TO` (comma-separated email addresses) for
+operational notifications through Resend. Set this on Production only.
+The existing live webhook must select these four events:
+
+- `checkout.session.completed`
+- `checkout.session.async_payment_succeeded`
+- `checkout.session.async_payment_failed`
+- `payment_intent.payment_failed`
+
+New checkout PaymentIntents carry `hfh_product=directory_access` metadata.
+Older sessions are attributed using their HFH return URL, so unrelated products
+in the same Stripe account do not generate these alerts. Alerts also cover
+checkout creation, Stripe verification, paid-access activation, missing paid
+email, and confirmation-email errors. Invalid signatures, invalid session IDs,
+unpaid sessions, and visitors abandoning checkout do not trigger alerts.
+
+No customer email, card details, raw exception text, access tokens or Checkout
+Session IDs are sent. Where available, the PaymentIntent reference links to
+Stripe. Redis stores only hashes of alert references, expiring after seven
+days; general endpoint errors are grouped for ten minutes. Resend idempotency
+also protects retries, and a Redis outage does not block sending. Failed
+Stripe-event alert deliveries return HTTP 500 so Stripe retries.
+
+Limits: browser connectivity failures before reaching the server and platform
+outages are not observable by these application alerts. Resend outages delay
+both confirmation emails and alerts; native Stripe webhook-health notices
+remain a separate account-level notification setting. No paid transaction is
+required to run `npm test` or send a clearly labelled alert-delivery test.
+
 ### 3. Upstash
 
 Database `hfh-prod-otp`, London (`eu-west-2`), pay as you go. Copy the **REST**

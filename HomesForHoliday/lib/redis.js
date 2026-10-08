@@ -1,8 +1,8 @@
 // Upstash Redis over its REST API.
 //
-// The one piece of shared state in the whole design, and it holds exactly one
-// kind of thing: a pending sign-in code, for ten minutes. Nothing here outlives
-// a sign-in attempt, so there is still no customer data at rest.
+// Shared state for short-lived sign-in codes and rate limits, plus hashes of
+// payment-alert references to suppress repeated notifications. No customer
+// payment details are stored here.
 //
 // REST rather than a Redis client because it is a single POST — no connection
 // pooling to get wrong in a serverless function, and no npm dependency.
@@ -39,6 +39,9 @@ export const get = key => command('GET', key);
 export const setEx = (key, value, seconds) => command('SET', key, value, 'EX', seconds);
 
 export const del = key => command('DEL', key);
+
+// Atomic claim for operational alerts. Only hashes of references are stored.
+export const setIfAbsent = (key, value, seconds) => command('SET', key, value, 'EX', seconds, 'NX');
 
 // Counter that expires. The EXPIRE is only set on the first increment, so the
 // window runs from the first attempt rather than sliding forward on every one —

@@ -8,6 +8,7 @@ import Stripe from 'stripe';
 import { foldAccessEnd, paidSessionsFor } from '../lib/stripe-access.js';
 import { sendAccessNotice } from '../lib/email.js';
 import { readRawBody, json, siteUrl, checkoutOrigin } from '../lib/http.js';
+import { handlePaymentFailure, reportPaymentIssue } from '../lib/payment-alerts.js';
 
 // Signature verification needs the untouched bytes.
 export const config = { api: { bodyParser: false } };
@@ -28,7 +29,14 @@ export default async function handler(req, res) {
     return res.end(`Webhook Error: ${err.message}`);
   }
 
-  if (event.type === 'checkout.session.completed') {
+  try {
+    if (await handlePaymentFailure(stripe, event)) return json(res, 200, { received: true });
+  } catch (err) {
+    console.error('webhook: failure alert could not be processed', err.name);
+    return json(res, 500, { error: 'alert_failed' });
+  }
+
+  if (['checkout.session.completed', 'checkout.session.async_payment_succeeded'].includes(event.type)) {
     const cs = event.data.object;
 
     if (cs.payment_status !== 'paid') {
@@ -38,6 +46,10 @@ export default async function handler(req, res) {
     const email = (cs.customer_details?.email || cs.customer_email || '').trim().toLowerCase();
     if (!email) {
       console.error('webhook: paid session with no email', cs.id);
+      try {
+        await reportPaymentIssue({ kind: 'paid_email_missing', reference: cs.id,
+          paymentId: cs.payment_intent, code: 'no_email', strict: true });
+      } catch { return json(res, 500, { error: 'alert_failed' }); }
       return json(res, 200, { received: true, ignored: 'no_email' });
     }
 
@@ -69,6 +81,8 @@ export default async function handler(req, res) {
       // 500 makes Stripe retry. The buyer is not locked out either way — they
       // are already through on this device, and a code gets them in on another.
       console.error('webhook: could not send the confirmation', err.message);
+      await reportPaymentIssue({ kind: 'confirmation_failed', reference: cs.id,
+        paymentId: cs.payment_intent, code: 'email_delivery' });
       res.statusCode = 500;
       return res.end('send failed');
     }

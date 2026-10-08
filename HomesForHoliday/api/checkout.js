@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 import { json, readJson, methodGuard, siteUrl } from '../lib/http.js';
+import { reportPaymentIssue } from '../lib/payment-alerts.js';
 
 // £5.95 flat. VLA Media Ltd is not VAT registered, so this is the whole price.
 // If that ever changes, the registered price has to be VAT-inclusive at this
@@ -54,11 +55,13 @@ export default async function handler(req, res) {
       success_url: `${base}/api/activate?cs={CHECKOUT_SESSION_ID}${next ? `&next=${next}` : ''}`,
       cancel_url: `${base}/unlock.html${next ? `?next=${next}` : ''}`,
       metadata: { next_slug: next || '' },
+      payment_intent_data: { metadata: { hfh_product: 'directory_access' } },
     });
 
     return json(res, 200, { url: session.url });
   } catch (err) {
     console.error('checkout', err.message);
+    await reportPaymentIssue({ kind: 'checkout_failed', code: err.code || err.type });
     return json(res, 500, { error: 'checkout_failed' });
   }
 }

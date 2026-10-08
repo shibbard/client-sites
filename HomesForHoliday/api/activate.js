@@ -12,6 +12,7 @@ import Stripe from 'stripe';
 import { foldAccessEnd, paidSessionsFor } from '../lib/stripe-access.js';
 import { sign, setAccessCookie } from '../lib/token.js';
 import { redirect, methodGuard } from '../lib/http.js';
+import { reportPaymentIssue } from '../lib/payment-alerts.js';
 
 export default async function handler(req, res) {
   if (!methodGuard(req, res, ['GET'])) return;
@@ -32,14 +33,17 @@ export default async function handler(req, res) {
 
   let email;
   let expiresAt;
+  let paymentId;
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
     const cs = await stripe.checkout.sessions.retrieve(sessionId);
     if (cs?.payment_status !== 'paid') return redirect(res, '/unlock.html?error=unpaid');
+    paymentId = cs.payment_intent;
 
     email = (cs.customer_details?.email || cs.customer_email || '').trim().toLowerCase();
     if (!email) {
       console.error('activate: paid session with no email', sessionId);
+      await reportPaymentIssue({ kind: 'paid_email_missing', reference: sessionId, paymentId, code: 'no_email' });
       return redirect(res, '/unlock.html?error=noemail');
     }
 
@@ -52,6 +56,8 @@ export default async function handler(req, res) {
     expiresAt = foldAccessEnd([cs, ...known.filter(prev => prev.id !== cs.id)]);
   } catch (err) {
     console.error('activate: stripe lookup failed', err.message);
+    // Invalid visitor-supplied IDs are not an operational failure.
+    if (err.code !== 'resource_missing') await reportPaymentIssue({ kind: 'activation_lookup_failed', code: err.code || err.type });
     return redirect(res, '/unlock.html?error=stripe');
   }
 
@@ -59,6 +65,7 @@ export default async function handler(req, res) {
     setAccessCookie(res, await sign(email, expiresAt), expiresAt);
   } catch (err) {
     console.error('activate: cannot mint token', err.message);
+    await reportPaymentIssue({ kind: 'activation_failed', reference: sessionId, paymentId, code: 'access_configuration' });
     return redirect(res, '/unlock.html?error=config');
   }
 

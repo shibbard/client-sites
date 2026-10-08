@@ -18,15 +18,17 @@ const escapeHtml = s => String(s).replace(/[&<>"]/g, c =>
 const formatDate = d => new Date(d).toLocaleDateString('en-GB',
   { day: 'numeric', month: 'long', year: 'numeric' });
 
-const send = async ({ to, subject, text, html }) => {
+const send = async ({ to, subject, text, html, idempotencyKey }) => {
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.MAIL_FROM || 'Home for Holiday <homeforholiday@hfhtravel.com>';
   if (!apiKey) throw new Error('RESEND_API_KEY is not set');
 
   const res = await fetch(ENDPOINT, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from, to: [to], reply_to: REPLY_TO, subject, text, html }),
+    headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json',
+      ...(idempotencyKey ? { 'Idempotency-Key': idempotencyKey } : {}) },
+    body: JSON.stringify({ from, to: Array.isArray(to) ? to : [to], reply_to: REPLY_TO, subject, text, html }),
+    signal: AbortSignal.timeout(5000),
   });
 
   if (!res.ok) {
@@ -35,6 +37,10 @@ const send = async ({ to, subject, text, html }) => {
   }
   return res.json().catch(() => ({}));
 };
+
+// Operational alerts have no sign-in codes, checkout links or customer details.
+export const sendPaymentAlert = ({ to, subject, text, idempotencyKey }) =>
+  send({ to, subject, text, idempotencyKey });
 
 // Tables rather than flexbox: Outlook renders the desktop versions with Word's
 // engine, which supports neither flex nor grid. Every colour is inline for the
