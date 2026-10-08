@@ -246,8 +246,9 @@ await testAsync('an expired token gets the unlock panel, not the owner site', as
 await testAsync('a tampered token gets the unlock panel, not the owner site', async () => {
   const token = await sign('cheat@example.com', inThirtyDays);
   const [payload, sig] = token.split('.');
+  const flipped = sig.slice(0, -1) + (sig.endsWith('A') ? 'B' : 'A');
   const res = mockRes();
-  await gate(withToken('lanner-cornwall', `${payload}.${sig.slice(0, -1)}A`), res);
+  await gate(withToken('lanner-cornwall', `${payload}.${flipped}`), res);
   assert.equal(res.statusCode, 302);
   assert.ok(res.getHeader('location').startsWith('/unlock.html'),
     `tampered token was sent to ${res.getHeader('location')}`);

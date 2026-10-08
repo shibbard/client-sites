@@ -10,12 +10,12 @@ web
 
 Dual-sided:
 
-1. **Travellers** browsing the directory for a holiday home worldwide (UK, Europe, USA, Canada, Caribbean, Central America) and wanting to book direct with the owner instead of through an agency.
-2. **Holiday-home owners** who want to list their property in the directory to reach guests who book direct, and who may also buy a website through the business's web-design partner.
+1. **Travellers** browsing the directory for a vacation home worldwide (UK, Europe, USA, Canada, Caribbean, Central America) and wanting to book direct with the owner instead of through an agency.
+2. **Vacation-home owners** who want to list their property in the directory to reach guests who book direct, and who may also buy a website through the business's web-design partner.
 
 ## Product Purpose
 
-Home for Holiday is a curated directory of exclusive holiday homes. It connects travellers directly with property owners so bookings happen without agency fees (agencies can charge up to 35%), and gives owners a channel to list their property and get a website built.
+Home for Holiday is a curated directory of exclusive vacation homes. It connects travellers directly with property owners so bookings happen without agency fees (agencies can charge up to 35%), and gives owners a channel to list their property and get a website built.
 
 ## Positioning
 

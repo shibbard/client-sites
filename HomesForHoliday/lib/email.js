@@ -73,7 +73,7 @@ const shell = (body, siteUrl) => {
             <a href="mailto:${REPLY_TO}" style="color:#6f756f;text-decoration:underline">${REPLY_TO}</a>
             &nbsp;&middot;&nbsp; <a href="tel:+447352816278" style="color:#6f756f;text-decoration:none">+44 7352 816278</a>
           </p>
-          <p style="margin:0 0 10px">Home for Holiday is an independent directory of holiday homes. We are not a booking agent &mdash; every arrangement is made directly with the property owner.</p>
+          <p style="margin:0 0 10px">Home for Holiday is an independent directory of vacation homes. We are not a booking agent &mdash; every arrangement is made directly with the property owner.</p>
           <p style="margin:0;color:#9a9f9a">VLA Media Ltd &middot; South Town Lodge, South Town, Exeter, Devon EX6 8JE &middot; Company no. 17030518</p>
           <p style="margin:10px 0 0;color:#9a9f9a">You are receiving this because you asked to sign in or bought directory access. It is not a marketing email and there is nothing to unsubscribe from.</p>
         </td></tr>
@@ -87,7 +87,7 @@ const shell = (body, siteUrl) => {
 const footerText = siteUrl => [
   '',
   '—',
-  'Home for Holiday — an independent directory of holiday homes.',
+  'Home for Holiday — an independent directory of vacation homes.',
   'We are not a booking agent; every arrangement is made directly with the owner.',
   '',
   `${siteUrl}  ·  ${REPLY_TO}  ·  +44 7352 816278`,

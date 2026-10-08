@@ -1,6 +1,6 @@
 ---
 name: Home for Holiday
-description: A curated directory of exclusive holiday homes, booked direct with the owner.
+description: A curated directory of exclusive vacation homes, booked direct with the owner.
 colors:
   navy: "#122248"
   navy-deep: "#0b1730"

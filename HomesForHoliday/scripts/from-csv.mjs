@@ -270,8 +270,8 @@ for (const [region, file] of Object.entries(REGIONS)) {
   const placeholders = (original.match(/<article class="prop-card reveal">/g) || []).length;
   const total = (counts[region] || 0) + placeholders;
   visibleCounts[region] = total;
-  let page = original.replace(/Browse \d+ owner-direct holiday homes/g,
-    `Browse ${total} owner-direct holiday homes`);
+  let page = original.replace(/Browse \d+ owner-direct vacation homes/g,
+    `Browse ${total} owner-direct vacation homes`);
   page = page.replace(/(<div class="region-group">)([\s\S]*?)(?=<div class="region-group">|<\/section>)/g,
     (block, opening, body) => {
       const heading = body.match(/<h2\b[^>]*>(.*?)<\/h2>/)?.[1];
@@ -299,7 +299,7 @@ const home = homeOriginal.replace(/Over \d+ exclusive properties available for h
   `Over ${liveMilestone} exclusive properties available for holiday rental`);
 if (home !== homeOriginal) writeFileSync('index.html', home);
 const llmsOriginal = readFileSync('llms.txt', 'utf8');
-let llms = llmsOriginal.replace(/over \d+ exclusive holiday homes/, `over ${liveMilestone} exclusive holiday homes`);
+let llms = llmsOriginal.replace(/over \d+ exclusive vacation homes/, `over ${liveMilestone} exclusive vacation homes`);
 for (const [region, file] of Object.entries(REGIONS)) {
   const placeholders = visibleCounts[region] - (counts[region] || 0);
   const label = `${visibleCounts[region]} homes${placeholders ? `, including ${placeholders === 1 ? 'one' : placeholders} awaiting ${placeholders === 1 ? 'its' : 'their'} direct link` : ''}`;
