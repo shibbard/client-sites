@@ -174,6 +174,10 @@ required to run `npm test` or send a clearly labelled alert-delivery test.
 Operators can send a signature-verified `hfh.integration.alert_test` diagnostic
 event using the existing webhook secret. It only sends a TEST notification;
 it cannot create a payment or grant access, and it is never a public test form.
+On 8 October 2026, the signed production diagnostic returned HTTP 200 and its
+TEST email arrived in the operator inbox from `homeforholiday@hfhtravel.com`
+at 18:39 UTC. Replaying the same diagnostic produced no second email; an
+invalid signature returned HTTP 400. No payment was attempted.
 
 ### 3. Upstash
 
