@@ -1232,6 +1232,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .unlock-list { margin-bottom: 26px; }
 .unlock-list li { align-items: flex-start; }
 .unlock-fine { font-size: 0.8rem; color: var(--muted); margin-top: 14px; text-align: center; }
+.unlock-payment-help { margin: 18px 0 0; box-shadow: none; }
+.unlock-payment-help > summary { padding: 16px 18px; gap: 12px; font-size: 0.95rem; }
+.unlock-payment-help .faq-a { padding: 0 18px 18px; font-size: 0.9rem; line-height: 1.6; }
 .unlock-alt { font-size: 0.9rem; color: var(--muted); margin-top: 18px; text-align: center; }
 .unlock-status { color: var(--muted); text-align: center; margin: 0; }
 .unlock-label {
