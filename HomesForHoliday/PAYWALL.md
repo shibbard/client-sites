@@ -88,6 +88,16 @@ says what is left.
 5. Any other device, or after clearing cookies → enter the email → six-digit
    code → cookie
 
+### Checkout payment methods
+
+Payment methods are managed in the HFH Stripe account's Dashboard. On
+13 October 2026, Link (shown as Onelink) was disabled in the live default
+payment configuration because its cross-site saved-card autofill confused
+customers. Ordinary cards and Apple Pay remain enabled. Keep Link disabled
+unless the client requests it again; browser or wallet autofill can still
+suggest saved details. The site does not prefill a customer or email when
+creating a Checkout Session.
+
 ## Files
 
 | File | Purpose |
