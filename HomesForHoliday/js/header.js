@@ -1,6 +1,6 @@
 (() => {
-  const menu = document.querySelector('.homepage #main-menu');
-  const toggle = document.querySelector('.homepage .nav-toggle');
+  const menu = document.querySelector('.site-header #main-menu');
+  const toggle = document.querySelector('.site-header .nav-toggle');
   if (menu && toggle) {
     const drawer = window.matchMedia('(max-width: 860px)');
     let wasOpen = false;

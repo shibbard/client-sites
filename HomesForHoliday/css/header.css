@@ -1,0 +1,36 @@
+/* Shared header: the approved homepage navigation on every page. */
+.site-header-destinations { flex: 1; margin: 0; text-align: center; color: var(--nav-ink); font-family: var(--font-label); font-size: .66rem; letter-spacing: .055em; text-transform: uppercase; white-space: nowrap; opacity: .8; }
+.site-header .nav { gap: 16px; }
+.site-header .nav-menu { gap: 20px; }
+.nav-toggle-label { display: none; }
+.site-header :focus-visible { outline: 3px solid #e0951f; outline-offset: 5px; }
+@media(max-width: 1180px) { .site-header-destinations { display: none; } }
+@media(max-width: 1100px) {
+  .site-header .nav-menu { gap: 12px; }
+  .site-header .nav-menu a { font-size: .79rem; }
+}
+@media(max-width: 860px) {
+  .site-header .nav-toggle { display: block; position: relative; width: 92px; height: 44px; padding: 0 12px 0 43px; border: 1px solid #ffffff55; border-radius: 8px; color: var(--nav-ink); }
+  .site-header.scrolled .nav-toggle { border-color: #16203a55; }
+  .site-header .nav-toggle > span { position: absolute; left: 13px; width: 20px; height: 2px; margin: 0; background: currentColor; }
+  .site-header .nav-toggle > span:nth-child(1) { top: 14px; }
+  .site-header .nav-toggle > span:nth-child(2) { top: 21px; }
+  .site-header .nav-toggle > span:nth-child(3) { top: 28px; }
+  .site-header .nav-toggle-label { display: block; font: 600 13px var(--font-body); }
+  .site-header .nav-toggle.open .nav-toggle-label { font-size: 0; }
+  .site-header .nav-toggle.open .nav-toggle-label::after { content: "Close"; font-size: 13px; }
+  .site-header .nav-menu { top: var(--header-h); bottom: 0; width: 100%; max-width: none; height: auto; padding: 18px 24px 36px; overflow-y: auto; }
+  .site-header .nav-menu-logo { display: none; }
+  .site-header .nav-menu a { font-size: 1rem; padding: 18px 0; }
+  .nav-backdrop { top: var(--header-h); }
+}
+@media(max-width: 620px) {
+  :root { --header-h: 76px; }
+  .site-header { --nav-ink: #fff; background: transparent; box-shadow: none; transition: background .25s ease, box-shadow .25s ease; }
+  .site-header.scrolled { --nav-ink: #fff; background: #122248; box-shadow: 0 4px 18px #09122825; }
+  .site-header::before { display: none; }
+  .site-header .nav { height: 76px; }
+  .site-header .brand { padding: 0; }
+  .site-header .brand-mark { height: 60px; filter: none; }
+  .site-header.scrolled .nav-toggle { border-color: #ffffff55; }
+}
