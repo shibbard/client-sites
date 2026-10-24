@@ -102,3 +102,5 @@ Directory hero follows Gary’s catalogue-cover typography: larger serif headlin
 24 October 2026: The homepage uses the approved Travel Reimagined / The Curated Collection design, with a home-style gallery, Bespoke Travel introduction, Current Global Destinations and five steps to a bespoke escape. Directory access is shown as Full Access For 30 Days £5.95 – US$8.00, with the note: 30 days of directory access, priced like a monthly magazine. The closing hero sentence reads: For the discerning traveller seeking comfort, privacy and tranquillity. Directory, owner, travel, contact and legal links lead to the existing live pages.
 
 24 October 2026: All pages share the approved homepage navigation header: centred regional wording on desktop, Destinations (link directory), and the labelled mobile Menu/Close control. The current navigation section is highlighted consistently.
+
+24 October 2026: Regional directory access banners begin with Unlock the full directory for 30 days, with direct links to property websites so you can contact owners directly. The free-browsing lead-in has been removed.
