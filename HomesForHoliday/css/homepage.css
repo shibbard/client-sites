@@ -1,0 +1,97 @@
+:root { --review-h: 0px; }
+.mobile-header-meta, .nav-toggle-label { display: none; }
+.site-header { top: var(--review-h); }
+.hero-inner { padding-top: calc(var(--header-h) + var(--review-h) + 36px); }
+.hero { margin-top: var(--review-h); }
+.skip-link { position: fixed; top: -100px; left: 16px; padding: 12px 20px; z-index: 300; background: #fff; color: #122248; }
+.skip-link:focus { top: 48px; }
+html { scroll-padding-top: calc(var(--header-h) + var(--review-h) + 20px); }
+.homepage-hero { min-height: max(800px, 90svh); }
+.homepage-hero .hero-inner { padding-top: calc(var(--header-h) + 34px); padding-bottom: 54px; }
+.homepage-hero .cover-copy { max-width: 650px; }
+.homepage-hero h1 { font-size: clamp(4.2rem, 7.5vw, 6.8rem); }
+.homepage-hero .homepage-brand-name { font-family: var(--font-display); font-size: 1.55rem; font-weight: 500; color: #f2d69c; margin: 0 0 12px; }
+.homepage-hero .homepage-collection { font-size: .79rem; text-transform: uppercase; letter-spacing: .2em; color: #f2d69c; margin: 0 0 16px; }
+.homepage-hero .cover-orn { max-width: 260px; margin: 24px 0; }
+.homepage-hero .directory-intro { font-size: 1.03rem; line-height: 1.65; font-weight: 400; max-width: 48ch; margin: 0; }
+.homepage-hero .homepage-owner-website { font-size: .95rem; font-weight: 400; margin: 20px 0 0; }
+.homepage-hero .homepage-book-direct { font-family: var(--font-display); font-size: clamp(1.5rem, 2.4vw, 1.9rem); line-height: 1.2; color: #f2d69c; margin: 12px 0 18px; }
+.homepage-hero .homepage-recommendations, .homepage-hero .homepage-enthusiasts { font-size: .9rem; line-height: 1.6; font-weight: 400; max-width: 51ch; margin: 6px 0 0; }
+.homepage-hero .homepage-traveller { font-family: var(--font-display); font-size: clamp(1.35rem, 2vw, 1.7rem); font-style: italic; line-height: 1.3; color: #f2d69c; max-width: 40ch; margin: 32px 0 0; }
+.homepage-hero .homepage-directory-link { color: inherit; text-decoration: underline; text-decoration-color: #f2d69c99; text-underline-offset: 3px; transition: color .2s ease; }
+.homepage-hero .homepage-directory-link:hover { color: #f2d69c; }
+.homepage-header-destinations { flex: 1; margin: 0; text-align: center; color: var(--nav-ink); font-family: var(--font-label); font-size: .66rem; letter-spacing: .055em; text-transform: uppercase; white-space: nowrap; opacity: .8; }
+.homepage .nav { gap: 16px; }
+.homepage .nav-menu { gap: 20px; }
+.homepage-directory-facts { background: var(--navy); color: #fff; padding: 32px 0; text-align: center; }
+.homepage-directory-facts p { color: #fff; font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.25; margin: 0 0 12px; }
+.homepage-directory-facts strong { color: var(--cover-gold); font-weight: 600; }
+.homepage-directory-facts small { display: inline-block; font: .8rem var(--font-body); white-space: nowrap; }
+.homepage-directory-facts span { display: inline-flex; align-items: center; gap: 9px; font-size: .87rem; }
+.homepage-directory-facts svg { width: 19px; height: 19px; color: var(--cover-gold); }
+.homepage-intro .split-body h2 { margin: 16px 0 22px; text-transform: uppercase; font-size: clamp(2.4rem, 4vw, 3.6rem); letter-spacing: .04em; }
+.homepage-intro .split-body p { font-size: 1.06rem; line-height: 1.7; }
+.homepage-benefits { display: grid; gap: 8px; margin: 24px 0; padding: 22px 0 0; border-top: 1px solid var(--line); list-style: none; color: var(--navy); font-weight: 600; }
+.homepage-register { padding: clamp(40px, 5vw, 64px) 0; background: var(--navy); text-align: center; }
+.homepage-register h2 { color: #fff; font-size: clamp(1.9rem, 3vw, 2.7rem); line-height: 1.2; max-width: 36ch; margin: 0 auto; }
+.homepage-register .homepage-register-price { color: #d9deeb; font-size: .875rem; font-weight: 400; line-height: 1.6; margin: 20px auto 0; }
+.homepage-register .homepage-register-note { color: #bdc6da; font-size: .75rem; line-height: 1.6; margin: 5px auto 0; }
+.homepage-how .section-head { max-width: 840px; }
+.homepage-how { background: #fff; border-block: 1px solid var(--hairline); }
+.homepage-steps { grid-template-columns: repeat(5, 1fr); }
+.homepage-steps h3 { font-family: var(--font-body); font-size: 1.08rem; line-height: 1.35; font-weight: 700; margin: 12px 0 10px; }
+.homepage-steps .step { padding: 28px 20px; }
+.homepage-steps .step-num { display: block; }
+.homepage-steps .step-num em { display: block; margin-top: 3px; }
+.homepage-gallery { padding-block: clamp(48px, 6vw, 80px); }
+.homepage-gallery .section-head { max-width: 800px; }
+.homepage-gallery h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
+.homepage-gallery .homepage-audiences { font-size: .76rem; text-transform: uppercase; letter-spacing: .17em; line-height: 1.7; color: var(--primary); margin-top: 24px; }
+.homepage-type-slide { overflow: hidden; background: #fff; border-radius: var(--r-lg); border: 1px solid var(--line); }
+.homepage-type-slide img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.homepage-type-slide figcaption { padding: 18px 16px; font-size: .9rem; font-weight: 600; color: var(--navy); }
+.homepage-countries { padding-top: 24px; }
+.homepage-countries .section-head h2 { text-transform: uppercase; font-size: clamp(1.8rem, 3.5vw, 2.7rem); letter-spacing: .035em; }
+.homepage-countries .destination-note { font-size: .9rem; letter-spacing: .02em; max-width: 68ch; }
+.homepage-story-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.homepage-story-actions .btn { padding-inline: 16px; font-size: .8rem; gap: 8px; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #e0951f; outline-offset: 5px; }
+@media(max-width: 1180px) { .homepage-header-destinations { display: none; } }
+@media(max-width: 1100px) { .homepage-steps { grid-template-columns: repeat(3, 1fr); } .homepage .nav-menu { gap: 12px; } .homepage .nav-menu a { font-size: .79rem; } }
+@media(max-width: 860px) { .nav-menu { padding-top: calc(var(--review-h) + 90px); } .homepage-steps { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width: 620px) {
+  .homepage { --header-h: 76px; }
+  .homepage .site-header { --nav-ink: #fff; background: transparent; box-shadow: none; transition: background .25s ease, box-shadow .25s ease; }
+  .homepage .site-header.scrolled { background: #122248; box-shadow: 0 4px 18px #09122825; }
+  .homepage .site-header::before { display: none; }
+  .homepage-hero { min-height: auto; }
+  .homepage-hero .hero-inner { display: block; padding-top: calc(var(--header-h) + 12px); padding-bottom: 40px; }
+  .homepage-hero h1 { font-size: clamp(3.6rem, 17vw, 6rem); }
+  .homepage-hero .cover-orn { margin: 22px 0; }
+  .homepage-hero .directory-intro { font-size: .94rem; line-height: 1.6; }
+  .homepage-hero .homepage-brand-name { font-size: 1.35rem; }
+  .homepage-hero .homepage-book-direct { font-size: 1.55rem; }
+  .homepage .nav { height: 76px; gap: 16px; }
+  .homepage .brand { padding: 0; }
+  .homepage .brand-mark { height: 60px; filter: none; }
+  .homepage .brand-tagline { display: none; }
+  .homepage .nav-toggle { display: block; position: relative; width: 92px; height: 44px; padding: 0 12px 0 43px; border: 1px solid #ffffff55; border-radius: 8px; color: #fff; }
+  .homepage .nav-toggle > span { position: absolute; left: 13px; width: 20px; height: 2px; margin: 0; background: #fff; }
+  .homepage .nav-toggle > span:nth-child(1) { top: 14px; }
+  .homepage .nav-toggle > span:nth-child(2) { top: 21px; }
+  .homepage .nav-toggle > span:nth-child(3) { top: 28px; }
+  .homepage .nav-toggle-label { display: block; font: 600 13px var(--font-body); }
+  .homepage .nav-toggle.open .nav-toggle-label { font-size: 0; }
+  .homepage .nav-toggle.open .nav-toggle-label::after { content: "Close"; font-size: 13px; }
+  .homepage .mobile-header-meta { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border-block: 1px solid #ffffff30; padding: 10px 0; margin: 0 0 26px; }
+  .homepage-hero .mobile-header-meta p { margin: 0; color: #fff; font-size: 11px; line-height: 1.2; letter-spacing: .035em; }
+  .homepage .nav-menu { top: calc(var(--review-h) + var(--header-h)); bottom: 0; width: 100%; max-width: none; height: auto; padding: 18px 24px 36px; overflow-y: auto; }
+  .homepage .nav-menu-logo { display: none; }
+  .homepage .nav-menu a { font-size: 1rem; padding: 18px 0; }
+  .homepage .nav-backdrop { top: calc(var(--review-h) + var(--header-h)); }
+  .homepage-steps { grid-template-columns: 1fr; }
+  .homepage-story-actions { flex-direction: column; align-items: stretch; }
+  .homepage-story-actions .btn { justify-content: center; }
+}
+@media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
