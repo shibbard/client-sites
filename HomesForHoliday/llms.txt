@@ -104,3 +104,5 @@ Directory hero follows Gary’s catalogue-cover typography: larger serif headlin
 24 October 2026: All pages share the approved homepage navigation header: centred regional wording on desktop, Destinations (link directory), and the labelled mobile Menu/Close control. The current navigation section is highlighted consistently.
 
 24 October 2026: Regional directory access banners begin with Unlock the full directory for 30 days, with direct links to property websites so you can contact owners directly. The free-browsing lead-in has been removed.
+
+25 October 2026: Every page footer credits Website by Get Digital Done and links to https://www.getdigitaldone.co.uk/.
