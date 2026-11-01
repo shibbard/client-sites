@@ -583,4 +583,3 @@ section{position:relative}
 /* Use the image embedded in the supplied PDF above phone widths. */
 .brand picture{display:block;max-width:100%}
 @media(min-width:601px){.brand img,.nav-drawer-brand img{mix-blend-mode:multiply}}
-
