@@ -106,16 +106,16 @@ variables and in the providers' own dashboards.
 
 | Service | What it does | Identifiers |
 | --- | --- | --- |
-| **Stripe** | Takes the payment, and *is* the customer record — access is recomputed from payment history rather than stored | Currently the **GetDigitalDone sandbox**, `acct_1TJWzbA1fWLsF0Ax`. Test webhook `we_1UDTEGA1fWLsF0Ax1H5qDzoj` → `/api/stripe-webhook`, event `checkout.session.completed` only |
+| **Stripe** | Takes the payment, and *is* the customer record — access is recomputed from payment history rather than stored | **Gary's sandbox**, `acct_1UFzlQP9dW1IiPA0`. Test webhook `we_1UJV5vP9dW1IiPA0O3OikuaU` → production `/api/stripe-webhook`, event `checkout.session.completed` only |
 | **Upstash Redis** | Holds pending six-digit sign-in codes for ten minutes. Nothing else, ever | Database `hfh-prod-otp`, London `eu-west-2`, pay-as-you-go. REST endpoint `https://obliging-tuna-98582.upstash.io`. Separate from the MockupGen databases on purpose |
-| **Resend** | Sends the sign-in code and the purchase confirmation | Sending domain still unverified — currently `onboarding@resend.dev`, which only delivers to the account owner |
+| **Resend** | Sends the sign-in code and the purchase confirmation | `getdigitaldone.co.uk` is verified in Simon's Resend account. Temporary sender: `Home for Holiday <homeforholiday@getdigitaldone.co.uk>`; replies go to `hfh.travel@outlook.com` |
 | **Vercel** | Hosting and the serverless functions | Project `prj_gY66mQ7UAWgLF9ZKM9IhZDmXEPVy` |
 
 ### Environment variables
 
-Seven, all set on **Preview** only at present. See `.env.example` for what each
-one is. Production has none, because the paywall has never been deployed to the
-live site.
+Seven, set on **Production and Preview**. See `.env.example` for what each one
+is. A change to either Stripe secret needs a fresh deployment before the
+serverless functions use it.
 
 ```
 ACCESS_SECRET             signs access tokens and keys the stored codes
@@ -131,13 +131,25 @@ SITE_URL                  deliberately UNSET on Preview, so Stripe returns to
 
 ## State of play
 
-The paywall is **built and tested end to end on the preview**, and **not
-deployed to production**. The live site is still the plain directory: it has no
-`/unlock.html` and no `/go/` routes.
+The paywall is deployed to **Production and Preview**. The production domain
+serves `/unlock.html`, checks access at `/api/me`, and redirects unauthenticated
+`/go/` requests to the unlock panel. The checkout integration uses Gary's test
+keys until the live payment handover is complete. Both Production and Preview
+environment variables point to his sandbox.
 
 Verified on a real deployment: purchase → instant access → gate → six-digit
 sign-in on a fresh host → repeat purchases stacking (three test payments folded
 to 90 days, not 30) → webhook-driven confirmation email.
+
+On 25 September 2026, a £5.95 dummy-card payment through Gary's sandbox
+granted 30 days of access on the production domain, and a paid `/go/` link
+opened the owner site. The first webhook attempts returned 500 because
+`onboarding@resend.dev` could only send to the Resend account owner. After
+switching `MAIL_FROM` to the verified `getdigitaldone.co.uk` sender and
+redeploying, the original Stripe event was resent manually and returned 200.
+Resend marked the confirmation email to `simon@getdigitaldone.co.uk` Delivered.
+A fresh sign-in code requested from the production domain was also marked
+Delivered by Resend from the verified sender.
 
 ### Going live for Gary
 
@@ -147,8 +159,9 @@ The code does not change. What changes is whose accounts it points at:
    `STRIPE_SECRET_KEY` for `sk_live_…`
 2. Create the webhook again in **his** dashboard against the production domain;
    put that `whsec_` in Production
-3. Resend sending domain verified with **SPF and DKIM** — a sign-in code in the
-   spam folder is a paying customer locked out
+3. Move Resend sending from the temporary `getdigitaldone.co.uk` address to
+   Gary's verified domain (with **SPF and DKIM**) before handover; test that
+   sign-in codes arrive reliably
 4. `ACCESS_SECRET`, Upstash credentials and `MAIL_FROM` set on Production
 5. `SITE_URL` set to the production origin
 6. Work through the manual test plan at the end of [PAYWALL.md](PAYWALL.md),
