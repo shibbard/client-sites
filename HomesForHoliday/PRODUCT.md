@@ -36,7 +36,7 @@ Direct owner-to-guest connection, not an OTA/agency middleman — no agency book
 ## Brand Commitments
 
 - Name: "Home for Holiday" (site title/copy) — note the repo folder is `HomesForHoliday`; treat "Home for Holiday" (singular) as the canonical on-page brand name unless corrected.
-- Established 2014, based in Devon, UK.
+- Established 2024, based in Devon, UK.
 - Brand navy #122248, vectorised "hfh" logo mark (confirmed in recent commit history — see `favicon.svg` / inline SVG logo in header).
 - Fonts: Hanken Grotesk + Geist (Google Fonts).
 
@@ -51,7 +51,7 @@ Direct owner-to-guest connection, not an OTA/agency middleman — no agency book
 1. Preserve the "book direct, no agency fees" positioning in any new copy or feature — it is the core differentiator.
 2. Treat both traveller-facing (browse/discover destinations) and owner-facing (list a property, buy a website) journeys as first-class; neither is decorative.
 3. Keep the site static and lightweight — no framework/build-step dependency, per repo-wide convention.
-4. Real business facts (est. 2014, Devon base, property counts) are truth to preserve exactly, not marketing filler to embellish or invent further.
+4. Real business facts (est. 2024, Devon base, property counts) are truth to preserve exactly, not marketing filler to embellish or invent further.
 
 ## Accessibility & Inclusion
 

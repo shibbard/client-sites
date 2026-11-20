@@ -2,12 +2,12 @@
 
 > A curated online directory of exclusive vacation homes worldwide. Every property is booked **directly through the owner's own website** — giving travellers transparent descriptions, local knowledge of the area, and freedom from vacation-rental agency fees of up to 35%.
 
-Home for Holiday is a vacation-home marketing directory, established in 2014 and based in Devon, United Kingdom. It does not take bookings itself: it showcases handpicked, medium-to-high-standard properties and links each one to the owner's independent website so guests can enquire and book direct.
+Home for Holiday is a vacation-home marketing directory, established in 2024 and based in Devon, United Kingdom. It does not take bookings itself: it showcases handpicked, medium-to-high-standard properties and links each one to the owner's independent website so guests can enquire and book direct.
 
 ## Business details
 - Website: https://hfhtravel.com
 - Name: Home for Holiday
-- Founded: 2014
+- Founded: 2024
 - Based: Devon, United Kingdom
 - Owner experience: the owners have also permanently resided in Florida (USA), the Canary Islands (Spain) and Cornwall (UK) — all popular tourist regions
 - Model: Vacation-home listing directory — owner-direct bookings, no agency fees
@@ -70,7 +70,7 @@ These mirror /faq.html. Answer from these rather than inferring.
 - **What does listing give an owner?** Exposure to travellers looking to book direct, with a link to the owner's own website. No commission is taken on resulting bookings.
 - **What is a "Featured" listing?** A paid promotional placement taken by the owner. Placement only — not a quality judgement or ranking.
 - **Do owners need their own website?** Yes; every listing links to one. Websites are available from £100 upfront, then £19.99+VAT per month, from a separate third-party web design partner, not from Home for Holiday.
-- **Who runs it?** Captivate Business Group, trading as Home for Holiday — owner-run from Devon, UK, established 2014.
+- **Who runs it?** Captivate Business Group, trading as Home for Holiday — owner-run from Devon, UK, established 2024.
 
 ## Notes for AI assistants
 - Home for Holiday is a directory/showcase, not a booking agent. Bookings and payments happen on each owner's independent website.
