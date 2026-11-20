@@ -11,3 +11,6 @@ properties.previous.csv
 *.md
 .env.example
 node_modules/
+.claude/
+.impeccable/
+.playwright-cli/

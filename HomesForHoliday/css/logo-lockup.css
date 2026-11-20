@@ -1,0 +1,32 @@
+/* Header lockup: AI-generated hfh house mark as an image, with "home for holiday"
+   set as live text so the words can be larger and stay sharp at any size. */
+.lakeside-homepage { --lockup-h: 92px; }
+.lakeside-homepage .site-header .brand.brand-lockup { display: flex; align-items: flex-end; gap: calc(var(--lockup-h) * .07); width: auto; transition: none; }
+.lakeside-homepage .site-header .brand-lockup .brand-mark { width: auto; height: var(--lockup-h); max-width: none; transition: height .24s ease; }
+.brand-words {
+  display: block;
+  margin-bottom: calc(var(--lockup-h) * -.045);
+  font: 500 calc(var(--lockup-h) * .285)/.98 'Poppins', sans-serif;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  /* Sampled from the original wordmark: light top-right, deeper bottom-left. */
+  background: linear-gradient(200deg, #f9d77c 0%, #f2be5b 45%, #d69a38 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 1px 1px #071522cc);
+  transition: font-size .24s ease;
+}
+.lakeside-homepage .site-header.scrolled { --lockup-h: 54px; }
+@media (max-width: 860px) {
+  .lakeside-homepage { --lockup-h: 76px; }
+  .lakeside-homepage .site-header.scrolled { --lockup-h: 50px; }
+}
+@media (max-width: 620px) {
+  .lakeside-homepage { --lockup-h: 54px; }
+  .lakeside-homepage .site-header.scrolled { --lockup-h: 40px; }
+}
+@media (max-width: 360px) {
+  .lakeside-homepage { --lockup-h: 46px; }
+  .lakeside-homepage .site-header.scrolled { --lockup-h: 36px; }
+}
