@@ -9,7 +9,7 @@ Home for Holiday is a vacation-home marketing directory, established in 2024 and
 - Name: Home for Holiday
 - Founded: 2024
 - Based: Devon, United Kingdom
-- Owner experience: the owners have also permanently resided in Florida (USA), the Canary Islands (Spain) and Cornwall (UK) — all popular tourist regions
+- Owner experience: experienced holiday-home owners and seasoned travellers who have also lived permanently in Florida (USA), the Canary Islands (Spain), Devon and Cornwall (UK) — all popular tourist destinations
 - Model: Vacation-home listing directory — owner-direct bookings, no agency fees
 - Email: hfh.travel@outlook.com
 - Phone / SMS / WhatsApp: +44 7352 816278
@@ -106,3 +106,5 @@ Directory hero follows Gary’s catalogue-cover typography: larger serif headlin
 24 October 2026: Regional directory access banners begin with Unlock the full directory for 30 days, with direct links to property websites so you can contact owners directly. The free-browsing lead-in has been removed.
 
 25 October 2026: Every page footer credits Website by Get Digital Done and links to https://www.getdigitaldone.co.uk/.
+
+21 November 2026: About Us copy updated with corrections from Gary: the owners are described as experienced holiday-home owners and seasoned travellers, and the page explains that living in these destinations gives a genuine understanding of what makes each one special.
